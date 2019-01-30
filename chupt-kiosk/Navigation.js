@@ -1,9 +1,9 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import Home from './Home';
-import Menu from './Menu';
-import Pickup from './Pickup';
-import Finish from './Finish';
-import Checkout from './Checkout';
+import Home from './screens/Home';
+import Menu from './screens/Menu';
+import Pickup from './screens/Pickup';
+import Finish from './screens/Finish';
+import Checkout from './screens/Checkout';
 
 const Navigation = createStackNavigator(
   {
