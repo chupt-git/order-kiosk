@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components/native'
 
 const MainButton = styled.TouchableOpacity`
@@ -14,6 +13,9 @@ const MainButton = styled.TouchableOpacity`
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  elevation: 25;
+
 `;
 
 export default MainButton;

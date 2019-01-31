@@ -10,52 +10,61 @@ import MainWrap from '../components/MainWrap';
 // import { Button } from 'react-native-paper';
 
 class Home extends React.Component {
-
-  // constructor (props) {
-  //   super(props)
-  //   this.state = {
-  //     menuList: []
-  //   }
-  // }
-  //
-  componentDidMount(){
-     Expo.ScreenOrientation.allowAsync(Expo.ScreenOrientation.Orientation.LANDSCAPE);
+  constructor (props) {
+    super(props)
+    this.state = {
+      menuList: [],
+      cart: [],
+    }
   }
-  //   return fetch('http://192.168.1.9:5000/pods')
-  //   .then((response) => response.json())
-  //   .then((responseJson) => {
-  //     console.log('TEST')
-  //
-  //     const newMenuList = this.state.menuList.map((item) => Object.assign({}, item))
-  //     console.log(newMenuList);
-  //       Object.keys(responseJson.pods).forEach(x => {
-  //         console.log(x.pod_id);
-  //       })
-  //   })
-  //   .catch(function(error) {
-  //     console.log(error.message);
-  //     throw error;
-  //   });
-  // }
+
+componentDidMount () {
+  return fetch('http://192.168.1.9:5000/pods/0e1c3f27-9a27-4ce4-96f4-9751232776cc/menu')
+    .then((response) => response.json())
+    .then((responseJson) => {
+      // console.log('It worked and returned the following:')
+      // console.log(responseJson);
+
+      const newMenuList = this.state.menuList.map((item) => Object.assign({}, item))
+      responseJson.menu.forEach(x => {
+        newMenuList.push({
+          name: x.name,
+          description: x.description,
+          images: x.images,
+          // price: x.price,
+          type: x.type
+        })
+      })
+      this.setState({
+          menuList: newMenuList
+      })
+    })
+    .catch(function(error) {
+      console.log(error.message);
+      throw error;
+    });
+  }
 
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <MainWrap>
+        <MainWrap home>
           <Image
             source={require('../assets/logo.png')}
           />
           <ButtonWrap>
             <MainButton
-              onPress={() => this.props.navigation.navigate('Menu')}>
-              <Image source={require('../assets/arrow.png')}/>
+              onPress={() => this.props.navigation.navigate('Menu', {
+                menuList: this.state.menuList,
+              })}>
+              <Image source={require('../assets/arrow_right.png')}/>
               <ButtonText>
                 Start
               </ButtonText>
             </MainButton>
             <MainButton
               onPress={() => this.props.navigation.navigate('Pickup')}>
-              <Image source={require('../assets/arrow_two.png')}/>
+              <Image source={require('../assets/arrow_up.png')}/>
               <ButtonText>
                 Pickup
               </ButtonText>

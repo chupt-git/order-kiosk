@@ -16,6 +16,7 @@ const theme = {
 export default class App extends React.Component {
   componentDidMount() {
      StatusBar.setHidden(true);
+     Expo.ScreenOrientation.allowAsync(Expo.ScreenOrientation.Orientation.LANDSCAPE);
    }
   render() {
     return (
