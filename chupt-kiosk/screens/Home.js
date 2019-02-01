@@ -14,8 +14,10 @@ class Home extends React.Component {
     super(props)
     this.state = {
       menuList: [],
-      cart: [],
+      cart: []
+      // ,currentPosition: 1
     }
+    // this.toggleStep = this.toggleStep.bind(this)
   }
 
 componentDidMount () {
@@ -55,7 +57,7 @@ componentDidMount () {
           <ButtonWrap>
             <MainButton
               onPress={() => this.props.navigation.navigate('Menu', {
-                menuList: this.state.menuList,
+                menuList: this.state.menuList
               })}>
               <Image source={require('../assets/arrow_right.png')}/>
               <ButtonText>

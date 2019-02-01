@@ -1,25 +1,95 @@
 import React from 'react';
-import { View, Button, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Button, Text, Image, TouchableOpacity, ScrollView, ViewPagerAndroid, FlatList } from 'react-native';
+import StepIndicator from 'react-native-step-indicator';
 import styled from 'styled-components/native';
+import OptionButtons from '../components/OptionButtons';
 import CircleButton from '../components/CircleButton';
 import ButtonText from '../components/ButtonText';
+import HeaderText from '../components/HeaderText';
 import GreenText from '../components/GreenText';
+import ItemTitle from '../components/ItemTitle';
+import ItemWrap from '../components/ItemWrap';
 import MainWrap from '../components/MainWrap';
+import DescWrap from '../components/DescWrap';
 import MedText from '../components/MedText';
 import Txt from '../components/Txt';
 import Img from '../components/Img';
 import MenuItem from './MenuItem';
 import PropTypes from 'prop-types'
 
+const labels = ["Entree","Side","Drink"];
+const customStyles = {
+}
+
 
 class Menu extends React.Component {
+
+  constructor() {
+    super();
+    this.viewabilityConfig = {itemVisiblePercentThreshold: 50};
+    this.state = {
+      currentPosition: 1
+    }
+  }
 
   render() {
     const { params } = this.props.navigation.state;
 
-    const items = params.menuList.map((item, id) =>{
-      return (
-        <ItemWrap key={id}>
+
+    return (
+      <MainWrap>
+        <View>
+
+        <StepIndicator
+         customStyles={customStyles}
+         stepCount={3}
+         currentPosition={this.state.currentPosition}
+         labels={labels}
+         />
+
+          <Text>
+            Meal: <GreenText>6.50</GreenText> -  Entree: <GreenText>3.50</GreenText> - Side: <GreenText>2.50</GreenText> - Drink: <GreenText>1.00</GreenText>
+          </Text>
+        </View>
+
+        <FlatList
+          horizontal
+          style={{flex:1}}
+          ref={(viewPager) => {this.viewPager = viewPager}}
+          // onPageSelected={(page) => {this.setState({currentPosition:page.position})}}
+          data={params.menuList.sort()}
+          renderItem={this.renderPage}
+          onViewableItemsChanged={this.onViewableItemsChanged}
+          viewabilityConfig={this.viewabilityConfig}
+          keyExtractor={(item, index) => index.toString()}
+          />
+
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Checkout')}>
+          <Image resizeMode={'contain'} style={{ height: 50, width: 50}} source={require('../assets/arrow_left.png')}/>
+        </TouchableOpacity>
+      </MainWrap>
+    );
+  }
+
+  onViewableItemsChanged = ({ viewableItems, changed }) => {
+      const visibleItemsCount = viewableItems.length;
+      const steps = {
+        entree: 0,
+        side: 1,
+        drink: 2
+      }
+
+      if (visibleItemsCount == 4) {
+        const  newestNum = steps[changed[0].item.type]
+        this.setState({currentPosition: newestNum})
+      }
+
+  }
+
+  renderPage({ item }): React.Element<any> {
+    return (
+      <View style={{width: 350, height: 500, borderStyle:'solid'}}>
+        <ItemWrap>
           <Img resizeMode={'cover'} source={require('../assets/placeholder.jpg')}/>
           <DescWrap>
             <ItemTitle>{item.name}</ItemTitle>
@@ -31,80 +101,10 @@ class Menu extends React.Component {
             </CircleButton>
           </OptionButtons>
         </ItemWrap>
-      )
-    })
-
-    return (
-      <MainWrap>
-        <View>
-          <HeaderText>STEPPER GOES HERE</HeaderText>
-
-          <Text>
-            Meal: <GreenText>6.50</GreenText> -  Entree: <GreenText>3.50</GreenText> - Side: <GreenText>2.50</GreenText> - Drink: <GreenText>1.00</GreenText>
-          </Text>
-        </View>
-
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          scrollEventThrottle={10}
-        >
-        {items}
-
-        </ScrollView>
-
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Checkout')}>
-          <Image resizeMode={'contain'} style={{ height: 50, width: 50}} source={require('../assets/arrow_left.png')}/>
-        </TouchableOpacity>
-      </MainWrap>
+      </View>
     );
   }
 }
-
-const ItemWrap = styled.View `
-  width: 300;
-  display: flex;
-  border-radius: 50;
-  background-color: #fff;
-  elevation: 5;
-  margin-left: 25;
-  overflow: hidden;
-  justify-content: space-between;
-  flex: 1;
-  flex-direction: column;
-`
-
-const OptionButtons = styled.View `
-  display: flex;
-  flex-direction: row;
-  justify-content: center
-  padding-bottom: 15;
-`
-
-const Header = styled.View`
-  display: flex;
-`
-
-const HeaderText = styled.Text`
-  text-align: center;
-  font-weight: bold;
-  font-size: 40;
-`
-
-const ItemTitle = styled.Text`
-  font-weight: bold;
-  font-size: 30;
-`
-
-const DescWrap = styled.View`
-  flex:1;
-  padding-top: 15;
-  padding-left: 15;
-  padding-right: 15;
-`
-
-
-
 
 
 export default Menu;
