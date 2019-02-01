@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Button, Text, Image, TouchableOpacity, ScrollView, ViewPagerAndroid, FlatList } from 'react-native';
+import { View, Text, Image, TouchableOpacity, FlatList } from 'react-native';
 import StepIndicator from 'react-native-step-indicator';
 import styled from 'styled-components/native';
 import OptionButtons from '../components/OptionButtons';
@@ -15,7 +15,8 @@ import MedText from '../components/MedText';
 import Txt from '../components/Txt';
 import Img from '../components/Img';
 import MenuItem from './MenuItem';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import Cart from './Cart'
 
 const labels = ["Entree","Side","Drink"];
 const customStyles = {
@@ -63,6 +64,8 @@ class Menu extends React.Component {
           viewabilityConfig={this.viewabilityConfig}
           keyExtractor={(item, index) => index.toString()}
           />
+
+        <Cart/>
 
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Checkout')}>
           <Image resizeMode={'contain'} style={{ height: 50, width: 50}} source={require('../assets/arrow_left.png')}/>
