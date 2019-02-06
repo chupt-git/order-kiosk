@@ -13,23 +13,25 @@ class Home extends React.Component {
     super(props)
     this.state = {
       menuList: [],
+      total: '',
       cart: [],
-      total: ''
+      incart: false,
     }
+    this.toggleCart = this.toggleCart.bind(this)
   }
 
 componentDidMount () {
-  return fetch('http://192.168.1.115:5000/pods/0e1c3f27-9a27-4ce4-96f4-9751232776cc/menu')
+  return fetch('http://172.31.98.46:5000/pods/0e1c3f27-9a27-4ce4-96f4-9751232776cc/menu')
     .then((response) => response.json())
     .then((responseJson) => {
-
       const newMenuList = this.state.menuList.map((item) => Object.assign({}, item))
       responseJson.menu.forEach(x => {
         newMenuList.push({
           name: x.name,
           description: x.description,
           images: x.images,
-          type: x.type
+          type: x.type,
+          id: x.item_id
         })
       })
       this.setState({
@@ -42,6 +44,19 @@ componentDidMount () {
     });
   }
 
+toggleCart = (itemId) => (e) => {
+      let item
+      const newCart = this.state.cart.map((item) => Object.assign({}, item))
+
+      this.state.menuList.forEach((dataItem) => {
+        if (dataItem.id === itemId) {
+        item = dataItem
+    }})
+    newCart.push(item)
+
+    this.setState({cart: newCart}, () => console.log(this.state.cart))
+  }
+
   render() {
     return (
       <ThemeProvider theme={theme}>
@@ -52,7 +67,9 @@ componentDidMount () {
           <ButtonWrap>
             <MainButton
               onPress={() => this.props.navigation.navigate('Menu', {
-                menuList: this.state.menuList
+                menuList: this.state.menuList,
+                toggleCart: this.toggleCart,
+                cart: this.state.cart
               })}>
               <Image source={require('../assets/arrow_right.png')}/>
               <ButtonText>

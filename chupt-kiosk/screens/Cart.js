@@ -5,13 +5,17 @@ import styled from 'styled-components/native'
 class Cart extends React.Component {
 
   render() {
+    let cartItems = []
+
+    this.props.cart.forEach((dataItem) => {
+      cartItems.push(<Text>{dataItem.name}</Text>)
+      console.log(cartItems);
+    })
+    console.log(this.props.cart);
     return (
       <View>
-        <FlatList
-          data={this.props.cart}
-          renderItem={this.renderPage}
-        />
-        <Text>Total: </Text>
+      <Text>CARTs</Text>
+        {cartItems}
       </View>
     )
   }
