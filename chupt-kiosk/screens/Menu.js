@@ -24,6 +24,12 @@ class Menu extends React.Component {
     const { params } = this.props.navigation.state;
     let deviceWidth = Dimensions.get('window').width
 
+    cartItems = []
+
+    params.cart.forEach((dataItem) => {
+      cartItems.push(<Text>{dataItem.name}</Text>)
+    })
+
     console.log(params.cart);
     return (
       <MainWrap>
@@ -58,6 +64,8 @@ class Menu extends React.Component {
           inactiveSlideOpacity={1}
           keyExtractor={(item, index) => index.toString()}
           />
+
+          <Text>{cartItems}</Text>
 
         <Cart cart={params.cart}/>
 

@@ -21,7 +21,7 @@ class Home extends React.Component {
   }
 
 componentDidMount () {
-  return fetch('http://172.31.98.46:5000/pods/0e1c3f27-9a27-4ce4-96f4-9751232776cc/menu')
+  return fetch('http://192.168.1.115:5000/pods/0e1c3f27-9a27-4ce4-96f4-9751232776cc/menu')
     .then((response) => response.json())
     .then((responseJson) => {
       const newMenuList = this.state.menuList.map((item) => Object.assign({}, item))

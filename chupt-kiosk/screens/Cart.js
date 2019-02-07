@@ -9,9 +9,7 @@ class Cart extends React.Component {
 
     this.props.cart.forEach((dataItem) => {
       cartItems.push(<Text>{dataItem.name}</Text>)
-      console.log(cartItems);
     })
-    console.log(this.props.cart);
     return (
       <View>
       <Text>CARTs</Text>
