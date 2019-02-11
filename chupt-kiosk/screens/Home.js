@@ -15,11 +15,12 @@ class Home extends React.Component {
     super(props)
   }
 
-componentDidMount () {
-      this.props.fetchProducts()
+  componentDidMount () {
+      this.props.dispatch(fetchProducts())
   }
 
   render() {
+
     return (
         <MainWrap home>
           <Image source={require('../assets/logo.png')}/>
@@ -27,7 +28,7 @@ componentDidMount () {
           <ButtonWrap>
             <MainButton
               onPress={() => this.props.navigation.navigate('Menu', {
-                menuList: this.props.menu,
+                menuList: this.props.menu
               })}>
               <Image source={require('../assets/arrow_right.png')}/>
               <ButtonText>
@@ -53,10 +54,11 @@ function mapStateToProps(state) {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        ...bindActionCreators({ fetchProducts }, dispatch)
-    }
-}
+// function mapDispatchToProps(dispatch) {
+//     return {
+//       addToCart: dispatch({ type: 'ADD_TO_CART' }),
+//         ...bindActionCreators({ fetchProducts }, dispatch)
+//     }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(mapStateToProps)(Home)

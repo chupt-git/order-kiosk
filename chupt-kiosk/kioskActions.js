@@ -18,10 +18,20 @@ export const fetchProductsFailure = error => ({
   payload: { error }
 });
 
+export const addToCart = item => ({
+  type: ADD_TO_CART,
+  payload: { item }
+});
+
+export const removeFromCart = item => ({
+  type: REMOVE_FROM_CART,
+  payload: { item }
+});
+
 export function fetchProducts() {
   return dispatch => {
     dispatch(fetchProductsBegin());
-    return fetch("http://192.168.1.9:5000/pods/0e1c3f27-9a27-4ce4-96f4-9751232776cc/menu")
+    return fetch("http://192.168.1.115:5000/pods/0e1c3f27-9a27-4ce4-96f4-9751232776cc/menu")
       .then(handleErrors)
       .then(res => res.json())
       .then(json => {
@@ -34,15 +44,7 @@ export function fetchProducts() {
 
 function handleErrors(response) {
   if (!response.ok) {
-    throw Error(response.statusText);
+    throw Error(response.statusText)
   }
-  return response;
-}
-
-export function addToCart(item) {
-  return { type: ADD_TO_CART, item }
-}
-
-export function removefromCart(item) {
-  return { type: REMOVE_FROM_CART, item }
+  return response
 }

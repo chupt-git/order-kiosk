@@ -9,10 +9,12 @@ import Txt from '../components/Txt';
 import OptionButtons from '../components/OptionButtons';
 import CircleButton from '../components/CircleButton';
 import MedText from '../components/MedText';
+import { bindActionCreators } from 'redux';
+import { addToCart } from '../kioskActions';
+import { connect } from 'react-redux';
 
 class MenuItem extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <View style={{width: 350, height: 500, borderStyle:'solid'}}>
         <ItemWrap>
@@ -27,8 +29,9 @@ class MenuItem extends React.Component {
               <OptionButtons>
                   <CircleButton
                     green
-                    id={this.props.item.id}
-                    onPress={dispatch(cartReducer())}>
+                    onPress={() =>
+                      this.props.addToCart(this.props.item)
+                    }>
                     <MedText white>+</MedText>
                   </CircleButton>
                 </OptionButtons>
@@ -38,6 +41,16 @@ class MenuItem extends React.Component {
   }
 }
 
+function mapStateToProps(state) {
+    return {
+        cart: state.cart
+    }
+}
 
+const mapDispatchToProps = dispatch => (
+  bindActionCreators({
+    addToCart,
+  }, dispatch)
+)
 
-export default MenuItem;
+export default connect(mapStateToProps, mapDispatchToProps)(MenuItem);

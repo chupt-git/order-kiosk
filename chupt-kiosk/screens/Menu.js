@@ -40,6 +40,7 @@ class Menu extends React.Component {
           return (
             <MenuItem
               item={item}
+              addToCart={this.props.addToCart}
             />
           )}}
           keyExtractor={(item, index) => index.toString()}
