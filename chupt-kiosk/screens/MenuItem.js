@@ -9,28 +9,29 @@ import Txt from '../components/Txt';
 import OptionButtons from '../components/OptionButtons';
 import CircleButton from '../components/CircleButton';
 import MedText from '../components/MedText';
-// import AddRemoveButton from './AddRemoveButton';
 
 class MenuItem extends React.Component {
   render() {
+    console.log(this.props);
     return (
       <View style={{width: 350, height: 500, borderStyle:'solid'}}>
         <ItemWrap>
           <Img
             resizeMode={'cover'}
             source={require('../assets/placeholder.jpg')}/>
-          <DescWrap>
-            <ItemTitle>{this.props.item.name}</ItemTitle>
-            <Txt light>{this.props.item.description}</Txt>
-          </DescWrap>
-          <OptionButtons>
-            <CircleButton
-              green
-              id={this.props.item.id}
-              onPress={this.props.toggleCart(this.props.item.id)}>
-              <MedText white>+</MedText>
-            </CircleButton>
-          </OptionButtons>
+
+              <DescWrap>
+                <ItemTitle>{this.props.item.name}</ItemTitle>
+                <Txt light>{this.props.item.description}</Txt>
+              </DescWrap>
+              <OptionButtons>
+                  <CircleButton
+                    green
+                    id={this.props.item.id}
+                    onPress={dispatch(cartReducer())}>
+                    <MedText white>+</MedText>
+                  </CircleButton>
+                </OptionButtons>
         </ItemWrap>
       </View>
     );

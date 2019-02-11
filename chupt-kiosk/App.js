@@ -1,17 +1,11 @@
 import React from 'react';
 import Navigation from './Navigation';
-import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import { StatusBar } from 'react-native';
+import { Provider } from 'react-redux';
+import storeConfig from './storeConfig';
 
-const theme = {
-  ...DefaultTheme,
-  roundness: 2,
-  colors: {
-    ...DefaultTheme.colors,
-    primary: '#333333',
-    accent: '#f1c40f',
-  }
-};
+const store = storeConfig()
+
 
 export default class App extends React.Component {
   componentDidMount() {
@@ -20,9 +14,9 @@ export default class App extends React.Component {
    }
   render() {
     return (
-      <PaperProvider theme={theme}>
+      <Provider store={store}>
         <Navigation/>
-      </PaperProvider>
+      </Provider>
     );
   }
 }

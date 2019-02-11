@@ -23,7 +23,4 @@ const Navigation = createStackNavigator(
 );
 
 
-// const AppContainer = createAppContainer(Navigation);
-//
-// export default AppContainer;
 export default createAppContainer(Navigation);
