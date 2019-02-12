@@ -14,6 +14,7 @@ const initialState = {
 }
 
 export default function productReducer(state = initialState, action) {
+  let newCart = state.cart.map((item) => Object.assign({}, item))
   switch(action.type) {
    case FETCH_PRODUCTS_BEGIN:
      return {
@@ -38,7 +39,6 @@ export default function productReducer(state = initialState, action) {
      };
 
    case ADD_TO_CART:
-      let newCart = state.cart.map((item) => Object.assign({}, item))
       newCart.push(action.payload)
        return {
          ...state,
@@ -46,11 +46,8 @@ export default function productReducer(state = initialState, action) {
      }
 
    case REMOVE_FROM_CART:
-      newCart = state.cart.find(function( obj ) {
-        return obj !== action.payload;
-      });
-      console.log(newCart);
-
+    index = state.cart.findIndex(x => x.item== action.payload.item.item)
+    newCart.splice(index, 1)
        return {
          ...state,
          cart: newCart

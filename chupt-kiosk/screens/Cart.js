@@ -21,13 +21,13 @@ class Cart extends React.Component {
       data={this.props.cart}
       renderItem={(dataitem) => {
         return (
-          <View>
+          <View style={{borderStyle:'solid', marginBottom: 5, backgroundColor: 'red'}}>
             <Text>
               {dataitem.item.item.name}
             </Text>
             <TouchableOpacity
               onPress={() =>
-                this.props.removeFromCart(dataitem.item.item)
+                this.props.removeFromCart(dataitem.item)
               }>
               <Text>remove</Text>
             </TouchableOpacity>

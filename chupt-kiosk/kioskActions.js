@@ -31,7 +31,7 @@ export const removeFromCart = item => ({
 export function fetchProducts() {
   return dispatch => {
     dispatch(fetchProductsBegin());
-    return fetch("http://192.168.1.115:5000/pods/0e1c3f27-9a27-4ce4-96f4-9751232776cc/menu")
+    return fetch("http://192.168.1.9:5000/pods/0e1c3f27-9a27-4ce4-96f4-9751232776cc/menu")
       .then(handleErrors)
       .then(res => res.json())
       .then(json => {
