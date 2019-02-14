@@ -6,6 +6,7 @@ import ButtonWrap from '../components/ButtonWrap';
 import MainButton from '../components/MainButton';
 import ButtonText from '../components/ButtonText';
 import MainWrap from '../components/MainWrap';
+import LogoImg from '../components/LogoImg';
 import { fetchProducts } from '../kioskActions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -53,12 +54,5 @@ function mapStateToProps(state) {
         menu: state.menu
     }
 }
-
-// function mapDispatchToProps(dispatch) {
-//     return {
-//       addToCart: dispatch({ type: 'ADD_TO_CART' }),
-//         ...bindActionCreators({ fetchProducts }, dispatch)
-//     }
-// }
 
 export default connect(mapStateToProps)(Home)

@@ -1,37 +1,26 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, FlatList, Dimensions } from 'react-native';
 import styled from 'styled-components/native';
-import ButtonText from '../components/ButtonText';
-import HeaderText from '../components/HeaderText';
-import GreenText from '../components/GreenText';
 import MainWrap from '../components/MainWrap';
 import MenuItem from './MenuItem';
 import PropTypes from 'prop-types';
-import Cart from './Cart'
-class Menu extends React.Component {
+import Cart from './Cart';
+import TopNavigation from './TopNavigation'
+import BottomNavigation from './BottomNavigation'
 
+
+class Menu extends React.Component {
   constructor() {
     super();
-    this.viewabilityConfig = {itemVisiblePercentThreshold: 50};
-    this.state = {
-      currentPosition: 1,
-    }
   }
 
   render() {
     const menu = this.props.navigation.state.params.menuList.products;
     let deviceWidth = Dimensions.get('window').width
-
     return (
       <MainWrap>
-        <View>
-          <Text>
-            Meal: <GreenText>6.50</GreenText>
-            -  Entree: <GreenText>3.50</GreenText>
-            - Side: <GreenText>2.50</GreenText>
-            - Drink: <GreenText>1.00</GreenText>
-          </Text>
-        </View>
+
+        <TopNavigation/>
 
         <FlatList
           style={{flex:1}}
@@ -40,7 +29,6 @@ class Menu extends React.Component {
           return (
             <MenuItem
               item={item}
-              addToCart={this.props.addToCart}
             />
           )}}
           keyExtractor={(item, index) => index.toString()}
@@ -48,12 +36,8 @@ class Menu extends React.Component {
 
         <Cart/>
 
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Checkout')}>
-          <Image
-            resizeMode={'contain'}
-            style={{ height: 50, width: 50}}
-            source={require('../assets/arrow_left.png')}/>
-        </TouchableOpacity>
+        <BottomNavigation/>
+
       </MainWrap>
     );
   }
@@ -61,3 +45,10 @@ class Menu extends React.Component {
 
 
 export default Menu;
+//
+// <TouchableOpacity onPress={() => this.props.navigation.navigate('Checkout')}>
+//   <Image
+//     resizeMode={'contain'}
+//     style={{ height: 50, width: 50}}
+//     source={require('../assets/arrow_left.png')}/>
+// </TouchableOpacity>
