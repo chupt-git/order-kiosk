@@ -46,8 +46,9 @@ export default function productReducer(state = initialState, action) {
      }
 
    case REMOVE_FROM_CART:
-    index = state.cart.findIndex(x => x.item == action.payload.item.item)
+    index = state.cart.findIndex(x => x.item== action.payload.item.item)
     newCart.splice(index, 1)
+      console.log(newCart);
        return {
          ...state,
          cart: newCart

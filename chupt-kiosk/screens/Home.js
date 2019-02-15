@@ -21,7 +21,6 @@ class Home extends React.Component {
   }
 
   render() {
-
     return (
         <MainWrap home>
           <Image source={require('../assets/logo.png')}/>
@@ -29,7 +28,7 @@ class Home extends React.Component {
           <ButtonWrap>
             <MainButton
               onPress={() => this.props.navigation.navigate('Menu', {
-                menuList: this.props.menu
+                menu: this.props.menu
               })}>
               <Image source={require('../assets/arrow_right.png')}/>
               <ButtonText>

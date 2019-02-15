@@ -21,6 +21,7 @@ export const fetchProductsFailure = error => ({
 export const addToCart = item => ({
   type: ADD_TO_CART,
   payload: { item }
+
 });
 
 export const removeFromCart = item => ({
@@ -31,7 +32,7 @@ export const removeFromCart = item => ({
 export function fetchProducts() {
   return dispatch => {
     dispatch(fetchProductsBegin());
-    return fetch("http://192.168.1.115:5000/pods/0e1c3f27-9a27-4ce4-96f4-9751232776cc/menu")
+    return fetch("http://192.168.1.115:5000/pods/DApm5HLNDrE4vpFjanQR65/menu")
       .then(handleErrors)
       .then(res => res.json())
       .then(json => {
