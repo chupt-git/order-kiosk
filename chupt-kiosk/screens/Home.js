@@ -1,15 +1,15 @@
-import React from 'react';
-import { View, TouchableOpacity, Text, Image } from 'react-native';
+import React from 'react'
+import { View, TouchableOpacity, Text, Image } from 'react-native'
 import { ThemeProvider } from 'styled-components/native'
-import theme from '../components/theme';
-import ButtonWrap from '../components/ButtonWrap';
-import MainButton from '../components/MainButton';
-import ButtonText from '../components/ButtonText';
-import MainWrap from '../components/MainWrap';
-import LogoImg from '../components/LogoImg';
-import { fetchProducts } from '../kioskActions';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import theme from '../components/theme'
+import ButtonWrap from '../components/ButtonWrap'
+import MainButton from '../components/MainButton'
+import ButtonText from '../components/ButtonText'
+import MainWrap from '../components/MainWrap'
+import LogoImg from '../components/LogoImg'
+import { fetchProducts } from '../kioskActions'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
 class Home extends React.Component {
   constructor (props) {

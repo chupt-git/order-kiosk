@@ -1,12 +1,12 @@
-import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import HeaderHat from '../components/HeaderHat';
-import HatWrapper from '../components/HatWrapper';
-import { LinearGradient } from 'expo';
+import React from 'react'
+import { View, Text, TouchableOpacity } from 'react-native'
+import HeaderHat from '../components/HeaderHat'
+import HatWrapper from '../components/HatWrapper'
+import { LinearGradient } from 'expo'
 import LogoImg from '../components/LogoImg'
-import ColoredText from '../components/ColoredText';
-import CircleButton from '../components/CircleButton';
-import { withNavigation } from 'react-navigation';
+import ColoredText from '../components/ColoredText'
+import CircleButton from '../components/CircleButton'
+import { withNavigation } from 'react-navigation'
 
 class TopNavigation extends React.Component {
   render() {

@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 
 const MainButton = styled.TouchableOpacity`
-  width: ${props => props.fullWidth ? "100%" : "50%"};
+  width: ${props => props.fullWidth ? "100%" : props.medWidth ? "95%" : "50%"};
   padding-top: 15;
   padding-bottom: 15;
   padding-left: 50;

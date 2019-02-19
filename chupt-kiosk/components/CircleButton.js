@@ -9,6 +9,7 @@ const CircleButton = styled.TouchableOpacity `
   justify-content: center;
   align-items: center;
   margin: 10px;
+  margin-bottom: ${props => props.lower ? "-10px" : "10px"}
 `
 
 export default CircleButton

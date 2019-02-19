@@ -1,8 +1,7 @@
 import styled from 'styled-components/native'
 
 const ItemTitle = styled.Text`
-  font-weight: bold;
-  font-size: 30;
+  font-size: 25;
 `
 
 export default ItemTitle

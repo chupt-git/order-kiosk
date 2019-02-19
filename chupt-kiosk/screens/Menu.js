@@ -1,12 +1,15 @@
-import React from 'react';
-import { View, Text, FlatList } from 'react-native';
-import { LinearGradient } from 'expo';
-import { connect } from 'react-redux';
-import styled from 'styled-components/native';
-import MainWrap from '../components/MainWrap';
-import TopNavigation from './TopNavigation';
-import BottomNavigation from './BottomNavigation';
-import MenuItem from './MenuItem';
+import React from 'react'
+import { View, Text, FlatList } from 'react-native'
+import { LinearGradient } from 'expo'
+import { connect } from 'react-redux'
+import styled from 'styled-components/native'
+import MainWrap from '../components/MainWrap'
+import ButtonText from '../components/ButtonText'
+import MainButton from '../components/MainButton'
+import Body from '../components/Body'
+import TopNavigation from './TopNavigation'
+import BottomNavigation from './BottomNavigation'
+import MenuItem from './MenuItem'
 
 
 class Menu extends React.Component {
@@ -28,7 +31,11 @@ class Menu extends React.Component {
     return (
       <MainWrap>
         <TopNavigation/>
-          <Text>{menu.type} {menu.price}</Text>
+        <Body>
+          <MainButton blue medWidth>
+            <ButtonText>{menu.type}</ButtonText>
+            <ButtonText>{menu.price.toFixed(2)}</ButtonText>
+          </MainButton>
           <FlatList
             contentContainerStyle={{flexGrow: 1, justifyContent: 'center'}}
             style={{width: '95%'}}
@@ -41,6 +48,7 @@ class Menu extends React.Component {
               )}}
             keyExtractor={(item, index) => index.toString()}
           />
+          </Body>
           <BottomNavigation/>
       </MainWrap>
     );

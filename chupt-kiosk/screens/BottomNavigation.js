@@ -5,7 +5,7 @@ import { LinearGradient } from 'expo'
 import LogoImg from '../components/LogoImg'
 import Cart from './Cart'
 import ColoredText from '../components/ColoredText'
-import { TouchableOpacity, Text } from 'react-native'
+import { TouchableOpacity, Text, View } from 'react-native'
 import { withNavigation } from 'react-navigation'
 import { connect } from 'react-redux'
 
@@ -13,10 +13,18 @@ class BottomNavigation extends React.Component {
   render() {
     let cartButton
     if (this.props.cart.length) {
-      cartButton = (<TouchableOpacity
-        onPress={() => this.props.navigation.navigate('Cart')}>
-        <Text>Cart</Text>
-      </TouchableOpacity>
+      cartButton = (
+        <View>
+          <TouchableOpacity
+          onPress={() => this.props.navigation.navigate('Cart')}>
+          <Text>Cart</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+        onPress={() => this.props.navigation.navigate('Checkout')}>
+        <Text>Checkout</Text>
+        </TouchableOpacity>
+      </View>
+
     )}
     return (
       <HatWrapper bottomHat>

@@ -10,8 +10,8 @@ import PropTypes from 'prop-types'
 import Cart from './Cart'
 import TopNavigation from './TopNavigation'
 import BottomNavigation from './BottomNavigation'
-import { LinearGradient } from 'expo';
-import MainButton from '../components/MainButton';
+import { LinearGradient } from 'expo'
+import MainButton from '../components/MainButton'
 
 
 class MenuPicker extends React.Component {
