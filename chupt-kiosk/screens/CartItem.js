@@ -15,9 +15,6 @@ import { connect } from 'react-redux';
 
 class CartItem extends React.Component {
   render() {
-    console.log("-----");
-    console.log(this.props.item.item);
-    console.log("=====");
     return (
       <View>
         <ItemWrap>

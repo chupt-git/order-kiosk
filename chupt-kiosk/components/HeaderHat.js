@@ -9,6 +9,7 @@ const HeaderHat = styled.View`
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius:5px;
 `;
 
 export default HeaderHat;

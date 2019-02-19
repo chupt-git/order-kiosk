@@ -2,8 +2,8 @@ import styled from 'styled-components/native'
 
 const LogoImg = styled.Image`
   position: absolute;
-  top: 5px;
-  z-index: 5;
+  bottom: -5px;
+  z-index: 50;
   width: 100px;
   height: 100px;
   margin-left: -70px;

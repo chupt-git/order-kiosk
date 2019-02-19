@@ -27,16 +27,18 @@ class Home extends React.Component {
 
           <ButtonWrap>
             <MainButton
-              onPress={() => this.props.navigation.navigate('Menu', {
+              onPress={() => this.props.navigation.navigate('MenuPicker', {
                 menu: this.props.menu
-              })}>
+              })}
+              white>
               <Image source={require('../assets/arrow_right.png')}/>
-              <ButtonText>
+              <ButtonText green>
                 Start
               </ButtonText>
             </MainButton>
             <MainButton
-              onPress={() => this.props.navigation.navigate('Pickup')}>
+              onPress={() => this.props.navigation.navigate('Pickup')}
+              blue>
               <Image source={require('../assets/arrow_up.png')}/>
               <ButtonText>
                 Pickup

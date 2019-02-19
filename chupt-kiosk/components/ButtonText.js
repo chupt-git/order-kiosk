@@ -3,8 +3,7 @@ import styled from 'styled-components/native'
 const ButtonText = styled.Text`
   text-align: center;
   font-size: 50;
-  color: #fff;
-  /* font-weight: bold; */
+  color: ${props => props.green ? "#6BE545" : "#fff"  };
   padding-left: 5;
 `;
 

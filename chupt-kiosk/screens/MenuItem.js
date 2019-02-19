@@ -1,41 +1,33 @@
-import React from 'react';
-import { Text, View, Button, CheckBox } from 'react-native';
-import styled from 'styled-components/native';
-import Img from '../components/Img';
-import ItemTitle from '../components/ItemTitle';
-import ItemWrap from '../components/ItemWrap';
-import DescWrap from '../components/DescWrap';
-import Txt from '../components/Txt';
-import OptionButtons from '../components/OptionButtons';
-import CircleButton from '../components/CircleButton';
-import MedText from '../components/MedText';
-import { bindActionCreators } from 'redux';
-import { addToCart } from '../kioskActions';
-import { connect } from 'react-redux';
+import React from 'react'
+import { Text, View, TouchableOpacity } from 'react-native'
+import styled from 'styled-components/native'
+import CircleButton from '../components/CircleButton'
+import ColoredText from '../components/ColoredText'
+import { addToCart } from '../kioskActions'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
 class MenuItem extends React.Component {
   render() {
-    return (
-      <View style={{width: 350, height: 500, borderStyle:'solid'}}>
-        <ItemWrap>
-          <Img
-            resizeMode={'cover'}
-            source={require('../assets/placeholder.jpg')}/>
+    const item = this.props.item
+    let name = []
+    if (item.type == 'entree + side') {
+      item.items.forEach(function(x) {
+        if (item.items[0].name == x.name){
+          name.push(x.name)
+        }
+        name.push(' + ' + x.name)
+      })
+    }else {
+      name.push(item.name)
+    }
 
-              <DescWrap>
-                <ItemTitle>{this.props.item.name}</ItemTitle>
-                <Txt light>{this.props.item.description}</Txt>
-              </DescWrap>
-              <OptionButtons>
-                  <CircleButton
-                    green
-                    onPress={() =>
-                      this.props.addToCart(this.props.item)
-                    }>
-                    <MedText white>+</MedText>
-                  </CircleButton>
-                </OptionButtons>
-        </ItemWrap>
+    return (
+      <View>
+        <Text>{name}</Text>
+        <CircleButton onPress={() => this.props.addToCart(item)}>
+          <ColoredText>+</ColoredText>
+        </CircleButton>
       </View>
     );
   }
@@ -52,5 +44,6 @@ const mapDispatchToProps = dispatch => (
     addToCart,
   }, dispatch)
 )
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(MenuItem);

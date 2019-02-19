@@ -1,76 +1,56 @@
-import React from 'react'
-import { View, Text, Image, TouchableOpacity, FlatList, Dimensions } from 'react-native'
-import styled from 'styled-components/native'
-import MainWrap from '../components/MainWrap'
-import ProductType from '../components/ProductType'
-import ButtonText from '../components/ButtonText'
-import MenuItem from './MenuItem'
-import MenuList from './MenuList'
-import PropTypes from 'prop-types'
-import Cart from './Cart'
-import TopNavigation from './TopNavigation'
-import BottomNavigation from './BottomNavigation'
+import React from 'react';
+import { View, Text, FlatList } from 'react-native';
 import { LinearGradient } from 'expo';
+import { connect } from 'react-redux';
+import styled from 'styled-components/native';
+import MainWrap from '../components/MainWrap';
+import TopNavigation from './TopNavigation';
+import BottomNavigation from './BottomNavigation';
+import MenuItem from './MenuItem';
 
 
 class Menu extends React.Component {
+
   constructor() {
     super();
   }
 
   render() {
-    const menu = this.props.navigation.state.params.menu.products
-    const test = []
+    const menu = this.props.navigation.state.params
+    const items = this.props.menu.products
+    let currentProducts = []
 
-    Object.keys(menu).forEach(function(key) {
-      const type = menu[key]
-      const price = type[0].price
-      test.push([key, price])
-    });
+    Object.keys(items).forEach(function(key) {
+      if (key == menu.type) {
+        currentProducts = items[key]
+    }});
 
     return (
       <MainWrap>
-
         <TopNavigation/>
-
-        <FlatList
-          data={test}
-          renderItem={({item}) => {
-            return (
-              <View>
-                <LinearGradient
-                  start={{x: 0, y: 0.1}}
-                  end={{x: 1, y: 0}}
-                  colors={['#27CC33', '#078611']}
-                  style={{
-                    height: 250,
-                    width: "80%",
-                    marginBottom: 20,
-                    marginTop: 20,
-                    marginLeft: "auto",
-                    marginRight: "auto"}}>
-                  <ButtonText>{item[0]}</ButtonText>
-                  <ButtonText>{item[1]}</ButtonText>
-                </LinearGradient>
-              </View>
-            )}}
-          keyExtractor={(item, index) => index.toString()}
-        />
-
-        <BottomNavigation/>
-
+          <Text>{menu.type} {menu.price}</Text>
+          <FlatList
+            contentContainerStyle={{flexGrow: 1, justifyContent: 'center'}}
+            style={{width: '95%'}}
+            data={currentProducts}
+            renderItem={({item}) => {
+              return (
+                <MenuItem
+                  item={item}
+                />
+              )}}
+            keyExtractor={(item, index) => index.toString()}
+          />
+          <BottomNavigation/>
       </MainWrap>
     );
   }
 }
 
-export default Menu;
+function mapStateToProps(state) {
+    return {
+        menu: state.menu
+    }
+}
 
-
-
-// <TouchableOpacity onPress={() => this.props.navigation.navigate('Checkout')}>
-//   <Image
-//     resizeMode={'contain'}
-//     style={{ height: 50, width: 50}}
-//     source={require('../assets/arrow_left.png')}/>
-// </TouchableOpacity>
+export default connect(mapStateToProps)(Menu);
