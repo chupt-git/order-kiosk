@@ -3,14 +3,18 @@ import {
   FETCH_PRODUCTS_SUCCESS,
   FETCH_PRODUCTS_FAILURE,
   ADD_TO_CART,
-  REMOVE_FROM_CART
+  REMOVE_FROM_CART,
+  CHANGE_NAME_INPUT,
+  CHANGE_PHONE_INPUT
 } from './kioskActions'
 
 const initialState = {
   menu: [],
   loading: false,
   error: null,
-  cart: []
+  cart: [],
+  name: '',
+  number: ''
 }
 
 export default function productReducer(state = initialState, action) {
@@ -43,7 +47,7 @@ export default function productReducer(state = initialState, action) {
        return {
          ...state,
          cart: newCart
-     }
+     };
 
    case REMOVE_FROM_CART:
     index = state.cart.findIndex(x => x.item== action.payload.item.item)
@@ -52,7 +56,19 @@ export default function productReducer(state = initialState, action) {
        return {
          ...state,
          cart: newCart
+     };
+
+   case CHANGE_NAME_INPUT:
+    return {
+      ...state,
+      name: action.payload
      }
+
+   case CHANGE_PHONE_INPUT:
+   return {
+     ...state,
+     number: action.payload
+   }
 
    default:
      return state;

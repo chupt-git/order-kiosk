@@ -30,9 +30,6 @@ class MenuItem extends React.Component {
     }
 
     return (
-      <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ModifyItem', {
-        item: item
-      })}>
       <View>
           <MenuItemWrap>
             <Image
@@ -43,12 +40,29 @@ class MenuItem extends React.Component {
               <Text>{desc}</Text>
             </View>
           </MenuItemWrap>
-          <CircleButton
-            style={{position: 'absolute', bottom: -5, left: '50%'}}>
-            <ColoredText>+</ColoredText>
-          </CircleButton>
+
+          <View
+            style={{
+              position: 'absolute',
+              bottom: -5,
+              display:'flex',
+              width: '100%',
+              flexDirection: 'row',
+              justifyContent: 'center'
+            }}>
+
+              <CircleButton onPress={() => this.props.navigation.navigate('ModifyItem', {
+                item: item,
+                type: this.props.type
+              })}>
+                <ColoredText>Modify</ColoredText>
+              </CircleButton>
+
+            <CircleButton onPress={() => this.props.addToCart(item)}>
+              <ColoredText>Add to Cart</ColoredText>
+            </CircleButton>
+          </View>
         </View>
-      </TouchableWithoutFeedback>
     );
   }
 }
@@ -71,3 +85,9 @@ export default withNavigation(connect(
   mapStateToProps,
   mapDispatchToProps
 )(MenuItem))
+
+
+// <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ModifyItem', {
+//   item: item,
+//   type: this.props.type
+// })}>

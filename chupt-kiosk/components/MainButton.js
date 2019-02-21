@@ -7,7 +7,6 @@ const MainButton = styled.TouchableOpacity`
   padding-left: 50;
   padding-right: 50;
   border-radius: 50;
-  /* margin-bottom: 100; */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -15,7 +14,10 @@ const MainButton = styled.TouchableOpacity`
   margin-right: auto;
   /* elevation: 25; */
   border: 2px solid #ffffff;
-  background-color: ${props => props.green ? "#6BE545" : props.blue ? "#3993F3" : props.pink ? "#EF7A6B" : props.lightBlue ? '#96cdfd' : props.white ? "#fff" : "#353636"};
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+  background-color: ${props => props.green || props.type == 'combos' ? "#6BE545" : props.blue || props.type == 'entrees' ? "#3993F3" : props.pink || props.type == 'sides' ? "#EF7A6B" : props.lightBlue || props.type == 'drinks' ? '#96cdfd' : props.white ? "#fff" : "transparent"};
 `;
 
 export default MainButton;

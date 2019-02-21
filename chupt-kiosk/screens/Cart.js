@@ -23,7 +23,7 @@ class Cart extends React.Component {
           data={this.props.cart}
           renderItem={(dataitem) => {
             return (
-              <View style={{borderStyle:'solid', marginBottom: 5, backgroundColor: 'red'}}>
+              <View style={{borderStyle:'solid', marginBottom: 5}}>
                 <Text>
                   {dataitem.item.item.name}
                 </Text>
@@ -39,10 +39,10 @@ class Cart extends React.Component {
           keyExtractor={(item, index) => index.toString()}
           />
         </Body>
+
       </MainWrap>
     )
   }
-
 }
 
 function mapStateToProps(state) {

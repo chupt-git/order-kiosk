@@ -32,7 +32,7 @@ class Menu extends React.Component {
       <MainWrap>
         <TopNavigation/>
         <Body>
-          <MainButton blue medWidth>
+          <MainButton type={menu.type} medWidth>
             <ButtonText>{menu.type}</ButtonText>
             <ButtonText>{menu.price.toFixed(2)}</ButtonText>
           </MainButton>
@@ -44,6 +44,7 @@ class Menu extends React.Component {
               return (
                 <MenuItem
                   item={item}
+                  type={menu.type}
                 />
               )}}
             keyExtractor={(item, index) => index.toString()}

@@ -19,6 +19,8 @@ class ModifyItem extends React.Component {
 
   render() {
     const item = this.props.navigation.state.params.item
+    const type = this.props.navigation.state.params.type
+    item.type = type
     return (
       <MainWrap>
 
@@ -26,6 +28,8 @@ class ModifyItem extends React.Component {
 
         <Body>
           <Text>{item.name}</Text>
+          <Text>{item.price}</Text>
+          <Text>{type}</Text>
           <CircleButton onPress={() => this.props.addToCart(item)}>
             <ColoredText>+</ColoredText>
           </CircleButton>
@@ -48,4 +52,4 @@ const mapDispatchToProps = dispatch => (
   }, dispatch)
 )
 
-export default connect(mapStateToProps,mapDispatchToProps) (ModifyItem)
+export default connect(mapStateToProps, mapDispatchToProps) (ModifyItem)

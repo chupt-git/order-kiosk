@@ -26,9 +26,15 @@ class MenuPicker extends React.Component {
      types.push({type:key, price:menu[key][0].price})
     });
 
+    const images = {
+      entrees: require('../assets/bluebg.png'),
+      sides: require('../assets/redbg.png'),
+      drinks: require('../assets/lightblubg.png'),
+      combos: require('../assets/greenbg.png')
+    }
+
     return (
       <MainWrap>
-
         <TopNavigation/>
 
         <Body>
@@ -38,18 +44,19 @@ class MenuPicker extends React.Component {
             data={types}
             renderItem={({item}) => {
               return (
-                <MainButton
-                  blue
-                  onPress={() => this.props.navigation.navigate('Menu', {
-                      type: item.type,
-                      price: item.price
-                  })}
-                  fullWidth>
+                  <MainButton
+                    type={item.type}
+                    onPress={() => this.props.navigation.navigate('Menu', {
+                        type: item.type,
+                        price: item.price
+                    })}
+                    fullWidth
+                    style={{position: 'relative', overflow: 'hidden'}}>
 
-                  <ButtonText>{item.type}</ButtonText>
-                  <ButtonText>${item.price.toFixed(2)}</ButtonText>
+                    <ButtonText>{item.type}</ButtonText>
+                    <ButtonText>${item.price.toFixed(2)}</ButtonText>
 
-                </MainButton>
+                  </MainButton>
               )}}
             keyExtractor={(item, index) => index.toString()}
           />
@@ -61,7 +68,6 @@ class MenuPicker extends React.Component {
 }
 
 export default MenuPicker;
-
 
 // <LinearGradient
 //   start={[0,1]}
