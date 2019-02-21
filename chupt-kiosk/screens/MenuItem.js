@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, TouchableWithoutFeedback, Image } from 'react-native'
+import { Text, View, TouchableOpacity, Image } from 'react-native'
 import styled from 'styled-components/native'
 import CircleButton from '../components/CircleButton'
 import ColoredText from '../components/ColoredText'
@@ -30,7 +30,21 @@ class MenuItem extends React.Component {
     }
 
     return (
-      <View>
+      <View style={{position: 'relative'}}>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('ModifyItem', {
+            item: item,
+            type: this.props.type
+          })}
+          style={{
+            position: 'absolute',
+            top: 20,
+            right: 25,
+            zIndex: 1
+          }}>
+            <Text style={{fontSize: 30}}>...</Text>
+          </TouchableOpacity>
+
+
           <MenuItemWrap>
             <Image
               style={{resizeMode: 'contain', width: 200, height: 200}}
@@ -51,15 +65,8 @@ class MenuItem extends React.Component {
               justifyContent: 'center'
             }}>
 
-              <CircleButton onPress={() => this.props.navigation.navigate('ModifyItem', {
-                item: item,
-                type: this.props.type
-              })}>
-                <ColoredText>Modify</ColoredText>
-              </CircleButton>
-
             <CircleButton onPress={() => this.props.addToCart(item)}>
-              <ColoredText>Add to Cart</ColoredText>
+              <ColoredText>+</ColoredText>
             </CircleButton>
           </View>
         </View>

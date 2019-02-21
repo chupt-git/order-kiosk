@@ -15,7 +15,7 @@ import MenuItem from './MenuItem'
 class Menu extends React.Component {
 
   constructor() {
-    super();
+    super()
   }
 
   render() {
@@ -26,7 +26,7 @@ class Menu extends React.Component {
     Object.keys(items).forEach(function(key) {
       if (key == menu.type) {
         currentProducts = items[key]
-    }});
+    }})
 
     return (
       <MainWrap>
@@ -49,10 +49,10 @@ class Menu extends React.Component {
               )}}
             keyExtractor={(item, index) => index.toString()}
           />
-          </Body>
-          <BottomNavigation/>
+        <BottomNavigation/>
+        </Body>
       </MainWrap>
-    );
+    )
   }
 }
 
@@ -62,4 +62,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(Menu);
+export default connect(mapStateToProps)(Menu)

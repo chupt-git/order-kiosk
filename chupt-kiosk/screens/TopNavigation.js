@@ -30,7 +30,7 @@ class TopNavigation extends React.Component {
               <ColoredText style={{fontSize: 30}}>←</ColoredText>
             </CircleButton>
 
-            <LogoImg width="100" source={require('../assets/chuptLogo.png')}/>
+            <LogoImg source={require('../assets/chuptLogo.png')}/>
         </LinearGradient>
 
         <HeaderHat style={{position: 'relative', zIndex: -1}}>
@@ -44,9 +44,3 @@ class TopNavigation extends React.Component {
 }
 
 export default withNavigation(TopNavigation);
-
-
-// <Button
-//   title="Go back"
-//   onPress={() => this.props.navigation.goBack()}
-// />

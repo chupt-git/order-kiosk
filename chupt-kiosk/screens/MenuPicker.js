@@ -60,8 +60,8 @@ class MenuPicker extends React.Component {
               )}}
             keyExtractor={(item, index) => index.toString()}
           />
+          <BottomNavigation/>
         </Body>
-        <BottomNavigation/>
       </MainWrap>
     );
   }

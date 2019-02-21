@@ -33,8 +33,8 @@ class ModifyItem extends React.Component {
           <CircleButton onPress={() => this.props.addToCart(item)}>
             <ColoredText>+</ColoredText>
           </CircleButton>
+          <BottomNavigation/>
         </Body>
-        <BottomNavigation/>
       </MainWrap>
     );
   }

@@ -31,17 +31,15 @@ class Home extends React.Component {
                 menu: this.props.menu
               })}
               white>
-              <Image source={require('../assets/arrow_right.png')}/>
               <ButtonText green>
-                Start
+                → Start
               </ButtonText>
             </MainButton>
             <MainButton
               onPress={() => this.props.navigation.navigate('Pickup')}
               blue>
-              <Image source={require('../assets/arrow_up.png')}/>
               <ButtonText>
-                Pickup
+                ↑ Pickup
               </ButtonText>
             </MainButton>
           </ButtonWrap>

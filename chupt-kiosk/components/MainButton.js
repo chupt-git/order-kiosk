@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 
 const MainButton = styled.TouchableOpacity`
-  width: ${props => props.fullWidth ? "100%" : props.medWidth ? "95%" : "50%"};
+  width: ${props => props.fullWidth ? "100%" : props.medWidth ? "95%" : props.smallWidth ? "auto" : "50%"};
   padding-top: 15;
   padding-bottom: 15;
   padding-left: 50;
@@ -13,7 +13,7 @@ const MainButton = styled.TouchableOpacity`
   margin-left: auto;
   margin-right: auto;
   /* elevation: 25; */
-  border: 2px solid #ffffff;
+  border: ${props => props.noBorder ? "0" : "2px solid #ffffff"};
   margin-bottom: 20px;
   margin-top: 20px;
 
