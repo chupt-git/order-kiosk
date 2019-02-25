@@ -12,7 +12,12 @@ const initialState = {
   menu: [],
   loading: false,
   error: null,
-  cart: [],
+  cart: [
+    {type: 'Entrees', items:[]},
+    {type: 'Sides', items:[]},
+    {type: 'Drinks', items:[]},
+    {type: 'Meals', items:[]}
+  ],
   name: '',
   number: ''
 }
@@ -43,16 +48,34 @@ export default function productReducer(state = initialState, action) {
      };
 
    case ADD_TO_CART:
-      newCart.push(action.payload)
+      newCart.forEach((x) => {
+        if (x.type.toLowerCase() == action.payload.item.type.toLowerCase()){
+          inCart = x.items.find(i => i.item_id == action.payload.item.item_id)
+          if (inCart) {
+            inCart.count += 1
+          }
+          else{
+            action.payload.item.count = 1
+            x.items.push(action.payload.item)
+          }
+        }
+      })
        return {
          ...state,
          cart: newCart
-     };
+     }
 
    case REMOVE_FROM_CART:
-    index = state.cart.findIndex(x => x.item== action.payload.item.item)
-    newCart.splice(index, 1)
-      console.log(newCart);
+       newCart.forEach((x) => {
+         if (x.type.toLowerCase() == action.payload.item.type.toLowerCase()) {
+           index = x.items.findIndex(i => i.item_id == action.payload.item.item_id)
+           if(x.items[index].count > 1) {
+             x.items[index].count -= 1
+           }else {
+             x.items.splice(index, 1)
+           }
+         }
+      })
        return {
          ...state,
          cart: newCart

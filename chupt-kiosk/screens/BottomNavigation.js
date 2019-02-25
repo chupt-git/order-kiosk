@@ -14,7 +14,18 @@ import { connect } from 'react-redux'
 class BottomNavigation extends React.Component {
   render() {
     let cartButton
-    if (this.props.cart.length) {
+    let populated = false
+
+    for (let x of this.props.cart) {
+      if (x.items.length) {
+        populated = true
+        break;
+      }
+      else {
+        populated = false
+      }
+    }
+    if (populated) {
       cartButton = (
         <View style={{
           display: 'flex',

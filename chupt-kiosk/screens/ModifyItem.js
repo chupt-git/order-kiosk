@@ -19,17 +19,13 @@ class ModifyItem extends React.Component {
 
   render() {
     const item = this.props.navigation.state.params.item
-    const type = this.props.navigation.state.params.type
-    item.type = type
     return (
       <MainWrap>
 
         <TopNavigation/>
 
         <Body>
-          <Text>{item.name}</Text>
-          <Text>{item.price}</Text>
-          <Text>{type}</Text>
+          <Text>{item.name}{item.type}{item.price}</Text>
           <CircleButton onPress={() => this.props.addToCart(item)}>
             <ColoredText>+</ColoredText>
           </CircleButton>

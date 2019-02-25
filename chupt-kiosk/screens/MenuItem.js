@@ -13,6 +13,7 @@ import { withNavigation } from 'react-navigation'
 class MenuItem extends React.Component {
   render() {
     const item = this.props.item
+    item.type = this.props.type
     let name = []
     let desc = []
     if (item.type == 'entree + side') {

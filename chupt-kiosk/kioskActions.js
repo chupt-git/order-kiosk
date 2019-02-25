@@ -48,6 +48,22 @@ export function fetchProducts() {
       .then(handleErrors)
       .then(res => res.json())
       .then(json => {
+        // items= {}
+        // let currentCategory = ''
+        // Object.keys(json.menu).forEach((key) => {
+        //   json.menu[key]
+        //
+        //   console.log(json.menu[key])
+        //   console.log("=======");
+          // console.log(key)
+          // if (currentCategory !== json.menu[key]) {
+            // json.menu[key].type = key
+
+            // console.log(json.menu[key])
+            // currentCategory = dataItem.type
+          // }
+        // })
+        // console.log(json.menu);
         dispatch(fetchProductsSuccess(json.menu));
         return json.menu;
       })
