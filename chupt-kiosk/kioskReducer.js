@@ -5,7 +5,8 @@ import {
   ADD_TO_CART,
   REMOVE_FROM_CART,
   CHANGE_NAME_INPUT,
-  CHANGE_PHONE_INPUT
+  CHANGE_PHONE_INPUT,
+  REMOVE_ONE_FROM_CART
 } from './kioskActions'
 
 const initialState = {
@@ -65,15 +66,26 @@ export default function productReducer(state = initialState, action) {
          cart: newCart
      }
 
+   case REMOVE_ONE_FROM_CART:
+       newCart.forEach((x) => {
+         if (x.type.toLowerCase() == action.payload.item.type.toLowerCase()) {
+           inCart = x.items.find(i => i.item_id == action.payload.item.item_id)
+           if (inCart.count > 1){
+             inCart.count -= 1
+          }
+         }
+      })
+       return {
+         ...state,
+         cart: newCart
+     }
+
    case REMOVE_FROM_CART:
        newCart.forEach((x) => {
          if (x.type.toLowerCase() == action.payload.item.type.toLowerCase()) {
            index = x.items.findIndex(i => i.item_id == action.payload.item.item_id)
-           if(x.items[index].count > 1) {
-             x.items[index].count -= 1
-           }else {
-             x.items.splice(index, 1)
-           }
+           console.log(x.items[index])
+           x.items.splice(index, 1)
          }
       })
        return {

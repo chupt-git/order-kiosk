@@ -8,4 +8,4 @@ const ButtonWrap = styled.View`
   height: 50%
 `;
 
-export default ButtonWrap;
+export default ButtonWrap

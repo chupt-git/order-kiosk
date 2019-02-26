@@ -5,6 +5,7 @@ export const ADD_TO_CART = 'ADD_TO_CART'
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
 export const CHANGE_NAME_INPUT = 'CHANGE_NAME_INPUT'
 export const CHANGE_PHONE_INPUT = 'CHANGE_PHONE_INPUT'
+export const REMOVE_ONE_FROM_CART = 'REMOVE_ONE_FROM_CART'
 
 export const fetchProductsBegin = () => ({
   type: FETCH_PRODUCTS_BEGIN
@@ -41,29 +42,18 @@ export const changePhoneInput = number => ({
   payload: { number }
 });
 
+export const removeOneFromCart = item => ({
+  type: REMOVE_ONE_FROM_CART,
+  payload: {item}
+})
+
 export function fetchProducts() {
   return dispatch => {
     dispatch(fetchProductsBegin());
-    return fetch('http://192.168.1.115:5000/pods/DApm5HLNDrE4vpFjanQR65/menu')
+    return fetch('http://192.168.1.9:5000/pods/DApm5HLNDrE4vpFjanQR65/menu')
       .then(handleErrors)
       .then(res => res.json())
       .then(json => {
-        // items= {}
-        // let currentCategory = ''
-        // Object.keys(json.menu).forEach((key) => {
-        //   json.menu[key]
-        //
-        //   console.log(json.menu[key])
-        //   console.log("=======");
-          // console.log(key)
-          // if (currentCategory !== json.menu[key]) {
-            // json.menu[key].type = key
-
-            // console.log(json.menu[key])
-            // currentCategory = dataItem.type
-          // }
-        // })
-        // console.log(json.menu);
         dispatch(fetchProductsSuccess(json.menu));
         return json.menu;
       })

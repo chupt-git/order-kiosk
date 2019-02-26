@@ -13,12 +13,9 @@ import CircleButton from '../components/CircleButton'
 
 class Cart extends React.Component {
   constructor( props ) {
-    super( props );
+    super( props )
   }
   render() {
-    let btn = ''
-    const obj = []
-    let currentCategory = ''
     return (
       <MainWrap>
         <TopNavigation/>
@@ -35,7 +32,7 @@ class Cart extends React.Component {
             }}>
             <MedText>Cart</MedText>
             <FlatList
-            style={{width: '95%', padding: 20}}
+            style={{width: '100%', padding: 20}}
             data={this.props.cart}
             renderItem={(dataItem) => {
               return (

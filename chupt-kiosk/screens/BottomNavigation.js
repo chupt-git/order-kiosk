@@ -1,13 +1,11 @@
 import React from 'react'
-import HeaderHat from '../components/HeaderHat'
-import HatWrapper from '../components/HatWrapper'
 import { LinearGradient } from 'expo'
-import LogoImg from '../components/LogoImg'
 import MainButton from '../components/MainButton'
 import Cart from './Cart'
 import ColoredText from '../components/ColoredText'
 import CircleButton from '../components/CircleButton'
-import { TouchableOpacity, Text, View } from 'react-native'
+import CartButtonWrapper from '../components/CartButtonWrapper'
+import { View } from 'react-native'
 import { withNavigation } from 'react-navigation'
 import { connect } from 'react-redux'
 
@@ -17,6 +15,7 @@ class BottomNavigation extends React.Component {
     let populated = false
 
     for (let x of this.props.cart) {
+      // x.items.length ? populated = true : populated = false
       if (x.items.length) {
         populated = true
         break;
@@ -27,14 +26,7 @@ class BottomNavigation extends React.Component {
     }
     if (populated) {
       cartButton = (
-        <View style={{
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          width: '100%',
-          position: 'relative',
-          zIndex: 2}}>
+        <CartButtonWrapper>
           <CircleButton grey>
             <ColoredText>X</ColoredText>
           </CircleButton>
@@ -59,7 +51,7 @@ class BottomNavigation extends React.Component {
               <ColoredText>Checkout</ColoredText>
             </MainButton>
           </View>
-      </View>
+      </CartButtonWrapper>
     )}
     return (
       <View style={{
