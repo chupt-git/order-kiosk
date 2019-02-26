@@ -11,7 +11,7 @@ import {CircleButton, DeleteButton } from '../components/CircleButton'
 import ColoredText from '../components/ColoredText'
 import MedText from '../components/MedText'
 import { bindActionCreators } from 'redux'
-import { removeFromCart, addToCart, removeOneFromCart } from '../kioskActions'
+import { removeFromCart, addToCart, changeItemNumber } from '../kioskActions'
 import { connect } from 'react-redux'
 
 
@@ -26,15 +26,11 @@ class CartButtons extends React.Component {
       justifyContent: 'flex-end',
     }}>
 
-      <Txt>{item.count}</Txt>
-
-      <CircleButton
-        grey
-        onPress={() =>
-          this.props.removeOneFromCart(item)
-        }>
-        <ColoredText>-</ColoredText>
-      </CircleButton>
+      <TextInput
+        maxLength={2}
+        keyboardType='numeric'
+        onEndEditing={(e) => this.props.changeItemNumber(e.nativeEvent.text, item)}
+        defaultValue={item.count.toString()}/>
 
       <CircleButton green
         onPress={() =>
@@ -43,12 +39,12 @@ class CartButtons extends React.Component {
         <ColoredText>+</ColoredText>
       </CircleButton>
 
-      <DeleteButton red
+      <CircleButton red
         onPress={() =>
           this.props.removeFromCart(item)
         }>
         <ColoredText>X</ColoredText>
-      </DeleteButton>
+      </CircleButton>
     </View>
 
   )}
@@ -65,7 +61,8 @@ const mapDispatchToProps = dispatch => (
   bindActionCreators({
     removeFromCart,
     addToCart,
-    removeOneFromCart
+    changeItemNumber
+    // removeOneFromCart
   }, dispatch)
 )
 export default connect(mapStateToProps, mapDispatchToProps)(CartButtons)

@@ -6,7 +6,8 @@ import {
   REMOVE_FROM_CART,
   CHANGE_NAME_INPUT,
   CHANGE_PHONE_INPUT,
-  REMOVE_ONE_FROM_CART
+  REMOVE_ONE_FROM_CART,
+  CHANGE_ITEM_NUMBER
 } from './kioskActions'
 
 const initialState = {
@@ -78,20 +79,34 @@ export default function productReducer(state = initialState, action) {
        return {
          ...state,
          cart: newCart
-     }
+       }
 
    case REMOVE_FROM_CART:
        newCart.forEach((x) => {
          if (x.type.toLowerCase() == action.payload.item.type.toLowerCase()) {
            index = x.items.findIndex(i => i.item_id == action.payload.item.item_id)
-           console.log(x.items[index])
            x.items.splice(index, 1)
          }
+        })
+         return {
+           ...state,
+           cart: newCart
+       };
+
+   case CHANGE_ITEM_NUMBER:
+     newCart.forEach((x) => {
+       if (x.type.toLowerCase() == action.item.item.type.toLowerCase()) {
+         index = x.items.findIndex(i => i.item_id == action.item.item.item_id)
+         if (action.number.number == ''){
+           x.items.splice(index, 1)
+          }else {
+            x.items[index].count = action.number.number.replace(/[^0-9]/g, '')
+          }}
       })
-       return {
-         ...state,
-         cart: newCart
-     };
+      return {
+        ...state,
+        cart: newCart
+      };
 
    case CHANGE_NAME_INPUT:
     return {

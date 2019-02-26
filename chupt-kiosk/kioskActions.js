@@ -6,6 +6,7 @@ export const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
 export const CHANGE_NAME_INPUT = 'CHANGE_NAME_INPUT'
 export const CHANGE_PHONE_INPUT = 'CHANGE_PHONE_INPUT'
 export const REMOVE_ONE_FROM_CART = 'REMOVE_ONE_FROM_CART'
+export const CHANGE_ITEM_NUMBER = 'CHANGE_ITEM_NUMBER'
 
 export const fetchProductsBegin = () => ({
   type: FETCH_PRODUCTS_BEGIN
@@ -30,6 +31,12 @@ export const addToCart = item => ({
 export const removeFromCart = item => ({
   type: REMOVE_FROM_CART,
   payload: { item }
+});
+
+export const changeItemNumber = (number, item) => ({
+  type: CHANGE_ITEM_NUMBER,
+  number: {number},
+  item: {item}
 });
 
 export const changeNameInput = name => ({
