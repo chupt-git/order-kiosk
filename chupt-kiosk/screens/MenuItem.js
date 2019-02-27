@@ -14,21 +14,6 @@ class MenuItem extends React.Component {
   render() {
     const item = this.props.item
     item.type = this.props.type
-    let name = []
-    let desc = []
-    if (item.type == 'entree + side') {
-      item.items.forEach(function(x) {
-        if (item.items[0].name == x.name){
-          name.push(x.name)
-          desc.push(x.description)
-        }
-        name.push(' + ' + x.name)
-        desc.push(' with a ' + x.description)
-      })
-    }else {
-      name.push(item.name)
-      desc.push(item.description)
-    }
 
     return (
       <View style={{position: 'relative'}}>
@@ -51,8 +36,8 @@ class MenuItem extends React.Component {
               style={{resizeMode: 'contain', width: 200, height: 200}}
               source={require('../assets/placeholder.jpg')}/>
             <View style={{width: '50%'}}>
-              <ItemTitle>{name}</ItemTitle>
-              <Text>{desc}</Text>
+              <ItemTitle>{item.name}</ItemTitle>
+              <Text>{item.description}</Text>
             </View>
           </MenuItemWrap>
 
@@ -93,9 +78,3 @@ export default withNavigation(connect(
   mapStateToProps,
   mapDispatchToProps
 )(MenuItem))
-
-
-// <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ModifyItem', {
-//   item: item,
-//   type: this.props.type
-// })}>

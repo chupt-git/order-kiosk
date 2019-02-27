@@ -22,6 +22,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     color: 'red',
   },
-});
+})
 
-export default Finish;
+export default Finish

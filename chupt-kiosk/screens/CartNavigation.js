@@ -1,7 +1,6 @@
 import React from 'react'
 import { LinearGradient } from 'expo'
 import MainButton from '../components/MainButton'
-import Cart from './Cart'
 import ColoredText from '../components/ColoredText'
 import CircleButton from '../components/CircleButton'
 import CartButtonWrapper from '../components/CartButtonWrapper'
@@ -9,7 +8,7 @@ import { View } from 'react-native'
 import { withNavigation } from 'react-navigation'
 import { connect } from 'react-redux'
 
-class BottomNavigation extends React.Component {
+class CartNavigation extends React.Component {
   render() {
     let cartButton
     let populated = false
@@ -27,36 +26,18 @@ class BottomNavigation extends React.Component {
       cartButton = (
         <View style={{
           display: 'flex',
-          flexDirection: 'row',
           alignItems: 'center',
-          justifyContent: 'space-between',
           width: '100%',
-          position: 'relative',
           zIndex: 2}}>
-          <CircleButton grey>
-            <ColoredText>X</ColoredText>
-          </CircleButton>
-          <View
-            style={{
-              display: 'flex',
-              flexDirection: 'row'}}
-            >
             <MainButton
+            style={{marginRight: 10, marginLeft: 10}}
             noBorder
             green
-            smallWidth
-            onPress={() => this.props.navigation.navigate('Cart')}>
-              <ColoredText>Cart</ColoredText>
-            </MainButton>
-            <MainButton
-            style={{marginRight: 10, marginLeft: 10,}}
-            noBorder
-            green
-            smallWidth
+            medWidth
+            centerText
             onPress={() => this.props.navigation.navigate('Checkout')}>
               <ColoredText>Checkout</ColoredText>
             </MainButton>
-          </View>
       </View>
     )}
     return (
@@ -90,4 +71,4 @@ function mapStateToProps(state) {
 
 export default withNavigation(connect(
   mapStateToProps
-)(BottomNavigation))
+)(CartNavigation))

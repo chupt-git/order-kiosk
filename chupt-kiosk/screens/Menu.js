@@ -34,10 +34,9 @@ class Menu extends React.Component {
         <Body>
           <MainButton type={menu.type} medWidth>
             <ButtonText>{menu.type}</ButtonText>
-            <ButtonText>{menu.price.toFixed(2)}</ButtonText>
           </MainButton>
           <FlatList
-            contentContainerStyle={{flexGrow: 1, justifyContent: 'center'}}
+            contentContainerStyle={{flexGrow: 1}}
             style={{width: '95%'}}
             data={currentProducts}
             renderItem={({item}) => {

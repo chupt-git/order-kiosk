@@ -24,14 +24,8 @@ class MenuPicker extends React.Component {
     const types = []
     Object.keys(menu).forEach(function(key) {
      types.push({type:key, price:menu[key][0].price})
-    });
-
-    const images = {
-      entrees: require('../assets/bluebg.png'),
-      sides: require('../assets/redbg.png'),
-      drinks: require('../assets/lightblubg.png'),
-      combos: require('../assets/greenbg.png')
-    }
+    })
+    types.reverse()
 
     return (
       <MainWrap>
@@ -47,14 +41,13 @@ class MenuPicker extends React.Component {
                   <MainButton
                     type={item.type}
                     onPress={() => this.props.navigation.navigate('Menu', {
-                        type: item.type,
-                        price: item.price
+                        type: item.type
                     })}
                     fullWidth
+                    center
                     style={{position: 'relative', overflow: 'hidden'}}>
 
                     <ButtonText>{item.type}</ButtonText>
-                    <ButtonText>${item.price.toFixed(2)}</ButtonText>
 
                   </MainButton>
               )}}

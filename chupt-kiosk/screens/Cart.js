@@ -10,6 +10,7 @@ import Txt from '../components/Txt'
 import MainWrap from '../components/MainWrap'
 import MedText from '../components/MedText'
 import CircleButton from '../components/CircleButton'
+import CartNavigation from './CartNavigation'
 
 class Cart extends React.Component {
   constructor( props ) {
@@ -43,11 +44,8 @@ class Cart extends React.Component {
             keyExtractor={(item, index) => index.toString()}
             />
           </View>
-          <View
-            style={{height: 90}}>
-          </View>
+          <CartNavigation/>
         </Body>
-
       </MainWrap>
     )
   }
@@ -59,65 +57,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(Cart);
-
-
-
-// <SectionList
-// renderItem={({item, index, section}) =>
-//   <Text key={index}>{item.name}</Text>
-// }
-// renderSectionHeader={({section}) => <Text> { section.title } </Text> }
-// sections={this.props.cart}
-// keyExtractor={(item, index) => item + index}
-// />
-
-
-// <FlatList
-// style={{width: '95%', padding: 20}}
-// data={this.props.cart}
-// renderItem={(dataItem) => {
-//   if (currentCategory !== dataItem.item.type) {
-//       btn = <Txt bold blue style={{marginBottom: 10}}>{dataItem.item.type.toUpperCase()}:</Txt>
-//       currentCategory = dataItem.item.type
-//   } else {
-//     btn = ''
-//   }
-//   return (
-//     <View style={{borderStyle:'solid', marginBottom: 5}}>
-//       <Text>{btn}</Text>
-//       <View>
-//         <View style={{
-//           marginBottom: 5,
-//           display: 'flex',
-//           flexDirection: 'row',
-//           alignItems: 'center',
-//           justifyContent: 'space-between'}}>
-//           <Txt light>
-//             {dataItem.item.name}
-//           </Txt>
-//           <View style={{
-//             display: 'flex',
-//             flexDirection: 'row',
-//             alignItems: 'center'}}>
-//             <CircleButton red
-//               onPress={() =>
-//                 this.props.removeFromCart(dataItem.item)
-//               }>
-//               <ColoredText>X</ColoredText>
-//             </CircleButton>
-//
-//             <CircleButton green
-//               onPress={() =>
-//                 this.props.addToCart(dataItem.item)
-//               }>
-//               <ColoredText>+</ColoredText>
-//             </CircleButton>
-//           </View>
-//         </View>
-//       </View>
-//     </View>
-//   )
-// }}
-// keyExtractor={(item, index) => index.toString()}
-// />
+export default connect(mapStateToProps)(Cart)

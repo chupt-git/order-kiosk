@@ -100,7 +100,7 @@ export default function productReducer(state = initialState, action) {
          if (action.number.number == ''){
            x.items.splice(index, 1)
           }else {
-            x.items[index].count = action.number.number.replace(/[^0-9]/g, '')
+            x.items[index].count = Number(action.number.number.replace(/[^0-9]/g, ''))
           }}
       })
       return {
