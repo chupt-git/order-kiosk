@@ -51,7 +51,9 @@ class MenuItem extends React.Component {
               justifyContent: 'center'
             }}>
 
-            <CircleButton onPress={() => this.props.addToCart(item)}>
+            <CircleButton onPress={() => {
+              this.props.addToCart(item) 
+              this.props.navigation.navigate('MenuPicker')}}>
               <ColoredText>+</ColoredText>
             </CircleButton>
           </View>

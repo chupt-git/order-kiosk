@@ -7,6 +7,7 @@ export const CHANGE_NAME_INPUT = 'CHANGE_NAME_INPUT'
 export const CHANGE_PHONE_INPUT = 'CHANGE_PHONE_INPUT'
 export const REMOVE_ONE_FROM_CART = 'REMOVE_ONE_FROM_CART'
 export const CHANGE_ITEM_NUMBER = 'CHANGE_ITEM_NUMBER'
+export const CHANGE_PICKUPTYPE_INPUT = 'CHANGE_PICKUPTYPE_INPUT'
 
 export const fetchProductsBegin = () => ({
   type: FETCH_PRODUCTS_BEGIN
@@ -25,7 +26,6 @@ export const fetchProductsFailure = error => ({
 export const addToCart = item => ({
   type: ADD_TO_CART,
   payload: { item }
-
 });
 
 export const removeFromCart = item => ({
@@ -49,6 +49,11 @@ export const changePhoneInput = number => ({
   payload: { number }
 });
 
+export const changePickupTypeInput = pickupType => ({
+  type: CHANGE_PICKUPTYPE_INPUT,
+  payload: { pickupType }
+})
+
 export const removeOneFromCart = item => ({
   type: REMOVE_ONE_FROM_CART,
   payload: {item}
@@ -57,7 +62,7 @@ export const removeOneFromCart = item => ({
 export function fetchProducts() {
   return dispatch => {
     dispatch(fetchProductsBegin());
-    return fetch('http://192.168.1.115:5000/pods/DApm5HLNDrE4vpFjanQR65/menu')
+    return fetch('http://192.168.1.9:5000/pods/DApm5HLNDrE4vpFjanQR65/menu')
       .then(handleErrors)
       .then(res => res.json())
       .then(json => {
@@ -68,18 +73,21 @@ export function fetchProducts() {
   };
 }
 
-export function sendOrder() {
+export function sendOrder(cart, contact) {
   return dispatch => {
     dispatch(fetchProductsBegin())
     items= {}
     let currentCategory = ''
+
     cart.forEach((dataItem) => {
-      if (currentCategory !== dataItem.item.type) {
-        items[dataItem.item.type] = dataItem.item
-        currentCategory = dataItem.item.type
+      if (currentCategory !== dataItem.type) {
+        delete dataItem.items.type
+        items[dataItem.type] = dataItem.items
+        currentCategory = dataItem.type
       }
     })
-    return fetch('http://192.168.1.115:5000/orders', {
+    console.log(items)
+    return fetch('http://192.168.1.9:5000/orders', {
       method: 'POST',
       headers: {
         Accept: 'application/json',

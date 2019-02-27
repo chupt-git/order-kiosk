@@ -1,15 +1,26 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { sendOrder, changeNameInput, changePhoneInput } from '../kioskActions'
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native'
+import {
+  sendOrder,
+  changeNameInput,
+  changePhoneInput,
+  changePickupTypeInput
+} from '../kioskActions'
+import { StyleSheet, Text, View, Button, TextInput, Picker } from 'react-native'
 
 class Checkout extends React.Component {
   render() {
-    if (this.props.number && this.props.name) {
-      const contact = Object.assign(this.props.number, this.props.name)
+    let empty = true
+    let contact
+
+    if (this.props.number && this.props.name && this.props.pickupType) {
+      contact = Object.assign(this.props.number, this.props.name, this.props.pickupType)
+      empty = false
+    }else {
+      empty = true
     }
-    const cart = this.props.cart
+
     return (
       <View style={{display: 'flex', alignItems: 'center'}}>
         <Text>CHECKOUT</Text>
@@ -29,9 +40,20 @@ class Checkout extends React.Component {
           onChangeText={(name) => this.props.changeNameInput(name)}
           />
 
+          <Picker
+            selectedValue={this.props.pickupType.pickupType}
+            style={{height: 50, width: '50%'}}
+            onValueChange={(itemValue) =>
+              this.props.changePickupTypeInput(itemValue)
+            }>
+            <Picker.Item label="Window" value="Window" />
+            <Picker.Item label="Locker" value="Locker" />
+          </Picker>
+
         <Button
+          disabled={empty}
           title="Finish"
-          onPress={() => this.props.sendOrder(cart, contact)}/>
+          onPress={() => this.props.sendOrder(this.props.cart, contact)}/>
       </View>
     );
   }
@@ -41,7 +63,8 @@ function mapStateToProps(state) {
     return {
         cart: state.cart,
         name: state.name,
-        number: state.number
+        number: state.number,
+        pickupType: state.pickupType
     }
 }
 
@@ -49,7 +72,8 @@ const mapDispatchToProps = dispatch => (
   bindActionCreators({
     sendOrder,
     changeNameInput,
-    changePhoneInput
+    changePhoneInput,
+    changePickupTypeInput,
   }, dispatch)
 )
 

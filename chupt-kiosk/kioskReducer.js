@@ -7,8 +7,10 @@ import {
   CHANGE_NAME_INPUT,
   CHANGE_PHONE_INPUT,
   REMOVE_ONE_FROM_CART,
-  CHANGE_ITEM_NUMBER
+  CHANGE_ITEM_NUMBER,
+  CHANGE_PICKUPTYPE_INPUT
 } from './kioskActions'
+import { NavigationActions } from "react-navigation";
 
 const initialState = {
   menu: [],
@@ -21,7 +23,8 @@ const initialState = {
     {type: 'Meals', items:[]}
   ],
   name: '',
-  number: ''
+  number: '',
+  pickupType: ''
 }
 
 export default function productReducer(state = initialState, action) {
@@ -113,6 +116,12 @@ export default function productReducer(state = initialState, action) {
       ...state,
       name: action.payload
      }
+
+   case CHANGE_PICKUPTYPE_INPUT:
+      return {
+        ...state,
+        pickupType: action.payload
+       }
 
    case CHANGE_PHONE_INPUT:
    return {
