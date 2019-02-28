@@ -62,7 +62,7 @@ export const removeOneFromCart = item => ({
 export function fetchProducts() {
   return dispatch => {
     dispatch(fetchProductsBegin());
-    return fetch('http://192.168.1.9:5000/pods/DApm5HLNDrE4vpFjanQR65/menu')
+    return fetch('https://chupt-dev-4.appspot.com/pods/DApm5HLNDrE4vpFjanQR65/menu')
       .then(handleErrors)
       .then(res => res.json())
       .then(json => {
@@ -78,16 +78,24 @@ export function sendOrder(cart, contact) {
     dispatch(fetchProductsBegin())
     items= {}
     let currentCategory = ''
-
     cart.forEach((dataItem) => {
       if (currentCategory !== dataItem.type) {
-        delete dataItem.items.type
-        items[dataItem.type] = dataItem.items
-        currentCategory = dataItem.type
+
+        dataItem.items.forEach((x) => {
+
+          items[dataItem.type] = [{
+            items:{item_id:x.item_id, item_type:x.item_type},
+            count:x.count,
+            amount: 3.0,
+            item_type: dataItem.type,
+            item_id: x.item_id
+          }]
+
+        })
       }
     })
-    console.log(items)
-    return fetch('http://192.168.1.9:5000/orders', {
+
+    return fetch('http://192.168.1.9:5000/orders/', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -95,9 +103,17 @@ export function sendOrder(cart, contact) {
       },
       body: JSON.stringify({
         pod_id: 'DApm5HLNDrE4vpFjanQR65',
-        items,
+        name: contact.name,
+        phone: contact.phone,
+        source: 'kiosk',
+        pickup_type: contact.pickupType,
+        items: items,
 
       }),
+    })
+    .then(handleErrors)
+    .catch((error) => {
+      console.log(error)
     })
   }
 }

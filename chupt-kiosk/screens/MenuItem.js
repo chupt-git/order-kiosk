@@ -14,7 +14,16 @@ class MenuItem extends React.Component {
   render() {
     const item = this.props.item
     item.type = this.props.type
-
+    let img
+    if (item.thumbnail){
+      img = (<Image
+        style={{resizeMode: 'contain', width: 200, height: 200}}
+        source={{uri: item.thumbnail.image_url}}/>)
+    }else {
+      img = (<Image
+        style={{resizeMode: 'contain', width: 200, height: 200}}
+        source={require('../assets/placeholder.jpg')}/>)
+    }
     return (
       <View style={{position: 'relative'}}>
           <TouchableOpacity onPress={() => this.props.navigation.navigate('ModifyItem', {
@@ -32,9 +41,7 @@ class MenuItem extends React.Component {
 
 
           <MenuItemWrap>
-            <Image
-              style={{resizeMode: 'contain', width: 200, height: 200}}
-              source={require('../assets/placeholder.jpg')}/>
+            {img}
             <View style={{width: '50%'}}>
               <ItemTitle>{item.name}</ItemTitle>
               <Text>{item.description}</Text>
@@ -52,7 +59,7 @@ class MenuItem extends React.Component {
             }}>
 
             <CircleButton onPress={() => {
-              this.props.addToCart(item) 
+              this.props.addToCart(item)
               this.props.navigation.navigate('MenuPicker')}}>
               <ColoredText>+</ColoredText>
             </CircleButton>

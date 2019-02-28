@@ -1,7 +1,11 @@
-import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, View, Button } from 'react-native'
 
 class Finish extends React.Component {
+  constructor() {
+  super();
+
+  }
   render() {
     return (
       <View style={styles.container}>
