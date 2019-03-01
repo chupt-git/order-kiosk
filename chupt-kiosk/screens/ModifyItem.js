@@ -7,6 +7,9 @@ import BottomNavigation from './BottomNavigation'
 import Body from '../components/Body'
 import CircleButton from '../components/CircleButton'
 import ColoredText from '../components/ColoredText'
+import MenuItemWrap from '../components/MenuItemWrap'
+import MenuImage from './MenuImage.js'
+import ItemTitle from '../components/ItemTitle'
 import { addToCart } from '../kioskActions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -21,16 +24,41 @@ class ModifyItem extends React.Component {
     const item = this.props.navigation.state.params.item
     return (
       <MainWrap>
-
         <TopNavigation/>
 
         <Body>
-          <Text>{item.name}{item.type}{item.price}</Text>
-          <CircleButton onPress={() => this.props.addToCart(item)}>
-            <ColoredText>+</ColoredText>
-          </CircleButton>
-          <BottomNavigation/>
+          <MenuItemWrap style={{
+            flexDirection: 'row',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-start',
+            paddingTop: 50,
+            minHeight: 300}}>
+            <MenuImage style={{width: '50%'}} item={item}/>
+            <View style={{width: '50%'}}>
+              <ItemTitle>{item.name}</ItemTitle>
+              <Text>{item.description}</Text>
+            </View>
+          </MenuItemWrap>
+          <View
+            style={{
+              position: 'absolute',
+              bottom: -5,
+              display:'flex',
+              width: '100%',
+              flexDirection: 'row',
+              justifyContent: 'center'
+            }}>
+
+            <CircleButton onPress={() => {
+              this.props.addToCart(item)
+              this.props.navigation.navigate('MenuPicker')}}>
+              <ColoredText>+</ColoredText>
+            </CircleButton>
+          </View>
         </Body>
+
+        <BottomNavigation/>
       </MainWrap>
     );
   }

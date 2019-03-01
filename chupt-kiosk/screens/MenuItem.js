@@ -5,6 +5,7 @@ import CircleButton from '../components/CircleButton'
 import ColoredText from '../components/ColoredText'
 import MenuItemWrap from '../components/MenuItemWrap'
 import ItemTitle from '../components/ItemTitle'
+import MenuImage from './MenuImage.js'
 import { addToCart } from '../kioskActions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -18,8 +19,7 @@ class MenuItem extends React.Component {
     return (
       <View style={{position: 'relative'}}>
           <TouchableOpacity onPress={() => this.props.navigation.navigate('ModifyItem', {
-            item: item,
-            type: this.props.type
+            item: item
           })}
           style={{
             position: 'absolute',
@@ -31,10 +31,14 @@ class MenuItem extends React.Component {
           </TouchableOpacity>
 
 
-          <MenuItemWrap>
-            <Image
-              style={{resizeMode: 'contain', width: 200, height: 200}}
-              source={require('../assets/placeholder.jpg')}/>
+          <MenuItemWrap style={{
+            flexDirection: 'row',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-start',
+            paddingTop: 50,
+            minHeight: 300}}>
+            <MenuImage style={{width: '50%'}} item={item}/>
             <View style={{width: '50%'}}>
               <ItemTitle>{item.name}</ItemTitle>
               <Text>{item.description}</Text>
@@ -52,7 +56,7 @@ class MenuItem extends React.Component {
             }}>
 
             <CircleButton onPress={() => {
-              this.props.addToCart(item) 
+              this.props.addToCart(item)
               this.props.navigation.navigate('MenuPicker')}}>
               <ColoredText>+</ColoredText>
             </CircleButton>

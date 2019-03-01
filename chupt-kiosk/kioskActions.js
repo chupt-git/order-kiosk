@@ -62,14 +62,15 @@ export const removeOneFromCart = item => ({
 export function fetchProducts() {
   return dispatch => {
     dispatch(fetchProductsBegin());
-    return fetch('http://192.168.1.9:5000/pods/DApm5HLNDrE4vpFjanQR65/menu')
+    return fetch('https://chupt-dev-4.appspot.com/pods/DApm5HLNDrE4vpFjanQR65/menu')
       .then(handleErrors)
       .then(res => res.json())
       .then(json => {
-        dispatch(fetchProductsSuccess(json.menu));
-        return json.menu;
+        dispatch(fetchProductsSuccess(json.menu))
+        console.log(json.menu)
+        return json.menu
       })
-      .catch(error => dispatch(fetchProductsFailure(error)));
+      .catch(error => dispatch(fetchProductsFailure(error)))
   };
 }
 
