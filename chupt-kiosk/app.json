@@ -27,7 +27,7 @@
       "bundleIdentifier": "com.chupt.chupt-kiosk"
     },
     "android": {
-      "package": "com.chupt.chupt-kiosk"
+      "package": "com.chupt.chupt_kiosk"
     }
   }
 }

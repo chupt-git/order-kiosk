@@ -23,16 +23,6 @@ class ModifyItem extends React.Component {
 
   render() {
     const item = this.props.navigation.state.params.item
-    // let mods={}
-    // let currentCategory = ''
-    // if (item.mods) {
-    // item.mods.forEach((x) => {
-    //   if (currentCategory !== x.mod_type) {
-    //     mods[x.mod_type] = x
-    //     currentCategory = x.mod_type
-    //   }})
-    //   console.log(item.mods);
-    // }
 
     return (
       <MainWrap>
@@ -57,6 +47,11 @@ class ModifyItem extends React.Component {
             </View>
 
             <FlatList
+              contentContainerStyle={{
+                display:'flex',
+                flexDirection:'row',
+                justifyContent: 'space-between',
+                width: '100%'}}
               data={item.mods}
               renderItem={({item}) => <ProductMods item={{item}}/>}
               keyExtractor={(item, index) => index.toString()}

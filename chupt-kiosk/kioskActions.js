@@ -86,7 +86,7 @@ export function sendOrder(cart, contact) {
         currentCategory = dataItem.type
       }
     })
-    console.log(items)
+    
     return fetch('http://192.168.1.9:5000/orders', {
       method: 'POST',
       headers: {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, CheckBox } from 'react-native'
 import styled from 'styled-components/native'
 import MainWrap from '../components/MainWrap'
 import ProductImage from '../components/ProductImage'
@@ -8,26 +8,38 @@ import ProductImage from '../components/ProductImage'
 class ProductMods extends React.Component {
   render() {
     const type = this.props.item.item
-    let test =[]
+    let choice = []
+    let option = []
+    
     switch(type.mod_type) {
       case 'choice':
-          type.choices.forEach((x)=>{
-            test.push(
-              <View>
+          type.choices.forEach((x, y)=>{
+            choice.push(
+              <View key={x + y}>
                 <Text>{x.name}</Text>
-                <CheckBox />
+                <CheckBox value={x.default}/>
               </View>)
           })
         break;
       case 'option':
-          // console.log(type)
+          option.push(
+            <View key={type.name}>
+              <Text>{type.name}</Text>
+              <CheckBox value={JSON.parse(type.default.toLowerCase())}/>
+            </View>)
         break;
       default:
     }
     return (
-      <Text>
-        HELLO
-      </Text>
+      <View>
+        <View style={{
+          display:'flex',
+          flexDirection:'row',
+          justifyContent: 'space-around'}}>
+          {choice}
+        </View>
+        {option}
+      </View>
     )
   }
 }
