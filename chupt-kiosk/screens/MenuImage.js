@@ -17,7 +17,7 @@ class MenuImage extends React.Component {
             <ProductImage
               key={item.item_id + y}
               number={y}
-              style={{left: - y * 50, top: - y * 10}}
+              style={{left: - y * 35, top: - y * 10}}
               source={{uri: x.image_url}}
               />
           )

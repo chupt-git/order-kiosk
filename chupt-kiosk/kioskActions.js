@@ -67,7 +67,6 @@ export function fetchProducts() {
       .then(res => res.json())
       .then(json => {
         dispatch(fetchProductsSuccess(json.menu))
-        console.log(json.menu)
         return json.menu
       })
       .catch(error => dispatch(fetchProductsFailure(error)))
@@ -77,7 +76,7 @@ export function fetchProducts() {
 export function sendOrder(cart, contact) {
   return dispatch => {
     dispatch(fetchProductsBegin())
-    items= {}
+    let items={}
     let currentCategory = ''
 
     cart.forEach((dataItem) => {

@@ -1,18 +1,19 @@
 import React from 'react'
-import { View, Text, Image, TouchableOpacity, } from 'react-native'
+import { View, Text, Image, TouchableOpacity, FlatList } from 'react-native'
 import styled from 'styled-components/native'
 import MainWrap from '../components/MainWrap'
 import TopNavigation from './TopNavigation'
 import BottomNavigation from './BottomNavigation'
 import Body from '../components/Body'
+import ItemTitle from '../components/ItemTitle'
 import CircleButton from '../components/CircleButton'
 import ColoredText from '../components/ColoredText'
 import MenuItemWrap from '../components/MenuItemWrap'
 import MenuImage from './MenuImage.js'
-import ItemTitle from '../components/ItemTitle'
 import { addToCart } from '../kioskActions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import ProductMods from './ProductMods'
 
 
 class ModifyItem extends React.Component {
@@ -22,43 +23,65 @@ class ModifyItem extends React.Component {
 
   render() {
     const item = this.props.navigation.state.params.item
+    // let mods={}
+    // let currentCategory = ''
+    // if (item.mods) {
+    // item.mods.forEach((x) => {
+    //   if (currentCategory !== x.mod_type) {
+    //     mods[x.mod_type] = x
+    //     currentCategory = x.mod_type
+    //   }})
+    //   console.log(item.mods);
+    // }
+
     return (
       <MainWrap>
         <TopNavigation/>
 
-        <Body>
+        <Body style={{height:'100%', justifyContent: 'space-between'}}>
           <MenuItemWrap style={{
-            flexDirection: 'row',
-            display: 'flex',
-            justifyContent: 'space-between',
+            height:'80%',
             alignItems: 'flex-start',
-            paddingTop: 50,
-            minHeight: 300}}>
-            <MenuImage style={{width: '50%'}} item={item}/>
-            <View style={{width: '50%'}}>
-              <ItemTitle>{item.name}</ItemTitle>
-              <Text>{item.description}</Text>
+            flexDirection: 'column'}}>
+            <View style={{
+              width: '100%',
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start'}}>
+              <MenuImage style={{width: '50%'}} item={item}/>
+              <View style={{width: '50%'}}>
+                <ItemTitle>{item.name}</ItemTitle>
+                <Text>{item.description}</Text>
+              </View>
+            </View>
+
+            <FlatList
+              data={item.mods}
+              renderItem={({item}) => <ProductMods item={{item}}/>}
+              keyExtractor={(item, index) => index.toString()}
+            />
+
+            <View
+              style={{
+                position: 'absolute',
+                bottom: -25,
+                left: 20,
+                display:'flex',
+                width: '100%',
+                flexDirection: 'row',
+                justifyContent: 'center',
+              }}>
+
+              <CircleButton onPress={() => {
+                this.props.addToCart(item)
+                this.props.navigation.navigate('MenuPicker')}}>
+                <ColoredText>+</ColoredText>
+              </CircleButton>
             </View>
           </MenuItemWrap>
-          <View
-            style={{
-              position: 'absolute',
-              bottom: -5,
-              display:'flex',
-              width: '100%',
-              flexDirection: 'row',
-              justifyContent: 'center'
-            }}>
-
-            <CircleButton onPress={() => {
-              this.props.addToCart(item)
-              this.props.navigation.navigate('MenuPicker')}}>
-              <ColoredText>+</ColoredText>
-            </CircleButton>
-          </View>
+          <BottomNavigation/>
         </Body>
-
-        <BottomNavigation/>
       </MainWrap>
     );
   }

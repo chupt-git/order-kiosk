@@ -44,7 +44,8 @@ class MenuItem extends React.Component {
               <Text>{item.description}</Text>
             </View>
           </MenuItemWrap>
-
+          <View>
+          </View>
           <View
             style={{
               position: 'absolute',
