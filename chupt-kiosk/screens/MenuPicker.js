@@ -5,6 +5,7 @@ import MainWrap from '../components/MainWrap'
 import ProductType from '../components/ProductType'
 import ButtonText from '../components/ButtonText'
 import Body from '../components/Body'
+import ColoredText from '../components/ColoredText'
 import MenuItem from './MenuItem'
 import PropTypes from 'prop-types'
 import Cart from './Cart'
@@ -22,11 +23,12 @@ class MenuPicker extends React.Component {
   render() {
     const menu = this.props.navigation.state.params.menu.products
     const types = []
-    Object.keys(menu).forEach(function(key) {
-     types.push({type:key, price:menu[key][0].price})
+    Object.keys(menu).forEach((key) => {
+      const a = menu[key][0].amount.toFixed(2).match(/^([^.]+)/)[0]
+      const b = menu[key][0].amount.toFixed(2).match(/[^.]*$/)[0]
+     types.push({type:key, price:{front: a, back:b}})
     })
     types.reverse()
-
     return (
       <MainWrap>
         <TopNavigation/>
@@ -41,13 +43,34 @@ class MenuPicker extends React.Component {
                   <MainButton
                     type={item.type}
                     onPress={() => this.props.navigation.navigate('Menu', {
-                        type: item.type
+                        type: item.type,
+                        price: item.price
                     })}
                     fullWidth
                     center
-                    style={{position: 'relative', overflow: 'hidden'}}>
+                    style={{
+                      width: '100%',
+                      overflow: 'hidden',
+                      display: 'flex',
+                      flexDirection: 'row',
+                      justifyContent: 'space-around',
+                      alignItems:'flex-end'}}>
 
                     <ButtonText>{item.type}</ButtonText>
+
+                    <View style={{
+                      height: 80,
+                      display: 'flex',
+                      flexDirection: 'row',
+                      alignItems:'flex-end'}}>
+                      <ButtonText>${item.price.front}</ButtonText>
+                      <ColoredText style={{
+                            fontSize:40,
+                            lineHeight: 40,
+                            alignSelf: 'flex-start'}}>
+                            .{item.price.back}
+                      </ColoredText>
+                    </View>
 
                   </MainButton>
               )}}
@@ -60,19 +83,4 @@ class MenuPicker extends React.Component {
   }
 }
 
-export default MenuPicker;
-
-// <LinearGradient
-//   start={[0,1]}
-//   end={[1,0]}
-//   colors={['#27CC33', '#078611']}
-//   style={{
-//     height: 250,
-//     width: "80%",
-//     marginBottom: 20,
-//     marginTop: 20,
-//     marginLeft: "auto",
-//     marginRight: "auto",
-//     }}>
-
-// </LinearGradient>
+export default MenuPicker

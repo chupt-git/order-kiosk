@@ -23,7 +23,7 @@ class ModifyItem extends React.Component {
 
   render() {
     const item = this.props.navigation.state.params.item
-
+    console.log(item)
     return (
       <MainWrap>
         <TopNavigation/>

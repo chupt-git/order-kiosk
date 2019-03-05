@@ -10,6 +10,7 @@ import Body from '../components/Body'
 import TopNavigation from './TopNavigation'
 import BottomNavigation from './BottomNavigation'
 import MenuItem from './MenuItem'
+import ColoredText from '../components/ColoredText'
 
 
 class Menu extends React.Component {
@@ -27,13 +28,30 @@ class Menu extends React.Component {
       if (key == menu.type) {
         currentProducts = items[key]
     }})
-
     return (
       <MainWrap>
         <TopNavigation/>
         <Body>
-          <MainButton type={menu.type} medWidth>
-            <ButtonText>{menu.type}</ButtonText>
+          <MainButton type={menu.type} medWidth
+          style={{
+            overflow: 'hidden',
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems:'flex-end'}}>
+            <ButtonText small>{menu.type}</ButtonText>
+            <View style={{
+              height: 50,
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems:'flex-end'}}>
+              <ButtonText small>${menu.price.front}</ButtonText>
+              <ColoredText style={{
+                    fontSize:25,
+                    lineHeight: 25,
+                    alignSelf: 'flex-start'}}>
+                    .{menu.price.back}
+              </ColoredText>
+            </View>
           </MainButton>
           <FlatList
             contentContainerStyle={{flexGrow: 1}}

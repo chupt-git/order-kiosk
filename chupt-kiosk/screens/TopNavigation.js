@@ -24,10 +24,11 @@ class TopNavigation extends React.Component {
             justifyContent:'center'}}>
             <CircleButton
               darkBlue
+              bigger
               onPress={() =>
                 this.props.navigation.goBack()
               }>
-              <ColoredText style={{fontSize: 30}}>←</ColoredText>
+              <ColoredText bigger style={{fontSize: 30}}>←</ColoredText>
             </CircleButton>
 
             <LogoImg source={require('../assets/chuptLogo.png')}/>
