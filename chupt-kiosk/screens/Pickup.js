@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, View, Button } from 'react-native'
 
 class Pickup extends React.Component {
   render() {
@@ -22,6 +22,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     color: 'red',
   },
-});
+})
 
-export default Pickup;
+export default Pickup

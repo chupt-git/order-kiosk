@@ -1,7 +1,5 @@
 import React from 'react'
 import { View, Image } from 'react-native'
-import styled from 'styled-components/native'
-import MainWrap from '../components/MainWrap'
 import ProductImage from '../components/ProductImage'
 
 
@@ -9,7 +7,6 @@ class MenuImage extends React.Component {
   render() {
     const item = this.props.item
     let images =[]
-    // console.log(item)
     if (item.items){
       item.items.forEach((x, y)=>{
         x.images.forEach((x)=>{
@@ -31,7 +28,6 @@ class MenuImage extends React.Component {
             style={{resizeMode: 'contain', width: 200, height: 200}}
             source={{uri: x.image_url}}/>
         )
-        console.log(x);
       })
     }
 

@@ -1,17 +1,11 @@
 import React from 'react'
-import { View, Text, Image, TouchableOpacity, FlatList, Dimensions } from 'react-native'
-import styled from 'styled-components/native'
+import { View, FlatList } from 'react-native'
 import MainWrap from '../components/MainWrap'
-import ProductType from '../components/ProductType'
 import ButtonText from '../components/ButtonText'
 import Body from '../components/Body'
 import ColoredText from '../components/ColoredText'
-import MenuItem from './MenuItem'
-import PropTypes from 'prop-types'
-import Cart from './Cart'
 import TopNavigation from './TopNavigation'
 import BottomNavigation from './BottomNavigation'
-import { LinearGradient } from 'expo'
 import MainButton from '../components/MainButton'
 
 

@@ -1,6 +1,5 @@
 import React from 'react'
-import { View, Text, Image, TouchableOpacity, FlatList } from 'react-native'
-import styled from 'styled-components/native'
+import { View, Text, FlatList } from 'react-native'
 import MainWrap from '../components/MainWrap'
 import TopNavigation from './TopNavigation'
 import BottomNavigation from './BottomNavigation'
@@ -17,13 +16,8 @@ import ProductMods from './ProductMods'
 
 
 class ModifyItem extends React.Component {
-  constructor() {
-    super();
-  }
-
   render() {
     const item = this.props.navigation.state.params.item
-    console.log(item)
     return (
       <MainWrap>
         <TopNavigation/>

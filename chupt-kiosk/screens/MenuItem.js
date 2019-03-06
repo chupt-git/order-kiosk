@@ -1,6 +1,5 @@
 import React from 'react'
-import { Text, View, TouchableOpacity, Image } from 'react-native'
-import styled from 'styled-components/native'
+import { Text, View, TouchableOpacity } from 'react-native'
 import CircleButton from '../components/CircleButton'
 import ColoredText from '../components/ColoredText'
 import MenuItemWrap from '../components/MenuItemWrap'

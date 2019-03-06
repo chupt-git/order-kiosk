@@ -1,7 +1,5 @@
 import React from 'react'
-import { Text, View, Button, FlatList, TextInput } from 'react-native'
-import styled from 'styled-components/native'
-import Img from '../components/Img'
+import { Text, View, FlatList } from 'react-native'
 import Txt from '../components/Txt'
 import CartButtons from './CartButtons'
 

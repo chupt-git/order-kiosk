@@ -1,5 +1,4 @@
 import React from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
 import HeaderHat from '../components/HeaderHat'
 import HatWrapper from '../components/HatWrapper'
 import { LinearGradient } from 'expo'

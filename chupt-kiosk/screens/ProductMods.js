@@ -1,8 +1,5 @@
 import React from 'react'
 import { View, Text, CheckBox } from 'react-native'
-import styled from 'styled-components/native'
-import MainWrap from '../components/MainWrap'
-import ProductImage from '../components/ProductImage'
 
 
 class ProductMods extends React.Component {

@@ -1,14 +1,7 @@
 import React from 'react'
-import { Text, View, Button, FlatList, TextInput } from 'react-native'
-import styled from 'styled-components/native'
-import Img from '../components/Img'
-import ItemTitle from '../components/ItemTitle'
-import ItemWrap from '../components/ItemWrap'
-import Txt from '../components/Txt'
-import OptionButtons from '../components/OptionButtons'
-import {CircleButton, DeleteButton } from '../components/CircleButton'
+import { View, TextInput } from 'react-native'
+import {CircleButton } from '../components/CircleButton'
 import ColoredText from '../components/ColoredText'
-import MedText from '../components/MedText'
 import { bindActionCreators } from 'redux'
 import { removeFromCart, addToCart, changeItemNumber } from '../kioskActions'
 import { connect } from 'react-redux'
@@ -61,7 +54,6 @@ const mapDispatchToProps = dispatch => (
     removeFromCart,
     addToCart,
     changeItemNumber
-    // removeOneFromCart
   }, dispatch)
-)
+);
 export default connect(mapStateToProps, mapDispatchToProps)(CartButtons)

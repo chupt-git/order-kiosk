@@ -31,6 +31,7 @@ import expo.modules.sensors.SensorsPackage;
 import expo.modules.sms.SMSPackage;
 import expo.modules.taskManager.TaskManagerPackage;
 import expolib_v1.okhttp3.OkHttpClient;
+import com.squareup.sdk.reader.ReaderSdk;
 
 // Needed for `react-native link`
 // import com.facebook.react.ReactApplication;
@@ -40,6 +41,17 @@ public class MainApplication extends ExpoApplication implements AppLoaderPackage
   @Override
   public boolean isDebug() {
     return BuildConfig.DEBUG;
+  }
+
+  @Override public void onCreate() {
+    super.onCreate();
+    ReaderSdk.initialize(this);
+  }
+
+  @Override protected void attachBaseContext(Context base) {
+    super.attachBaseContext(base);
+    // Required if minSdkVersion < 21
+    MultiDex.install(this);
   }
 
   // Needed for `react-native link`

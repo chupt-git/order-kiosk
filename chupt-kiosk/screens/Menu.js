@@ -1,8 +1,6 @@
 import React from 'react'
 import { View, Text, FlatList } from 'react-native'
-import { LinearGradient } from 'expo'
 import { connect } from 'react-redux'
-import styled from 'styled-components/native'
 import MainWrap from '../components/MainWrap'
 import ButtonText from '../components/ButtonText'
 import MainButton from '../components/MainButton'
@@ -25,7 +23,7 @@ class Menu extends React.Component {
     let currentProducts = []
 
     Object.keys(items).forEach(function(key) {
-      if (key == menu.type) {
+      if (key === menu.type) {
         currentProducts = items[key]
     }})
     return (

@@ -4018,9 +4018,9 @@ react-native-snap-carousel@^3.7.5:
     prop-types "^15.6.1"
     react-addons-shallow-compare "15.6.2"
 
-react-native-square-reader-sdk@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/react-native-square-reader-sdk/-/react-native-square-reader-sdk-1.0.3.tgz#d279eba9f6e1d0b369deaa6f7d4529bfdd616d2f"
+react-native-square-reader-sdk@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-square-reader-sdk/-/react-native-square-reader-sdk-1.1.0.tgz#b83812991fb7c8fc09ecb85ef34588e168201ada"
 
 react-native-step-indicator@0.0.9:
   version "0.0.9"
