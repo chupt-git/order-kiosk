@@ -1,15 +1,17 @@
 import React from 'react'
 import {Text, View, FlatList, CheckBox} from 'react-native'
-import {toggleChecked} from "../kioskActions";
+import {toggleChecked} from "../kioskActions"
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withNavigation } from 'react-navigation'
 
 class OptionMod extends React.Component {
+
     render() {
         const options = this.props.data.option
         const itemID = this.props.item.item.item_id
-        console.log(menuItem)
+        const checked = this.props.checked.find(x=> x==itemID)
+        // const inChecked = checked.find(x => x.id === itemID)
         return (
             <View>
                 <Text>OPTIONS</Text>
@@ -19,8 +21,8 @@ class OptionMod extends React.Component {
                         <View>
                             <Text>{item.name}</Text>
                             <CheckBox
-                                value={(/true/i).test(item.value)}
-                                onChange={() => this.props.toggleChecked(item.name, itemID)}
+                                checked={true}
+                                onValueChange={() => this.props.toggleChecked(item.name, itemID)}
                             />
                         </View>}
                     keyExtractor={(item, index) => index.toString()}
@@ -32,21 +34,25 @@ class OptionMod extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        cart: state.cart,
+        menu: state.menu,
         checked: state.checked
     }
 }
 
 const mapDispatchToProps = dispatch => (
     bindActionCreators({
-        toggleChecked,
+        toggleChecked
     }, dispatch)
-)
+);
 
 export default withNavigation(connect(
     mapStateToProps,
     mapDispatchToProps
 )(OptionMod))
+
+
+// this.props.checked.itemID
+
 
 // export default OptionMod
 

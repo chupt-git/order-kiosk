@@ -11,12 +11,15 @@ import MenuItemWrap from '../components/MenuItemWrap'
 import MenuImage from './MenuImage'
 import ChoiceMod from './ChoiceMod'
 import OptionMod from './OptionMod'
-import { addToCart } from '../kioskActions'
+import { addToCart, populateMods } from '../kioskActions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import ProductMods from './ProductMods'
 
 class ModifyItem extends React.Component {
+    componentWillMount () {
+        this.props.populateMods(this.props.navigation.state.params.item)
+    }
   render() {
     const item = this.props.navigation.state.params.item
     const option = []
@@ -101,9 +104,10 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = dispatch => (
-  bindActionCreators({
-    addToCart,
-  }, dispatch)
+    bindActionCreators({
+        addToCart,
+        populateMods
+    }, dispatch)
 )
 
 export default connect(mapStateToProps, mapDispatchToProps) (ModifyItem)

@@ -12,11 +12,11 @@ class Home extends React.Component {
     super(props)
   }
 
-  componentDidMount () {
+  componentWillMount () {
       this.props.dispatch(fetchProducts())
   }
 
-  render() {
+    render() {
     return (
         <MainWrap home>
           <Image style={{width: '65%', resizeMode: 'contain'}}  source={require('../assets/fullLogo.png')}/>

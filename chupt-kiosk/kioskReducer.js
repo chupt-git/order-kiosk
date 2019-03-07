@@ -9,9 +9,11 @@ import {
     REMOVE_ONE_FROM_CART,
     CHANGE_ITEM_NUMBER,
     CHANGE_PICKUPTYPE_INPUT,
-    TOGGLE_CHECKED
+    TOGGLE_CHECKED,
+    POPULATE_MODS
 } from './kioskActions'
 import {NavigationActions} from "react-navigation";
+import OptionMod from "./screens/ModifyItem";
 
 const initialState = {
     menu: [],
@@ -73,16 +75,46 @@ export default function productReducer(state = initialState, action) {
             }
 
         case TOGGLE_CHECKED:
-            const itemID = action.payload.itemID
-            const data = action.payload.option
+            const itemID = action.itemID
+            const data = action.option
             if (!state.checked.includes(itemID)) {
                 newChecked.push({itemID:[data]})
+                console.log(newChecked)
+                console.log("checked")
             } else {
-                // const test = x.items.find(i => i.item_id == action.payload.item.item_id)
+                console.log(itemID)
+                const test = data.items.find(i => i.item_id == itemID)
+                console.log(test)
             }
 
             return {
                 ...state,
+            }
+
+        case POPULATE_MODS:
+            const inChecked = newChecked.find(x => x.id === action.payload.item.item_id)
+
+            if (!inChecked) {
+                const option = []
+                const choice = []
+                action.payload.item.mods.forEach((x) => {
+                    switch (x.mod_type) {
+                        case 'option':
+                            option.push({[x.name]: x.default})
+                            break;
+                        case 'choice':
+                            choice.push({[x.name]: x.default})
+                    }
+                })
+
+                newChecked.push({
+                    id: action.payload.item.item_id, options: option, choices: choice})
+            }else {
+                console.log(inChecked)
+            }
+            return {
+                ...state,
+                checked: newChecked
             }
 
         case REMOVE_ONE_FROM_CART:
@@ -144,7 +176,6 @@ export default function productReducer(state = initialState, action) {
                 ...state,
                 number: action.payload
             }
-
 
         default:
             return state;

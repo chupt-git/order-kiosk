@@ -8,7 +8,8 @@ export const CHANGE_PHONE_INPUT = 'CHANGE_PHONE_INPUT'
 export const REMOVE_ONE_FROM_CART = 'REMOVE_ONE_FROM_CART'
 export const CHANGE_ITEM_NUMBER = 'CHANGE_ITEM_NUMBER'
 export const CHANGE_PICKUPTYPE_INPUT = 'CHANGE_PICKUPTYPE_INPUT'
-export  const TOGGLE_CHECKED = 'TOGGLE_CHECKED'
+export const TOGGLE_CHECKED = 'TOGGLE_CHECKED'
+export const  POPULATE_MODS ='POPULATE_MODS'
 
 export const fetchProductsBegin = () => ({
   type: FETCH_PRODUCTS_BEGIN
@@ -23,6 +24,11 @@ export const fetchProductsFailure = error => ({
   type: FETCH_PRODUCTS_FAILURE,
   payload: { error }
 });
+
+export const  populateMods = item => ({
+  type: POPULATE_MODS,
+  payload: {item}
+})
 
 export const addToCart = item => ({
   type: ADD_TO_CART,

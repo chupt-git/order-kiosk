@@ -7,20 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ba24926-2a33-4977-97f5-844d1f09b88e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/screens/ChoiceMod.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screens/OptionMod.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kioskActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/kioskActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kioskReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/kioskReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/Finish.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Finish.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/MenuItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/MenuItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/ModifyItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ModifyItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/ProductMods.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ProductMods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/OptionMod.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/OptionMod.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,14 +21,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4197002">
+    <splitter split-orientation="horizontal" split-proportion="0.33904353">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/screens/Home.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="215">
-                  <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+                <state relative-caret-position="-78">
+                  <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
                   </folding>
@@ -45,47 +37,10 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/screens/MenuItem.js">
+            <entry file="file://$PROJECT_DIR$/screens/Menu.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-                  <folding>
-                    <element signature="e#0#25#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/screens/Checkout.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="61" column="33" lean-forward="true" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
-                  <folding>
-                    <element signature="e#0#25#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/kioskActions.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="520">
-                  <caret line="64" column="2" selection-start-line="64" selection-start-column="2" selection-end-line="64" selection-end-column="8" />
-                  <folding>
-                    <element signature="n#!!block;n#fetchProducts#0" />
-                    <element signature="n#!!block;n#sendOrder#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/screens/OptionMod.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="179">
-                  <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="33" />
+                <state relative-caret-position="537">
+                  <caret line="56" column="25" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="25" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
                   </folding>
@@ -96,8 +51,20 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/screens/ModifyItem.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="277">
-                  <caret line="62" column="37" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="37" />
+                <state relative-caret-position="141">
+                  <caret line="44" column="17" lean-forward="true" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
+                  <folding>
+                    <element signature="e#0#25#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/screens/OptionMod.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="184">
+                  <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
                   </folding>
@@ -112,19 +79,21 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/kioskReducer.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="427">
-                  <caret line="79" column="20" lean-forward="true" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
+                <state relative-caret-position="578">
+                  <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
                   <folding>
-                    <element signature="e#0#298#0" expanded="true" />
+                    <element signature="e#0#317#0" expanded="true" />
                     <element signature="e#817#964#0" />
-                    <element signature="e#974#1133#0" />
+                    <element signature="e#1084#1256#0" />
                     <element signature="e#1143#1335#0" />
+                    <element signature="e#2063#2580#0" />
                     <element signature="e#1947#2417#0" />
                     <element signature="e#2427#2835#0" />
                     <element signature="e#2845#3457#0" />
                     <element signature="e#3467#3588#0" />
                     <element signature="e#3598#3731#0" />
                     <element signature="e#3741#3865#0" />
+                    <element signature="e#4507#4541#0" />
                   </folding>
                 </state>
               </provider>
@@ -140,45 +109,13 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/screens/ChoiceMod.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-140">
-                  <caret line="2" selection-start-line="2" selection-end-line="5" selection-end-column="49" />
-                  <folding>
-                    <element signature="e#0#25#0" expanded="true" />
-                    <element signature="e#307#344#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/screens/ProductMods.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+                <state relative-caret-position="77">
+                  <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
                     <marker date="1551920280075" expanded="false" signature="452:1109" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/screens/Finish.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="314">
-                  <caret line="153" column="39" lean-forward="true" selection-start-line="153" selection-start-column="11" selection-end-line="153" selection-end-column="39" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                    <marker date="1551916592134" expanded="false" signature="645:1218" ph="..." />
-                    <marker date="1551916592134" expanded="false" signature="1226:3762" ph="..." />
-                    <marker date="1551916592134" expanded="true" signature="2872:3762" ph="..." />
-                    <marker date="1551916592134" expanded="true" signature="2873:3762" ph="..." />
-                    <marker date="1551916592134" expanded="true" signature="3768:6074" ph="..." />
-                    <marker date="1551916592134" expanded="true" signature="4641:6070" ph="..." />
-                    <marker date="1551916592134" expanded="true" signature="6399:6636" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -213,6 +150,13 @@
       <find>startReaderSettings</find>
       <find>startCheckout</find>
       <find>item.name</find>
+      <find>POPULATE_MODS</find>
+      <find>cart</find>
+      <find>meni</find>
+      <find>Object</find>
+      <find>Obj</find>
+      <find>Mod</find>
+      <find>Obje</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -227,9 +171,7 @@
         <option value="$PROJECT_DIR$/screens/CartItem.js" />
         <option value="$PROJECT_DIR$/screens/CartNavigation.js" />
         <option value="$PROJECT_DIR$/screens/Checkout.js" />
-        <option value="$PROJECT_DIR$/screens/Home.js" />
         <option value="$PROJECT_DIR$/screens/MenuImage.js" />
-        <option value="$PROJECT_DIR$/screens/Menu.js" />
         <option value="$PROJECT_DIR$/screens/MenuName.js" />
         <option value="$PROJECT_DIR$/screens/MenuPicker.js" />
         <option value="$PROJECT_DIR$/screens/TopNavigation.js" />
@@ -238,9 +180,11 @@
         <option value="$PROJECT_DIR$/screens/ProductMods.js" />
         <option value="$PROJECT_DIR$/screens/ChoiceMod.js" />
         <option value="$PROJECT_DIR$/screens/MenuItem.js" />
+        <option value="$PROJECT_DIR$/kioskActions.js" />
+        <option value="$PROJECT_DIR$/screens/Home.js" />
+        <option value="$PROJECT_DIR$/screens/Menu.js" />
         <option value="$PROJECT_DIR$/screens/ModifyItem.js" />
         <option value="$PROJECT_DIR$/screens/OptionMod.js" />
-        <option value="$PROJECT_DIR$/kioskActions.js" />
         <option value="$PROJECT_DIR$/kioskReducer.js" />
       </list>
     </option>
@@ -263,11 +207,6 @@
             <path>
               <item name="chupt-kiosk" type="b2602c69:ProjectViewProjectNode" />
               <item name="chupt-kiosk" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chupt-kiosk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chupt-kiosk" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="chupt-kiosk" type="b2602c69:ProjectViewProjectNode" />
@@ -368,12 +307,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1548289874961</updated>
-      <workItem from="1551834938122" duration="22077000" />
+      <workItem from="1551834938122" duration="30502000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22077000" />
+    <option name="totallyTimeSpent" value="30502000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
@@ -411,69 +350,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/android/android.iml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screens/BottomNavigation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
-          <folding>
-            <element signature="n#BottomNavigation#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screens/Cart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="43" lean-forward="true" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screens/CartButtons.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1058">
-          <caret line="46" column="12" lean-forward="true" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screens/CartItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="39" lean-forward="true" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screens/CartNavigation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-866">
-          <caret line="3" column="51" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screens/DeleteButton.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screens/Menu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-498">
-          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/screens/TopNavigation.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -529,16 +405,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/screens/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
@@ -573,9 +439,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/components/MenuItemWrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/CartButtons.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="46" column="12" lean-forward="true" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/ChoiceMod.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" selection-start-line="2" selection-end-line="5" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#307#344#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Body.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/screens/Finish.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
+        <state relative-caret-position="1164">
           <caret line="153" column="39" lean-forward="true" selection-start-line="153" selection-start-column="11" selection-end-line="153" selection-end-column="39" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -592,8 +493,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/screens/ProductMods.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+        <state relative-caret-position="77">
+          <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
             <marker date="1551920280075" expanded="false" signature="452:1109" ph="..." />
@@ -601,17 +502,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/MenuItemWrap.js">
+    <entry file="file://$PROJECT_DIR$/kioskActions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        <state relative-caret-position="1047">
+          <caret line="88" column="41" lean-forward="true" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-78">
+          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/BottomNavigation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
+          <folding>
+            <element signature="n#BottomNavigation#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/Cart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/CartItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="602">
+          <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/CartNavigation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="51" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/screens/Checkout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="61" column="33" lean-forward="true" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
+        <state relative-caret-position="92">
+          <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/DeleteButton.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/Menu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="56" column="25" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="25" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
@@ -620,78 +585,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/screens/MenuItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        <state relative-caret-position="277">
+          <caret line="19" column="78" selection-start-line="19" selection-start-column="75" selection-end-line="19" selection-end-column="78" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screens/ChoiceMod.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-140">
-          <caret line="2" selection-start-line="2" selection-end-line="5" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#307#344#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/screens/ModifyItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="62" column="37" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="37" />
+        <state relative-caret-position="141">
+          <caret line="44" column="17" lean-forward="true" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/Body.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screens/OptionMod.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kioskActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="64" column="2" selection-start-line="64" selection-start-column="2" selection-end-line="64" selection-end-column="8" />
-          <folding>
-            <element signature="n#!!block;n#fetchProducts#0" />
-            <element signature="n#!!block;n#sendOrder#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kioskReducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="79" column="20" lean-forward="true" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
+        <state relative-caret-position="578">
+          <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
           <folding>
-            <element signature="e#0#298#0" expanded="true" />
+            <element signature="e#0#317#0" expanded="true" />
             <element signature="e#817#964#0" />
-            <element signature="e#974#1133#0" />
+            <element signature="e#1084#1256#0" />
             <element signature="e#1143#1335#0" />
+            <element signature="e#2063#2580#0" />
             <element signature="e#1947#2417#0" />
             <element signature="e#2427#2835#0" />
             <element signature="e#2845#3457#0" />
             <element signature="e#3467#3588#0" />
             <element signature="e#3598#3731#0" />
             <element signature="e#3741#3865#0" />
+            <element signature="e#4507#4541#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/OptionMod.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
