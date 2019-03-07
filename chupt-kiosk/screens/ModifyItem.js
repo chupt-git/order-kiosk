@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, FlatList } from 'react-native'
+import { View, Text } from 'react-native'
 import MainWrap from '../components/MainWrap'
 import TopNavigation from './TopNavigation'
 import BottomNavigation from './BottomNavigation'
@@ -14,7 +14,6 @@ import OptionMod from './OptionMod'
 import { addToCart, populateMods } from '../kioskActions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import ProductMods from './ProductMods'
 
 class ModifyItem extends React.Component {
     componentWillMount () {
@@ -93,7 +92,7 @@ class ModifyItem extends React.Component {
           <BottomNavigation/>
         </Body>
       </MainWrap>
-    );
+    )
   }
 }
 

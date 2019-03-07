@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, FlatList } from 'react-native'
+import { View, FlatList } from 'react-native'
 import { connect } from 'react-redux'
 import MainWrap from '../components/MainWrap'
 import ButtonText from '../components/ButtonText'
@@ -12,11 +12,6 @@ import ColoredText from '../components/ColoredText'
 
 
 class Menu extends React.Component {
-
-  constructor() {
-    super()
-  }
-
   render() {
     const menu = this.props.navigation.state.params
     const items = this.props.menu.products

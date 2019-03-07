@@ -12,8 +12,6 @@ import {
     TOGGLE_CHECKED,
     POPULATE_MODS
 } from './kioskActions'
-import {NavigationActions} from "react-navigation";
-import OptionMod from "./screens/ModifyItem";
 
 const initialState = {
     menu: [],
@@ -75,24 +73,17 @@ export default function productReducer(state = initialState, action) {
             }
 
         case TOGGLE_CHECKED:
-            const itemID = action.itemID
-            const data = action.option
-            if (!state.checked.includes(itemID)) {
-                newChecked.push({itemID:[data]})
-                console.log(newChecked)
-                console.log("checked")
-            } else {
-                console.log(itemID)
-                const test = data.items.find(i => i.item_id == itemID)
-                console.log(test)
-            }
+            const checkedItem = newChecked.find(x => x.id == action.item.item)
+            const val = checkedItem[action.mod.mod].find(x=> x.name == action.name.name)
+            val.value = !val.value
 
             return {
                 ...state,
+                checked: newChecked
             }
 
         case POPULATE_MODS:
-            const inChecked = newChecked.find(x => x.id === action.payload.item.item_id)
+            const inChecked = newChecked.find(x => x.id == action.payload.item.item_id)
 
             if (!inChecked) {
                 const option = []
@@ -100,10 +91,10 @@ export default function productReducer(state = initialState, action) {
                 action.payload.item.mods.forEach((x) => {
                     switch (x.mod_type) {
                         case 'option':
-                            option.push({[x.name]: x.default})
+                            option.push({name: x.name, value: x.default})
                             break;
                         case 'choice':
-                            choice.push({[x.name]: x.default})
+                            choice.push({name: x.name, value: x.default})
                     }
                 })
 
@@ -120,7 +111,7 @@ export default function productReducer(state = initialState, action) {
         case REMOVE_ONE_FROM_CART:
             newCart.forEach((x) => {
                 if (x.type.toLowerCase() == action.payload.item.type.toLowerCase()) {
-                    inCart = x.items.find(i => i.item_id == action.payload.item.item_id)
+                    const inCart = x.items.find(i => i.item_id == action.payload.item.item_id)
                     if (inCart.count > 1) {
                         inCart.count -= 1
                     }

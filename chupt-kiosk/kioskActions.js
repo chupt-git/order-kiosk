@@ -13,17 +13,17 @@ export const  POPULATE_MODS ='POPULATE_MODS'
 
 export const fetchProductsBegin = () => ({
   type: FETCH_PRODUCTS_BEGIN
-});
+})
 
 export const fetchProductsSuccess = products => ({
   type: FETCH_PRODUCTS_SUCCESS,
   payload: { products }
-});
+})
 
 export const fetchProductsFailure = error => ({
   type: FETCH_PRODUCTS_FAILURE,
   payload: { error }
-});
+})
 
 export const  populateMods = item => ({
   type: POPULATE_MODS,
@@ -44,7 +44,7 @@ export const changeItemNumber = (number, item) => ({
   type: CHANGE_ITEM_NUMBER,
   number: {number},
   item: {item}
-});
+})
 
 export const changeNameInput = name => ({
   type: CHANGE_NAME_INPUT,
@@ -61,15 +61,11 @@ export const changePickupTypeInput = pickupType => ({
   payload: { pickupType }
 })
 
-export const removeOneFromCart = item => ({
-  type: REMOVE_ONE_FROM_CART,
-  payload: {item}
-})
-
-export const toggleChecked = (option, itemID) => ({
+export const toggleChecked = (item, mod, name) => ({
   type: TOGGLE_CHECKED,
-  option: {option},
-  itemID: {itemID}
+  item: {item},
+  mod: {mod},
+  name: {name}
 })
 
 export function fetchProducts() {
