@@ -8,6 +8,7 @@ export const CHANGE_PHONE_INPUT = 'CHANGE_PHONE_INPUT'
 export const REMOVE_ONE_FROM_CART = 'REMOVE_ONE_FROM_CART'
 export const CHANGE_ITEM_NUMBER = 'CHANGE_ITEM_NUMBER'
 export const CHANGE_PICKUPTYPE_INPUT = 'CHANGE_PICKUPTYPE_INPUT'
+export  const TOGGLE_CHECKED = 'TOGGLE_CHECKED'
 
 export const fetchProductsBegin = () => ({
   type: FETCH_PRODUCTS_BEGIN
@@ -57,6 +58,12 @@ export const changePickupTypeInput = pickupType => ({
 export const removeOneFromCart = item => ({
   type: REMOVE_ONE_FROM_CART,
   payload: {item}
+})
+
+export const toggleChecked = (option, itemID) => ({
+  type: TOGGLE_CHECKED,
+  option: {option},
+  itemID: {itemID}
 })
 
 export function fetchProducts() {

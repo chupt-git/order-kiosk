@@ -14,22 +14,6 @@ class MenuItem extends React.Component {
   render() {
     const item = this.props.item
     item.type = this.props.type
-    // const mods = []
-
-
-    // if (item.mods.length || item.items.mods.length) {
-    //   mods.push(<TouchableOpacity onPress={() => this.props.navigation.navigate('ModifyItem', {
-    //     item: item
-    //   })}
-    //   style={{
-    //     position: 'absolute',
-    //     top: 20,
-    //     right: 25,
-    //     zIndex: 1
-    //   }}>
-    //     <Text style={{fontSize: 30}}>...</Text>
-    //   </TouchableOpacity>)
-    // }
 
     return (
       <View style={{position: 'relative'}}>

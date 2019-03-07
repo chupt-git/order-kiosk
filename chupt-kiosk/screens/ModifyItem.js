@@ -8,16 +8,41 @@ import ItemTitle from '../components/ItemTitle'
 import CircleButton from '../components/CircleButton'
 import ColoredText from '../components/ColoredText'
 import MenuItemWrap from '../components/MenuItemWrap'
-import MenuImage from './MenuImage.js'
+import MenuImage from './MenuImage'
+import ChoiceMod from './ChoiceMod'
+import OptionMod from './OptionMod'
 import { addToCart } from '../kioskActions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import ProductMods from './ProductMods'
 
-
 class ModifyItem extends React.Component {
   render() {
     const item = this.props.navigation.state.params.item
+    const option = []
+    const choice = []
+    const modGuts = []
+
+    item.mods.forEach((x, y)=>{
+        switch (x.mod_type) {
+            case 'option':
+                option.push(x);
+                if(option.length <= 1){
+                    modGuts.push(
+                        <OptionMod key={'option'} data={{option}} item={{item}}/>
+                    )
+                }
+                break;
+            case 'choice':
+                choice.push(x);
+                if(choice.length <= 1){
+                    modGuts.push(
+                        <ChoiceMod key={'choice'} data={{choice}} item={{item}}/>
+                    )
+                }
+        }
+    })
+
     return (
       <MainWrap>
         <TopNavigation/>
@@ -28,11 +53,11 @@ class ModifyItem extends React.Component {
             alignItems: 'flex-start',
             flexDirection: 'column'}}>
             <View style={{
-              width: '100%',
-              display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              alignItems: 'flex-start'}}>
+                  width: '100%',
+                  display: 'flex',
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  alignItems: 'flex-start'}}>
               <MenuImage style={{width: '50%'}} item={item}/>
               <View style={{width: '50%'}}>
                 <ItemTitle>{item.name}</ItemTitle>
@@ -40,16 +65,9 @@ class ModifyItem extends React.Component {
               </View>
             </View>
 
-            <FlatList
-              contentContainerStyle={{
-                display:'flex',
-                flexDirection:'row',
-                justifyContent: 'space-between',
-                width: '100%'}}
-              data={item.mods}
-              renderItem={({item}) => <ProductMods item={{item}}/>}
-              keyExtractor={(item, index) => index.toString()}
-            />
+          <View style={{width: '100%'}}>
+            {modGuts}
+          </View>
 
             <View
               style={{
@@ -89,3 +107,5 @@ const mapDispatchToProps = dispatch => (
 )
 
 export default connect(mapStateToProps, mapDispatchToProps) (ModifyItem)
+
+
