@@ -83,26 +83,31 @@ export default function productReducer(state = initialState, action) {
             }
 
         case POPULATE_MODS:
-            const inChecked = newChecked.find(x => x.id == action.payload.item.item_id)
+            console.log(action.payload)
+            if (action.payload.item.item) {
+                const inChecked = newChecked.find(x => x.id == action.payload.item.item_id)
 
-            if (!inChecked) {
-                const option = []
-                const choice = []
-                action.payload.item.mods.forEach((x) => {
-                    switch (x.mod_type) {
-                        case 'option':
-                            option.push({name: x.name, value: x.default})
-                            break;
-                        case 'choice':
-                            choice.push({name: x.name, value: x.default})
-                    }
-                })
+                if (!inChecked) {
+                    const option = []
+                    const choice = []
+                    action.payload.item.mods.forEach((x) => {
+                        switch (x.mod_type) {
+                            case 'option':
+                                option.push({name: x.name, value: x.default})
+                                break;
+                            case 'choice':
+                                choice.push({name: x.name, value: x.default})
+                        }
+                    })
 
-                newChecked.push({
-                    id: action.payload.item.item_id, options: option, choices: choice})
-            }else {
-                console.log(inChecked)
+                    newChecked.push({
+                        id: action.payload.item.item_id, options: option, choices: choice
+                    })
+                }
+            } else {
+                console.log(action.payload)
             }
+
             return {
                 ...state,
                 checked: newChecked
