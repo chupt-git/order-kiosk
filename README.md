@@ -5,4 +5,3 @@
 2. Finish payment fLow
 3. Style Checkout
 4. Move all styling outside of screens
-5. Finish implementation of mods
