@@ -12,23 +12,25 @@ class OptionMod extends React.Component {
         const itemID = this.props.item.item.item_id
         const checked = this.props.checked.find(x=> x.id === itemID)
 
+
+
         if (!checked) {
             return null
         } else {
-            console.log(checked)
             return (
                 <View>
                     <Text>OPTIONS</Text>
                     <FlatList
                         data={options}
-                        renderItem={({item}) =>
-                            <View>
+                        extraData={checked}
+                        renderItem={({item}) =>{
+                            return(<View>
                                 <Text>{item.name}</Text>
                                 <CheckBox
                                     value={(/true/i).test(checked.options.find(x => x.name === item.name).value)}
                                     onValueChange={() => this.props.toggleChecked(itemID, 'options', item.name )}
                                 />
-                            </View>}
+                            </View>)}}
                         keyExtractor={(item, index) => index.toString()}
                     />
                 </View>

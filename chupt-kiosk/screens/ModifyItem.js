@@ -9,42 +9,23 @@ import CircleButton from '../components/CircleButton'
 import ColoredText from '../components/ColoredText'
 import MenuItemWrap from '../components/MenuItemWrap'
 import MenuImage from './MenuImage'
-import ChoiceMod from './ChoiceMod'
-import OptionMod from './OptionMod'
-import { addToCart, populateMods } from '../kioskActions'
+import { addToCart } from '../kioskActions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import ModWrapper from "./ModWrapper";
 
 class ModifyItem extends React.Component {
-    componentWillMount () {
-        this.props.populateMods(this.props.navigation.state.params.item)
-    }
+
   render() {
     const item = this.props.navigation.state.params.item
-    const option = []
-    const choice = []
-    const modGuts = []
-
-    item.mods.forEach((x, y)=>{
-        switch (x.mod_type) {
-            case 'option':
-                option.push(x);
-                if(option.length <= 1){
-                    modGuts.push(
-                        <OptionMod key={'option'} data={{option}} item={{item}}/>
-                    )
-                }
-                break;
-            case 'choice':
-                choice.push(x);
-                if(choice.length <= 1){
-                    modGuts.push(
-                        <ChoiceMod key={'choice'} data={{choice}} item={{item}}/>
-                    )
-                }
-        }
-    })
-
+    const mods =[]
+    if (!item.items) {
+        mods.push(<ModWrapper key={item.item_id} item={{item}}/>)
+    }else {
+        item.items.forEach((item) => {
+            mods.push(<ModWrapper key={item.item_id} item={{item}}/>)
+        })
+    }
     return (
       <MainWrap>
         <TopNavigation/>
@@ -67,9 +48,7 @@ class ModifyItem extends React.Component {
               </View>
             </View>
 
-          <View style={{width: '100%'}}>
-            {modGuts}
-          </View>
+              {mods}
 
             <View
               style={{
@@ -105,7 +84,7 @@ function mapStateToProps(state) {
 const mapDispatchToProps = dispatch => (
     bindActionCreators({
         addToCart,
-        populateMods
+
     }, dispatch)
 )
 

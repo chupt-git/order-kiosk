@@ -61,11 +61,12 @@ export const changePickupTypeInput = pickupType => ({
   payload: { pickupType }
 })
 
-export const toggleChecked = (item, mod, name) => ({
+export const toggleChecked = (item, mod, name, itemName) => ({
   type: TOGGLE_CHECKED,
   item: {item},
   mod: {mod},
-  name: {name}
+  name: {name},
+  itemName: {itemName}
 })
 
 export function fetchProducts() {
