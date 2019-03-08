@@ -38,7 +38,6 @@ class Finish extends React.Component {
       const authorizedLocation = await authorizeAsync('sq0acp-G7NymXx00omA0eiGAMOJsKsBH6hd8UCadxSKG58DXds');
       // Authorized and authorizedLocation is available
     } catch(ex) {
-      console.log(ex)
       switch(ex.code) {
         case AuthorizeErrorNoNetwork:
           console.log("OOO")

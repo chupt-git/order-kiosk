@@ -15,6 +15,7 @@ class MenuItem extends React.Component {
     const item = this.props.item
     item.type = this.props.type
 
+
     return (
       <View style={{position: 'relative'}}>
           <TouchableOpacity onPress={() => this.props.navigation.navigate('ModifyItem', {

@@ -75,7 +75,14 @@ export default function productReducer(state = initialState, action) {
         case TOGGLE_CHECKED:
             const checkedItem = newChecked.find(x => x.id == action.item.item)
             const val = checkedItem[action.mod.mod].find(x=> x.name == action.name.name)
-            val.value = !val.value
+            switch (action.mod.mod){
+                case 'choices':
+                    val.value = action.itemName.itemName.toLowerCase()
+                    break
+                case 'options':
+                    val.value = !val.value
+                    break
+            }
 
             return {
                 ...state,
