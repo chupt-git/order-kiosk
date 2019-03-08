@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "chupt-kiosk",
+    "name": "chupt kiosk",
     "slug": "chupt-kiosk",
     "privacy": "public",
     "sdkVersion": "32.0.0",
@@ -10,7 +10,7 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/squareIcon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -23,7 +23,11 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.chupt.chupt-kiosk"
+    },
+    "android": {
+      "package": "com.chupt.chupt_kiosk"
     }
   }
 }

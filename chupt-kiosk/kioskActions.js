@@ -8,20 +8,33 @@ export const CHANGE_PHONE_INPUT = 'CHANGE_PHONE_INPUT'
 export const REMOVE_ONE_FROM_CART = 'REMOVE_ONE_FROM_CART'
 export const CHANGE_ITEM_NUMBER = 'CHANGE_ITEM_NUMBER'
 export const CHANGE_PICKUPTYPE_INPUT = 'CHANGE_PICKUPTYPE_INPUT'
+export const TOGGLE_CHECKED = 'TOGGLE_CHECKED'
+export const  POPULATE_MODS = 'POPULATE_MODS'
+export const CHANGE_SIDE = 'CHANGE_SIDE'
+
+export const changeSide = item => ({
+  type: CHANGE_SIDE,
+  payload: { item }
+})
 
 export const fetchProductsBegin = () => ({
   type: FETCH_PRODUCTS_BEGIN
-});
+})
 
 export const fetchProductsSuccess = products => ({
   type: FETCH_PRODUCTS_SUCCESS,
   payload: { products }
-});
+})
 
 export const fetchProductsFailure = error => ({
   type: FETCH_PRODUCTS_FAILURE,
   payload: { error }
-});
+})
+
+export const  populateMods = item => ({
+  type: POPULATE_MODS,
+  payload: {item}
+})
 
 export const addToCart = item => ({
   type: ADD_TO_CART,
@@ -37,7 +50,7 @@ export const changeItemNumber = (number, item) => ({
   type: CHANGE_ITEM_NUMBER,
   number: {number},
   item: {item}
-});
+})
 
 export const changeNameInput = name => ({
   type: CHANGE_NAME_INPUT,
@@ -54,9 +67,12 @@ export const changePickupTypeInput = pickupType => ({
   payload: { pickupType }
 })
 
-export const removeOneFromCart = item => ({
-  type: REMOVE_ONE_FROM_CART,
-  payload: {item}
+export const toggleChecked = (item, mod, name, itemName) => ({
+  type: TOGGLE_CHECKED,
+  item: {item},
+  mod: {mod},
+  name: {name},
+  itemName: {itemName}
 })
 
 export function fetchProducts() {
@@ -66,17 +82,17 @@ export function fetchProducts() {
       .then(handleErrors)
       .then(res => res.json())
       .then(json => {
-        dispatch(fetchProductsSuccess(json.menu));
-        return json.menu;
+        dispatch(fetchProductsSuccess(json.menu))
+        return json.menu
       })
-      .catch(error => dispatch(fetchProductsFailure(error)));
+      .catch(error => dispatch(fetchProductsFailure(error)))
   };
 }
 
 export function sendOrder(cart, contact) {
   return dispatch => {
     dispatch(fetchProductsBegin())
-    items= {}
+    let items={}
     let currentCategory = ''
     cart.forEach((dataItem) => {
       if (currentCategory !== dataItem.type) {
@@ -95,7 +111,7 @@ export function sendOrder(cart, contact) {
       }
     })
 
-    return fetch('http://192.168.1.9:5000/orders/', {
+    return fetch('http://192.168.1.9:5000/orders', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -117,7 +133,6 @@ export function sendOrder(cart, contact) {
     })
   }
 }
-
 
 function handleErrors(response) {
   if (!response.ok) {

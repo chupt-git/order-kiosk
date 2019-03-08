@@ -1,11 +1,11 @@
 import React from 'react'
-import { Text, View, TouchableOpacity, Image } from 'react-native'
-import styled from 'styled-components/native'
+import { Text, View, TouchableOpacity } from 'react-native'
 import CircleButton from '../components/CircleButton'
 import ColoredText from '../components/ColoredText'
 import MenuItemWrap from '../components/MenuItemWrap'
 import ItemTitle from '../components/ItemTitle'
-import { addToCart } from '../kioskActions'
+import MenuImage from './MenuImage.js'
+import { addToCart, changeSide } from '../kioskActions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withNavigation } from 'react-navigation'
@@ -14,21 +14,28 @@ class MenuItem extends React.Component {
   render() {
     const item = this.props.item
     item.type = this.props.type
-    let img
-    if (item.thumbnail){
-      img = (<Image
-        style={{resizeMode: 'contain', width: 200, height: 200}}
-        source={{uri: item.thumbnail.image_url}}/>)
-    }else {
-      img = (<Image
-        style={{resizeMode: 'contain', width: 200, height: 200}}
-        source={require('../assets/placeholder.jpg')}/>)
+    const addButton = []
+    if(!this.props.addSides) {
+        addButton.push(<CircleButton
+            key={'addButton'}
+            onPress={() => {
+                this.props.addToCart(item)
+                this.props.navigation.navigate('MenuPicker')}}>
+            <ColoredText>+</ColoredText>
+        </CircleButton>)
+    } else {
+        addButton.push(<CircleButton
+            key={'addButton'}
+            onPress={() => {
+                this.props.changeSide(item)
+                this.props.navigation.goBack()}}>
+            <ColoredText>+</ColoredText>
+        </CircleButton>)
     }
     return (
       <View style={{position: 'relative'}}>
           <TouchableOpacity onPress={() => this.props.navigation.navigate('ModifyItem', {
-            item: item,
-            type: this.props.type
+            item: item
           })}
           style={{
             position: 'absolute',
@@ -38,16 +45,21 @@ class MenuItem extends React.Component {
           }}>
             <Text style={{fontSize: 30}}>...</Text>
           </TouchableOpacity>
-
-
-          <MenuItemWrap>
-            {img}
+          <MenuItemWrap style={{
+            flexDirection: 'row',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-start',
+            paddingTop: 50,
+            minHeight: 300}}>
+            <MenuImage style={{width: '50%'}} item={item}/>
             <View style={{width: '50%'}}>
               <ItemTitle>{item.name}</ItemTitle>
               <Text>{item.description}</Text>
             </View>
           </MenuItemWrap>
-
+          <View>
+          </View>
           <View
             style={{
               position: 'absolute',
@@ -58,11 +70,7 @@ class MenuItem extends React.Component {
               justifyContent: 'center'
             }}>
 
-            <CircleButton onPress={() => {
-              this.props.addToCart(item)
-              this.props.navigation.navigate('MenuPicker')}}>
-              <ColoredText>+</ColoredText>
-            </CircleButton>
+              {addButton}
           </View>
         </View>
     );
@@ -77,9 +85,10 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = dispatch => (
-  bindActionCreators({
-    addToCart,
-  }, dispatch)
+    bindActionCreators({
+        addToCart,
+        changeSide
+    }, dispatch)
 )
 
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
 import HeaderHat from '../components/HeaderHat'
 import HatWrapper from '../components/HatWrapper'
 import { LinearGradient } from 'expo'
@@ -24,10 +23,11 @@ class TopNavigation extends React.Component {
             justifyContent:'center'}}>
             <CircleButton
               darkBlue
+              bigger
               onPress={() =>
                 this.props.navigation.goBack()
               }>
-              <ColoredText style={{fontSize: 30}}>←</ColoredText>
+              <ColoredText bigger style={{fontSize: 30}}>←</ColoredText>
             </CircleButton>
 
             <LogoImg source={require('../assets/chuptLogo.png')}/>

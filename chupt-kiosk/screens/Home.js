@@ -1,14 +1,10 @@
 import React from 'react'
-import { View, TouchableOpacity, Text, Image } from 'react-native'
-import { ThemeProvider } from 'styled-components/native'
-import theme from '../components/theme'
+import { Image } from 'react-native'
 import ButtonWrap from '../components/ButtonWrap'
 import MainButton from '../components/MainButton'
 import ButtonText from '../components/ButtonText'
 import MainWrap from '../components/MainWrap'
-import LogoImg from '../components/LogoImg'
 import { fetchProducts } from '../kioskActions'
-import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 class Home extends React.Component {
@@ -16,28 +12,32 @@ class Home extends React.Component {
     super(props)
   }
 
-  componentDidMount () {
+  componentWillMount () {
       this.props.dispatch(fetchProducts())
   }
 
-  render() {
+    render() {
     return (
         <MainWrap home>
-          <Image source={require('../assets/logo.png')}/>
+          <Image style={{width: '65%', resizeMode: 'contain'}}  source={require('../assets/fullLogo.png')}/>
 
           <ButtonWrap>
             <MainButton
+              style={{width: '75%'}}
               onPress={() => this.props.navigation.navigate('MenuPicker', {
                 menu: this.props.menu
               })}
-              white>
+              white
+              home>
               <ButtonText green>
                 → Start
               </ButtonText>
             </MainButton>
             <MainButton
+              style={{width: '75%'}}
               onPress={() => this.props.navigation.navigate('Pickup')}
-              blue>
+              blue
+              home>
               <ButtonText>
                 ↑ Pickup
               </ButtonText>

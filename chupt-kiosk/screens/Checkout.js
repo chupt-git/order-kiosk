@@ -7,7 +7,7 @@ import {
   changePhoneInput,
   changePickupTypeInput
 } from '../kioskActions'
-import { StyleSheet, Text, View, Button, TextInput, Picker } from 'react-native'
+import { Text, View, Button, TextInput, Picker } from 'react-native'
 
 class Checkout extends React.Component {
   render() {
@@ -53,7 +53,7 @@ class Checkout extends React.Component {
         <Button
           disabled={empty}
           title="Finish"
-          onPress={() => this.props.sendOrder(this.props.cart, contact)}/>
+          onPress={() => {this.props.navigation.navigate('Finish')}}/>
       </View>
     );
   }
@@ -79,4 +79,4 @@ const mapDispatchToProps = dispatch => (
 
 export default connect(mapStateToProps, mapDispatchToProps)(Checkout)
 
-// onPress={() => this.props.navigation.navigate('Finish')}
+// this.props.sendOrder(this.props.cart, contact)

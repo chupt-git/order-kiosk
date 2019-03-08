@@ -4,7 +4,6 @@ import MainButton from '../components/MainButton'
 import Cart from './Cart'
 import ColoredText from '../components/ColoredText'
 import CircleButton from '../components/CircleButton'
-import CartButtonWrapper from '../components/CartButtonWrapper'
 import { View } from 'react-native'
 import { withNavigation } from 'react-navigation'
 import { connect } from 'react-redux'
@@ -25,22 +24,22 @@ class BottomNavigation extends React.Component {
     }
     if (populated) {
       cartButton = (
-        <View style={{
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          width: '100%',
-          position: 'relative',
-          zIndex: 2}}>
-          <CircleButton grey>
-            <ColoredText>X</ColoredText>
-          </CircleButton>
-          <View
-            style={{
+        <View
+          style={{
               display: 'flex',
-              flexDirection: 'row'}}
-            >
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              width: '100%',
+              position: 'relative',
+              zIndex: 2}}>
+              <CircleButton grey>
+                <ColoredText>X</ColoredText>
+              </CircleButton>
+              <View
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row'}}>
             <MainButton
             noBorder
             green
@@ -53,7 +52,7 @@ class BottomNavigation extends React.Component {
             noBorder
             green
             smallWidth
-            onPress={() => this.props.navigation.navigate('Checkout')}>
+            onPress={() => this.props.navigation.navigate('Finish')}>
               <ColoredText>Checkout</ColoredText>
             </MainButton>
           </View>

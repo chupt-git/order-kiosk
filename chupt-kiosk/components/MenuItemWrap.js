@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 
-const MainButton = styled.View`
+const MenuItemWrap = styled.View`
   padding: 20px;
   display: flex;
   flex-direction: row;
@@ -12,6 +12,6 @@ const MainButton = styled.View`
   align-items: center;
   justify-content: space-around;
   position: relative;
-`;
+`
 
-export default MainButton;
+export default MenuItemWrap
