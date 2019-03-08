@@ -10,7 +10,7 @@ import {
     CHANGE_ITEM_NUMBER,
     CHANGE_PICKUPTYPE_INPUT,
     TOGGLE_CHECKED,
-    POPULATE_MODS
+    POPULATE_MODS, CHANGE_SIDE
 } from './kioskActions'
 
 const initialState = {
@@ -89,30 +89,28 @@ export default function productReducer(state = initialState, action) {
                 checked: newChecked
             }
 
+
+        case CHANGE_SIDE:
+            console.log(action.payload.item)
+s
         case POPULATE_MODS:
-            console.log(action.payload)
-            if (action.payload.item.item) {
-                const inChecked = newChecked.find(x => x.id == action.payload.item.item_id)
+            const inChecked = newChecked.find(x => x.id == action.payload.item.item_id)
 
-                if (!inChecked) {
-                    const option = []
-                    const choice = []
-                    action.payload.item.mods.forEach((x) => {
-                        switch (x.mod_type) {
-                            case 'option':
-                                option.push({name: x.name, value: x.default})
-                                break;
-                            case 'choice':
-                                choice.push({name: x.name, value: x.default})
-                        }
-                    })
-
-                    newChecked.push({
-                        id: action.payload.item.item_id, options: option, choices: choice
-                    })
-                }
-            } else {
-                console.log(action.payload)
+            if (!inChecked) {
+                const option = []
+                const choice = []
+                action.payload.item.mods.forEach((x) => {
+                    switch (x.mod_type) {
+                        case 'option':
+                            option.push({name: x.name, value: x.default})
+                            break;
+                        case 'choice':
+                            choice.push({name: x.name, value: x.default})
+                    }
+                })
+                newChecked.push({
+                    id: action.payload.item.item_id, options: option, choices: choice
+                })
             }
 
             return {

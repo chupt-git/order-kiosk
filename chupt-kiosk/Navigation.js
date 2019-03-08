@@ -7,6 +7,7 @@ import Checkout from './screens/Checkout'
 import Menu from './screens/Menu'
 import Cart from './screens/Cart'
 import ModifyItem from './screens/ModifyItem'
+import SideChange from './screens/SideChange'
 
 const Navigation = createStackNavigator(
   {
@@ -17,7 +18,8 @@ const Navigation = createStackNavigator(
   Finish: Finish,
   Checkout: Checkout,
   Cart: Cart,
-  ModifyItem: ModifyItem
+  ModifyItem: ModifyItem,
+  SideChange: SideChange
 },
   {
     initialRouteName: "Home",

@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import MainWrap from '../components/MainWrap'
 import TopNavigation from './TopNavigation'
 import BottomNavigation from './BottomNavigation'
@@ -13,18 +13,27 @@ import { addToCart } from '../kioskActions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import ModWrapper from "./ModWrapper";
+import {withNavigation} from "react-navigation";
 
 class ModifyItem extends React.Component {
 
   render() {
     const item = this.props.navigation.state.params.item
     const mods =[]
+    const sideButton =[]
     if (!item.items) {
         mods.push(<ModWrapper key={item.item_id} item={{item}}/>)
     }else {
         item.items.forEach((item) => {
             mods.push(<ModWrapper key={item.item_id} item={{item}}/>)
         })
+        sideButton.push(
+            <TouchableOpacity key={'sideButton'} onPress={() => this.props.navigation.navigate('SideChange', {
+                item: item
+            })}>
+                <Text>CHANGE SIDE</Text>
+            </TouchableOpacity>
+        )
     }
     return (
       <MainWrap>
@@ -48,7 +57,10 @@ class ModifyItem extends React.Component {
               </View>
             </View>
 
+
               {mods}
+
+              {sideButton}
 
             <View
               style={{
@@ -88,6 +100,9 @@ const mapDispatchToProps = dispatch => (
     }, dispatch)
 )
 
-export default connect(mapStateToProps, mapDispatchToProps) (ModifyItem)
+export default withNavigation(connect(
+    mapStateToProps,
+    mapDispatchToProps
+) (ModifyItem))
 
 

@@ -5,7 +5,7 @@ import ColoredText from '../components/ColoredText'
 import MenuItemWrap from '../components/MenuItemWrap'
 import ItemTitle from '../components/ItemTitle'
 import MenuImage from './MenuImage.js'
-import { addToCart } from '../kioskActions'
+import { addToCart, changeSide } from '../kioskActions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withNavigation } from 'react-navigation'
@@ -14,8 +14,24 @@ class MenuItem extends React.Component {
   render() {
     const item = this.props.item
     item.type = this.props.type
-
-
+    const addButton = []
+    if(!this.props.addSides) {
+        addButton.push(<CircleButton
+            key={'addButton'}
+            onPress={() => {
+                this.props.addToCart(item)
+                this.props.navigation.navigate('MenuPicker')}}>
+            <ColoredText>+</ColoredText>
+        </CircleButton>)
+    } else {
+        addButton.push(<CircleButton
+            key={'addButton'}
+            onPress={() => {
+                this.props.changeSide(item)
+                this.props.navigation.goBack()}}>
+            <ColoredText>+</ColoredText>
+        </CircleButton>)
+    }
     return (
       <View style={{position: 'relative'}}>
           <TouchableOpacity onPress={() => this.props.navigation.navigate('ModifyItem', {
@@ -54,11 +70,7 @@ class MenuItem extends React.Component {
               justifyContent: 'center'
             }}>
 
-            <CircleButton onPress={() => {
-              this.props.addToCart(item)
-              this.props.navigation.navigate('MenuPicker')}}>
-              <ColoredText>+</ColoredText>
-            </CircleButton>
+              {addButton}
           </View>
         </View>
     );
@@ -73,9 +85,10 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = dispatch => (
-  bindActionCreators({
-    addToCart,
-  }, dispatch)
+    bindActionCreators({
+        addToCart,
+        changeSide
+    }, dispatch)
 )
 
 

@@ -9,7 +9,13 @@ export const REMOVE_ONE_FROM_CART = 'REMOVE_ONE_FROM_CART'
 export const CHANGE_ITEM_NUMBER = 'CHANGE_ITEM_NUMBER'
 export const CHANGE_PICKUPTYPE_INPUT = 'CHANGE_PICKUPTYPE_INPUT'
 export const TOGGLE_CHECKED = 'TOGGLE_CHECKED'
-export const  POPULATE_MODS ='POPULATE_MODS'
+export const  POPULATE_MODS = 'POPULATE_MODS'
+export const CHANGE_SIDE = 'CHANGE_SIDE'
+
+export const changeSide = item => ({
+  type: CHANGE_SIDE,
+  payload: { item }
+})
 
 export const fetchProductsBegin = () => ({
   type: FETCH_PRODUCTS_BEGIN
@@ -111,7 +117,6 @@ export function sendOrder(cart, contact) {
     })
   }
 }
-
 
 function handleErrors(response) {
   if (!response.ok) {
