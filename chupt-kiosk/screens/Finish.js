@@ -15,7 +15,8 @@ import {
 class Finish extends React.Component {
   async componentWillMount() {
     try {
-      await startReaderSettingsAsync();
+      const test = await startReaderSettingsAsync();
+      console.log(test)
     } catch (ex) {
       console.log(ex)
       switch(ex.code) {
@@ -33,29 +34,29 @@ class Finish extends React.Component {
       }
     }
 
-    try {
-      // authCode is a mobile authorization code from the Mobile Authorization API
-      const authorizedLocation = await authorizeAsync('sq0acp-G7NymXx00omA0eiGAMOJsKsBH6hd8UCadxSKG58DXds');
-      // Authorized and authorizedLocation is available
-    } catch(ex) {
-      switch(ex.code) {
-        case AuthorizeErrorNoNetwork:
-          console.log("OOO")
-          // Remind connecting to network
-          break;
-        case UsageError:
-          let errorMessage = ex.message;
-          if (__DEV__) {
-            errorMessage += `\n\nDebug Message: ${ex.debugMessage}`;
-            console.log(`${ex.code}:${ex.debugCode}:${ex.debugMessage}`)
-          }
-          Alert.alert('Error', errorMessage);
-          break;
-      }
-    }
+    // try {
+    //   // authCode is a mobile authorization code from the Mobile Authorization API
+    //   const authorizedLocation = await authorizeAsync('sq0acp-G7NymXx00omA0eiGAMOJsKsBH6hd8UCadxSKG58DXds');
+    //   // Authorized and authorizedLocation is available
+    // } catch(ex) {
+    //   switch(ex.code) {
+    //     case AuthorizeErrorNoNetwork:
+    //       console.log("OOO")
+    //       // Remind connecting to network
+    //       break;
+    //     case UsageError:
+    //       let errorMessage = ex.message;
+    //       if (__DEV__) {
+    //         errorMessage += `\n\nDebug Message: ${ex.debugMessage}`;
+    //         console.log(`${ex.code}:${ex.debugCode}:${ex.debugMessage}`)
+    //       }
+    //       Alert.alert('Error', errorMessage);
+    //       break;
+    //   }
+    // }
   }
 
-  static async onCheckout() {
+  async onCheckout() {
     const checkoutParams = {
       amountMoney: {
         amount: 1,

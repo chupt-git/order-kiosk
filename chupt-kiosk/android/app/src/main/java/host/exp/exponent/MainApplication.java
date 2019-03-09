@@ -35,6 +35,7 @@ import com.squareup.sdk.reader.ReaderSdk;
 
 // Needed for `react-native link`
 // import com.facebook.react.ReactApplication;
+import sqip.react.SquareInAppPaymentsPackage;
 import com.squareup.sdk.reader.react.ReaderSdkPackage;
 
 public class MainApplication extends ExpoApplication implements AppLoaderPackagesProviderInterface<ReactPackage> {
@@ -63,6 +64,7 @@ public class MainApplication extends ExpoApplication implements AppLoaderPackage
 
         // Needed for `react-native link`
         // new MainReactPackage(),
+            new SquareInAppPaymentsPackage(),
             new ReaderSdkPackage()
     );
   }
