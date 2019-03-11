@@ -17,8 +17,8 @@ repositories {
   maven {
     url "https://sdk.squareup.com/android"
     credentials {
-      username SQUARE_READER_SDK_APPLICATION_ID
-      password SQUARE_READER_SDK_REPOSITORY_PASSWORD
+      username 'sq0idp-EEr0UerVULRXtF1xdh3zLw'
+      password 'gcfbf3tevbr2jrovtflv3p57vhht5ho4suotytxknnf3jldlht3q'
     }
   }
   jcenter()
