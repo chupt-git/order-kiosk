@@ -4381,7 +4381,7 @@
     <string name="color_purple">Purple</string>
     <string name="color_red">Red</string>
     <string name="color_yellow">Yellow</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">6727ce6a-350c-496a-b1d5-392e24227c5e</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">a55ace7a-d662-497d-9f16-8549364a0fa0</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>

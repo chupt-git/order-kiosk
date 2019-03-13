@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-371:12
-INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-371:12
-INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-371:12
-INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-371:12
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-370:12
+INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-370:12
+INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-370:12
+INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-370:12
 MERGED from [:react-native-square-reader-sdk] /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/node_modules/react-native-square-reader-sdk/android/build/intermediates/merged_manifests/release/processReleaseManifest/merged/AndroidManifest.xml:17:1-26:12
 MERGED from [:react-native-fabric] /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/node_modules/react-native-fabric/android/build/intermediates/merged_manifests/release/processReleaseManifest/merged/AndroidManifest.xml:2:1-11:12
 MERGED from [host.exp.exponent:expoview:32.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/expoview-32.0.0.aar/1953188914e2c5b96b671f2fbaa745aa/AndroidManifest.xml:2:1-91:12
@@ -161,22 +161,22 @@ MERGED from [asia.ivity.android:drag-sort-listview:1.0] /Users/chelsea/.gradle/c
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.0.aar/b30338a0d7ef297144a1123d04ec777b/AndroidManifest.xml:2:1-11:12
 MERGED from [com.jakewharton.threetenabp:threetenabp:1.0.5] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/threetenabp-1.0.5.aar/f50839cf938c039c265f6e07fa97f0fd/AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.android.gms:play-services-safetynet-license:12.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-safetynet-license-12.0.1.aar/48baec23757d5e93f23a65229b57cbfe/AndroidManifest.xml:17:1-24:12
-INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-371:12
-INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-371:12
-INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-371:12
+INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-370:12
+INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-370:12
+INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-370:12
 	package
 		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:3:3-30
 		INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-371:12
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-370:12
 		INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:5:3-49
 	android:versionCode
 		INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-371:12
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-370:12
 		INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:4:3-61
@@ -447,7 +447,7 @@ ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/m
 	android:name
 		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:46:17-60
 application
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:48:3-370:17
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:48:3-369:17
 MERGED from [host.exp.exponent:expoview:32.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/expoview-32.0.0.aar/1953188914e2c5b96b671f2fbaa745aa/AndroidManifest.xml:71:5-89:19
 MERGED from [host.exp.exponent:expoview:32.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/expoview-32.0.0.aar/1953188914e2c5b96b671f2fbaa745aa/AndroidManifest.xml:71:5-89:19
 MERGED from [com.facebook.react:react-native:32.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/react-native-32.0.0.aar/7468dfd4097dcf5eaa82e80a68d213c7/AndroidManifest.xml:13:5-20
@@ -595,389 +595,389 @@ MERGED from [com.google.android.gms:play-services-safetynet-license:12.0.1] /Use
 	android:name
 		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:49:5-36
 activity#host.exp.exponent.LauncherActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:55:5-97:16
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:54:5-96:16
 	android:screenOrientation
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:59:7-43
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:58:7-43
 	android:launchMode
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:58:7-38
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:57:7-38
 	android:exported
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:57:7-30
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:56:7-30
 	android:theme
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:60:7-66
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:59:7-66
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:56:7-39
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:55:7-39
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:exp+data:scheme:exps
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:62:7-70:23
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:61:7-69:23
 data
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:63:9-37
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:62:9-37
 	android:path
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:191:50-78
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:190:50-78
 	android:host
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:75:11-34
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:74:11-34
 	android:scheme
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:63:15-35
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:62:15-35
 	android:pathPattern
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:84:11-35
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:83:11-35
 	android:pathPrefix
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:76:11-34
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:75:11-34
 action#android.intent.action.VIEW
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:66:9-60
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:65:9-60
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:66:17-58
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:65:17-58
 category#android.intent.category.DEFAULT
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:68:9-67
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:67:9-67
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:68:19-65
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:67:19-65
 category#android.intent.category.BROWSABLE
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:69:9-69
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:68:9-69
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:69:19-67
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:68:19-67
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:*.exp.direct+data:host:*.exp.direct+data:host:exp.host+data:host:exp.host+data:pathPattern:.*+data:pathPattern:.*+data:pathPrefix:/@+data:pathPrefix:/@+data:scheme:http+data:scheme:http+data:scheme:https+data:scheme:https
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:73:7-95:23
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:72:7-94:23
 activity#host.exp.exponent.experience.ExperienceActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:99:5-104:16
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:98:5-103:16
 	android:windowSoftInputMode
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:103:7-49
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:102:7-49
 	android:configChanges
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:101:7-77
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:100:7-77
 	android:theme
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:102:7-50
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:101:7-50
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:100:7-52
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:99:7-52
 activity#host.exp.exponent.MainActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:106:5-115:16
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:105:5-114:16
 	android:launchMode
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:108:7-38
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:107:7-38
 	android:windowSoftInputMode
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:111:7-49
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:110:7-49
 	android:configChanges
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:109:7-77
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:108:7-77
 	android:theme
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:110:7-51
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:109:7-51
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:107:7-35
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:106:7-35
 activity#host.exp.exponent.experience.HomeActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:117:5-130:16
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:116:5-129:16
 	android:screenOrientation
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:121:7-43
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:120:7-43
 	android:label
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:119:7-39
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:118:7-39
 	android:launchMode
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:120:7-38
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:119:7-38
 	android:theme
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:122:7-50
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:121:7-50
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:118:7-46
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:117:7-46
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:124:7-128:23
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:123:7-127:23
 action#android.intent.action.MAIN
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:125:9-60
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:124:9-60
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:125:17-58
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:124:17-58
 category#android.intent.category.LAUNCHER
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:127:9-68
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:126:9-68
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:127:19-66
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:126:19-66
 activity#host.exp.exponent.experience.TvActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:132:5-141:15
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:131:5-140:15
 	android:screenOrientation
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:136:7-44
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:135:7-44
 	android:label
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:134:7-39
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:133:7-39
 	android:theme
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:135:7-50
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:134:7-50
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:133:7-44
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:132:7-44
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LEANBACK_LAUNCHER
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:137:6-140:22
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:136:6-139:22
 category#android.intent.category.LEANBACK_LAUNCHER
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:139:8-77
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:138:8-77
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:139:18-74
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:138:18-74
 activity#com.facebook.react.devsupport.DevSettingsActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:145:5-81
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:144:5-81
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:145:15-79
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:144:15-79
 activity#abi32_0_0.com.facebook.react.devsupport.DevSettingsActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:148:5-91
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:147:5-91
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:148:15-89
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:147:15-89
 activity#abi31_0_0.com.facebook.react.devsupport.DevSettingsActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:150:5-91
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:149:5-91
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:150:15-89
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:149:15-89
 activity#abi30_0_0.com.facebook.react.devsupport.DevSettingsActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:153:5-91
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:152:5-91
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:153:15-89
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:152:15-89
 activity#abi29_0_0.com.facebook.react.devsupport.DevSettingsActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:156:5-91
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:155:5-91
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:156:15-89
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:155:15-89
 activity#abi28_0_0.com.facebook.react.devsupport.DevSettingsActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:159:5-91
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:158:5-91
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:159:15-89
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:158:15-89
 activity#abi27_0_0.com.facebook.react.devsupport.DevSettingsActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:162:5-91
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:161:5-91
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:162:15-89
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:161:15-89
 activity#abi26_0_0.com.facebook.react.devsupport.DevSettingsActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:165:5-91
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:164:5-91
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:165:15-89
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:164:15-89
 activity#host.exp.exponent.ExponentDevActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:169:5-176:16
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:168:5-175:16
 	android:screenOrientation
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:173:7-43
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:172:7-43
 	android:label
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:172:7-48
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:171:7-48
 	android:windowSoftInputMode
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:175:7-46
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:174:7-46
 	android:exported
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:171:7-30
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:170:7-30
 	android:theme
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:174:7-49
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:173:7-49
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:170:7-42
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:169:7-42
 activity#host.exp.exponent.oauth.OAuthWebViewActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:178:5-182:16
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:177:5-181:16
 	android:screenOrientation
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:180:7-43
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:179:7-43
 	android:theme
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:181:7-50
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:180:7-50
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:179:7-49
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:178:7-49
 activity#net.openid.appauth.RedirectUriReceiverActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:184:5-193:16
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:183:5-192:16
 REJECTED from [net.openid:appauth:0.7.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/appauth-0.7.1.aar/2d53652c79949b372d16ad7755f38456/AndroidManifest.xml:32:9-43:20
 	tools:node
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:186:9-29
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:185:9-29
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:185:9-70
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:184:9-70
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:path:oauthredirect+data:scheme:host.exp.exponent
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:187:7-192:23
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:186:7-191:23
 activity#host.exp.exponent.oauth.OAuthResultActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:195:5-197:16
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:194:5-196:16
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:196:7-48
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:195:7-48
 activity#abi32_0_0.expo.modules.appauth.AppAuthBrowserActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:199:5-201:16
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:198:5-200:16
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:200:7-75
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:199:7-75
 activity#expo.modules.payments.stripe.RedirectUriReceiver
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:204:5-215:16
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:203:5-214:16
 	android:launchMode
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:206:9-40
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:205:9-40
 	android:exported
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:205:9-32
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:204:9-32
 	android:theme
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:208:9-79
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:207:9-79
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:207:9-72
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:206:9-72
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:expo.modules.payments.stripe
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:209:9-214:25
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:208:9-213:25
 activity#abi31_0_0.expo.modules.payments.stripe.RedirectUriReceiver
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:217:5-228:16
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:216:5-227:16
 	android:launchMode
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:219:9-40
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:218:9-40
 	android:exported
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:218:9-32
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:217:9-32
 	android:theme
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:221:9-79
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:220:9-79
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:220:9-82
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:219:9-82
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:abi31_0_0.expo.modules.payments.stripe
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:222:9-227:25
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:221:9-226:25
 activity#host.exp.exponent.chrometabs.ChromeTabsManagerActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:232:5-234:16
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:231:5-233:16
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:233:7-59
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:232:7-59
 activity#host.exp.exponent.experience.ErrorActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:236:5-240:16
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:235:5-239:16
 	android:screenOrientation
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:239:7-43
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:238:7-43
 	android:theme
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:238:7-49
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:237:7-49
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:237:7-47
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:236:7-47
 activity#host.exp.exponent.experience.InfoActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:242:5-246:16
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:241:5-245:16
 	android:screenOrientation
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:244:7-43
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:243:7-43
 	android:theme
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:245:7-50
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:244:7-50
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:243:7-46
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:242:7-46
 activity#com.facebook.FacebookActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:248:5-253:39
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:247:5-252:39
 MERGED from [com.facebook.android:facebook-common:4.39.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/facebook-common-4.39.0.aar/06615c0b6754bacf6189c4e69a0a1164/AndroidManifest.xml:29:9-32:66
 MERGED from [com.facebook.android:facebook-common:4.39.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/facebook-common-4.39.0.aar/06615c0b6754bacf6189c4e69a0a1164/AndroidManifest.xml:29:9-32:66
 	android:label
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:251:7-39
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:250:7-39
 	android:configChanges
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:250:7-90
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:249:7-90
 	android:theme
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:252:7-66
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:251:7-66
 		REJECTED from [com.facebook.android:facebook-common:4.39.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/facebook-common-4.39.0.aar/06615c0b6754bacf6189c4e69a0a1164/AndroidManifest.xml:32:13-63
 	tools:replace
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:253:7-36
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:252:7-36
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:249:7-51
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:248:7-51
 activity#com.facebook.ads.InterstitialAdActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:255:5-259:69
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:254:5-258:69
 	android:label
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:258:7-39
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:257:7-39
 	android:configChanges
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:257:7-90
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:256:7-90
 	android:theme
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:259:7-66
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:258:7-66
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:256:7-61
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:255:7-61
 service#host.exp.exponent.ExponentIntentService
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:261:5-263:34
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:260:5-262:34
 	android:exported
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:263:7-31
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:262:7-31
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:262:7-44
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:261:7-44
 receiver#host.exp.exponent.referrer.InstallReferrerReceiver
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:266:5-272:16
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:265:5-271:16
 	android:exported
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:268:7-30
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:267:7-30
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:267:7-72
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:266:7-72
 intent-filter#action:name:com.android.vending.INSTALL_REFERRER
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:269:7-271:23
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:268:7-270:23
 action#com.android.vending.INSTALL_REFERRER
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:270:9-71
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:269:9-71
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:270:17-68
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:269:17-68
 receiver#com.google.android.gms.analytics.AnalyticsReceiver
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:282:5-287:16
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:281:5-286:16
 MERGED from [com.google.android.gms:play-services-analytics:16.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.1.aar/372b54c92a1ca5bd16ffaf78cc0395bc/AndroidManifest.xml:30:9-34:20
 MERGED from [com.google.android.gms:play-services-analytics:16.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.1.aar/372b54c92a1ca5bd16ffaf78cc0395bc/AndroidManifest.xml:30:9-34:20
 	android:enabled
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:283:15-37
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:282:15-37
 	android:exported
 		ADDED from [com.google.android.gms:play-services-analytics:16.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.1.aar/372b54c92a1ca5bd16ffaf78cc0395bc/AndroidManifest.xml:33:13-37
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:282:15-80
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:281:15-80
 intent-filter#action:name:com.google.android.gms.analytics.ANALYTICS_DISPATCH
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:284:7-286:23
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:283:7-285:23
 action#com.google.android.gms.analytics.ANALYTICS_DISPATCH
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:285:9-86
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:284:9-86
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:285:17-83
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:284:17-83
 service#com.google.android.gms.analytics.AnalyticsService
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:289:5-291:40
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:288:5-290:40
 MERGED from [com.google.android.gms:play-services-analytics:16.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.1.aar/372b54c92a1ca5bd16ffaf78cc0395bc/AndroidManifest.xml:36:9-39:40
 MERGED from [com.google.android.gms:play-services-analytics:16.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.1.aar/372b54c92a1ca5bd16ffaf78cc0395bc/AndroidManifest.xml:36:9-39:40
 	android:enabled
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:290:14-36
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:289:14-36
 	android:exported
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:291:14-38
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:290:14-38
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:289:14-78
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:288:14-78
 receiver#com.google.android.gms.gcm.GcmReceiver
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:294:5-304:16
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:293:5-303:16
 	android:exported
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:296:7-30
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:295:7-30
 	android:permission
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:297:7-67
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:296:7-67
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:295:7-60
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:294:7-60
 intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+action:name:com.google.android.c2dm.intent.REGISTRATION+category:name:host.exp.exponent
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:298:7-303:23
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:297:7-302:23
 action#com.google.android.c2dm.intent.RECEIVE
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:299:9-72
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:298:9-72
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:299:17-70
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:298:17-70
 action#com.google.android.c2dm.intent.REGISTRATION
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:300:9-77
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:299:9-77
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:300:17-75
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:299:17-75
 category#host.exp.exponent
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:302:9-53
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:301:9-53
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:302:19-51
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:301:19-51
 service#host.exp.exponent.gcm.ExponentGcmListenerService
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:306:5-312:15
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:305:5-311:15
 	android:exported
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:308:7-31
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:307:7-31
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:307:7-53
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:306:7-53
 intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:309:7-311:23
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:308:7-310:23
 service#host.exp.exponent.gcm.ExponentInstanceIDListenerService
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:313:5-319:15
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:312:5-318:15
 	android:exported
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:315:7-31
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:314:7-31
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:314:7-60
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:313:7-60
 intent-filter#action:name:com.google.android.gms.iid.InstanceID
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:316:7-318:23
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:315:7-317:23
 action#com.google.android.gms.iid.InstanceID
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:317:9-71
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:316:9-71
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:317:17-69
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:316:17-69
 service#host.exp.exponent.gcm.GcmRegistrationIntentService
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:320:5-323:15
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:319:5-322:15
 	android:exported
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:322:7-31
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:321:7-31
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:321:7-55
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:320:7-55
 service#host.exp.exponent.fcm.ExpoFcmMessagingService
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:326:5-331:15
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:325:5-330:15
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:327:7-50
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:326:7-50
 intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:328:7-330:23
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:327:7-329:23
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:329:9-69
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:328:9-69
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:329:17-67
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:328:17-67
 meta-data#com.google.firebase.messaging.default_notification_icon
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:332:5-334:62
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:331:5-333:62
 	android:resource
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:334:7-59
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:333:7-59
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:333:7-77
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:332:7-77
 meta-data#com.google.firebase.messaging.default_notification_color
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:335:5-337:47
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:334:5-336:47
 	android:resource
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:337:7-44
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:336:7-44
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:336:7-78
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:335:7-78
 service#host.exp.exponent.fcm.FcmRegistrationIntentService
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:338:5-341:15
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:337:5-340:15
 	android:exported
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:340:7-31
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:339:7-31
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:339:7-55
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:338:7-55
 activity#com.theartofdev.edmodo.cropper.CropImageActivity
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:344:5-347:16
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:343:5-346:16
 	android:theme
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:346:7-50
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:345:7-50
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:345:7-70
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:344:7-70
 meta-data#io.fabric.ApiKey
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:352:5-354:65
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:351:5-353:65
 	android:value
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:354:7-63
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:353:7-63
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:353:7-38
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:352:7-38
 meta-data#com.google.android.geo.API_KEY
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:359:5-361:64
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:358:5-360:64
 	android:value
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:361:7-62
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:360:7-62
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:360:7-52
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:359:7-52
 meta-data#com.facebook.sdk.ApplicationId
-ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:367:5-83
+ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:366:5-83
 	android:value
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:367:62-81
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:366:62-81
 	android:name
-		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:367:16-61
+		ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:366:16-61
 uses-sdk
 INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml

@@ -92,7 +92,7 @@ export default function productReducer(state = initialState, action) {
 
         case CHANGE_SIDE:
             console.log(action.payload.item)
-s
+
         case POPULATE_MODS:
             const inChecked = newChecked.find(x => x.id == action.payload.item.item_id)
 
