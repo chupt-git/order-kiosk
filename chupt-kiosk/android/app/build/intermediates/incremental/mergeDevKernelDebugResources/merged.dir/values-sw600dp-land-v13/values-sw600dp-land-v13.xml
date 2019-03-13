@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="home_view_sales_frame_shadow">#0F000000</color>
+    <dimen name="cart_header_height">@dimen/marin_min_height</dimen>
+    <dimen name="home_view_sales_frame_shadow_width">2dp</dimen>
+    <dimen name="landing_gap">@dimen/marin_gap_ultra_large</dimen>
+    <dimen name="marin_cart_item_gutter">20dp</dimen>
+    <dimen name="marin_cart_item_gutter_half">10dp</dimen>
+    <dimen name="marin_charge_height">@dimen/marin_min_height</dimen>
+    <dimen name="marin_grid_tile_text_size">14sp</dimen>
+    <dimen name="marin_gutter_applet_section_button_bottom">14dp</dimen>
+    <dimen name="marin_gutter_applet_section_button_inner">13dp</dimen>
+    <dimen name="marin_split_ticket_width">287dp</dimen>
+    <dimen name="marin_text_tile_inner_padding">@dimen/marin_gap_mini</dimen>
+    <dimen name="marin_text_tile_outer_padding">@dimen/marin_gap_mini</dimen>
+    <dimen name="nav_column_item_height">48dp</dimen>
+    <dimen name="permission_passcode_group_bottom_margin">28dp</dimen>
+    <dimen name="r6_first_time_video_text_margin_top">16dp</dimen>
+    <dimen name="r6_first_time_video_text_size">32sp</dimen>
+    <dimen name="responsive_16P96L_64P0L_72P0L_96P0L">0dp</dimen>
+    <dimen name="responsive_16_64P0L_72P0L_96P0L">0dp</dimen>
+    <dimen name="world_landing_horizontal_padding">224dp</dimen>
+    <dimen name="world_landing_vertical_padding">64dp</dimen>
+    <drawable name="marin_badge_background_wide">@drawable/marin_selector_badge_ultra_light_gray</drawable>
+    <integer name="color_picker_column_count">5</integer>
+    <integer name="signature_color_picker_column_count">@integer/color_picker_column_count</integer>
+    <item name="no_applet_drawer_root_view" type="layout">@layout/no_applet_drawer_root_view_tablet_master_detail</item>
+    <item name="root_view" type="layout">@layout/root_view_tablet_master_detail</item>
+    <style name="TextAppearance.Marin.Badge.Hamburger.Wide">
+    <item name="android:textSize">@dimen/marin_text_badge</item>
+    <item name="android:textColor">@color/marin_white</item>
+    <item name="weight">medium</item>
+  </style>
+    <style name="Widget.Marin.Button.ActionBar.Navigation.Burger.Wide">
+    <item name="android:background">@drawable/marin_selector_ultra_light_gray_pressed</item>
+    <item name="android:textColor">@color/marin_text_selector_dark_gray</item>
+  </style>
+</resources>

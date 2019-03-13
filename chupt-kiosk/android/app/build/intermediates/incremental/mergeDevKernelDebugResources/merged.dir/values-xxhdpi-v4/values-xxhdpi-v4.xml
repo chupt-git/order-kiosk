@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="r12_lights" type="drawable">@drawable/r12_lights_xxl</item>
+    <item name="r12_no_lights" type="drawable">@drawable/r12_no_lights_xxl</item>
+</resources>

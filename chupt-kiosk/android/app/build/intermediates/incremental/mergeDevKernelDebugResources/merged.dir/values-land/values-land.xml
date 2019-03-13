@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="day_of_week_responsive">
+    <item>@string/long_monday</item>
+    <item>@string/long_tuesday</item>
+    <item>@string/long_wednesday</item>
+    <item>@string/long_thursday</item>
+    <item>@string/long_friday</item>
+    <item>@string/long_saturday</item>
+    <item>@string/long_sunday</item>
+  </string-array>
+    <bool name="is_portrait">false</bool>
+    <bool name="show_tip_breakdown">true</bool>
+    <dimen name="abc_action_bar_default_height_material">48dp</dimen>
+    <dimen name="abc_action_bar_progress_bar_size">32dp</dimen>
+    <dimen name="abc_text_size_subtitle_material_toolbar">12dp</dimen>
+    <dimen name="abc_text_size_title_material_toolbar">14dp</dimen>
+    <dimen name="crm_customer_input_width">536dp</dimen>
+    <dimen name="default_status_bar_icon_padding_horizontal">@dimen/status_bar_padding_half</dimen>
+    <dimen name="employee_management_timecards_button_text_size">32sp</dimen>
+    <dimen name="employee_management_timecards_glyph_margin">48dp</dimen>
+    <dimen name="employee_management_timecards_glyph_margin_bottom_card">20dp</dimen>
+    <dimen name="employee_management_timecards_glyph_margin_top_card">32dp</dimen>
+    <dimen name="employee_management_timecards_gutter">16dp</dimen>
+    <dimen name="employee_management_timecards_margin">12dp</dimen>
+    <dimen name="glyph_logotype_font_size">40.16dp</dimen>
+    <dimen name="glyph_logotype_height">32dp</dimen>
+    <dimen name="glyph_logotype_width_en">235dp</dimen>
+    <dimen name="glyph_logotype_width_es">185dp</dimen>
+    <dimen name="glyph_logotype_width_fr">218dp</dimen>
+    <dimen name="glyph_logotype_width_ja">166dp</dimen>
+    <dimen name="invoice_bottom_card_dialog_width">460dp</dimen>
+    <dimen name="keypad_letters_text_size">10sp</dimen>
+    <dimen name="keypad_letters_text_size_small">8sp</dimen>
+    <dimen name="keypad_line_spacing_extra">6sp</dimen>
+    <dimen name="keypad_text_size">24sp</dimen>
+    <dimen name="keypad_text_size_small">20sp</dimen>
+    <dimen name="landing_gap">@dimen/marin_gap_small</dimen>
+    <dimen name="loyalty_contents_width">460dp</dimen>
+    <dimen name="marin_action_bar_header_gutter">0dp</dimen>
+    <dimen name="marin_charge_height">@dimen/marin_min_height</dimen>
+    <dimen name="marin_text_charge">@dimen/marin_text_default</dimen>
+    <dimen name="marin_text_logo">32sp</dimen>
+    <dimen name="message_detail_horizontal_padding">0dp</dimen>
+    <dimen name="permission_passcode_group_bottom_margin">5dp</dimen>
+    <dimen name="permission_passcode_group_height">20dp</dimen>
+    <dimen name="permission_passcode_group_top_margin">28dp</dimen>
+    <dimen name="permission_passcode_pad_margin">28dp</dimen>
+    <dimen name="pinpad_height">192dp</dimen>
+    <dimen name="r6_first_time_video_text_margin_top">0dp</dimen>
+    <dimen name="r6_first_time_video_text_size">20sp</dimen>
+    <dimen name="rate_max_message_width">630dp</dimen>
+    <dimen name="responsive_16P48L_64_72_96">48dp</dimen>
+    <dimen name="responsive_16P96L_64P0L_72P0L_96P0L">96dp</dimen>
+    <dimen name="responsive_32P48L_64_72_96">48dp</dimen>
+    <dimen name="responsive_48P96L_60P120L_96P192L">96dp</dimen>
+    <dimen name="responsive_96P192L_120P240L_192P384L">192dp</dimen>
+    <dimen name="tutorial_height">@dimen/marin_min_height</dimen>
+    <integer name="color_picker_column_count">5</integer>
+    <integer name="crm_customer_input_help_text_gravity">@integer/center_horizontal</integer>
+    <integer name="noho_glyph_visibility">@integer/view_gone</integer>
+    <integer name="noho_message_image_visibility">@integer/view_gone</integer>
+    <integer name="signature_color_picker_column_count">10</integer>
+    <integer name="tutorial_dialog_title_lines">1</integer>
+    <string name="deposit_speed_one_to_two_bus_days">1–2 Business Days</string>
+    <style name="DateTimePicker"/>
+    <style name="OrientationVerticalOnPhonePortrait">
+    <item name="android:orientation">horizontal</item>
+  </style>
+    <style name="TextAppearance.Marin.ModalTitle.SingleLineByOrientation">
+    <item name="android:singleLine">true</item>
+  </style>
+    <style name="Widget.Design.TabLayout" parent="Base.Widget.Design.TabLayout">
+        <item name="tabGravity">center</item>
+        <item name="tabMode">fixed</item>
+    </style>
+    <style name="Widget.Marin.GlyphView.VisibleByOrientation">
+    <item name="android:visibility">gone</item>
+  </style>
+</resources>

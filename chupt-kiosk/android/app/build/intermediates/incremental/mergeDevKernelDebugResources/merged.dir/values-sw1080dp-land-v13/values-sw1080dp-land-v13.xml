@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="employee_management_timecards_button_text_size">48sp</dimen>
+    <dimen name="employee_management_timecards_glyph_margin">108dp</dimen>
+    <dimen name="employee_management_timecards_gutter">548dp</dimen>
+    <dimen name="employee_management_timecards_margin">64dp</dimen>
+    <dimen name="marin_gap_grid_inner_padding">24dp</dimen>
+    <dimen name="marin_gap_grid_outer_padding">24dp</dimen>
+    <dimen name="marin_gap_grid_padding_wide">24dp</dimen>
+    <dimen name="marin_gap_tile_padding_horizontal">16dp</dimen>
+    <dimen name="marin_grid_tile_text_size">24sp</dimen>
+    <dimen name="marin_split_ticket_width">440dp</dimen>
+    <dimen name="nav_column_item_height">96dp</dimen>
+    <dimen name="responsive_16P96L_64P0L_72P0L_96P0L">0dp</dimen>
+    <dimen name="responsive_16_64P0L_72P0L_96P0L">0dp</dimen>
+    <dimen name="responsive_48P96L_60P120L_96P192L">192dp</dimen>
+    <dimen name="responsive_96P192L_120P240L_192P384L">384dp</dimen>
+    <dimen name="world_landing_horizontal_padding">492dp</dimen>
+    <dimen name="world_landing_logo_padding">72dp</dimen>
+    <dimen name="world_landing_vertical_padding">96dp</dimen>
+</resources>

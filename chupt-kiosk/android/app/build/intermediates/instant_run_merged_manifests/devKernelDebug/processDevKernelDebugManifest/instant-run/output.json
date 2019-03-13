@@ -1,0 +1,1 @@
+[{"outputType":{"type":"INSTANT_RUN_MERGED_MANIFESTS"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":106,"versionName":"2.10.7","enabled":true,"outputFile":"app-devKernel-debug.apk","fullName":"devKernelDebug","baseName":"devKernel-debug"},"path":"AndroidManifest.xml","properties":{"packageId":"host.exp.exponent","split":"","minSdkVersion":"21"}}]

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="day_of_week_responsive">
+    <item>\@string/long_monday</item>
+    <item>\@string/long_tuesday</item>
+    <item>\@string/long_wednesday</item>
+    <item>\@string/long_thursday</item>
+    <item>\@string/long_friday</item>
+    <item>\@string/long_saturday</item>
+    <item>\@string/long_sunday</item>
+  </string-array>
+    <string name="crm_email_collection_enter_email_address">Saisir une adresse email</string>
+    <string name="crm_email_collection_settings_screen_label">Afficher l’écran Collection des emails</string>
+    <string name="deposit_speed_one_to_two_bus_days">un à deux jours ouvrables</string>
+    <string name="gift_card_load_amount">Glisser la carte cadeau pour créditer {amount}</string>
+    <string name="kitchen_printing_cardholder_name_retrieving">Récupération du nom du titulaire d’une carte à puce</string>
+    <string name="points_redeem_button">Échanger contre {points} {points_terminology}</string>
+    <string name="points_redeem_button_applied">Appliqué pour {points} {points_terminology}</string>
+    <string name="points_redeem_button_disabled">{points} {points_terminology}</string>
+    <string name="split_tender_card_tendered">Débit de {amount} autorisé sur {brand} {digits}</string>
+    <string name="split_tender_card_tendered_plus_tip">Débit de {amount} + pourboire autorisé sur {brand} {digits}</string>
+</resources>

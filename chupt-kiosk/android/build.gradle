@@ -14,6 +14,12 @@ buildscript {
   }
 }
 
+
+ext {
+  compileSdkVersion = 23
+  buildToolsVersion = '23.0.1'
+}
+
 allprojects {
   repositories {
     // For non-detach

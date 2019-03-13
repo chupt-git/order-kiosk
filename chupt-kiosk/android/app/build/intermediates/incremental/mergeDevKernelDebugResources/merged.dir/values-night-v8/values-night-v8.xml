@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="noho_background">@color/noho_standard_night_dark</color>
+    <color name="noho_divider_hairline">@color/noho_standard_black</color>
+    <color name="noho_inner_shadow_color">#12000000</color>
+    <color name="noho_number_picker_selected">@color/noho_text_body</color>
+    <color name="noho_number_picker_unselected">@color/noho_standard_medium_gray</color>
+    <color name="noho_row_legacy_icon">@color/noho_standard_night_gray</color>
+    <color name="noho_row_legacy_icon_destructive">@color/noho_standard_red</color>
+    <color name="noho_standard_night_almost_black">#151515</color>
+    <color name="noho_standard_night_dark">#2f2f2f</color>
+    <color name="noho_standard_night_extra_dark">#242424</color>
+    <color name="noho_standard_night_gray">#7c7f82</color>
+    <color name="noho_standard_night_gray_35_opacity">#597c7f82</color>
+    <color name="noho_standard_night_gray_pressed">#707275</color>
+    <color name="noho_text_body">@color/noho_standard_white</color>
+    <color name="noho_text_button_destructive">@color/noho_standard_white</color>
+    <color name="noho_text_button_link_disabled">@color/noho_standard_night_gray_35_opacity</color>
+    <color name="noho_text_button_link_enabled">@color/noho_standard_blue</color>
+    <color name="noho_text_button_primary_disabled">@color/noho_standard_light_gray</color>
+    <color name="noho_text_button_primary_disabled_payment_flow">@color/noho_standard_light_gray_disabled</color>
+    <color name="noho_text_button_primary_enabled">@color/noho_standard_white</color>
+    <color name="noho_text_button_secondary_disabled">@color/noho_standard_night_gray_35_opacity</color>
+    <color name="noho_text_button_secondary_enabled">@color/noho_standard_blue</color>
+    <color name="noho_text_button_tertiary_disabled">@color/noho_standard_night_gray_35_opacity</color>
+    <color name="noho_text_button_tertiary_enabled">@color/noho_standard_blue</color>
+    <color name="noho_text_help">@color/noho_standard_gray_40</color>
+    <color name="noho_text_help_link">@color/noho_standard_night_gray</color>
+    <color name="noho_text_hint">@color/noho_standard_night_gray</color>
+    <color name="noho_text_input">@color/noho_standard_light_gray</color>
+    <color name="noho_text_label">@color/noho_standard_white</color>
+    <color name="noho_text_subheader">@color/noho_standard_light_gray</color>
+    <color name="noho_text_topbar_action_disabled">@color/noho_standard_light_gray</color>
+    <color name="noho_text_topbar_action_enabled">@color/noho_standard_blue</color>
+    <color name="noho_text_topbar_title">@color/noho_standard_light_gray</color>
+    <color name="noho_topbar_background">@color/noho_standard_night_dark</color>
+    <drawable name="noho_button_primary_background_disabled">@color/noho_standard_night_gray</drawable>
+    <drawable name="noho_button_primary_background_enabled">@color/noho_standard_blue</drawable>
+    <drawable name="noho_button_primary_background_pressed">@color/noho_standard_night_gray_pressed</drawable>
+    <drawable name="noho_button_secondary_background_disabled">@color/noho_standard_night_dark</drawable>
+    <drawable name="noho_button_secondary_background_enabled">@color/noho_standard_night_extra_dark</drawable>
+    <drawable name="noho_button_tertiary_background_disabled">@color/noho_standard_night_extra_dark</drawable>
+    <drawable name="noho_button_tertiary_background_enabled">@color/noho_standard_night_dark</drawable>
+    <drawable name="noho_clear">@android:color/transparent</drawable>
+    <drawable name="noho_row_background">@android:color/transparent</drawable>
+    <drawable name="noho_row_background_pressed">@color/noho_standard_gray_60</drawable>
+    <drawable name="noho_standard_night_almost_black">@color/noho_standard_night_almost_black</drawable>
+    <drawable name="noho_standard_night_dark">@color/noho_standard_night_dark</drawable>
+    <drawable name="noho_standard_night_extra_dark">@color/noho_standard_night_extra_dark</drawable>
+    <drawable name="noho_standard_night_gray">@color/noho_standard_night_gray</drawable>
+    <style name="Theme.AppCompat.DayNight" parent="Theme.AppCompat"/>
+    <style name="Theme.AppCompat.DayNight.DarkActionBar" parent="Theme.AppCompat"/>
+    <style name="Theme.AppCompat.DayNight.Dialog" parent="Theme.AppCompat.Dialog"/>
+    <style name="Theme.AppCompat.DayNight.Dialog.Alert" parent="Theme.AppCompat.Dialog.Alert"/>
+    <style name="Theme.AppCompat.DayNight.Dialog.MinWidth" parent="Theme.AppCompat.Dialog.MinWidth"/>
+    <style name="Theme.AppCompat.DayNight.DialogWhenLarge" parent="Theme.AppCompat.DialogWhenLarge"/>
+    <style name="Theme.AppCompat.DayNight.NoActionBar" parent="Theme.AppCompat.NoActionBar"/>
+    <style name="Widget.Noho.Radio.Colors.Checked" parent="Widget.Noho.Radio.Colors.Normal">
+    <!-- in dark mode, the circle around gets blue when checked -->
+    <item name="nohoRadioColorOuterCircle">#2483C1</item>
+  </style>
+    <style name="Widget.Noho.Radio.Colors.CheckedPressed" parent="Widget.Noho.Radio.Colors.Pressed">
+    <!-- checked: outer circle also blue -->
+    <item name="nohoRadioColorOuterCircle">#2483C1</item>
+  </style>
+    <style name="Widget.Noho.Radio.Colors.Disabled" parent="Widget.Noho.Radio.Colors.Normal">
+    <item name="nohoRadioColorCenter">#B5BBC1</item>
+  </style>
+    <style name="Widget.Noho.Radio.Colors.Normal" parent="None">
+    <item name="nohoRadioColorOuterCircle">#B5BBC1</item>
+    <item name="nohoRadioColorBackground">#000000</item>
+    <item name="nohoRadioColorCenter">#2483C1</item>
+  </style>
+    <style name="Widget.Noho.Radio.Colors.Pressed" parent="None">
+    <!-- not checked: outer circle gray -->
+    <item name="nohoRadioColorOuterCircle">#9EA2A9</item>
+    <item name="nohoRadioColorBackground">#666666</item>
+    <item name="nohoRadioColorCenter">#1F72A8</item>
+  </style>
+</resources>

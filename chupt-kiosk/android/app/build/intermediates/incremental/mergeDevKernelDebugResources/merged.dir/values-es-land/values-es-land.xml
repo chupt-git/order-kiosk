@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="day_of_week_responsive">
+    <item>\@string/long_monday</item>
+    <item>\@string/long_tuesday</item>
+    <item>\@string/long_wednesday</item>
+    <item>\@string/long_thursday</item>
+    <item>\@string/long_friday</item>
+    <item>\@string/long_saturday</item>
+    <item>\@string/long_sunday</item>
+  </string-array>
+    <string name="deposit_speed_one_to_two_bus_days">Uno a dos días hábiles</string>
+</resources>

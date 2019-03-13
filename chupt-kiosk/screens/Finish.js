@@ -15,8 +15,7 @@ import {
 class Finish extends React.Component {
   async componentWillMount() {
     try {
-      const test = await startReaderSettingsAsync();
-      console.log(test)
+      await startReaderSettingsAsync();
     } catch (ex) {
       console.log(ex)
       switch(ex.code) {

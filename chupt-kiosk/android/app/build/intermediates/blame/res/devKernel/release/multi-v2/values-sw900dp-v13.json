@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/build/intermediates/incremental/mergeDevKernelReleaseResources/merged.dir/values-sw900dp-v13/values-sw900dp-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/chelsea/.gradle/caches/transforms-1/files-1.1/reader-sdk-155af43b-1.1.3.aar/b0098d56f9fd039811edb32cf59e4dea/res/values-sw900dp-v13/values-sw900dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,106,165,223,290,344,398,461,515,569,623,682,740,794,848,902",
+                        "endColumns": "50,58,57,66,53,53,62,53,53,53,58,57,53,53,53,53",
+                        "endOffsets": "101,160,218,285,339,393,456,510,564,618,677,735,789,843,897,951"
+                    }
+                }
+            ]
+        }
+    ]
+}
