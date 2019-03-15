@@ -8,33 +8,61 @@ import { withNavigation } from 'react-navigation'
 class ChoiceMod extends React.Component {
     render() {
         const choices = this.props.data.choice
-        const itemID = this.props.item.item.item_id
+        const itemID = this.props.id
         const choiceGuts =[]
-        const inChecked = this.props.checked.find(x => x.id === itemID)
-        if (!inChecked) {
-            return null
-        }else {
-            // choices.forEach((x, y) => {
-            //     choiceGuts.push(
-            //         <View key={x.description + y}>
-            //             <Text>{x.name}</Text>
-            //             <FlatList
-            //                 data={x.choices}
-            //                 extraData={inChecked}
-            //                 renderItem={ (item) =>
-            //                     <View>
-            //                         <Text>{item.item.name}</Text>
-            //                         <CheckBox
-            //                             value={inChecked.choices[y].value.includes(item.item.name.toLowerCase())}
-            //                             onValueChange={() => this.props.toggleChecked(itemID, 'choices', x.name, item.item.name )}
-            //                         />
-            //                     </View>
-            //                 }
-            //                 keyExtractor={(item, index) => index.toString()}
-            //             />
-            //         </View>
-            //     )
-            // })
+        const checked = this.props.checked.find(x => x.id === itemID)
+
+        if (checked) {
+            switch (this.props.mealType) {
+                case 'single':
+                    choices.forEach((x, y) => {
+                        choiceGuts.push(
+                            <View key={x.description + y}>
+                                <Text>{x.name}</Text>
+                                <FlatList
+                                    data={x.choices}
+                                    extraData={checked}
+                                    renderItem={ (item) =>
+                                        <View>
+                                            <Text>{item.item.name}</Text>
+                                            <CheckBox
+                                                value={checked.choices[y].value.includes(item.item.name.toLowerCase())}
+                                                onValueChange={() => this.props.toggleChecked(itemID, 'choices', x.name, item.item.name )}
+                                            />
+                                        </View>
+                                    }
+                                    keyExtractor={(item, index) => index.toString()}
+                                />
+                            </View>
+                        )
+                    })
+                    break
+                case 'multi':
+                    checked.item[0].choices.forEach((x, y) => {
+                        choiceGuts.push(
+                            <View key={x.description + y}>
+                                <Text>{x.name}</Text>
+                                <FlatList
+                                    data={x.choices}
+                                    extraData={checked}
+                                    renderItem={ ({item}) =>{
+                                        return(
+                                        <View>
+                                            <Text>{item.name}</Text>
+                                            <CheckBox
+                                            value={checked.item[0].choices[y].value.includes(item.name.toLowerCase())}
+                                            onValueChange={() => this.props.toggleChecked(itemID, 'choices', x.name, item.name )}
+                                        />
+                                        </View>)
+                                    }}
+                                    keyExtractor={(item, index) => index.toString()}
+                                />
+                            </View>
+                        )
+                    })
+                    break
+
+            }
         }
         return (
             <View>
@@ -61,4 +89,3 @@ export default withNavigation(connect(
     mapStateToProps,
     mapDispatchToProps
 )(ChoiceMod))
-// export default ChoiceMod

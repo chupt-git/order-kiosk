@@ -23,7 +23,12 @@ class ModWrapper extends React.Component {
                     option.push(x)
                     if (option.length <= 1){
                         modGuts.push(
-                            <OptionMod key={'option'} data={{option}} item={{item}} id={this.props.productID}/>
+                            <OptionMod
+                                key={'option'}
+                                data={{option}}
+                                item={{item}}
+                                id={this.props.productID}
+                                mealType={this.props.mealType}/>
                         )
                     }
                     break;
@@ -31,7 +36,12 @@ class ModWrapper extends React.Component {
                     choice.push(x)
                     if (choice.length <= 1){
                         modGuts.push(
-                            <ChoiceMod key={'choice'} data={{choice}} item={{item}} id={this.props.productID}/>
+                            <ChoiceMod
+                                key={'choice'}
+                                data={{choice}}
+                                item={{item}}
+                                id={this.props.productID}
+                                mealType={this.props.mealType}/>
                         )
                     }
             }

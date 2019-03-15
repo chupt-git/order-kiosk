@@ -13,7 +13,6 @@ import MainWrap from '../components/MainWrap'
 
 class SideChange extends React.Component {
     render() {
-        // const item = this.props.navigation.state.params.item.find(x => x.item_type.toLowerCase() === 'side')
         const items = this.props.menu.products
         const mealId = this.props.navigation.state.params.mealId
 

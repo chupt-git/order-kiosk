@@ -27,12 +27,14 @@ const initialState = {
     name: '',
     number: '',
     pickupType: '',
-    checked: []
+    checked: [],
+    moddedSide: []
 }
 
 export default function productReducer(state = initialState, action) {
     let newCart = state.cart.map((item) => Object.assign({}, item))
     let newChecked = state.checked.map((item) => Object.assign({}, item))
+    let newModdedSide = state.moddedSide.map((item) => Object.assign({}, item))
     switch (action.type) {
         case FETCH_PRODUCTS_BEGIN:
             return {
@@ -75,15 +77,30 @@ export default function productReducer(state = initialState, action) {
 
         case TOGGLE_CHECKED:
             const checkedItem = newChecked.find(x => x.id == action.item.item)
-            const val = checkedItem[action.mod.mod].find(x=> x.name == action.name.name)
-            switch (action.mod.mod){
-                case 'choices':
-                    val.value = action.itemName.itemName.toLowerCase()
-                    break
-                case 'options':
-                    val.value = !val.value
-                    break
+
+            if (!checkedItem.item) {
+                console.log(action)
+                const val = checkedItem[action.mod.mod].find(x=> x.name == action.name.name)
+                switch (action.mod.mod){
+                    case 'choices':
+                        val.value = action.itemName.itemName.toLowerCase()
+                        break
+                    case 'options':
+                        val.value = !val.value
+                        break
+                }
+            } else {
+                const val = checkedItem.item[0][action.mod.mod].find(x=> x.name == action.name.name)
+                switch (action.mod.mod){
+                    case 'choices':
+                        val.value = action.itemName.itemName.toLowerCase()
+                        break
+                    case 'options':
+                        val.value = !val.value
+                        break
+                }
             }
+
 
             return {
                 ...state,
@@ -91,9 +108,17 @@ export default function productReducer(state = initialState, action) {
             }
 
         case CHANGE_SIDE:
-            //TODO: finish implementation
-            console.log(action.item.item)
-            console.log(action.mealId.mealId)
+            // console.log(action.item.item.item_id + 'NEW SIDE')
+            // console.log(action.mealId.mealId + 'MEAL')
+            // newModdedSide
+
+            const test = state.menu.products.meals.find(x => x.item_id === action.mealId.mealId)
+            let testOne = test.items.find(x => x.item_type === 'side')
+
+            testOne = action.item.item
+
+            test.items.find()
+
             return {
                 ...state
             }
@@ -111,7 +136,7 @@ export default function productReducer(state = initialState, action) {
                             option.push({name: x.name, value: x.default})
                             break;
                         case 'choice':
-                            choice.push({name: x.name, value: x.default})
+                            choice.push({name: x.name, value: x.default, choices: x.choices})
                     }
                 })
 
