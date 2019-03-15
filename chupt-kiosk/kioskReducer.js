@@ -10,7 +10,8 @@ import {
     CHANGE_ITEM_NUMBER,
     CHANGE_PICKUPTYPE_INPUT,
     TOGGLE_CHECKED,
-    POPULATE_MODS, CHANGE_SIDE
+    POPULATE_MODS,
+    CHANGE_SIDE
 } from './kioskActions'
 
 const initialState = {
@@ -89,17 +90,22 @@ export default function productReducer(state = initialState, action) {
                 checked: newChecked
             }
 
-
         case CHANGE_SIDE:
-            console.log(action.payload.item)
-s
-        case POPULATE_MODS:
-            const inChecked = newChecked.find(x => x.id == action.payload.item.item_id)
+            //TODO: finish implementation
+            console.log(action.item.item)
+            console.log(action.mealId.mealId)
+            return {
+                ...state
+            }
 
-            if (!inChecked) {
+        case POPULATE_MODS:
+            const inChecked = newChecked.find(x => x.id == action.productID.productID)
+
+            if (!inChecked || action.mealType.mealType === 'multi') {
                 const option = []
                 const choice = []
-                action.payload.item.mods.forEach((x) => {
+
+                action.item.item.mods.forEach((x) => {
                     switch (x.mod_type) {
                         case 'option':
                             option.push({name: x.name, value: x.default})
@@ -108,9 +114,35 @@ s
                             choice.push({name: x.name, value: x.default})
                     }
                 })
-                newChecked.push({
-                    id: action.payload.item.item_id, options: option, choices: choice
-                })
+
+                if (action.mealType.mealType === 'multi') {
+                    const mealOptions = []
+                    switch (action.item.item.item_type) {
+                        case 'side':
+                            mealOptions.push({
+                                type: 'side',
+                                id: action.item.item.item_id,
+                                options: option,
+                                choices: choice})
+                            break
+                        case 'entree':
+                            mealOptions.push({
+                                type: 'entree',
+                                id: action.item.item.item_id,
+                                options: option,
+                                choices: choice})
+                    }
+                    newChecked.push({
+                        id: action.productID.productID,
+                        item: mealOptions
+                    })
+                } else {
+                    newChecked.push({
+                        id: action.item.item.item_id,
+                        options: option,
+                        choices: choice
+                    })
+                }
             }
 
             return {

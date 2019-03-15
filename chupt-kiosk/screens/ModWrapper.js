@@ -8,7 +8,7 @@ import {View} from "react-native"
 
 class ModWrapper extends React.Component {
     componentWillMount () {
-        this.props.populateMods(this.props.item.item)
+        this.props.populateMods(this.props.item.item, this.props.mealType, this.props.productID)
     }
 
     render() {
@@ -17,24 +17,24 @@ class ModWrapper extends React.Component {
         const choice = []
         let modGuts = []
 
-        item.mods.forEach((x, y)=>{
+        item.mods.forEach((x)=>{
             switch (x.mod_type) {
                 case 'option':
-                    option.push(x);
-                    if(option.length <= 1){
+                    option.push(x)
+                    if (option.length <= 1){
                         modGuts.push(
-                            <OptionMod key={'option'} data={{option}} item={{item}}/>
+                            <OptionMod key={'option'} data={{option}} item={{item}} id={this.props.productID}/>
                         )
                     }
                     break;
                 case 'choice':
-                    choice.push(x);
-                    if(choice.length <= 1){
+                    choice.push(x)
+                    if (choice.length <= 1){
                         modGuts.push(
-                            <ChoiceMod key={'choice'} data={{choice}} item={{item}}/>
+                            <ChoiceMod key={'choice'} data={{choice}} item={{item}} id={this.props.productID}/>
                         )
                     }
-             }
+            }
         })
         return (
             <View style={{width: '100%'}}>

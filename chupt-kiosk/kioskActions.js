@@ -12,9 +12,10 @@ export const TOGGLE_CHECKED = 'TOGGLE_CHECKED'
 export const  POPULATE_MODS = 'POPULATE_MODS'
 export const CHANGE_SIDE = 'CHANGE_SIDE'
 
-export const changeSide = item => ({
+export const changeSide = (item, mealId) => ({
   type: CHANGE_SIDE,
-  payload: { item }
+  item: { item },
+  mealId: { mealId }
 })
 
 export const fetchProductsBegin = () => ({
@@ -31,9 +32,11 @@ export const fetchProductsFailure = error => ({
   payload: { error }
 })
 
-export const  populateMods = item => ({
+export const  populateMods = (item, mealType, productID) => ({
   type: POPULATE_MODS,
-  payload: {item}
+  item: {item},
+  mealType: {mealType},
+  productID: {productID}
 })
 
 export const addToCart = item => ({

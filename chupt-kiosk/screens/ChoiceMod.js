@@ -14,27 +14,27 @@ class ChoiceMod extends React.Component {
         if (!inChecked) {
             return null
         }else {
-            choices.forEach((x, y) => {
-                choiceGuts.push(
-                    <View key={x.description + y}>
-                        <Text>{x.name}</Text>
-                        <FlatList
-                            data={x.choices}
-                            extraData={inChecked}
-                            renderItem={ (item) =>
-                                <View>
-                                    <Text>{item.item.name}</Text>
-                                    <CheckBox
-                                        value={inChecked.choices[y].value.includes(item.item.name.toLowerCase())}
-                                        onValueChange={() => this.props.toggleChecked(itemID, 'choices', x.name, item.item.name )}
-                                    />
-                                </View>
-                            }
-                            keyExtractor={(item, index) => index.toString()}
-                        />
-                    </View>
-                )
-            })
+            // choices.forEach((x, y) => {
+            //     choiceGuts.push(
+            //         <View key={x.description + y}>
+            //             <Text>{x.name}</Text>
+            //             <FlatList
+            //                 data={x.choices}
+            //                 extraData={inChecked}
+            //                 renderItem={ (item) =>
+            //                     <View>
+            //                         <Text>{item.item.name}</Text>
+            //                         <CheckBox
+            //                             value={inChecked.choices[y].value.includes(item.item.name.toLowerCase())}
+            //                             onValueChange={() => this.props.toggleChecked(itemID, 'choices', x.name, item.item.name )}
+            //                         />
+            //                     </View>
+            //                 }
+            //                 keyExtractor={(item, index) => index.toString()}
+            //             />
+            //         </View>
+            //     )
+            // })
         }
         return (
             <View>

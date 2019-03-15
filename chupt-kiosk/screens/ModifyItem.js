@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import {Text, TouchableOpacity, View} from 'react-native'
 import MainWrap from '../components/MainWrap'
 import TopNavigation from './TopNavigation'
 import BottomNavigation from './BottomNavigation'
@@ -9,27 +9,26 @@ import CircleButton from '../components/CircleButton'
 import ColoredText from '../components/ColoredText'
 import MenuItemWrap from '../components/MenuItemWrap'
 import MenuImage from './MenuImage'
-import { addToCart } from '../kioskActions'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import {addToCart} from '../kioskActions'
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
 import ModWrapper from "./ModWrapper";
 import {withNavigation} from "react-navigation";
 
 class ModifyItem extends React.Component {
-
   render() {
-    const item = this.props.navigation.state.params.item
-    const mods =[]
-    const sideButton =[]
-    if (!item.items) {
-        mods.push(<ModWrapper key={item.item_id} item={{item}}/>)
+    let itemWrap = this.props.navigation.state.params.item
+    const mods = []
+    const sideButton = []
+    if (!itemWrap.items) {
+        mods.push(<ModWrapper key={itemWrap.item_id} item={{item: itemWrap}} mealType={'single'} productID={itemWrap.item_id}/>)
     }else {
-        item.items.forEach((item) => {
-            mods.push(<ModWrapper key={item.item_id} item={{item}}/>)
+        itemWrap.items.forEach((item) => {
+            mods.push(<ModWrapper key={item.item_id} item={{item}} mealType={'multi'} productID={itemWrap.item_id}/>)
         })
         sideButton.push(
             <TouchableOpacity key={'sideButton'} onPress={() => this.props.navigation.navigate('SideChange', {
-                item: item
+                mealId: itemWrap.item_id
             })}>
                 <Text>CHANGE SIDE</Text>
             </TouchableOpacity>
@@ -50,10 +49,10 @@ class ModifyItem extends React.Component {
                   flexDirection: 'row',
                   justifyContent: 'space-between',
                   alignItems: 'flex-start'}}>
-              <MenuImage style={{width: '50%'}} item={item}/>
+              <MenuImage style={{width: '50%'}} item={itemWrap}/>
               <View style={{width: '50%'}}>
-                <ItemTitle>{item.name}</ItemTitle>
-                <Text>{item.description}</Text>
+                <ItemTitle>{itemWrap.name}</ItemTitle>
+                <Text>{itemWrap.description}</Text>
               </View>
             </View>
 
