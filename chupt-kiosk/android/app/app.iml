@@ -414,5 +414,7 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.test.espresso:espresso-core:3.0.1@aar" level="project" />
     <orderEntry type="module" module-name="react-native-square-reader-sdk" />
     <orderEntry type="module" module-name="react-native-fabric" />
+    <orderEntry type="module" module-name="react-native-square-reader-sdk" />
+    <orderEntry type="module" module-name="react-native-fabric" />
   </component>
 </module>

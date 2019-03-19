@@ -4,9 +4,12 @@ import MainButton from '../components/MainButton'
 import Cart from './Cart'
 import ColoredText from '../components/ColoredText'
 import CircleButton from '../components/CircleButton'
+import DeleteMenuModal from './DeleteMenuModal'
 import { View } from 'react-native'
 import { withNavigation } from 'react-navigation'
 import { connect } from 'react-redux'
+import {bindActionCreators} from "redux";
+import {toggleModalDisplay} from "../kioskActions";
 
 class BottomNavigation extends React.Component {
   render() {
@@ -33,7 +36,10 @@ class BottomNavigation extends React.Component {
               width: '100%',
               position: 'relative',
               zIndex: 2}}>
-              <CircleButton grey>
+                <DeleteMenuModal/>
+              <CircleButton grey onPress={() =>
+                  this.props.toggleModalDisplay()
+              }>
                 <ColoredText>X</ColoredText>
               </CircleButton>
               <View
@@ -87,6 +93,16 @@ function mapStateToProps(state) {
     }
 }
 
+const mapDispatchToProps = dispatch => (
+    bindActionCreators({
+        toggleModalDisplay
+        // quickDeleteCart
+    }, dispatch)
+)
+
 export default withNavigation(connect(
-  mapStateToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(BottomNavigation))
+
+// this.props.quickDeleteCart()

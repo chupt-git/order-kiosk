@@ -7,6 +7,7 @@ class MenuImage extends React.Component {
   render() {
     const item = this.props.item
     let images =[]
+
     if (item.items){
       item.items.forEach((x, y)=>{
         x.images.forEach((x)=>{

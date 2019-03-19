@@ -38,7 +38,8 @@ class ChoiceMod extends React.Component {
                     })
                     break
                 case 'multi':
-                    checked.item[0].choices.forEach((x, y) => {
+                    const multiItem = checked.items.find(x => x.id === this.props.item.item.item_id)
+                    multiItem.choices.forEach((x, y) => {
                         choiceGuts.push(
                             <View key={x.description + y}>
                                 <Text>{x.name}</Text>
@@ -50,8 +51,8 @@ class ChoiceMod extends React.Component {
                                         <View>
                                             <Text>{item.name}</Text>
                                             <CheckBox
-                                            value={checked.item[0].choices[y].value.includes(item.name.toLowerCase())}
-                                            onValueChange={() => this.props.toggleChecked(itemID, 'choices', x.name, item.name )}
+                                            value={multiItem.choices[y].value.includes(item.name.toLowerCase())}
+                                            onValueChange={() => this.props.toggleChecked(itemID, x.name, 'choices', multiItem.id, item.name )}
                                         />
                                         </View>)
                                     }}

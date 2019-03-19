@@ -15,8 +15,8 @@ class MenuItem extends React.Component {
     const item = this.props.item
     item.type = this.props.type
     const mealId = this.props.mealId
-
     const addButton = []
+
     if(!mealId) {
         addButton.push(
             <CircleButton
@@ -34,9 +34,10 @@ class MenuItem extends React.Component {
                 onPress={() => {
                     this.props.changeSide(item, mealId)
                     this.props.navigation.goBack()}}>
-                <ColoredText>Change Side</ColoredText>
+                <ColoredText>Choose Side</ColoredText>
             </CircleButton>)
     }
+
     return (
       <View style={{position: 'relative'}}>
           <TouchableOpacity
@@ -73,7 +74,6 @@ class MenuItem extends React.Component {
               flexDirection: 'row',
               justifyContent: 'center'
             }}>
-
               {addButton}
           </View>
         </View>

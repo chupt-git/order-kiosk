@@ -11,6 +11,16 @@ export const CHANGE_PICKUPTYPE_INPUT = 'CHANGE_PICKUPTYPE_INPUT'
 export const TOGGLE_CHECKED = 'TOGGLE_CHECKED'
 export const  POPULATE_MODS = 'POPULATE_MODS'
 export const CHANGE_SIDE = 'CHANGE_SIDE'
+export  const QUICK_DELETE_CART = 'QUICK_DELETE_CART'
+export const TOGGLE_MODAL_DISPLAY = 'TOGGLE_MODAL_DISPLAY'
+
+export const toggleModalDisplay = () => ({
+  type: TOGGLE_MODAL_DISPLAY
+})
+
+export const quickDeleteCart = () => ({
+  type: QUICK_DELETE_CART
+})
 
 export const changeSide = (item, mealId) => ({
   type: CHANGE_SIDE,
@@ -70,12 +80,13 @@ export const changePickupTypeInput = pickupType => ({
   payload: { pickupType }
 })
 
-export const toggleChecked = (item, mod, name, itemName) => ({
+export const toggleChecked = (item, mod, name, itemName, choiceID) => ({
   type: TOGGLE_CHECKED,
   item: {item},
   mod: {mod},
   name: {name},
-  itemName: {itemName}
+  itemName: {itemName},
+  choiceID: {choiceID}
 })
 
 export function fetchProducts() {

@@ -13,8 +13,8 @@ class ModWrapper extends React.Component {
 
     render() {
         const item = this.props.item.item
-        const option = []
-        const choice = []
+        let option = []
+        let choice = []
         let modGuts = []
 
         item.mods.forEach((x)=>{
@@ -31,7 +31,7 @@ class ModWrapper extends React.Component {
                                 mealType={this.props.mealType}/>
                         )
                     }
-                    break;
+                    break
                 case 'choice':
                     choice.push(x)
                     if (choice.length <= 1){
@@ -44,6 +44,7 @@ class ModWrapper extends React.Component {
                                 mealType={this.props.mealType}/>
                         )
                     }
+                    break
             }
         })
         return (

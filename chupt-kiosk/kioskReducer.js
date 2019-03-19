@@ -11,7 +11,9 @@ import {
     CHANGE_PICKUPTYPE_INPUT,
     TOGGLE_CHECKED,
     POPULATE_MODS,
-    CHANGE_SIDE
+    CHANGE_SIDE,
+    QUICK_DELETE_CART,
+    TOGGLE_MODAL_DISPLAY
 } from './kioskActions'
 
 const initialState = {
@@ -28,13 +30,15 @@ const initialState = {
     number: '',
     pickupType: '',
     checked: [],
-    moddedSide: []
+    moddedSide: [],
+    display: false
 }
 
 export default function productReducer(state = initialState, action) {
     let newCart = state.cart.map((item) => Object.assign({}, item))
     let newChecked = state.checked.map((item) => Object.assign({}, item))
     let newModdedSide = state.moddedSide.map((item) => Object.assign({}, item))
+
     switch (action.type) {
         case FETCH_PRODUCTS_BEGIN:
             return {
@@ -76,31 +80,32 @@ export default function productReducer(state = initialState, action) {
             }
 
         case TOGGLE_CHECKED:
-            const checkedItem = newChecked.find(x => x.id == action.item.item)
+            const checkedItem = newChecked.find(x => x.id === action.item.item)
 
-            if (!checkedItem.item) {
-                console.log(action)
-                const val = checkedItem[action.mod.mod].find(x=> x.name == action.name.name)
+            if (!checkedItem.items) {
+                //Single
+                const val = checkedItem[action.mod.mod].find(x=> x.name === action.name.name)
                 switch (action.mod.mod){
                     case 'choices':
                         val.value = action.itemName.itemName.toLowerCase()
                         break
                     case 'options':
-                        val.value = !val.value
+                        val.value = !(/true/i).test(val.value)
                         break
                 }
             } else {
-                const val = checkedItem.item[0][action.mod.mod].find(x=> x.name == action.name.name)
-                switch (action.mod.mod){
+                // meal item
+                let mealItem = checkedItem.items.find(x=>x.id === action.itemName.itemName)
+                let val = mealItem[action.name.name].find(x=> x.name === action.mod.mod)
+                switch (action.name.name){
                     case 'choices':
-                        val.value = action.itemName.itemName.toLowerCase()
+                        val.value = action.choiceID.choiceID.toLowerCase()
                         break
                     case 'options':
-                        val.value = !val.value
+                        val.value = !(/true/i).test(val.value)
                         break
                 }
             }
-
 
             return {
                 ...state,
@@ -108,67 +113,136 @@ export default function productReducer(state = initialState, action) {
             }
 
         case CHANGE_SIDE:
-            // console.log(action.item.item.item_id + 'NEW SIDE')
-            // console.log(action.mealId.mealId + 'MEAL')
-            // newModdedSide
+            let newProducts = state.menu.products.meals.map((item) => Object.assign({}, item))
+            const meal = newProducts.find(x => x.item_id === action.mealId.mealId)
+            const index = meal.items.find(x => x.item_type === 'entree')
+            meal.items.splice(index, 1)
+            meal.items.push(action.item.item)
 
-            const test = state.menu.products.meals.find(x => x.item_id === action.mealId.mealId)
-            let testOne = test.items.find(x => x.item_type === 'side')
-
-            testOne = action.item.item
-
-            test.items.find()
-
+            newModdedSide.push(meal)
             return {
-                ...state
+                ...state,
+                moddedSide: newModdedSide
             }
 
         case POPULATE_MODS:
-            const inChecked = newChecked.find(x => x.id == action.productID.productID)
+            const inChecked = newChecked.find(x => x.item_id === action.productID.productID)
+            const swappedSide = newModdedSide.find(x => x.item_id === action.productID.productID)
 
-            if (!inChecked || action.mealType.mealType === 'multi') {
-                const option = []
-                const choice = []
+            if (!inChecked) {
+                switch (action.mealType.mealType) {
+                    case 'multi':
+                        let meal
+                        if (swappedSide){
+                            meal = swappedSide
+                        } else {
+                            let newProd = state.menu.products.meals.map((item) => Object.assign({}, item))
+                            meal = newProd.find(x => x.item_id === action.productID.productID)
+                        }
+                        let mealOptions = []
 
-                action.item.item.mods.forEach((x) => {
-                    switch (x.mod_type) {
-                        case 'option':
-                            option.push({name: x.name, value: x.default})
-                            break;
-                        case 'choice':
-                            choice.push({name: x.name, value: x.default, choices: x.choices})
-                    }
-                })
-
-                if (action.mealType.mealType === 'multi') {
-                    const mealOptions = []
-                    switch (action.item.item.item_type) {
-                        case 'side':
+                        meal.items.forEach(x=>{
+                            let option = []
+                            let choice = []
+                            x.mods.forEach(y=>{
+                                if (y.mod_type == 'option') {
+                                    option.push({name: y.name, value: y.default})
+                                } else if (y.mod_type === 'choice'){
+                                    choice.push({name: y.name, value: y.default, choices: y.choices})
+                                }
+                            })
                             mealOptions.push({
-                                type: 'side',
-                                id: action.item.item.item_id,
+                                type: x.item_type,
+                                id: x.item_id,
                                 options: option,
-                                choices: choice})
-                            break
-                        case 'entree':
-                            mealOptions.push({
-                                type: 'entree',
-                                id: action.item.item.item_id,
-                                options: option,
-                                choices: choice})
-                    }
-                    newChecked.push({
-                        id: action.productID.productID,
-                        item: mealOptions
-                    })
-                } else {
-                    newChecked.push({
-                        id: action.item.item.item_id,
-                        options: option,
-                        choices: choice
-                    })
+                                choices: choice
+                            })
+                        })
+                        newChecked.push({
+                            id: action.productID.productID,
+                            items: mealOptions
+                        })
+                        break
+                    case 'single':
+                        let option = []
+                        let choice = []
+                        action.item.item.mods.forEach((x) => {
+                            switch (x.mod_type) {
+                                case 'option':
+                                    option.push({name: x.name, value: x.default})
+                                    break;
+                                case 'choice':
+                                    choice.push({name: x.name, value: x.default, choices: x.choices})
+                            }
+                        })
+                        newChecked.push({
+                            id: action.item.item.item_id,
+                            options: option,
+                            choices: choice
+                        })
+                        break
                 }
+            } else {
+                // newChecked.push({
+                //     id: action.item.item.item_id,
+                //     options: option,
+                //     choices: choice
+                // })
             }
+
+            // if (!inChecked || action.mealType.mealType === 'multi') {
+            //     let menuMeals = state.menu.products.meals.map((item) => Object.assign({}, item))
+            //     // const newMeal = menuMeals[0].items.find(x => x.item_id === action.productID.productID)
+            //     const option = []
+            //     const choice = []
+            //
+            //     action.item.item.mods.forEach((x) => {
+            //         switch (x.mod_type) {
+            //             case 'option':
+            //                 option.push({name: x.name, value: x.default})
+            //                 break;
+            //             case 'choice':
+            //                 choice.push({name: x.name, value: x.default, choices: x.choices})
+            //         }
+            //     })
+            //
+            //     if (action.mealType.mealType === 'multi') {
+            //         const test = menuMeals.find(x => x.item_id === action.productID.productID)
+            //
+            //
+            //
+            //         const mealOptions = []
+            //         switch (action.item.item.item_type) {
+            //             case 'side':
+            //                 console.log(action.item.item.item_id)
+            //                 mealOptions.push({
+            //                     type: 'side',
+            //                     id: action.item.item.item_id,
+            //                     options: option,
+            //                     choices: choice
+            //                 })
+            //                 break
+            //             case 'entree':
+            //                 console.log(action.item.item.item_id)
+            //                 mealOptions.push({
+            //                     type: 'entree',
+            //                     id: action.item.item.item_id,
+            //                     options: option,
+            //                     choices: choice
+            //                 })
+            //         }
+            //         newChecked.push({
+            //             id: action.productID.productID,
+            //             item: mealOptions
+            //         })
+            //     } else {
+            //         newChecked.push({
+            //             id: action.item.item.item_id,
+            //             options: option,
+            //             choices: choice
+            //         })
+            //     }
+            // }
 
             return {
                 ...state,
@@ -192,7 +266,7 @@ export default function productReducer(state = initialState, action) {
         case REMOVE_FROM_CART:
             newCart.forEach((x) => {
                 if (x.type.toLowerCase() == action.payload.item.type.toLowerCase()) {
-                    index = x.items.findIndex(i => i.item_id == action.payload.item.item_id)
+                    const index = x.items.findIndex(i => i.item_id == action.payload.item.item_id)
                     x.items.splice(index, 1)
                 }
             })
@@ -204,7 +278,7 @@ export default function productReducer(state = initialState, action) {
         case CHANGE_ITEM_NUMBER:
             newCart.forEach((x) => {
                 if (x.type.toLowerCase() == action.item.item.type.toLowerCase()) {
-                    index = x.items.findIndex(i => i.item_id == action.item.item.item_id)
+                    const index = x.items.findIndex(i => i.item_id == action.item.item.item_id)
                     if (action.number.number == '') {
                         x.items.splice(index, 1)
                     } else {
@@ -233,6 +307,21 @@ export default function productReducer(state = initialState, action) {
             return {
                 ...state,
                 number: action.payload
+            }
+
+        case QUICK_DELETE_CART:
+            newCart.forEach(x => {
+                x.items = []
+            })
+            return {
+                ...state,
+                cart: newCart
+            }
+
+        case TOGGLE_MODAL_DISPLAY:
+            return {
+                ...state,
+                display: !state.display
             }
 
         default:
