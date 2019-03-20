@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, FlatList } from 'react-native'
+import { View, FlatList, Text } from 'react-native'
 import CartItem from './CartItem'
 import { connect } from 'react-redux'
 import TopNavigation from './TopNavigation'
@@ -13,7 +13,7 @@ class Cart extends React.Component {
         super(props)
     }
 
-    render() {
+    render()  {
         return (
             <MainWrap>
                 <TopNavigation/>
@@ -29,6 +29,7 @@ class Cart extends React.Component {
 
                     }}>
                     <MedText>Cart</MedText>
+                    <Text>${this.props.amount.toFixed(2)}</Text>
                     <FlatList
                         style={{width: '100%', padding: 20}}
                         data={this.props.cart}
@@ -50,7 +51,8 @@ class Cart extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        cart: state.cart
+        cart: state.cart,
+        amount: state.amount
     }
 }
 

@@ -31,13 +31,15 @@ const initialState = {
     pickupType: '',
     checked: [],
     moddedSide: [],
-    display: false
+    display: false,
+    amount: 0
 }
 
 export default function productReducer(state = initialState, action) {
     let newCart = JSON.parse(JSON.stringify(state.cart))
     let newChecked = state.checked.map((item) => Object.assign({}, item))
     let newModdedSide = state.moddedSide.map((item) => Object.assign({}, item))
+    let newAmount = state.amount
 
     switch (action.type) {
         case FETCH_PRODUCTS_BEGIN:
@@ -73,18 +75,19 @@ export default function productReducer(state = initialState, action) {
                         const test = []
                         const testTwo = []
                         inCart.forEach(y => {
-                            action.payload.item.items.forEach(z=>test.push(z.item_id))
-                            y.items.forEach(z=>testTwo.push(z.item_id))
-                            finalItem = y
+                            if (action.payload.item.items){
+                                action.payload.item.items.forEach(z=>test.push(z.item_id))
+                                y.items.forEach(z=>testTwo.push(z.item_id))
+                                finalItem = y}
+                            else {
+                                finalItem = x.items.find(x=>x.item_id === action.payload.item.item_id)
+                            }
                         })
                         const finalTest = test.filter((item) => { return !testTwo.includes(item)})
-
                         if (finalTest.length >= 1){
-
                             action.payload.item.count = 1
                             x.items.push(action.payload.item)
                             finish= true
-
                         } else {
                             finalItem.count += 1
                             finish = true
@@ -95,9 +98,12 @@ export default function productReducer(state = initialState, action) {
                     }
                 }
             })
+
+            newAmount += action.payload.item.amount
             return {
                 ...state,
-                cart: newCart
+                cart: newCart,
+                amount: newAmount
             }
 
         case TOGGLE_CHECKED:
@@ -212,6 +218,7 @@ export default function productReducer(state = initialState, action) {
             }
 
         case REMOVE_ONE_FROM_CART:
+
             newCart.forEach((x) => {
                 if (x.type.toLowerCase() == action.payload.item.type.toLowerCase()) {
                     const inCart = x.items.find(i => i.item_id == action.payload.item.item_id)
@@ -220,9 +227,11 @@ export default function productReducer(state = initialState, action) {
                     }
                 }
             })
+            newAmount -= action.payload.item.amount
             return {
                 ...state,
-                cart: newCart
+                cart: newCart,
+                amount: newAmount
             }
 
         case REMOVE_FROM_CART:
@@ -232,9 +241,12 @@ export default function productReducer(state = initialState, action) {
                     x.items.splice(index, 1)
                 }
             })
+            const deleteAmount = action.payload.item.amount * action.payload.item.count
+            newAmount -= deleteAmount
             return {
                 ...state,
-                cart: newCart
+                cart: newCart,
+                amount: newAmount
             };
 
         case CHANGE_ITEM_NUMBER:
@@ -248,9 +260,15 @@ export default function productReducer(state = initialState, action) {
                     }
                 }
             })
+            const toggleAmount = action.item.item.amount * action.number.number
+            const delAmount = action.item.item.amount * action.item.item.count
+            newAmount -= delAmount
+            newAmount += toggleAmount
+
             return {
                 ...state,
-                cart: newCart
+                cart: newCart,
+                amount: newAmount
             };
 
         case CHANGE_NAME_INPUT:
@@ -277,7 +295,8 @@ export default function productReducer(state = initialState, action) {
             })
             return {
                 ...state,
-                cart: newCart
+                cart: newCart,
+                amount: 0
             }
 
         case TOGGLE_MODAL_DISPLAY:

@@ -9,9 +9,7 @@
     <list default="true" id="9ba24926-2a33-4977-97f5-844d1f09b88e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kioskReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/kioskReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/ModWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ModWrapper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/ModifyItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ModifyItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/OptionMod.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/OptionMod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Cart.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,13 +18,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6134055">
+    <splitter split-orientation="horizontal" split-proportion="0.6743649">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/screens/MenuItem.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="328">
+                <state relative-caret-position="-467">
                   <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
@@ -49,13 +47,14 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/screens/OptionMod.js">
+            <entry file="file://$PROJECT_DIR$/kioskActions.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="124">
-                  <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+                <state relative-caret-position="835">
+                  <caret line="88" column="22" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
                   <folding>
-                    <element signature="e#0#25#0" expanded="true" />
-                    <element signature="e#599#1680#0" />
+                    <element signature="n#!!block;n#fetchProducts#0" />
+                    <element signature="n#!!block;n#sendOrder#0" />
+                    <element signature="n#!!block;n#handleErrors#0" />
                   </folding>
                 </state>
               </provider>
@@ -64,32 +63,38 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/kioskReducer.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+                <state relative-caret-position="405">
+                  <caret line="261" column="14" lean-forward="true" selection-start-line="261" selection-start-column="14" selection-end-line="261" selection-end-column="14" />
                   <folding>
                     <element signature="e#1051#1198#0" />
                     <element signature="e#1208#1367#0" />
                     <element signature="e#1377#1569#0" />
-                    <element signature="e#3920#5181#0" />
-                    <element signature="e#5191#5677#0" />
-                    <element signature="e#5687#8707#0" />
-                    <element signature="e#8717#9193#0" />
-                    <element signature="e#9203#9617#0" />
-                    <element signature="e#9627#10245#0" />
+                    <element signature="e#1594#3165#0" />
+                    <element signature="e#1753#2944#0" />
+                    <element signature="e#2178#2393#0" />
+                    <element signature="e#2449#2639#0" />
+                    <element signature="e#3060#4321#0" />
+                    <element signature="e#4331#4850#0" />
+                    <element signature="e#4860#7708#0" />
+                    <element signature="e#7855#8467#0" />
+                    <element signature="e#9256#9377#0" />
+                    <element signature="e#9640#9773#0" />
+                    <element signature="e#9783#9907#0" />
+                    <element signature="e#9917#10110#0" />
+                    <element signature="e#10120#10247#0" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/kioskActions.js">
+            <entry file="file://$PROJECT_DIR$/screens/OptionMod.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2024">
-                  <caret line="88" column="22" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+                <state relative-caret-position="127">
+                  <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
                   <folding>
-                    <element signature="n#!!block;n#fetchProducts#0" />
-                    <element signature="n#!!block;n#sendOrder#0" />
-                    <element signature="n#!!block;n#handleErrors#0" />
+                    <element signature="e#0#25#0" expanded="true" />
+                    <element signature="e#599#1680#0" />
                   </folding>
                 </state>
               </provider>
@@ -111,7 +116,7 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/screens/ModWrapper.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="236">
@@ -126,8 +131,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/screens/MenuPicker.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="145">
-                  <caret line="20" column="10" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="10" />
+                <state relative-caret-position="670">
+                  <caret line="56" column="38" lean-forward="true" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
                   </folding>
@@ -135,11 +140,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/screens/Cart.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="145">
-                  <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+                <state relative-caret-position="296">
+                  <caret line="30" column="43" lean-forward="true" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
                   </folding>
@@ -172,7 +177,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>compileSdkVersion 23</find>
       <find>Context</find>
       <find>multidex</find>
       <find>.com</find>
@@ -198,10 +202,11 @@
       <find>choice</find>
       <find>mod</find>
       <find>conso</find>
-      <find>consol</find>
       <find>console.log</find>
       <find>con</find>
+      <find>action.payload.item.items.forE</find>
       <find>console</find>
+      <find>consol</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/</dir>
@@ -235,12 +240,12 @@
         <option value="$PROJECT_DIR$/screens/Menu.js" />
         <option value="$PROJECT_DIR$/kioskActions.js" />
         <option value="$PROJECT_DIR$/screens/ChoiceMod.js" />
-        <option value="$PROJECT_DIR$/screens/Cart.js" />
         <option value="$PROJECT_DIR$/screens/CartItem.js" />
         <option value="$PROJECT_DIR$/screens/MenuItem.js" />
         <option value="$PROJECT_DIR$/screens/ModifyItem.js" />
         <option value="$PROJECT_DIR$/screens/OptionMod.js" />
         <option value="$PROJECT_DIR$/screens/ModWrapper.js" />
+        <option value="$PROJECT_DIR$/screens/Cart.js" />
         <option value="$PROJECT_DIR$/kioskReducer.js" />
       </list>
     </option>
@@ -369,19 +374,19 @@
       <updated>1548289874961</updated>
       <workItem from="1551834938122" duration="39683000" />
       <workItem from="1552659499720" duration="32555000" />
-      <workItem from="1553021574246" duration="21378000" />
+      <workItem from="1553021574246" duration="25540000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146510000" />
+    <option name="totallyTimeSpent" value="150672000" />
   </component>
   <component name="TodoView" selected-index="2" />
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10970464" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21699819" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Captures" order="3" weight="0.25" />
@@ -655,26 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/screens/MenuPicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screens/Cart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/screens/CartItem.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="874">
@@ -722,40 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/screens/MenuItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#1038#1393#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kioskActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2024">
-          <caret line="88" column="22" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
-          <folding>
-            <element signature="n#!!block;n#fetchProducts#0" />
-            <element signature="n#!!block;n#sendOrder#0" />
-            <element signature="n#!!block;n#handleErrors#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screens/OptionMod.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#599#1680#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/screens/ModifyItem.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -776,6 +727,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/screens/OptionMod.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#599#1680#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/screens/ModWrapper.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
@@ -786,20 +748,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/kioskActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="835">
+          <caret line="88" column="22" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!block;n#fetchProducts#0" />
+            <element signature="n#!!block;n#sendOrder#0" />
+            <element signature="n#!!block;n#handleErrors#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/MenuItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-467">
+          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#1038#1393#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/MenuPicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="56" column="38" lean-forward="true" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/Cart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="30" column="43" lean-forward="true" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/kioskReducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+        <state relative-caret-position="405">
+          <caret line="261" column="14" lean-forward="true" selection-start-line="261" selection-start-column="14" selection-end-line="261" selection-end-column="14" />
           <folding>
             <element signature="e#1051#1198#0" />
             <element signature="e#1208#1367#0" />
             <element signature="e#1377#1569#0" />
-            <element signature="e#3920#5181#0" />
-            <element signature="e#5191#5677#0" />
-            <element signature="e#5687#8707#0" />
-            <element signature="e#8717#9193#0" />
-            <element signature="e#9203#9617#0" />
-            <element signature="e#9627#10245#0" />
+            <element signature="e#1594#3165#0" />
+            <element signature="e#1753#2944#0" />
+            <element signature="e#2178#2393#0" />
+            <element signature="e#2449#2639#0" />
+            <element signature="e#3060#4321#0" />
+            <element signature="e#4331#4850#0" />
+            <element signature="e#4860#7708#0" />
+            <element signature="e#7855#8467#0" />
+            <element signature="e#9256#9377#0" />
+            <element signature="e#9640#9773#0" />
+            <element signature="e#9783#9907#0" />
+            <element signature="e#9917#10110#0" />
+            <element signature="e#10120#10247#0" />
           </folding>
         </state>
       </provider>
