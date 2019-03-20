@@ -64,47 +64,31 @@ export default function productReducer(state = initialState, action) {
 
         case ADD_TO_CART:
             newCart.forEach((x) => {
-                // let newProd = state.menu.products.meals.map((item) => Object.assign({}, item))
-                // const newProducts = JSON.parse(JSON.stringify(state.menu.products.meals))
-
-                // let meal = newProd.find(x => x.item_id === action.payload.item.item_id)
-
-                // console.log(action.payload.item.items)
-                // console.log("_____________")
-                // console.log(x)
-                // if (x == action.payload.item) {
-                //     console.log('yes')
-                // } else {
-                //     console.log("_____________")
-                //     console.log(x.items)
-                //     console.log(action.payload.item.items)
-                //     console.log("+++++++++++++++")
-                // }
-
+                let finish = false
                 if (x.type.toLowerCase() == action.payload.item.type.toLowerCase()) {
                     const inCart = x.items.filter(i => i.item_id == action.payload.item.item_id)
 
-                    if (inCart.length) {
+                    if (inCart.length || finish) {
+                        let finalItem
+                        const test = []
+                        const testTwo = []
                         inCart.forEach(y => {
-                            const test = []
-                            const testTwo = []
                             action.payload.item.items.forEach(z=>test.push(z.item_id))
                             y.items.forEach(z=>testTwo.push(z.item_id))
-
-                            const finalTest = test.filter((item) => { return !testTwo.includes(item) })
-                            if (finalTest.length){
-                                // if (finalTest.length === 1 ) {
-
-                                    // const merp = x.items.find(z => z.item_id === finalTest[0])
-                                    console.log('merp')
-                                    action.payload.item.count = 1
-                                    x.items.push(action.payload.item)
-                                // }
-
-                            } else {
-                                y.count += 1
-                            }
+                            finalItem = y
                         })
+                        const finalTest = test.filter((item) => { return !testTwo.includes(item)})
+
+                        if (finalTest.length >= 1){
+
+                            action.payload.item.count = 1
+                            x.items.push(action.payload.item)
+                            finish= true
+
+                        } else {
+                            finalItem.count += 1
+                            finish = true
+                        }
                     } else {
                         action.payload.item.count = 1
                         x.items.push(action.payload.item)
@@ -152,10 +136,10 @@ export default function productReducer(state = initialState, action) {
         case CHANGE_SIDE:
             const newProducts = JSON.parse(JSON.stringify(state.menu.products.meals))
             const meal = newProducts.find(x => x.item_id === action.mealId.mealId)
-            const index = meal.items.find(x => x.item_type === 'entree')
+            const index = meal.items.findIndex(x => x.item_type === 'side')
             meal.items.splice(index, 1)
             meal.items.push(action.item.item)
-
+            newModdedSide = []
             newModdedSide.push(meal)
             return {
                 ...state,
@@ -165,6 +149,7 @@ export default function productReducer(state = initialState, action) {
         case POPULATE_MODS:
             const inChecked = newChecked.find(x => x.item_id === action.productID.productID)
             const swappedSide = newModdedSide.find(x => x.item_id === action.productID.productID)
+            let clearChecked = []
 
             if (!inChecked) {
                 switch (action.mealType.mealType) {
@@ -195,7 +180,7 @@ export default function productReducer(state = initialState, action) {
                                 choices: choice
                             })
                         })
-                        newChecked.push({
+                        clearChecked.push({
                             id: action.productID.productID,
                             items: mealOptions
                         })
@@ -212,24 +197,18 @@ export default function productReducer(state = initialState, action) {
                                     choice.push({name: x.name, value: x.default, choices: x.choices})
                             }
                         })
-                        newChecked.push({
+                        clearChecked.push({
                             id: action.item.item.item_id,
                             options: option,
                             choices: choice
                         })
                         break
                 }
-            } else {
-                // newChecked.push({
-                //     id: action.item.item.item_id,
-                //     options: option,
-                //     choices: choice
-                // })
             }
 
             return {
                 ...state,
-                checked: newChecked
+                checked: clearChecked
             }
 
         case REMOVE_ONE_FROM_CART:

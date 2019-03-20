@@ -38,7 +38,6 @@ class OptionMod extends React.Component {
                     )
                 case 'multi':
                     const multiItem = checked.items.find(x => x.id === this.props.item.item.item_id)
-                    // console.log(multiItem)
                     if (multiItem) {
                         return (
                             <View>

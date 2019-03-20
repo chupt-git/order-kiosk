@@ -4,15 +4,21 @@ import ChoiceMod from './ChoiceMod'
 import { populateMods } from '../kioskActions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import {View} from "react-native"
+import {View, Text} from "react-native"
 
 class ModWrapper extends React.Component {
     componentWillMount () {
+        // console.log(this.props.item.item)
         this.props.populateMods(this.props.item.item, this.props.mealType, this.props.productID)
     }
 
     componentDidUpdate() {
-        console.log('test')
+        const sideChanged = this.props.moddedSide.find(x => x.item_id === this.props.productID)
+        if (sideChanged) {
+            sideChanged.items.forEach(x => {
+                this.props.populateMods(x, this.props.mealType, this.props.productID)
+            })
+        }
     }
 
     render() {
@@ -53,6 +59,7 @@ class ModWrapper extends React.Component {
         })
         return (
             <View style={{width: '100%'}}>
+                <Text>{this.props.item.item.name} Mods</Text>
                 {modGuts}
             </View>
         )
@@ -61,7 +68,8 @@ class ModWrapper extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        cart: state.cart
+        cart: state.cart,
+        moddedSide: state.moddedSide
     }
 }
 

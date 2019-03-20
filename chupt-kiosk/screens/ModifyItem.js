@@ -37,8 +37,11 @@ class ModifyItem extends React.Component {
                     mealType={'single'}
                     productID={itemWrap.item_id}/>)
         } else {
-
+            //Multi items
             itemWrap.items.forEach((item) => {
+                // console.log('++++++++')
+                // console.log(item)
+                // console.log("===============")
                 mods.push(
                     <ModWrapper
                         key={item.item_id}
