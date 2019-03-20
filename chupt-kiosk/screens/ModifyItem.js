@@ -12,8 +12,8 @@ import MenuImage from './MenuImage'
 import {addToCart} from '../kioskActions'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import ModWrapper from "./ModWrapper";
-import {withNavigation} from "react-navigation";
+import ModWrapper from "./ModWrapper"
+import {withNavigation} from "react-navigation"
 
 class ModifyItem extends React.Component {
     render() {
@@ -37,13 +37,13 @@ class ModifyItem extends React.Component {
                     mealType={'single'}
                     productID={itemWrap.item_id}/>)
         } else {
+
             itemWrap.items.forEach((item) => {
                 mods.push(
                     <ModWrapper
                         key={item.item_id}
                         item={{item}}
                         mealType={'multi'}
-
                         productID={itemWrap.item_id}/>)
             })
             sideButton.push(
@@ -93,7 +93,7 @@ class ModifyItem extends React.Component {
                     }}>
 
                         <CircleButton onPress={() => {
-                            this.props.addToCart(item)
+                            this.props.addToCart(itemWrap)
                             this.props.navigation.navigate('MenuPicker')
                         }}>
                             <ColoredText>+</ColoredText>

@@ -12,20 +12,29 @@ import { withNavigation } from 'react-navigation'
 
 class MenuItem extends React.Component {
   render() {
-    const item = this.props.item
+    let item = this.props.item
     item.type = this.props.type
     const mealId = this.props.mealId
     const addButton = []
 
     if(!mealId) {
-        addButton.push(
+        const sideChanged = this.props.moddedSide.find(x=> x.item_id === item.item_id)
+        let itemToAdd
+        if (!sideChanged){
+            itemToAdd = item
+        }else {
+            item = sideChanged
+            itemToAdd = sideChanged
+        }
+        addButton.push (
             <CircleButton
                 key={'addButton'}
                 onPress={() => {
-                    this.props.addToCart(item)
+                    this.props.addToCart(itemToAdd)
                     this.props.navigation.navigate('MenuPicker')}}>
                 <ColoredText>+</ColoredText>
             </CircleButton>)
+
     } else {
         addButton.push(
             <CircleButton
@@ -84,7 +93,8 @@ class MenuItem extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        cart: state.cart
+        cart: state.cart,
+        moddedSide: state.moddedSide
     }
 }
 

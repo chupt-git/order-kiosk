@@ -35,7 +35,7 @@ const initialState = {
 }
 
 export default function productReducer(state = initialState, action) {
-    let newCart = state.cart.map((item) => Object.assign({}, item))
+    let newCart = JSON.parse(JSON.stringify(state.cart))
     let newChecked = state.checked.map((item) => Object.assign({}, item))
     let newModdedSide = state.moddedSide.map((item) => Object.assign({}, item))
 
@@ -64,10 +64,47 @@ export default function productReducer(state = initialState, action) {
 
         case ADD_TO_CART:
             newCart.forEach((x) => {
+                // let newProd = state.menu.products.meals.map((item) => Object.assign({}, item))
+                // const newProducts = JSON.parse(JSON.stringify(state.menu.products.meals))
+
+                // let meal = newProd.find(x => x.item_id === action.payload.item.item_id)
+
+                // console.log(action.payload.item.items)
+                // console.log("_____________")
+                // console.log(x)
+                // if (x == action.payload.item) {
+                //     console.log('yes')
+                // } else {
+                //     console.log("_____________")
+                //     console.log(x.items)
+                //     console.log(action.payload.item.items)
+                //     console.log("+++++++++++++++")
+                // }
+
                 if (x.type.toLowerCase() == action.payload.item.type.toLowerCase()) {
-                    const inCart = x.items.find(i => i.item_id == action.payload.item.item_id)
-                    if (inCart) {
-                        inCart.count += 1
+                    const inCart = x.items.filter(i => i.item_id == action.payload.item.item_id)
+
+                    if (inCart.length) {
+                        inCart.forEach(y => {
+                            const test = []
+                            const testTwo = []
+                            action.payload.item.items.forEach(z=>test.push(z.item_id))
+                            y.items.forEach(z=>testTwo.push(z.item_id))
+
+                            const finalTest = test.filter((item) => { return !testTwo.includes(item) })
+                            if (finalTest.length){
+                                // if (finalTest.length === 1 ) {
+
+                                    // const merp = x.items.find(z => z.item_id === finalTest[0])
+                                    console.log('merp')
+                                    action.payload.item.count = 1
+                                    x.items.push(action.payload.item)
+                                // }
+
+                            } else {
+                                y.count += 1
+                            }
+                        })
                     } else {
                         action.payload.item.count = 1
                         x.items.push(action.payload.item)
@@ -113,7 +150,7 @@ export default function productReducer(state = initialState, action) {
             }
 
         case CHANGE_SIDE:
-            let newProducts = state.menu.products.meals.map((item) => Object.assign({}, item))
+            const newProducts = JSON.parse(JSON.stringify(state.menu.products.meals))
             const meal = newProducts.find(x => x.item_id === action.mealId.mealId)
             const index = meal.items.find(x => x.item_type === 'entree')
             meal.items.splice(index, 1)
@@ -189,60 +226,6 @@ export default function productReducer(state = initialState, action) {
                 //     choices: choice
                 // })
             }
-
-            // if (!inChecked || action.mealType.mealType === 'multi') {
-            //     let menuMeals = state.menu.products.meals.map((item) => Object.assign({}, item))
-            //     // const newMeal = menuMeals[0].items.find(x => x.item_id === action.productID.productID)
-            //     const option = []
-            //     const choice = []
-            //
-            //     action.item.item.mods.forEach((x) => {
-            //         switch (x.mod_type) {
-            //             case 'option':
-            //                 option.push({name: x.name, value: x.default})
-            //                 break;
-            //             case 'choice':
-            //                 choice.push({name: x.name, value: x.default, choices: x.choices})
-            //         }
-            //     })
-            //
-            //     if (action.mealType.mealType === 'multi') {
-            //         const test = menuMeals.find(x => x.item_id === action.productID.productID)
-            //
-            //
-            //
-            //         const mealOptions = []
-            //         switch (action.item.item.item_type) {
-            //             case 'side':
-            //                 console.log(action.item.item.item_id)
-            //                 mealOptions.push({
-            //                     type: 'side',
-            //                     id: action.item.item.item_id,
-            //                     options: option,
-            //                     choices: choice
-            //                 })
-            //                 break
-            //             case 'entree':
-            //                 console.log(action.item.item.item_id)
-            //                 mealOptions.push({
-            //                     type: 'entree',
-            //                     id: action.item.item.item_id,
-            //                     options: option,
-            //                     choices: choice
-            //                 })
-            //         }
-            //         newChecked.push({
-            //             id: action.productID.productID,
-            //             item: mealOptions
-            //         })
-            //     } else {
-            //         newChecked.push({
-            //             id: action.item.item.item_id,
-            //             options: option,
-            //             choices: choice
-            //         })
-            //     }
-            // }
 
             return {
                 ...state,

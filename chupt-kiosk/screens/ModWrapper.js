@@ -11,6 +11,10 @@ class ModWrapper extends React.Component {
         this.props.populateMods(this.props.item.item, this.props.mealType, this.props.productID)
     }
 
+    componentDidUpdate() {
+        console.log('test')
+    }
+
     render() {
         const item = this.props.item.item
         let option = []
