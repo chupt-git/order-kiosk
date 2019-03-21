@@ -53,7 +53,7 @@ class Checkout extends React.Component {
         <Button
           disabled={empty}
           title="Finish"
-          onPress={() => {this.props.navigation.navigate('Finish')}}/>
+          onPress={() => {this.props.sendOrder(this.props.cart, contact)}}/>
       </View>
     );
   }
@@ -79,4 +79,5 @@ const mapDispatchToProps = dispatch => (
 
 export default connect(mapStateToProps, mapDispatchToProps)(Checkout)
 
-// this.props.sendOrder(this.props.cart, contact)
+// this.props.navigation.navigate('Finish')
+//

@@ -5,13 +5,18 @@ import ColoredText from '../components/ColoredText'
 import MenuItemWrap from '../components/MenuItemWrap'
 import ItemTitle from '../components/ItemTitle'
 import MenuImage from './MenuImage.js'
-import { addToCart, changeSide } from '../kioskActions'
+import { addToCart, changeSide, clearModdedSide } from '../kioskActions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withNavigation } from 'react-navigation'
 
 class MenuItem extends React.Component {
-  render() {
+    componentDidMount() {
+        if (this.props.moddedSide.length){
+        this.props.clearModdedSide()}
+    }
+
+    render() {
     let item = this.props.item
     item.type = this.props.type
     const mealId = this.props.mealId
@@ -101,7 +106,8 @@ function mapStateToProps(state) {
 const mapDispatchToProps = dispatch => (
     bindActionCreators({
         addToCart,
-        changeSide
+        changeSide,
+        clearModdedSide
     }, dispatch)
 )
 

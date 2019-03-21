@@ -1,8 +1,10 @@
 import React from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native'
+import {fetchPickup} from "../kioskActions";
 
 class Pickup extends React.Component {
   render() {
+    this.props.dispatch(fetchPickup())
     return (
       <View style={styles.container}>
         <Text>Pickup</Text>

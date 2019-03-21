@@ -13,7 +13,8 @@ import {
     POPULATE_MODS,
     CHANGE_SIDE,
     QUICK_DELETE_CART,
-    TOGGLE_MODAL_DISPLAY
+    TOGGLE_MODAL_DISPLAY,
+    CLEAR_MODDED_SIDE
 } from './kioskActions'
 
 const initialState = {
@@ -63,6 +64,12 @@ export default function productReducer(state = initialState, action) {
                 error: action.payload.error,
                 menu: []
             };
+
+        case CLEAR_MODDED_SIDE:
+            return {
+                ...state,
+                moddedSide: []
+            }
 
         case ADD_TO_CART:
             newCart.forEach((x) => {

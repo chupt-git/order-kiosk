@@ -13,9 +13,14 @@ export const  POPULATE_MODS = 'POPULATE_MODS'
 export const CHANGE_SIDE = 'CHANGE_SIDE'
 export  const QUICK_DELETE_CART = 'QUICK_DELETE_CART'
 export const TOGGLE_MODAL_DISPLAY = 'TOGGLE_MODAL_DISPLAY'
+export const CLEAR_MODDED_SIDE = 'CLEAR_MODDED_SIDE'
 
 export const toggleModalDisplay = () => ({
   type: TOGGLE_MODAL_DISPLAY
+})
+
+export const clearModdedSide = () => ({
+  type: CLEAR_MODDED_SIDE
 })
 
 export const quickDeleteCart = () => ({
@@ -103,11 +108,27 @@ export function fetchProducts() {
   };
 }
 
+export function fetchPickup() {
+  return dispatch => {
+    dispatch(fetchProductsBegin());
+    return fetch('https://chupt-dev-4.appspot.com/pods/DApm5HLNDrE4vpFjanQR65/cart')
+        .then(handleErrors)
+        .then(res => res.json())
+        .then(json => {
+          console.log(json)
+          return json
+        })
+        .catch(error => dispatch(fetchProductsFailure(error)))
+  };
+}
+
 export function sendOrder(cart, contact) {
   return dispatch => {
     dispatch(fetchProductsBegin())
     let items={}
     let currentCategory = ''
+
+    console.log(cart, contact)
 
     cart.forEach((dataItem) => {
       if (currentCategory !== dataItem.type) {
