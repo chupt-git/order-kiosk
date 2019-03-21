@@ -17,18 +17,11 @@ class MenuPicker extends React.Component {
   render() {
     const menu = this.props.navigation.state.params.menu.products
     const types = []
-    Object.keys(menu).forEach((key, index) => {
-        let typeIndex
-        if (key === 'meals') {
-            typeIndex = 0
-        } else {
-            typeIndex = index + 1
-        }
-
-        console.log()
+    Object.keys(menu).forEach((key) => {
+        const name = key.charAt(0).toUpperCase() + key.slice(1)
       const a = menu[key][0].amount.toFixed(2).match(/^([^.]+)/)[0]
       const b = menu[key][0].amount.toFixed(2).match(/[^.]*$/)[0]
-        types.push({index:typeIndex, type:key, price:{front: a, back:b, full: menu[key][0].amount.toFixed(2)}})
+        types.push({type:key, displayName: name, price:{front: a, back:b, full: menu[key][0].amount.toFixed(2)}})
     })
       types.sort((a, b) => parseFloat(b.price.full) - parseFloat(a.price.full))
     return (
@@ -46,7 +39,8 @@ class MenuPicker extends React.Component {
                     type={item.type}
                     onPress={() => this.props.navigation.navigate('Menu', {
                         type: item.type,
-                        price: item.price
+                        price: item.price,
+                        displayName: item.displayName
                     })}
                     fullWidth
                     center
@@ -58,7 +52,7 @@ class MenuPicker extends React.Component {
                       justifyContent: 'space-around',
                       alignItems:'flex-end'}}>
 
-                    <ButtonText>{item.type}</ButtonText>
+                    <ButtonText>{item.displayName}</ButtonText>
 
                     <View style={{
                       height: 80,
