@@ -17,12 +17,18 @@ class MenuPicker extends React.Component {
   render() {
     const menu = this.props.navigation.state.params.menu.products
     const types = []
-    Object.keys(menu).forEach((key) => {
+    Object.keys(menu).forEach((key, index) => {
+        let typeIndex
+        if (key === 'meals') {
+            typeIndex = 0
+        } else {
+            typeIndex = index + 1
+        }
       const a = menu[key][0].amount.toFixed(2).match(/^([^.]+)/)[0]
       const b = menu[key][0].amount.toFixed(2).match(/[^.]*$/)[0]
-     types.push({type:key, price:{front: a, back:b}})
+     types.push({index:typeIndex, type:key, price:{front: a, back:b}})
     })
-    types.reverse()
+    types.sort((a, b) => parseFloat(a.index) - parseFloat(b.index))
     return (
       <MainWrap>
         <TopNavigation/>

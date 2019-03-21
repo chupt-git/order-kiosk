@@ -1,7 +1,12 @@
 import React from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native'
+import {fetchPickup} from "../kioskActions";
 
 class Pickup extends React.Component {
+  componentWillMount() {
+    this.props.dispatch(fetchPickup())
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -25,3 +30,11 @@ const styles = StyleSheet.create({
 })
 
 export default Pickup
+
+
+// let pickupbuttons = Array(24).fill(2)
+// // for (leti=0; i < 25; i++) {
+// //   pickupbuttons.push (
+// //
+// //   )
+// // }

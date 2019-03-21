@@ -11,10 +11,26 @@ export const CHANGE_PICKUPTYPE_INPUT = 'CHANGE_PICKUPTYPE_INPUT'
 export const TOGGLE_CHECKED = 'TOGGLE_CHECKED'
 export const  POPULATE_MODS = 'POPULATE_MODS'
 export const CHANGE_SIDE = 'CHANGE_SIDE'
+export  const QUICK_DELETE_CART = 'QUICK_DELETE_CART'
+export const TOGGLE_MODAL_DISPLAY = 'TOGGLE_MODAL_DISPLAY'
+export const CLEAR_MODDED_SIDE = 'CLEAR_MODDED_SIDE'
 
-export const changeSide = item => ({
+export const toggleModalDisplay = () => ({
+  type: TOGGLE_MODAL_DISPLAY
+})
+
+export const clearModdedSide = () => ({
+  type: CLEAR_MODDED_SIDE
+})
+
+export const quickDeleteCart = () => ({
+  type: QUICK_DELETE_CART
+})
+
+export const changeSide = (item, mealId) => ({
   type: CHANGE_SIDE,
-  payload: { item }
+  item: { item },
+  mealId: { mealId }
 })
 
 export const fetchProductsBegin = () => ({
@@ -31,9 +47,11 @@ export const fetchProductsFailure = error => ({
   payload: { error }
 })
 
-export const  populateMods = item => ({
+export const  populateMods = (item, mealType, productID) => ({
   type: POPULATE_MODS,
-  payload: {item}
+  item: {item},
+  mealType: {mealType},
+  productID: {productID}
 })
 
 export const addToCart = item => ({
@@ -67,12 +85,13 @@ export const changePickupTypeInput = pickupType => ({
   payload: { pickupType }
 })
 
-export const toggleChecked = (item, mod, name, itemName) => ({
+export const toggleChecked = (item, mod, name, itemName, choiceID) => ({
   type: TOGGLE_CHECKED,
   item: {item},
   mod: {mod},
   name: {name},
-  itemName: {itemName}
+  itemName: {itemName},
+  choiceID: {choiceID}
 })
 
 export function fetchProducts() {
@@ -89,11 +108,27 @@ export function fetchProducts() {
   };
 }
 
+export function fetchPickup() {
+  return dispatch => {
+    dispatch(fetchProductsBegin());
+    return fetch('https://chupt-dev-4.appspot.com/carts/1')
+        .then(handleErrors)
+        .then(res => res.json())
+        .then(json => {
+          console.log(json)
+          return json
+        })
+        .catch(error => dispatch(fetchProductsFailure(error)))
+  };
+}
+
 export function sendOrder(cart, contact) {
   return dispatch => {
     dispatch(fetchProductsBegin())
     let items={}
     let currentCategory = ''
+
+    console.log(cart, contact)
 
     cart.forEach((dataItem) => {
       if (currentCategory !== dataItem.type) {

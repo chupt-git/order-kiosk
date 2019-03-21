@@ -5,45 +5,66 @@ import ColoredText from '../components/ColoredText'
 import MenuItemWrap from '../components/MenuItemWrap'
 import ItemTitle from '../components/ItemTitle'
 import MenuImage from './MenuImage.js'
-import { addToCart, changeSide } from '../kioskActions'
+import { addToCart, changeSide, clearModdedSide } from '../kioskActions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withNavigation } from 'react-navigation'
 
 class MenuItem extends React.Component {
-  render() {
-    const item = this.props.item
-    item.type = this.props.type
-    const addButton = []
-    if(!this.props.addSides) {
-        addButton.push(<CircleButton
-            key={'addButton'}
-            onPress={() => {
-                this.props.addToCart(item)
-                this.props.navigation.navigate('MenuPicker')}}>
-            <ColoredText>+</ColoredText>
-        </CircleButton>)
-    } else {
-        addButton.push(<CircleButton
-            key={'addButton'}
-            onPress={() => {
-                this.props.changeSide(item)
-                this.props.navigation.goBack()}}>
-            <ColoredText>+</ColoredText>
-        </CircleButton>)
+    componentDidMount() {
+        if (this.props.moddedSide.length){
+        this.props.clearModdedSide()}
     }
+
+    render() {
+    let item = this.props.item
+    item.type = this.props.type
+    const mealId = this.props.mealId
+    const addButton = []
+
+    if(!mealId) {
+        const sideChanged = this.props.moddedSide.find(x=> x.item_id === item.item_id)
+        let itemToAdd
+        if (!sideChanged){
+            itemToAdd = item
+        }else {
+            item = sideChanged
+            itemToAdd = sideChanged
+        }
+        addButton.push (
+            <CircleButton
+                key={'addButton'}
+                onPress={() => {
+                    this.props.addToCart(itemToAdd)
+                    this.props.navigation.navigate('MenuPicker')}}>
+                <ColoredText>+</ColoredText>
+            </CircleButton>)
+
+    } else {
+        addButton.push(
+            <CircleButton
+                style={{width: 100}}
+                key={'addButton'}
+                onPress={() => {
+                    this.props.changeSide(item, mealId)
+                    this.props.navigation.goBack()}}>
+                <ColoredText>Choose Side</ColoredText>
+            </CircleButton>)
+    }
+
     return (
       <View style={{position: 'relative'}}>
-          <TouchableOpacity onPress={() => this.props.navigation.navigate('ModifyItem', {
-            item: item
-          })}
-          style={{
-            position: 'absolute',
-            top: 20,
-            right: 25,
-            zIndex: 1
-          }}>
-            <Text style={{fontSize: 30}}>...</Text>
+          <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('ModifyItem', {
+                item: item
+              })}
+              style={{
+                position: 'absolute',
+                top: 20,
+                right: 25,
+                zIndex: 1
+              }}>
+                <Text style={{fontSize: 30}}>...</Text>
           </TouchableOpacity>
           <MenuItemWrap style={{
             flexDirection: 'row',
@@ -52,14 +73,12 @@ class MenuItem extends React.Component {
             alignItems: 'flex-start',
             paddingTop: 50,
             minHeight: 300}}>
-            <MenuImage style={{width: '50%'}} item={item}/>
-            <View style={{width: '50%'}}>
-              <ItemTitle>{item.name}</ItemTitle>
-              <Text>{item.description}</Text>
-            </View>
+                <MenuImage style={{width: '50%'}} item={item}/>
+                <View style={{width: '50%'}}>
+                  <ItemTitle>{item.name}</ItemTitle>
+                  <Text>{item.description}</Text>
+                </View>
           </MenuItemWrap>
-          <View>
-          </View>
           <View
             style={{
               position: 'absolute',
@@ -69,7 +88,6 @@ class MenuItem extends React.Component {
               flexDirection: 'row',
               justifyContent: 'center'
             }}>
-
               {addButton}
           </View>
         </View>
@@ -80,14 +98,16 @@ class MenuItem extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        cart: state.cart
+        cart: state.cart,
+        moddedSide: state.moddedSide
     }
 }
 
 const mapDispatchToProps = dispatch => (
     bindActionCreators({
         addToCart,
-        changeSide
+        changeSide,
+        clearModdedSide
     }, dispatch)
 )
 

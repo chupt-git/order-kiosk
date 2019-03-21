@@ -25,12 +25,14 @@ class Menu extends React.Component {
       <MainWrap>
         <TopNavigation/>
         <Body>
-          <MainButton type={menu.type} medWidth
-          style={{
-            overflow: 'hidden',
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems:'flex-end'}}>
+          <MainButton
+              type={menu.type}
+              medWidth
+              style={{
+                overflow: 'hidden',
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems:'flex-end'}}>
             <ButtonText small>{menu.type}</ButtonText>
             <View style={{
               height: 50,

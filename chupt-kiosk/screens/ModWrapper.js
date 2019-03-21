@@ -4,40 +4,62 @@ import ChoiceMod from './ChoiceMod'
 import { populateMods } from '../kioskActions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import {View} from "react-native"
+import {View, Text} from "react-native"
 
 class ModWrapper extends React.Component {
     componentWillMount () {
-        this.props.populateMods(this.props.item.item)
+        // console.log(this.props.item.item)
+        this.props.populateMods(this.props.item.item, this.props.mealType, this.props.productID)
+    }
+
+    componentDidUpdate() {
+        const sideChanged = this.props.moddedSide.find(x => x.item_id === this.props.productID)
+        if (sideChanged) {
+            sideChanged.items.forEach(x => {
+                this.props.populateMods(x, this.props.mealType, this.props.productID)
+            })
+        }
     }
 
     render() {
         const item = this.props.item.item
-        const option = []
-        const choice = []
+        let option = []
+        let choice = []
         let modGuts = []
 
-        item.mods.forEach((x, y)=>{
+        item.mods.forEach((x)=>{
             switch (x.mod_type) {
                 case 'option':
-                    option.push(x);
-                    if(option.length <= 1){
+                    option.push(x)
+                    if (option.length <= 1){
                         modGuts.push(
-                            <OptionMod key={'option'} data={{option}} item={{item}}/>
+                            <OptionMod
+                                key={'option'}
+                                data={{option}}
+                                item={{item}}
+                                id={this.props.productID}
+                                mealType={this.props.mealType}/>
                         )
                     }
-                    break;
+                    break
                 case 'choice':
-                    choice.push(x);
-                    if(choice.length <= 1){
+                    choice.push(x)
+                    if (choice.length <= 1){
                         modGuts.push(
-                            <ChoiceMod key={'choice'} data={{choice}} item={{item}}/>
+                            <ChoiceMod
+                                key={'choice'}
+                                data={{choice}}
+                                item={{item}}
+                                id={this.props.productID}
+                                mealType={this.props.mealType}/>
                         )
                     }
-             }
+                    break
+            }
         })
         return (
             <View style={{width: '100%'}}>
+                <Text>{this.props.item.item.name} Mods</Text>
                 {modGuts}
             </View>
         )
@@ -46,7 +68,8 @@ class ModWrapper extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        cart: state.cart
+        cart: state.cart,
+        moddedSide: state.moddedSide
     }
 }
 

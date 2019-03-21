@@ -6,38 +6,70 @@ import { connect } from 'react-redux'
 import { withNavigation } from 'react-navigation'
 
 class OptionMod extends React.Component {
-
     render() {
         const options = this.props.data.option
-        const itemID = this.props.item.item.item_id
+        const itemID = this.props.id
         const checked = this.props.checked.find(x=> x.id === itemID)
-
-
 
         if (!checked) {
             return null
         } else {
-            return (
-                <View>
-                    <Text>OPTIONS</Text>
-                    <FlatList
-                        data={options}
-                        extraData={checked}
-                        renderItem={({item}) =>{
-                            return(<View>
-                                <Text>{item.name}</Text>
-                                <CheckBox
-                                    value={(/true/i).test(checked.options.find(x => x.name === item.name).value)}
-                                    onValueChange={() => this.props.toggleChecked(itemID, 'options', item.name )}
+            switch (this.props.mealType) {
+                case 'single':
+                    return (
+                        <View>
+                            <Text>OPTIONS</Text>
+                            <FlatList
+                                data={options}
+                                extraData={checked}
+                                renderItem={({item}) => {
+                                    return(
+                                        <View>
+                                            <Text>{item.name}</Text>
+                                            <CheckBox
+                                                value={(/true/i).test(checked.options.find(x => x.name === item.name).value)}
+                                                onValueChange={() => this.props.toggleChecked(itemID, 'options', item.name )}
+                                            />
+                                        </View>)
+                                }}
+                                keyExtractor={(item, index) => index.toString()}
+                            />
+                        </View>
+                    )
+                case 'multi':
+                    const multiItem = checked.items.find(x => x.id === this.props.item.item.item_id)
+                    if (multiItem) {
+                        return (
+                            <View>
+                                <Text>OPTIONS MULTI</Text>
+                                <FlatList
+                                    data={options}
+                                    extraData={checked}
+                                    renderItem={({item}) => {
+                                        return(
+                                            <View>
+                                                <Text>{item.name}</Text>
+                                                <CheckBox
+                                                    value={(/true/i).test(multiItem.options.find(x => x.name === item.name).value)}
+                                                    onValueChange={() => this.props.toggleChecked(itemID, item.name, 'options', multiItem.id, 'filler')}
+                                                />
+                                            </View>)
+                                    }}
+                                    keyExtractor={(item, index) => index.toString()}
                                 />
-                            </View>)}}
-                        keyExtractor={(item, index) => index.toString()}
-                    />
-                </View>
-            )
+                            </View>
+                    )} else {
+                        return (
+                            null
+                        )
+                    }
+            }
         }
     }
 }
+
+
+
 
 function mapStateToProps(state) {
     return {
@@ -56,3 +88,4 @@ export default withNavigation(connect(
     mapStateToProps,
     mapDispatchToProps
 )(OptionMod))
+

@@ -5,15 +5,16 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withNavigation } from 'react-navigation'
 import MenuItemWrap from "../components/MenuItemWrap"
+import Body from '../components/Body'
+import TopNavigation from './TopNavigation'
+import BottomNavigation from './BottomNavigation'
 import MenuItem from './MenuItem'
-import ItemTitle from '../components/ItemTitle'
+import MainWrap from '../components/MainWrap'
 
 class SideChange extends React.Component {
     render() {
-        // const item = this.props.navigation.state.params.item.find(x => x.item_type.toLowerCase() === 'side')
-
         const items = this.props.menu.products
-        // const items = this.props.navigation.state.params.item
+        const mealId = this.props.navigation.state.params.mealId
 
         let currentProducts = []
 
@@ -22,33 +23,37 @@ class SideChange extends React.Component {
                 currentProducts = items[key]
             }})
 
-        console.log(currentProducts)
         return (
-            <View>
-                <MenuItemWrap style={{
-                    flexDirection: 'row',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'flex-start',
-                    paddingTop: 50,
-                    minHeight: 300
-                }}>
-                    <FlatList
-                        contentContainerStyle={{flexGrow: 1}}
-                        style={{width: '95%'}}
-                        data={currentProducts}
-                        renderItem={({item}) => {
-                            return (
-                                <MenuItem
-                                    item={item}
-                                    type={'sides'}
-                                    addSides={true}
-                                />
-                            )}}
-                        keyExtractor={(item, index) => index.toString()}
-                    />
-                </MenuItemWrap>
-            </View>
+            <MainWrap>
+                <TopNavigation/>
+                    <Body>
+                    <MenuItemWrap style={{
+                        flexDirection: 'row',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'flex-start',
+                        paddingTop: 50,
+                        minHeight: 300,
+                        marginTop: 100
+                    }}>
+                        <FlatList
+                            contentContainerStyle={{flexGrow: 1}}
+                            style={{width: '95%'}}
+                            data={currentProducts}
+                            renderItem={({item}) => {
+                                return (
+                                    <MenuItem
+                                        item={item}
+                                        type={'sides'}
+                                        mealId={mealId}
+                                    />
+                                )}}
+                            keyExtractor={(item, index) => index.toString()}
+                        />
+                    </MenuItemWrap>
+                    <BottomNavigation/>
+                </Body>
+            </MainWrap>
         )
     }
 }
