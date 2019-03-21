@@ -1,6 +1,9 @@
 export const FETCH_PRODUCTS_BEGIN   = 'FETCH_PRODUCTS_BEGIN'
 export const FETCH_PRODUCTS_SUCCESS = 'FETCH_PRODUCTS_SUCCESS'
 export const FETCH_PRODUCTS_FAILURE = 'FETCH_PRODUCTS_FAILURE'
+export const FETCH_LOCKERS_BEGIN   = 'FETCH_LOCKERS_BEGIN'
+export const FETCH_LOCKERS_SUCCESS = 'FETCH_LOCKERS_SUCCESS'
+export const FETCH_LOCKERS_FAILURE = 'FETCH_LOCKERS_FAILURE'
 export const ADD_TO_CART = 'ADD_TO_CART'
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
 export const CHANGE_NAME_INPUT = 'CHANGE_NAME_INPUT'
@@ -31,20 +34,6 @@ export const changeSide = (item, mealId) => ({
   type: CHANGE_SIDE,
   item: { item },
   mealId: { mealId }
-})
-
-export const fetchProductsBegin = () => ({
-  type: FETCH_PRODUCTS_BEGIN
-})
-
-export const fetchProductsSuccess = products => ({
-  type: FETCH_PRODUCTS_SUCCESS,
-  payload: { products }
-})
-
-export const fetchProductsFailure = error => ({
-  type: FETCH_PRODUCTS_FAILURE,
-  payload: { error }
 })
 
 export const  populateMods = (item, mealType, productID) => ({
@@ -94,6 +83,34 @@ export const toggleChecked = (item, mod, name, itemName, choiceID) => ({
   choiceID: {choiceID}
 })
 
+export const fetchProductsBegin = () => ({
+  type: FETCH_PRODUCTS_BEGIN
+})
+
+export const fetchProductsSuccess = products => ({
+  type: FETCH_PRODUCTS_SUCCESS,
+  payload: { products }
+})
+
+export const fetchProductsFailure = error => ({
+  type: FETCH_PRODUCTS_FAILURE,
+  payload: { error }
+})
+
+export const fetchLockersBegin = () => ({
+  type: FETCH_LOCKERS_BEGIN
+})
+
+export const fetchLockersSuccess = lockers => ({
+  type: FETCH_LOCKERS_SUCCESS,
+  payload: { lockers }
+})
+
+export const fetchLockersFailure = error => ({
+  type: FETCH_LOCKERS_FAILURE,
+  payload: { error }
+})
+
 export function fetchProducts() {
   return dispatch => {
     dispatch(fetchProductsBegin());
@@ -110,15 +127,15 @@ export function fetchProducts() {
 
 export function fetchPickup() {
   return dispatch => {
-    dispatch(fetchProductsBegin());
+    dispatch(fetchLockersBegin());
     return fetch('https://chupt-dev-4.appspot.com/carts/1')
         .then(handleErrors)
         .then(res => res.json())
         .then(json => {
-          console.log(json)
-          return json
+          dispatch(fetchLockersSuccess(json.lockers))
+          return json.lockers
         })
-        .catch(error => dispatch(fetchProductsFailure(error)))
+        .catch(error => dispatch(fetchLockersFailure(error)))
   };
 }
 

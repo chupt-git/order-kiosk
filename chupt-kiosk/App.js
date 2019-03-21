@@ -6,7 +6,6 @@ import storeConfig from './storeConfig';
 
 const store = storeConfig()
 
-
 export default class App extends React.Component {
   componentDidMount() {
      StatusBar.setHidden(true);

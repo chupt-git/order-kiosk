@@ -2,6 +2,9 @@ import {
     FETCH_PRODUCTS_BEGIN,
     FETCH_PRODUCTS_SUCCESS,
     FETCH_PRODUCTS_FAILURE,
+    FETCH_LOCKERS_BEGIN,
+    FETCH_LOCKERS_SUCCESS,
+    FETCH_LOCKERS_FAILURE,
     ADD_TO_CART,
     REMOVE_FROM_CART,
     CHANGE_NAME_INPUT,
@@ -19,8 +22,9 @@ import {
 
 const initialState = {
     menu: [],
-    loading: false,
-    error: null,
+    lockers: [],
+    checked: [],
+    moddedSide: [],
     cart: [
         {type: 'Entrees', items: []},
         {type: 'Sides', items: []},
@@ -30,9 +34,9 @@ const initialState = {
     name: '',
     number: '',
     pickupType: '',
-    checked: [],
-    moddedSide: [],
     display: false,
+    loading: false,
+    error: null,
     amount: 0
 }
 
@@ -58,6 +62,28 @@ export default function productReducer(state = initialState, action) {
             };
 
         case FETCH_PRODUCTS_FAILURE:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload.error,
+                menu: []
+            };
+
+        case FETCH_LOCKERS_BEGIN:
+            return {
+                ...state,
+                loading: true,
+                error: null
+            };
+
+        case FETCH_LOCKERS_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                lockers: action.payload.lockers
+            };
+
+        case FETCH_LOCKERS_FAILURE:
             return {
                 ...state,
                 loading: false,

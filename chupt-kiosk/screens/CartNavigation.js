@@ -28,15 +28,15 @@ class CartNavigation extends React.Component {
           width: '100%',
           zIndex: 2}}>
             <MainButton
-            style={{marginRight: 10, marginLeft: 10}}
-            noBorder
-            green
-            medWidth
-            centerText
-            onPress={() => this.props.navigation.navigate('Checkout')}>
-              <ColoredText>Checkout</ColoredText>
-            </MainButton>
-      </View>
+                style={{marginRight: 10, marginLeft: 10}}
+                noBorder
+                green
+                medWidth
+                centerText
+                onPress={() => this.props.navigation.navigate('Checkout')}>
+                  <ColoredText>Checkout</ColoredText>
+                </MainButton>
+            </View>
     )}
     return (
       <View style={{
