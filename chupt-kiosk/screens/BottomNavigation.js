@@ -37,53 +37,46 @@ class BottomNavigation extends React.Component {
               position: 'relative',
               zIndex: 2}}>
                 <DeleteMenuModal/>
-              <CircleButton grey onPress={() =>
-                  this.props.toggleModalDisplay()
-              }>
-                <ColoredText>X</ColoredText>
-              </CircleButton>
-              <View
-                style={{
-                  display: 'flex',
-                  flexDirection: 'row'}}>
-            <MainButton
-            noBorder
-            green
-            smallWidth
-            onPress={() => this.props.navigation.navigate('Cart')}>
-              <ColoredText>Cart</ColoredText>
-            </MainButton>
-            <MainButton
-            style={{marginRight: 10, marginLeft: 10,}}
-            noBorder
-            green
-            smallWidth
-            onPress={() => this.props.navigation.navigate('Finish')}>
-              <ColoredText>Checkout</ColoredText>
-            </MainButton>
-          </View>
-      </View>
+                  <CircleButton grey onPress={() =>
+                      this.props.toggleModalDisplay()
+                  }>
+                    <ColoredText>X</ColoredText>
+                  </CircleButton>
+                  <View
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'row'}}>
+                        <MainButton
+                        noBorder
+                        green
+                        smallWidth
+                        onPress={() => this.props.navigation.navigate('Cart')}>
+                          <ColoredText>Cart</ColoredText>
+                        </MainButton>
+                        <MainButton
+                        style={{marginRight: 10, marginLeft: 10,}}
+                        noBorder
+                        green
+                        smallWidth
+                        onPress={() => this.props.navigation.navigate('Finish')}>
+                          <ColoredText>Checkout</ColoredText>
+                        </MainButton>
+                  </View>
+        </View>
     )}
     return (
-      <View style={{
-        height: 100,
-        width: '100%',
-        position: 'relative',
-        display: 'flex',
-        alignItems: 'center'}}>
-      <LinearGradient
-        colors={[
-          'rgba(230, 230, 230, 0)',
-          'rgba(230, 230, 230, 1)']}
-        style={{
-          height: '50%',
-          width: '100%',
-          position: 'absolute',
-          bottom: 99}}>
-      </LinearGradient>
-      {cartButton}
-      </View>
-    )
+        <View style={{width: '100%'}}>
+            <View style={{height: 30,width: '100%', backgroundColor: '#efeded'}}/>
+          <View style={{
+            height: 90,
+            width: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            backgroundColor:'#e8e8e8',}}>
+          {cartButton}
+          </View>
+        </View>
+        )
   }
 }
 
@@ -106,3 +99,13 @@ export default withNavigation(connect(
 )(BottomNavigation))
 
 // this.props.quickDeleteCart()
+// <LinearGradient
+// colors={[
+//         'rgba(230, 230, 230, 0)',
+//     'rgba(230, 230, 230, 1)']}
+// style={{
+//     height: '50%',
+//         width: '100%',
+//         position: 'absolute',
+//         bottom: 99}}>
+// </LinearGradient>

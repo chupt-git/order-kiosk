@@ -24,11 +24,13 @@ class MenuPicker extends React.Component {
         } else {
             typeIndex = index + 1
         }
+
+        console.log()
       const a = menu[key][0].amount.toFixed(2).match(/^([^.]+)/)[0]
       const b = menu[key][0].amount.toFixed(2).match(/[^.]*$/)[0]
-     types.push({index:typeIndex, type:key, price:{front: a, back:b}})
+        types.push({index:typeIndex, type:key, price:{front: a, back:b, full: menu[key][0].amount.toFixed(2)}})
     })
-    types.sort((a, b) => parseFloat(a.index) - parseFloat(b.index))
+      types.sort((a, b) => parseFloat(b.price.full) - parseFloat(a.price.full))
     return (
       <MainWrap>
         <TopNavigation/>
@@ -76,8 +78,8 @@ class MenuPicker extends React.Component {
               )}}
             keyExtractor={(item, index) => index.toString()}
           />
-          <BottomNavigation/>
         </Body>
+        <BottomNavigation/>
       </MainWrap>
     );
   }

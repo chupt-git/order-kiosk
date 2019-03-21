@@ -14,8 +14,8 @@ class TopNavigation extends React.Component {
         <LinearGradient
           colors={['#3993F3', '#3993F3', '#4284C5']}
           style={{
-            height: "70%",
-            width: "80%",
+            height: "80%",
+            width: "100%",
             position: 'relative',
             borderTopLeftRadius: 5,
             borderTopRightRadius: 5,
@@ -35,7 +35,7 @@ class TopNavigation extends React.Component {
 
         <HeaderHat style={{position: 'relative', zIndex: -1}}>
           <ColoredText>
-            Meals: 6.50  -  Entrées: 5.00 - Sides: 2.50 - Drinks: 1.00
+            Meals: 6.50  -  Entrées: $5.00 - Sides: $3.00 - Drinks: $1.00
           </ColoredText>
         </HeaderHat>
       </HatWrapper>

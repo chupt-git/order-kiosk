@@ -2,7 +2,7 @@ import styled from 'styled-components/native'
 import { Dimensions } from 'react-native'
 
 const MainWrap = styled.View`
-  background-color: ${props => props.home ? "#27CC33" : "#fff"};
+  background-color: ${props => props.home ? "#27CC33" : "#f3f3f3"};
   display: flex;
   justify-content: ${props => props.home ? "space-around" : "space-between"};
   align-items: center;

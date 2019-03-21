@@ -29,6 +29,8 @@ class Menu extends React.Component {
               type={menu.type}
               medWidth
               style={{
+                  position:'relative',
+                  zIndex:5,
                 overflow: 'hidden',
                 display: 'flex',
                 flexDirection: 'row',
@@ -49,8 +51,12 @@ class Menu extends React.Component {
             </View>
           </MainButton>
           <FlatList
-            contentContainerStyle={{flexGrow: 1}}
-            style={{width: '95%'}}
+            contentContainerStyle={{flexGrow: 1, paddingBottom: 57}}
+            style={{
+                width: '95%',
+                paddingTop: 30,
+                marginTop: -40
+            }}
             data={currentProducts}
             renderItem={({item}) => {
               return (
@@ -61,8 +67,8 @@ class Menu extends React.Component {
               )}}
             keyExtractor={(item, index) => index.toString()}
           />
-        <BottomNavigation/>
         </Body>
+        <BottomNavigation/>
       </MainWrap>
     )
   }
