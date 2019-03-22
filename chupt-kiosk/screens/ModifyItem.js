@@ -103,8 +103,8 @@ class ModifyItem extends React.Component {
                         </CircleButton>
                     </View>
                 </MenuItemWrap>
-                <BottomNavigation/>
                 </Body>
+                <BottomNavigation/>
             </MainWrap>
         )
     }

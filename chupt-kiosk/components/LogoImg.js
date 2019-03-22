@@ -4,8 +4,8 @@ const LogoImg = styled.Image`
   position: absolute;
   bottom: -15;
   z-index: 50;
-  width: 130px;
-  height: 100px;
+  width: 150px;
+  height: 120px;
   margin-left: -70px;
   left:50%;
 `;

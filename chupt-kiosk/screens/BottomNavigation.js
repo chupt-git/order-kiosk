@@ -13,67 +13,64 @@ import {toggleModalDisplay} from "../kioskActions";
 
 class BottomNavigation extends React.Component {
   render() {
-    let cartButton
-    let populated = false
+    let populated = true
 
     for (let x of this.props.cart) {
       if (x.items.length) {
-        populated = true
+        populated = false
         break;
       }
       else {
-        populated = false
+        populated = true
       }
     }
-    if (populated) {
-      cartButton = (
-        <View
-          style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              width: '100%',
-              position: 'relative',
-              zIndex: 2}}>
-                <DeleteMenuModal/>
-                  <CircleButton grey onPress={() =>
-                      this.props.toggleModalDisplay()
-                  }>
-                    <ColoredText>X</ColoredText>
-                  </CircleButton>
-                  <View
-                    style={{
-                      display: 'flex',
-                      flexDirection: 'row'}}>
-                        <MainButton
-                        noBorder
-                        green
-                        smallWidth
-                        onPress={() => this.props.navigation.navigate('Cart')}>
-                          <ColoredText>Cart</ColoredText>
-                        </MainButton>
-                        <MainButton
-                        style={{marginRight: 10, marginLeft: 10,}}
-                        noBorder
-                        green
-                        smallWidth
-                        onPress={() => this.props.navigation.navigate('Finish')}>
-                          <ColoredText>Checkout</ColoredText>
-                        </MainButton>
-                  </View>
-        </View>
-    )}
     return (
         <View style={{width: '100%'}}>
-            <View style={{height: 30,width: '100%', backgroundColor: '#efeded'}}/>
+        <View style={{height: 30,width: '100%', backgroundColor: '#efeded'}}/>
           <View style={{
             height: 90,
             width: '100%',
             display: 'flex',
             alignItems: 'center',
-            backgroundColor:'#e8e8e8',}}>
-          {cartButton}
+            backgroundColor:'#e8e8e8'}}>
+              <View
+                  style={{
+                      display: 'flex',
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      width: '95%',
+                      position: 'relative',
+                      zIndex: 2}}>
+                  <DeleteMenuModal/>
+                  <CircleButton
+                      disabled={populated}
+                      onPress={() =>
+                          this.props.toggleModalDisplay()
+                      }>
+                      <ColoredText  disabled={populated}>X</ColoredText>
+                  </CircleButton>
+                  <View
+                      style={{
+                          display: 'flex',
+                          flexDirection: 'row'}}>
+                      <MainButton
+                          noBorder
+                          smallWidth
+                          disabled={populated}
+                          onPress={() => this.props.navigation.navigate('Cart')}>
+                          <ColoredText  disabled={populated}>Cart</ColoredText>
+                      </MainButton>
+                      <MainButton
+                          style={{marginRight: 10, marginLeft: 10,}}
+                          noBorder
+                          smallWidth
+                          disabled={populated}
+                          onPress={() => this.props.navigation.navigate('Finish')}>
+                          <ColoredText disabled={populated}>Checkout</ColoredText>
+                      </MainButton>
+                  </View>
+              </View>
           </View>
         </View>
         )

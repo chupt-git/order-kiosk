@@ -2,7 +2,7 @@ import styled from 'styled-components/native'
 
 export const CircleButton = styled.TouchableOpacity `
   border-radius: 50;
-  background-color: ${props => props.green ? "#6BE545" : props.red ? "#EB3223" : props.darkBlue ? "#0079cc" : props.grey ? "#747474" : props.disabled == true ? "red" : "#3B93EF"};
+  background-color: ${props => props.disabled === true ? '#ddd' : props.green ? "#6BE545" : props.red  || props.disabled === false ? "#EB3223" : props.darkBlue ? "#0079cc" : props.grey ? "#747474" : "#3B93EF"};
   height: ${props => props.bigger ? 65 : 50};
   width: ${props => props.bigger ? 65 : 50};
   display: flex;

@@ -34,11 +34,16 @@ class BottomNavigation extends React.Component {
                         </Text>
                         <Text>Are you sur you want to do this?</Text>
 
-                        <MainButton blue onPress={() =>{
+                        <MainButton blue fullWidth onPress={() =>{
                             this.props.toggleModalDisplay()
                             this.props.quickDeleteCart()
                         }}>
-                            <ColoredText>I'm sure, clear my cart</ColoredText>
+                            <ColoredText style={{width: '100%'}}>I'm sure, clear my cart</ColoredText>
+                        </MainButton>
+                        <MainButton blue fullWidth onPress={() =>{
+                            this.props.toggleModalDisplay()
+                        }}>
+                            <ColoredText style={{width: '100%'}}>No thanks, keep my cart</ColoredText>
                         </MainButton>
                     </View>
                 </View>

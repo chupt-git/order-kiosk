@@ -60,7 +60,8 @@ class MenuPicker extends React.Component {
                       flexDirection: 'row',
                       alignItems:'flex-end'}}>
                       <ButtonText>${item.price.front}</ButtonText>
-                      <ColoredText style={{
+                      <ColoredText
+                          style={{
                             fontSize:40,
                             lineHeight: 40,
                             alignSelf: 'flex-start'}}>

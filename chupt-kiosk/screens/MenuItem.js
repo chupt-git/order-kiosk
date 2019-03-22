@@ -60,11 +60,11 @@ class MenuItem extends React.Component {
               })}
               style={{
                 position: 'absolute',
-                top: 20,
+                top: 0,
                 right: 25,
                 zIndex: 1
               }}>
-                <Text style={{fontSize: 30}}>...</Text>
+                <Text style={{fontSize: 50, color: 'grey'}}>...</Text>
           </TouchableOpacity>
           <MenuItemWrap style={{
             flexDirection: 'row',

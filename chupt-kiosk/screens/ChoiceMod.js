@@ -39,28 +39,29 @@ class ChoiceMod extends React.Component {
                     break
                 case 'multi':
                     const multiItem = checked.items.find(x => x.id === this.props.item.item.item_id)
-                    multiItem.choices.forEach((x, y) => {
-                        choiceGuts.push(
-                            <View key={x.description + y}>
-                                <Text>{x.name}</Text>
-                                <FlatList
-                                    data={x.choices}
-                                    extraData={checked}
-                                    renderItem={ ({item}) =>{
-                                        return(
-                                        <View>
-                                            <Text>{item.name}</Text>
-                                            <CheckBox
-                                            value={multiItem.choices[y].value.includes(item.name.toLowerCase())}
-                                            onValueChange={() => this.props.toggleChecked(itemID, x.name, 'choices', multiItem.id, item.name )}
-                                        />
-                                        </View>)
-                                    }}
-                                    keyExtractor={(item, index) => index.toString()}
-                                />
-                            </View>
-                        )
-                    })
+                    if (multiItem.choices.length){
+                        multiItem.choices.forEach((x, y) => {
+                            choiceGuts.push(
+                                <View key={x.description + y}>
+                                    <Text>{x.name}</Text>
+                                    <FlatList
+                                        data={x.choices}
+                                        extraData={checked}
+                                        renderItem={ ({item}) =>{
+                                            return(
+                                            <View>
+                                                <Text>{item.name}</Text>
+                                                <CheckBox
+                                                value={multiItem.choices[y].value.includes(item.name.toLowerCase())}
+                                                onValueChange={() => this.props.toggleChecked(itemID, x.name, 'choices', multiItem.id, item.name )}
+                                            />
+                                            </View>)
+                                        }}
+                                        keyExtractor={(item, index) => index.toString()}
+                                    />
+                                </View>
+                            )
+                    })}
                     break
 
             }
