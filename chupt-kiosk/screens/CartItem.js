@@ -25,7 +25,7 @@ class CartItem extends React.Component {
                                 justifyContent: 'space-between',
                                 width: '95%'
                             }}>
-                                <Txt light>
+                                <Txt style={{maxWidth: '50%'}} light>
                                     {dataItem.item.name}
                                 </Txt>
                                 <CartButtons

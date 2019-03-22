@@ -45,16 +45,6 @@ class CartNavigation extends React.Component {
         position: 'relative',
         display: 'flex',
         alignItems: 'center'}}>
-      <LinearGradient
-        colors={[
-          'rgba(230, 230, 230, 0)',
-          'rgba(230, 230, 230, 1)']}
-        style={{
-          height: '50%',
-          width: '100%',
-          position: 'absolute',
-          bottom: 99}}>
-      </LinearGradient>
       {cartButton}
       </View>
     )

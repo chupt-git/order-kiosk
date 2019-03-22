@@ -5,6 +5,7 @@ import {
     FETCH_LOCKERS_BEGIN,
     FETCH_LOCKERS_SUCCESS,
     FETCH_LOCKERS_FAILURE,
+    ADD_ONE_TO_CART,
     ADD_TO_CART,
     REMOVE_FROM_CART,
     CHANGE_NAME_INPUT,
@@ -45,6 +46,10 @@ export default function productReducer(state = initialState, action) {
     let newChecked = state.checked.map((item) => Object.assign({}, item))
     let newModdedSide = state.moddedSide.map((item) => Object.assign({}, item))
     let newAmount = state.amount
+
+    function compare(a, b) {
+        return JSON.stringify(a) === JSON.stringify(b);
+    }
 
     switch (action.type) {
         case FETCH_PRODUCTS_BEGIN:
@@ -97,40 +102,51 @@ export default function productReducer(state = initialState, action) {
                 moddedSide: []
             }
 
-        case ADD_TO_CART:
-            newCart.forEach((x) => {
-                let finish = false
-                if (x.type.toLowerCase() == action.payload.item.type.toLowerCase()) {
-                    const inCart = x.items.filter(i => i.item_id == action.payload.item.item_id)
+        // case ADD_ONE_TO_CART:
+        //     // const cartType = newCart.find(x=> x.type.toLowerCase() == action.payload.item.type.toLowerCase())
+        //     // const inCart = cartType.items.filter(i => i.item_id == action.payload.item.item_id)
+        //     // let item;
+        //     //
+        //     // for (let i = 0; i > inCart.length; i ++) {
+        //     //     if (compare(inCart[i], action.payload.item)) {
+        //     //         item = inCart[i]
+        //     //         break
+        //     //     }
+        //     // }
+        //
+        //     // inCart.forEach(x => {
+        //     //     console.log(action.payload.item)
+        //     //     console.log(x)
+        //     //     console.log(compare(x, action.payload.item))
+        //     //
+        //     // })
+        //
+        //
+        //     // compare(data1, data2)
+        //     return {
+        //         ...state,
+        //         cart: newCart,
+        //         amount: newAmount
+        //     }
 
-                    if (inCart.length || finish) {
-                        let finalItem
-                        const test = []
-                        const testTwo = []
-                        inCart.forEach(y => {
-                            if (action.payload.item.items){
-                                action.payload.item.items.forEach(z=>test.push(z.item_id))
-                                y.items.forEach(z=>testTwo.push(z.item_id))
-                                finalItem = y}
-                            else {
-                                finalItem = x.items.find(x=>x.item_id === action.payload.item.item_id)
-                            }
-                        })
-                        const finalTest = test.filter((item) => { return !testTwo.includes(item)})
-                        if (finalTest.length >= 1){
-                            action.payload.item.count = 1
-                            x.items.push(action.payload.item)
-                            finish= true
-                        } else {
-                            finalItem.count += 1
-                            finish = true
-                        }
-                    } else {
-                        action.payload.item.count = 1
-                        x.items.push(action.payload.item)
-                    }
+        case ADD_TO_CART:
+            const cartType = newCart.find(x=> x.type.toLowerCase() == action.payload.item.type.toLowerCase())
+            const inCart = cartType.items.filter(i => i.item_id == action.payload.item.item_id)
+            let item
+
+            for (let i = 0; i < inCart.length; i ++) {
+                if (compare(inCart[i], action.payload.item)) {
+                    item = inCart[i]
+                    break
                 }
-            })
+            }
+
+            if (!item) {
+                action.payload.item.count = 1
+                cartType.items.push(action.payload.item)
+            } else {
+                item.count += 1
+            }
 
             newAmount += action.payload.item.amount
             return {
@@ -176,10 +192,27 @@ export default function productReducer(state = initialState, action) {
             const newProducts = JSON.parse(JSON.stringify(state.menu.products.meals))
             const meal = newProducts.find(x => x.item_id === action.mealId.mealId)
             const index = meal.items.findIndex(x => x.item_type === 'side')
+            let newName = ''
+            let newDec = ''
+
             meal.items.splice(index, 1)
             meal.items.push(action.item.item)
             newModdedSide = []
             newModdedSide.push(meal)
+
+            newModdedSide[0].items.forEach((x, y) => {
+                if (y > 0) {
+                    newName += 'and ' + x.name
+                    newDec += ' ' + x.description
+                } else {
+                    newName += x.name
+                    newDec += x.description
+                }
+            })
+
+            newModdedSide[0].name = newName
+            newModdedSide[0].description = newDec
+
             return {
                 ...state,
                 moddedSide: newModdedSide

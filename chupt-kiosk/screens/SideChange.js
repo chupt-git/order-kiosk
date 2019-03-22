@@ -51,8 +51,8 @@ class SideChange extends React.Component {
                             keyExtractor={(item, index) => index.toString()}
                         />
                     </MenuItemWrap>
-                    <BottomNavigation/>
                 </Body>
+                <BottomNavigation/>
             </MainWrap>
         )
     }
