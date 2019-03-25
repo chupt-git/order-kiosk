@@ -14,7 +14,7 @@ const MainButton = styled.TouchableOpacity`
   margin-left: auto;
   margin-right: auto;
   /* elevation: 25; */
-  border: ${props => props.noBorder ? '0' : props.home ? '2px solid #ffffff' : '5px solid #ffffff'};
+  border: ${props => props.noBorder ? '0' : props.home ? '2px solid #ffffff' : props.blueBorder ? '2px solid #3993F3' : '5px solid #ffffff'};
   margin-bottom: 20px;
   margin-top: 20px;
   background-color: ${props => props.green || props.type == 'meals'  || props.disabled === false ? '#6BE545' : props.blue || props.type == 'entrees' ? '#3993F3' : props.pink || props.type == 'sides' ? '#EF7A6B' : props.lightBlue || props.type == 'drinks' ? '#96cdfd' : props.white ? '#fff' : props.disabled === true ? '#ddd' : 'transparent'};

@@ -20,12 +20,22 @@ class ChoiceMod extends React.Component {
                             <View key={x.description + y}>
                                 <Text>{x.name}</Text>
                                 <FlatList
+                                    contentContainerStyle={{
+                                        display: 'flex',
+                                        flexDirection: 'row'
+                                    }}
+                                    style={{backgroundColor: 'red'}}
                                     data={x.choices}
                                     extraData={checked}
                                     renderItem={ (item) =>
                                         <View>
                                             <Text>{item.item.name}</Text>
                                             <CheckBox
+                                                style={{
+                                                    width: 15,
+                                                    height: 15,
+                                                    borderRadius: '50%'
+                                                }}
                                                 value={checked.choices[y].value.includes(item.item.name.toLowerCase())}
                                                 onValueChange={() => this.props.toggleChecked(itemID, 'choices', x.name, item.item.name )}
                                             />
@@ -45,6 +55,10 @@ class ChoiceMod extends React.Component {
                                 <View key={x.description + y}>
                                     <Text>{x.name}</Text>
                                     <FlatList
+                                        contentContainerStyle={{
+                                            display: 'flex',
+                                            flexDirection: 'row'
+                                        }}
                                         data={x.choices}
                                         extraData={checked}
                                         renderItem={ ({item}) =>{
@@ -52,8 +66,8 @@ class ChoiceMod extends React.Component {
                                             <View>
                                                 <Text>{item.name}</Text>
                                                 <CheckBox
-                                                value={multiItem.choices[y].value.includes(item.name.toLowerCase())}
-                                                onValueChange={() => this.props.toggleChecked(itemID, x.name, 'choices', multiItem.id, item.name )}
+                                                    value={multiItem.choices[y].value.includes(item.name.toLowerCase())}
+                                                    onValueChange={() => this.props.toggleChecked(itemID, x.name, 'choices', multiItem.id, item.name )}
                                             />
                                             </View>)
                                         }}
@@ -68,7 +82,6 @@ class ChoiceMod extends React.Component {
         }
         return (
             <View>
-                <Text>CHOICES</Text>
                 {choiceGuts}
             </View>
         );

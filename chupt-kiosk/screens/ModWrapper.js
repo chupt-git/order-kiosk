@@ -1,14 +1,14 @@
 import React from 'react'
-import OptionMod from "./OptionMod"
+import OptionMod from './OptionMod'
 import ChoiceMod from './ChoiceMod'
 import { populateMods } from '../kioskActions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import {View, Text} from "react-native"
+import {View} from 'react-native'
+import MedText from '../components/MedText'
 
 class ModWrapper extends React.Component {
     componentWillMount () {
-        // console.log(this.props.item.item)
         this.props.populateMods(this.props.item.item, this.props.mealType, this.props.productID)
     }
 
@@ -26,6 +26,7 @@ class ModWrapper extends React.Component {
         let option = []
         let choice = []
         let modGuts = []
+        const modType = item.item_type.charAt(0).toUpperCase() + item.item_type.slice(1)
 
         item.mods.forEach((x)=>{
             switch (x.mod_type) {
@@ -59,8 +60,10 @@ class ModWrapper extends React.Component {
         })
         return (
             <View style={{width: '50%'}}>
-                <Text>{this.props.item.item.name} Mods</Text>
-                {modGuts}
+                <MedText>{modType} Mods:</MedText>
+                <View style={{marginLeft: 20}}>
+                    {modGuts}
+                </View>
             </View>
         )
     }

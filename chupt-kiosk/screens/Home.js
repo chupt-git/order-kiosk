@@ -8,10 +8,6 @@ import { fetchProducts } from '../kioskActions'
 import { connect } from 'react-redux'
 
 class Home extends React.Component {
-  constructor (props) {
-    super(props)
-  }
-
   componentWillMount () {
       this.props.dispatch(fetchProducts())
   }

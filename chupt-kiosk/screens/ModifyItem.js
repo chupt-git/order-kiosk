@@ -13,7 +13,10 @@ import {addToCart} from '../kioskActions'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import ModWrapper from "./ModWrapper"
+import MainButton from '../components/MainButton'
 import {withNavigation} from "react-navigation"
+import MedText from "../components/MedText"
+import Txt from "../components/Txt"
 
 class ModifyItem extends React.Component {
     render() {
@@ -47,11 +50,16 @@ class ModifyItem extends React.Component {
                         productID={itemWrap.item_id}/>)
             })
             sideButton.push(
-                <TouchableOpacity key={'sideButton'} onPress={() => this.props.navigation.navigate('SideChange', {
+                <MainButton
+                    key={'sideButton'}
+                    smallWidth
+                    blueBorder
+                    style={{marginLeft: 0,}}
+                    onPress={() => this.props.navigation.navigate('SideChange', {
                     mealId: itemWrap.item_id
                 })}>
-                    <Text>CHANGE SIDE</Text>
-                </TouchableOpacity>
+                    <Txt blue>CHANGE SIDE</Txt>
+                </MainButton>
             )
         }
         return (
@@ -73,15 +81,14 @@ class ModifyItem extends React.Component {
                     }}>
                         <MenuImage style={{width: '50%'}} item={itemWrap}/>
                         <View style={{width: '50%'}}>
-                            <ItemTitle>{itemWrap.name}</ItemTitle>
-                            <Text>{itemWrap.description}</Text>
+                            <MedText>{itemWrap.name}</MedText>
+                            <Txt>{itemWrap.description}</Txt>
+                            {sideButton}
                         </View>
                     </View>
                     <View style={{display:'flex', flexDirection: 'row'}}>
                         {mods}
                     </View>
-
-                    {sideButton}
 
                     <View style={{
                         position: 'absolute',
