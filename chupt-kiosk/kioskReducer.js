@@ -5,7 +5,6 @@ import {
     FETCH_LOCKERS_BEGIN,
     FETCH_LOCKERS_SUCCESS,
     FETCH_LOCKERS_FAILURE,
-    ADD_ONE_TO_CART,
     ADD_TO_CART,
     REMOVE_FROM_CART,
     CHANGE_NAME_INPUT,
@@ -18,7 +17,8 @@ import {
     CHANGE_SIDE,
     QUICK_DELETE_CART,
     TOGGLE_MODAL_DISPLAY,
-    CLEAR_MODDED_SIDE
+    CLEAR_MODDED_SIDE,
+    CLEAR_CHECKED
 } from './kioskActions'
 
 const initialState = {
@@ -102,37 +102,49 @@ export default function productReducer(state = initialState, action) {
                 moddedSide: []
             }
 
-        // case ADD_ONE_TO_CART:
-        //     // const cartType = newCart.find(x=> x.type.toLowerCase() == action.payload.item.type.toLowerCase())
-        //     // const inCart = cartType.items.filter(i => i.item_id == action.payload.item.item_id)
-        //     // let item;
-        //     //
-        //     // for (let i = 0; i > inCart.length; i ++) {
-        //     //     if (compare(inCart[i], action.payload.item)) {
-        //     //         item = inCart[i]
-        //     //         break
-        //     //     }
-        //     // }
-        //
-        //     // inCart.forEach(x => {
-        //     //     console.log(action.payload.item)
-        //     //     console.log(x)
-        //     //     console.log(compare(x, action.payload.item))
-        //     //
-        //     // })
-        //
-        //
-        //     // compare(data1, data2)
-        //     return {
-        //         ...state,
-        //         cart: newCart,
-        //         amount: newAmount
-        //     }
+        case CLEAR_CHECKED:
+            return {
+                ...state,
+                checked: []
+            }
 
         case ADD_TO_CART:
-            const cartType = newCart.find(x=> x.type.toLowerCase() == action.payload.item.type.toLowerCase())
-            const inCart = cartType.items.filter(i => i.item_id == action.payload.item.item_id)
+            const cartType = newCart.find(x=> x.type.toLowerCase() === action.payload.item.type.toLowerCase())
+            const inCart = cartType.items.filter(x => x.item_id === action.payload.item.item_id)
             let item
+            // const checked = newChecked.find(x => x.id === action.payload.item.item_id)
+            // const newItem = JSON.parse(JSON.stringify(action.payload.item))
+            // newItem.changedMod = []
+            // if (checked) {
+            //     if (newItem.items) {
+            //         newItem.items.forEach(x => {
+            //             const itemMods = checked.items.find(y=> y.id ===x.item_id)
+            //
+            //             itemMods.options.forEach(y => {
+            //                 const singleMod = x.mods.find(i => i.name === y.name)
+            //                 if (singleMod.value !== y.value) {
+            //                         singleMod.value = y.value
+            //                         if (y.value === false) {
+            //                             newItem.changedMod.push('no ' + y.name)
+            //                         } else if  (y.value === true){
+            //                             newItem.changedMod.push('add ' + y.name)
+            //                         }
+            //                     }
+            //                 })
+            //             itemMods.choices.forEach(y=> {
+            //                 const singleMod = x.mods.find(i => i.name === y.name)
+            //
+            //
+            //                 if (singleMod.value !== y.value) {
+            //                     singleMod.value = y.value
+            //                     newItem.changedMod.push(y.name + ' - ' + y.value)
+            //                 }
+            //             })
+            //         })
+            //     } else {
+            //         console.log("SINGLE")
+            //     }
+            // }
 
             for (let i = 0; i < inCart.length; i ++) {
                 if (compare(inCart[i], action.payload.item)) {

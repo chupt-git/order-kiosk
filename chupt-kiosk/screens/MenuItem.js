@@ -5,7 +5,7 @@ import ColoredText from '../components/ColoredText'
 import MenuItemWrap from '../components/MenuItemWrap'
 import ItemTitle from '../components/ItemTitle'
 import MenuImage from './MenuImage.js'
-import { addToCart, changeSide, clearModdedSide } from '../kioskActions'
+import { addToCart, changeSide, clearModdedSide, clearChecked } from '../kioskActions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withNavigation } from 'react-navigation'
@@ -13,7 +13,11 @@ import { withNavigation } from 'react-navigation'
 class MenuItem extends React.Component {
     componentDidMount() {
         if (this.props.moddedSide.length){
-        this.props.clearModdedSide()}
+        this.props.clearModdedSide()
+        }
+        if (this.props.checked.length){
+            this.props.clearChecked()
+        }
     }
 
     render() {
@@ -99,7 +103,8 @@ class MenuItem extends React.Component {
 function mapStateToProps(state) {
     return {
         cart: state.cart,
-        moddedSide: state.moddedSide
+        moddedSide: state.moddedSide,
+        checked: state.checked
     }
 }
 
@@ -107,7 +112,8 @@ const mapDispatchToProps = dispatch => (
     bindActionCreators({
         addToCart,
         changeSide,
-        clearModdedSide
+        clearModdedSide,
+        clearChecked
     }, dispatch)
 )
 

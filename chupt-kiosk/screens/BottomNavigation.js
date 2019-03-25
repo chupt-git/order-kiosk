@@ -4,7 +4,7 @@ import MainButton from '../components/MainButton'
 import Cart from './Cart'
 import ColoredText from '../components/ColoredText'
 import CircleButton from '../components/CircleButton'
-import DeleteMenuModal from './DeleteMenuModal'
+
 import { View } from 'react-native'
 import { withNavigation } from 'react-navigation'
 import { connect } from 'react-redux'
@@ -42,7 +42,6 @@ class BottomNavigation extends React.Component {
                       width: '95%',
                       position: 'relative',
                       zIndex: 2}}>
-                  <DeleteMenuModal/>
                   <CircleButton
                       disabled={populated}
                       onPress={() =>
@@ -94,15 +93,3 @@ export default withNavigation(connect(
     mapStateToProps,
     mapDispatchToProps
 )(BottomNavigation))
-
-// this.props.quickDeleteCart()
-// <LinearGradient
-// colors={[
-//         'rgba(230, 230, 230, 0)',
-//     'rgba(230, 230, 230, 1)']}
-// style={{
-//     height: '50%',
-//         width: '100%',
-//         position: 'absolute',
-//         bottom: 99}}>
-// </LinearGradient>

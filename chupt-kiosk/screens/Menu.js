@@ -9,6 +9,7 @@ import TopNavigation from './TopNavigation'
 import BottomNavigation from './BottomNavigation'
 import MenuItem from './MenuItem'
 import ColoredText from '../components/ColoredText'
+import DeleteMenuModal from './DeleteMenuModal'
 
 
 class Menu extends React.Component {

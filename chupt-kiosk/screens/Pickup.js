@@ -23,56 +23,58 @@ class Pickup extends React.Component {
     } else {
       return (
           <MainWrap>
-            <TopNavigation/>
-            <Body>
-            <View style={{width: '97%', height: '90%', display:'flex', justifyContent: 'space-around'}}>
-              <View>
-                <View>
-                  <HeaderText left big>Pickup</HeaderText>
-                  <FlatList
-                      style={{width: '100%'}}
-                      keyExtractor={(item, index) => index.toString()}
-                      data={this.props.lockers}
-                      numColumns={4}
-                      renderItem={({item}) => {
-                        return (
-                            <PickupButton status={item.status}>
-                              <ColoredText bigger>{item.locker_number}</ColoredText>
-                            </PickupButton>
-                        )
-                      }}
-                  />
-                </View>
-                <View style={{margin: 15}}>
-                  <MedText style={{marginTop: 50}}>PHONE NUMBER (PIN)</MedText>
-                  <TextInput
-                      style={{
-                        height: 70,
-                        backgroundColor: '#fff',
-                        padding: 5,
-                        marginTop: 15,
-                        fontSize: 20}}
-                      placeholder="Enter Phone Number"
-                      keyboardType={'phone-pad'}
-                      autoComplete={'tel'}
-                  />
-                </View>
+              <TopNavigation/>
+              <Body>
+              <View style={{width: '97%', height: '90%', display: 'flex', justifyContent: 'space-around'}}>
+                  <View>
+                      <View>
+                          <HeaderText left margin big>Pickup</HeaderText>
+                          <FlatList
+                              style={{width: '100%'}}
+                              keyExtractor={(item, index) => index.toString()}
+                              data={this.props.lockers}
+                              numColumns={4}
+                              renderItem={({item}) => {
+                                  return (
+                                      <PickupButton status={item.status}>
+                                          <ColoredText bigger>{item.locker_number}</ColoredText>
+                                      </PickupButton>
+                                  )
+                              }}
+                          />
+                      </View>
+                      <View style={{margin: 15}}>
+                          <MedText style={{marginTop: 50}}>PHONE NUMBER (PIN)</MedText>
+                          <TextInput
+                              style={{
+                                  height: 70,
+                                  backgroundColor: '#fff',
+                                  padding: 5,
+                                  marginTop: 15,
+                                  fontSize: 20
+                              }}
+                              placeholder="Enter Phone Number"
+                              keyboardType={'phone-pad'}
+                              autoComplete={'tel'}
+                          />
+                      </View>
+                  </View>
+                  <View style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      width: '100%'
+                  }}>
+                      <MainButton
+                          noBorder
+                          green
+                          medWidth
+                          centerText
+                          onPress={() => this.props.navigation.navigate('Checkout')}>
+                          <ColoredText>SIGN IN</ColoredText>
+                      </MainButton>
+                  </View>
               </View>
-              <View style={{
-                display: 'flex',
-                alignItems: 'center',
-                width: '100%'}}>
-                <MainButton
-                    noBorder
-                    green
-                    medWidth
-                    centerText
-                    onPress={() => this.props.navigation.navigate('Checkout')}>
-                  <ColoredText>SIGN IN</ColoredText>
-                </MainButton>
-              </View>
-            </View>
-            </Body>
+              </Body>
           </MainWrap>
       );
     }

@@ -17,7 +17,7 @@ export const CHANGE_SIDE = 'CHANGE_SIDE'
 export  const QUICK_DELETE_CART = 'QUICK_DELETE_CART'
 export const TOGGLE_MODAL_DISPLAY = 'TOGGLE_MODAL_DISPLAY'
 export const CLEAR_MODDED_SIDE = 'CLEAR_MODDED_SIDE'
-export const ADD_ONE_TO_CART = 'ADD_ONE_TO_CART'
+export const CLEAR_CHECKED = 'CLEAR_CHECKED'
 
 export const toggleModalDisplay = () => ({
   type: TOGGLE_MODAL_DISPLAY
@@ -25,6 +25,10 @@ export const toggleModalDisplay = () => ({
 
 export const clearModdedSide = () => ({
   type: CLEAR_MODDED_SIDE
+})
+
+export const clearChecked = () => ({
+  type: CLEAR_CHECKED
 })
 
 export const quickDeleteCart = () => ({
@@ -42,11 +46,6 @@ export const  populateMods = (item, mealType, productID) => ({
   item: {item},
   mealType: {mealType},
   productID: {productID}
-})
-
-export const addOneToCart = item => ({
-  type: ADD_ONE_TO_CART,
-  payload: { item }
 })
 
 export const addToCart = item => ({
