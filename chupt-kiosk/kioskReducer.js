@@ -48,7 +48,10 @@ export default function productReducer(state = initialState, action) {
     let newAmount = state.amount
 
     function compare(a, b) {
-        return JSON.stringify(a) === JSON.stringify(b);
+        const newA = JSON.parse(JSON.stringify(a))
+        const newB = JSON.parse(JSON.stringify(b))
+        newA.count = newB.count = 0
+        return JSON.stringify(newA) === JSON.stringify(newB);
     }
 
     switch (action.type) {
@@ -112,39 +115,41 @@ export default function productReducer(state = initialState, action) {
             const cartType = newCart.find(x=> x.type.toLowerCase() === action.payload.item.type.toLowerCase())
             const inCart = cartType.items.filter(x => x.item_id === action.payload.item.item_id)
             let item
-            // const checked = newChecked.find(x => x.id === action.payload.item.item_id)
-            // const newItem = JSON.parse(JSON.stringify(action.payload.item))
-            // newItem.changedMod = []
-            // if (checked) {
-            //     if (newItem.items) {
-            //         newItem.items.forEach(x => {
-            //             const itemMods = checked.items.find(y=> y.id ===x.item_id)
-            //
-            //             itemMods.options.forEach(y => {
-            //                 const singleMod = x.mods.find(i => i.name === y.name)
-            //                 if (singleMod.value !== y.value) {
-            //                         singleMod.value = y.value
-            //                         if (y.value === false) {
-            //                             newItem.changedMod.push('no ' + y.name)
-            //                         } else if  (y.value === true){
-            //                             newItem.changedMod.push('add ' + y.name)
-            //                         }
-            //                     }
-            //                 })
-            //             itemMods.choices.forEach(y=> {
-            //                 const singleMod = x.mods.find(i => i.name === y.name)
-            //
-            //
-            //                 if (singleMod.value !== y.value) {
-            //                     singleMod.value = y.value
-            //                     newItem.changedMod.push(y.name + ' - ' + y.value)
-            //                 }
-            //             })
-            //         })
-            //     } else {
-            //         console.log("SINGLE")
-            //     }
-            // }
+            const revertItem = JSON.parse(JSON.stringify(action.payload.item))
+            const checked = newChecked.find(x => x.id === action.payload.item.item_id)
+            action.payload.item.changedMod = []
+
+            if (checked) {
+                if (action.payload.item.items) {
+                    action.payload.item.items.forEach(x => {
+                        const itemMods = checked.items.find(y=> y.id === x.item_id)
+
+
+                        itemMods.options.forEach(y => {
+                            const singleMod = x.mods.find(i => i.name === y.name)
+                            if (singleMod.value !== y.value) {
+                                singleMod.value = y.value
+                                if (y.value === false) {
+                                    action.payload.item.changedMod.push('No ' + y.name)
+                                } else if  (y.value === true){
+                                    action.payload.item.changedMod.push('Add ' + y.name)
+                                }
+                            }
+                        })
+
+                        itemMods.choices.forEach(y=> {
+                            const singleMod = x.mods.find(i => i.name === y.name)
+
+                            if (singleMod.value !== y.value) {
+                                singleMod.value = y.value
+                                action.payload.item.changedMod.push(y.name + ' Is ' + y.value.charAt(0).toUpperCase() + y.value.slice(1))
+                            }
+                        })
+                    })
+                } else {
+                    console.log("SINGLE")
+                }
+            }
 
             for (let i = 0; i < inCart.length; i ++) {
                 if (compare(inCart[i], action.payload.item)) {
@@ -161,6 +166,8 @@ export default function productReducer(state = initialState, action) {
             }
 
             newAmount += action.payload.item.amount
+            action.payload.item = revertItem
+
             return {
                 ...state,
                 cart: newCart,

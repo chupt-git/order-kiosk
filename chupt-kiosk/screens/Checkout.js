@@ -14,6 +14,8 @@ import MedText from '../components/MedText'
 import Body from '../components/Body'
 import MainWrap from '../components/MainWrap'
 import InputBox from '../components/InputBox'
+import ColoredText from "./CartNavigation"
+import MainButton from '../components/MainButton'
 
 class Checkout extends React.Component {
   render() {
@@ -56,10 +58,11 @@ class Checkout extends React.Component {
                             <InputBox placeholder="Credit Card Number"/>
                         </View>
                     </View>
-                    <View>
+                    <View style={{display:'flex',flexDirection: 'row'}}>
                         <MedText blue>Total:</MedText>
-                        <Text>${this.props.amount.toFixed(2)}</Text>
+                        <MedText>${this.props.amount.toFixed(2)}</MedText>
                     </View>
+
                 </View>
             </Body>
         </MainWrap>
@@ -88,54 +91,9 @@ const mapDispatchToProps = dispatch => (
 
 export default connect(mapStateToProps, mapDispatchToProps)(Checkout)
 
-// this.props.navigation.navigate('Finish')
-//
 
 
 
-// <View
-// style={{
-//     display: 'flex',
-//         alignItems: 'center',
-//         width: '100%'
-// }}>
-// <MainButton
-// noBorder
-// green
-// medWidth
-// centerText
-// onPress={() => this.props.navigation.navigate('Checkout')}>
-// <ColoredText>SIGN IN</ColoredText>
-// </MainButton>
-// </View>
-
-
-// <InputBox
-// style={{borderWidth: 1, borderColor: '#d6d7da', width: '50%'}}
-// keyboardType={'phone-pad'}
-// autoComplete={'tel'}
-// placeholder={'Phone Number'}
-// value={this.props.number.number}
-// onChangeText={(number) => this.props.changePhoneInput(number)}
-// />
-//
-// <InputBox
-//     style={{borderWidth: 1, borderColor: '#d6d7da', width: '50%'}}
-//     placeholder={'Name'}
-//     value={this.props.name.name}
-//     onChangeText={(name) => this.props.changeNameInput(name)}
-// />
-//
-// <Picker
-// selectedValue={this.props.pickupType.pickupType}
-// style={{height: 50, width: '50%'}}
-// onValueChange={(itemValue) =>
-// this.props.changePickupTypeInput(itemValue)
-// }>
-// <Picker.Item label="Window" value="Window" />
-//     <Picker.Item label="Locker" value="Locker" />
-//     </Picker>
-//
 // <Button
 //     disabled={empty}
 //     title="Finish"

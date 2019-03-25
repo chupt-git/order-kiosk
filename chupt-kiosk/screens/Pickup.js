@@ -69,7 +69,7 @@ class Pickup extends React.Component {
                           green
                           medWidth
                           centerText
-                          onPress={() => this.props.navigation.navigate('Checkout')}>
+                          onPress={() => this.props.navigation.navigate('OrderInfo')}>
                           <ColoredText>SIGN IN</ColoredText>
                       </MainButton>
                   </View>
