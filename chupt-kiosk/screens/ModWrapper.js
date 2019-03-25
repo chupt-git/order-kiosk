@@ -58,7 +58,7 @@ class ModWrapper extends React.Component {
             }
         })
         return (
-            <View style={{width: '100%'}}>
+            <View style={{width: '50%'}}>
                 <Text>{this.props.item.item.name} Mods</Text>
                 {modGuts}
             </View>

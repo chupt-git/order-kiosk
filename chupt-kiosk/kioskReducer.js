@@ -18,7 +18,8 @@ import {
     QUICK_DELETE_CART,
     TOGGLE_MODAL_DISPLAY,
     CLEAR_MODDED_SIDE,
-    CLEAR_CHECKED
+    CLEAR_CHECKED,
+    ADD_ONE_TO_CART
 } from './kioskActions'
 
 const initialState = {
@@ -50,7 +51,20 @@ export default function productReducer(state = initialState, action) {
     function compare(a, b) {
         const newA = JSON.parse(JSON.stringify(a))
         const newB = JSON.parse(JSON.stringify(b))
-        newA.count = newB.count = 0
+
+        newA.count = 0
+        newB.count = 0
+
+       if (newB.items){
+           newB.items.forEach(x=> {
+                x.count = 0
+        })}
+       if ( newA.items){
+           newA.items.forEach(x=> {
+               x.count = 0
+           })
+       }
+
         return JSON.stringify(newA) === JSON.stringify(newB);
     }
 
@@ -111,28 +125,54 @@ export default function productReducer(state = initialState, action) {
                 checked: []
             }
 
+
+        case ADD_ONE_TO_CART:
+            const menuType = newCart.find(x=> x.type.toLowerCase() === action.payload.item.type.toLowerCase())
+            const CartItems = menuType.items.filter(x => x.item_id === action.payload.item.item_id)
+            for (let i = 0; i < CartItems.length; i ++) {
+                if (compare(CartItems[i], action.payload.item)) {
+                    item = CartItems[i]
+                    break
+                }
+            }
+            if (!item) {
+                action.payload.item.count = 1
+                menuType.items.push(action.payload.item)
+            } else {
+                item.count += 1
+            }
+
+            newAmount += action.payload.item.amount
+
+            return {
+                ...state,
+                cart: newCart,
+                amount: newAmount
+            }
+
         case ADD_TO_CART:
             const cartType = newCart.find(x=> x.type.toLowerCase() === action.payload.item.type.toLowerCase())
             const inCart = cartType.items.filter(x => x.item_id === action.payload.item.item_id)
             let item
             const revertItem = JSON.parse(JSON.stringify(action.payload.item))
-            const checked = newChecked.find(x => x.id === action.payload.item.item_id)
-            action.payload.item.changedMod = []
+            const checked = newChecked.find(x => x.id === revertItem.item_id)
+
+            revertItem.changedMod = action.payload.item.changedMod = []
 
             if (checked) {
-                if (action.payload.item.items) {
-                    action.payload.item.items.forEach(x => {
+                if (revertItem.items) {
+                    // MULTI
+                    revertItem.items.forEach(x => {
                         const itemMods = checked.items.find(y=> y.id === x.item_id)
-
 
                         itemMods.options.forEach(y => {
                             const singleMod = x.mods.find(i => i.name === y.name)
                             if (singleMod.value !== y.value) {
                                 singleMod.value = y.value
                                 if (y.value === false) {
-                                    action.payload.item.changedMod.push('No ' + y.name)
+                                    revertItem.changedMod.push('No ' + y.name)
                                 } else if  (y.value === true){
-                                    action.payload.item.changedMod.push('Add ' + y.name)
+                                    revertItem.changedMod.push('Add ' + y.name)
                                 }
                             }
                         })
@@ -142,31 +182,51 @@ export default function productReducer(state = initialState, action) {
 
                             if (singleMod.value !== y.value) {
                                 singleMod.value = y.value
-                                action.payload.item.changedMod.push(y.name + ' Is ' + y.value.charAt(0).toUpperCase() + y.value.slice(1))
+                                revertItem.changedMod.push(y.name + ' Is ' + y.value.charAt(0).toUpperCase() + y.value.slice(1))
                             }
                         })
                     })
+
                 } else {
-                    console.log("SINGLE")
+                    // Single
+                    checked.options.forEach(y => {
+                        const singleMod = revertItem.mods.find(i => i.name === y.name)
+                        if (singleMod.value !== y.value) {
+                            singleMod.value = y.value
+                            if (y.value === false) {
+                                revertItem.changedMod.push('No ' + y.name)
+                            } else if  (y.value === true){
+                                revertItem.changedMod.push('Add ' + y.name)
+                            }
+                        }
+                    })
+
+                    checked.choices.forEach(y=> {
+                        const singleMod = revertItem.mods.find(i => i.name === y.name)
+
+                        if (singleMod.value !== y.value) {
+                            singleMod.value = y.value
+                            revertItem.changedMod.push(y.name + ' Is ' + y.value.charAt(0).toUpperCase() + y.value.slice(1))
+                        }
+                    })
                 }
             }
 
             for (let i = 0; i < inCart.length; i ++) {
-                if (compare(inCart[i], action.payload.item)) {
+                if (compare(inCart[i], revertItem)) {
                     item = inCart[i]
                     break
                 }
             }
 
             if (!item) {
-                action.payload.item.count = 1
-                cartType.items.push(action.payload.item)
+                revertItem.count = 1
+                cartType.items.push(revertItem)
             } else {
                 item.count += 1
             }
 
-            newAmount += action.payload.item.amount
-            action.payload.item = revertItem
+            newAmount += revertItem.amount
 
             return {
                 ...state,

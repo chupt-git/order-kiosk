@@ -18,7 +18,6 @@ class OptionMod extends React.Component {
                 case 'single':
                     return (
                         <View>
-                            <Text>OPTIONS</Text>
                             <FlatList
                                 data={options}
                                 extraData={checked}
@@ -41,7 +40,6 @@ class OptionMod extends React.Component {
                     if (multiItem) {
                         return (
                             <View>
-                                <Text>OPTIONS MULTI</Text>
                                 <FlatList
                                     data={options}
                                     extraData={checked}

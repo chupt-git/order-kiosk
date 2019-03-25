@@ -3,7 +3,7 @@ import { View, TextInput } from 'react-native'
 import {CircleButton } from '../components/CircleButton'
 import ColoredText from '../components/ColoredText'
 import { bindActionCreators } from 'redux'
-import { removeFromCart, addToCart, changeItemNumber } from '../kioskActions'
+import { removeFromCart, addOneToCart, changeItemNumber } from '../kioskActions'
 import { connect } from 'react-redux'
 
 
@@ -26,7 +26,7 @@ class CartButtons extends React.Component {
 
       <CircleButton green
         onPress={() =>
-          this.props.addToCart(item)
+          this.props.addOneToCart(item)
         }>
         <ColoredText>+</ColoredText>
       </CircleButton>
@@ -52,7 +52,7 @@ function mapStateToProps(state) {
 const mapDispatchToProps = dispatch => (
   bindActionCreators({
     removeFromCart,
-    addToCart,
+    addOneToCart,
     changeItemNumber
   }, dispatch)
 );

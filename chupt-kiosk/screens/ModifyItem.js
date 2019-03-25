@@ -77,8 +77,9 @@ class ModifyItem extends React.Component {
                             <Text>{itemWrap.description}</Text>
                         </View>
                     </View>
-
-                    {mods}
+                    <View style={{display:'flex', flexDirection: 'row'}}>
+                        {mods}
+                    </View>
 
                     {sideButton}
 
