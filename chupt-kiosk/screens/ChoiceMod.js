@@ -4,6 +4,7 @@ import {toggleChecked} from "../kioskActions";
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withNavigation } from 'react-navigation'
+import Txt from '../components/Txt'
 
 class ChoiceMod extends React.Component {
     render() {
@@ -18,27 +19,17 @@ class ChoiceMod extends React.Component {
                     choices.forEach((x, y) => {
                         choiceGuts.push(
                             <View key={x.description + y}>
-                                <Text>{x.name}</Text>
+                                <Txt big>{x.name}</Txt>
                                 <FlatList
-                                    contentContainerStyle={{
-                                        display: 'flex',
-                                        flexDirection: 'row'
-                                    }}
-                                    style={{backgroundColor: 'red'}}
                                     data={x.choices}
                                     extraData={checked}
                                     renderItem={ (item) =>
-                                        <View>
-                                            <Text>{item.item.name}</Text>
+                                        <View style={{marginLeft: 20,display: 'flex', flexDirection:'row', alignItems: 'center'}}>
                                             <CheckBox
-                                                style={{
-                                                    width: 15,
-                                                    height: 15,
-                                                    borderRadius: '50%'
-                                                }}
                                                 value={checked.choices[y].value.includes(item.item.name.toLowerCase())}
                                                 onValueChange={() => this.props.toggleChecked(itemID, 'choices', x.name, item.item.name )}
                                             />
+                                            <Text>{item.item.name}</Text>
                                         </View>
                                     }
                                     keyExtractor={(item, index) => index.toString()}
@@ -53,7 +44,7 @@ class ChoiceMod extends React.Component {
                         multiItem.choices.forEach((x, y) => {
                             choiceGuts.push(
                                 <View key={x.description + y}>
-                                    <Text>{x.name}</Text>
+                                    <Txt big>{x.name}</Txt>
                                     <FlatList
                                         contentContainerStyle={{
                                             display: 'flex',
@@ -63,13 +54,13 @@ class ChoiceMod extends React.Component {
                                         extraData={checked}
                                         renderItem={ ({item}) =>{
                                             return(
-                                            <View>
-                                                <Text>{item.name}</Text>
-                                                <CheckBox
-                                                    value={multiItem.choices[y].value.includes(item.name.toLowerCase())}
-                                                    onValueChange={() => this.props.toggleChecked(itemID, x.name, 'choices', multiItem.id, item.name )}
-                                            />
-                                            </View>)
+                                                <View style={{marginLeft: 20, display: 'flex', flexDirection:'row', alignItems: 'center'}}>
+                                                    <CheckBox
+                                                        value={multiItem.choices[y].value.includes(item.name.toLowerCase())}
+                                                        onValueChange={() => this.props.toggleChecked(itemID, x.name, 'choices', multiItem.id, item.name )}
+                                                    />
+                                                    <Text>{item.name}</Text>
+                                                </View>)
                                         }}
                                         keyExtractor={(item, index) => index.toString()}
                                     />

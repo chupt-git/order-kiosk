@@ -4,6 +4,7 @@ import {toggleChecked} from "../kioskActions"
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withNavigation } from 'react-navigation'
+import Txt from '../components/Txt'
 
 class OptionMod extends React.Component {
     render() {
@@ -18,17 +19,19 @@ class OptionMod extends React.Component {
                 case 'single':
                     return (
                         <View>
+                            <Txt big>Options</Txt>
                             <FlatList
+                                style={{marginLeft: 20}}
                                 data={options}
                                 extraData={checked}
                                 renderItem={({item}) => {
                                     return(
-                                        <View>
-                                            <Text>{item.name}</Text>
+                                        <View style={{display: 'flex', flexDirection:'row', alignItems: 'center'}}>
                                             <CheckBox
                                                 value={(/true/i).test(checked.options.find(x => x.name === item.name).value)}
                                                 onValueChange={() => this.props.toggleChecked(itemID, 'options', item.name )}
                                             />
+                                            <Text>{item.name}</Text>
                                         </View>)
                                 }}
                                 keyExtractor={(item, index) => index.toString()}
@@ -40,17 +43,19 @@ class OptionMod extends React.Component {
                     if (multiItem) {
                         return (
                             <View>
+                                <Txt big>Options</Txt>
                                 <FlatList
+                                    style={{marginLeft: 20}}
                                     data={options}
                                     extraData={checked}
                                     renderItem={({item}) => {
                                         return(
-                                            <View>
-                                                <Text>{item.name}</Text>
+                                            <View style={{display: 'flex', flexDirection:'row', alignItems: 'center'}}>
                                                 <CheckBox
                                                     value={(/true/i).test(multiItem.options.find(x => x.name === item.name).value)}
                                                     onValueChange={() => this.props.toggleChecked(itemID, item.name, 'options', multiItem.id, 'filler')}
                                                 />
+                                                <Text>{item.name}</Text>
                                             </View>)
                                     }}
                                     keyExtractor={(item, index) => index.toString()}
