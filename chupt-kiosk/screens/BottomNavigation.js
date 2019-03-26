@@ -65,7 +65,7 @@ class BottomNavigation extends React.Component {
                           noBorder
                           smallWidth
                           disabled={populated}
-                          onPress={() => this.props.navigation.navigate('Finish')}>
+                          onPress={() => this.props.navigation.navigate('Checkout')}>
                           <ColoredText disabled={populated}>Checkout</ColoredText>
                       </MainButton>
                   </View>

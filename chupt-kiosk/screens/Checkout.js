@@ -33,37 +33,45 @@ class Checkout extends React.Component {
         <MainWrap>
             <TopNavigation/>
             <Body>
-                <View style={{width: '97%', height: '90%', display: 'flex', justifyContent: 'space-around'}}>
+            <View style={{width: '97%', marginTop: 50, display: 'flex', justifyContent: 'space-between'}}>
+                <HeaderText style={{marginBottom: 0}} left big>Checkout</HeaderText>
+                
+                <View>
                     <View>
-                        <HeaderText left big>Checkout</HeaderText>
-                        <View>
-                            <MedText  blue style={{marginTop: 50}}>INFO</MedText>
-                            <InputBox placeholder="Full Name"/>
-                            <InputBox
-                                placeholder="Phone Number (PIN)"
-                                keyboardType={'phone-pad'}
-                                autoComplete={'tel'}
-                            />
-                            <InputBox placeholder="Email Address"/>
-                        </View>
-                        <View style={{height: 3, width: '100%', backgroundColor: '#959595', marginTop: 20, marginBottom: 20}}/>
-                        <View>
-                            <MedText blue>PAYMENT INFO</MedText>
-                            <InputBox placeholder="Full Name"/>
-                            <InputBox placeholder="Address"/>
-                            <View>
-                                <InputBox placeholder="City"/>
-                                <InputBox placeholder="Zip Code"/>
-                            </View>
-                            <InputBox placeholder="Credit Card Number"/>
-                        </View>
+                        <MedText  blue style={{marginTop: 10}}>INFO</MedText>
+                        <InputBox placeholder="Full Name"/>
+                        <InputBox
+                            placeholder="Phone Number (PIN)"
+                            keyboardType={'phone-pad'}
+                            autoComplete={'tel'}
+                        />
+                        <InputBox placeholder="Email Address"/>
                     </View>
-                    <View style={{display:'flex',flexDirection: 'row'}}>
-                        <MedText blue>Total:</MedText>
-                        <MedText>${this.props.amount.toFixed(2)}</MedText>
+                    <View style={{height: 3, width: '100%', backgroundColor: '#959595', marginTop: 20, marginBottom: 20}}/>
+                    <View>
+                        <MedText blue>PAYMENT INFO</MedText>
+                        <InputBox placeholder="Full Name"/>
+                        <InputBox placeholder="Address"/>
+                        <View>
+                            <InputBox placeholder="City"/>
+                            <InputBox placeholder="Zip Code"/>
+                        </View>
+                        <InputBox placeholder="Credit Card Number"/>
                     </View>
-
                 </View>
+
+                <View style={{display:'flex',flexDirection: 'row', alignItems: 'baseline'}}>
+                    <MedText blue>Total:</MedText>
+                    <MedText>${this.props.amount.toFixed(2)}</MedText>
+                </View>
+                <MainButton
+                    style={{marginRight: 10, marginLeft: 10,}}
+                    noBorder
+                    fullWidth
+                    onPress={() => this.props.navigation.navigate('Checkout')}>
+                    <ColoredText>Checkout</ColoredText>
+                </MainButton>
+            </View>
             </Body>
         </MainWrap>
     );
@@ -90,6 +98,8 @@ const mapDispatchToProps = dispatch => (
 )
 
 export default connect(mapStateToProps, mapDispatchToProps)(Checkout)
+
+
 
 
 
