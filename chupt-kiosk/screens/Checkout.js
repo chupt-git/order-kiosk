@@ -19,15 +19,6 @@ import MainButton from '../components/MainButton'
 
 class Checkout extends React.Component {
   render() {
-    // let empty = true
-    // let contact
-    //
-    // if (this.props.number && this.props.name && this.props.pickupType) {
-    //   contact = Object.assign(this.props.number, this.props.name, this.props.pickupType)
-    //   empty = false
-    // }else {
-    //   empty = true
-    // }
 
     return (
         <MainWrap>
@@ -68,8 +59,8 @@ class Checkout extends React.Component {
                     style={{marginRight: 10, marginLeft: 10,}}
                     noBorder
                     fullWidth
-                    onPress={() => this.props.navigation.navigate('Checkout')}>
-                    <ColoredText>Checkout</ColoredText>
+                    onPress={() => this.props.navigation.navigate('Finish')}>
+                    <ColoredText>Finish</ColoredText>
                 </MainButton>
             </View>
             </Body>
