@@ -102,7 +102,7 @@ class OrderInfo extends React.Component {
                             fullWidth
                             home
                             centerText
-                            onPress={() => this.props.navigation.navigate('Home')}>
+                            onPress={() => this.props.navigation.navigate('LockerOpened')}>
                             <HeaderText center big white light>Open Locker</HeaderText>
                         </MainButton>
                     </View>

@@ -162,8 +162,6 @@ export function sendOrder(cart, contact) {
     let items={}
     let currentCategory = ''
 
-    console.log(cart, contact)
-
     cart.forEach((dataItem) => {
       if (currentCategory !== dataItem.type) {
         delete dataItem.items.type

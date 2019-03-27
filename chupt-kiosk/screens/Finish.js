@@ -113,6 +113,7 @@ class Finish extends React.Component {
             justifyContent: 'center'
           }}>
             <ButtonText>Congratulations!</ButtonText>
+            <ButtonText style={{marginTop: 50}} >Locker 15</ButtonText>
             <ButtonText style={{marginTop: 50, marginBottom: 50}} small>Your order has been successfully received!
               Your order will be ready in 5 minutes.</ButtonText>
 

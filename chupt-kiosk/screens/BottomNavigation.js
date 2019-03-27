@@ -29,8 +29,7 @@ class BottomNavigation extends React.Component {
             }
         ).start(() => {
             let s = JSON.stringify(this.springValue)
-            if (s === '-5'){
-                console.log('test')
+            if (s === '-5') {
                 this.props.removePopup()
             }
         })
@@ -47,12 +46,12 @@ class BottomNavigation extends React.Component {
                     width: 335,
                     alignSelf: 'flex-end',
                     right: 25,
-                    borderTopLeftRadius: 20,
-                    borderTopRightRadius: 20,
+                    borderTopLeftRadius: 30,
+                    borderTopRightRadius: 30,
                     position: 'absolute',
                     bottom: this.springValue
                 }}>
-                <ColoredText blue>Item Added to Cart!</ColoredText>
+                <ColoredText med blue>Item added to cart!</ColoredText>
             </Animated.View>
             )
         } else {
