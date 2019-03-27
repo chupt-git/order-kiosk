@@ -121,7 +121,7 @@ class Finish extends React.Component {
                 onPress={() => this.props.navigation.navigate('Pickup')}
                 white
                 home>
-              <ButtonText center small green>
+              <ButtonText style={{width: '100%'}} center small green>
                 Open Locker
               </ButtonText>
             </MainButton>
@@ -132,7 +132,7 @@ class Finish extends React.Component {
                 })}
                 blue
                 home>
-              <ButtonText center small>
+              <ButtonText style={{width: '100%'}} center small>
                 New Order
               </ButtonText>
             </MainButton>

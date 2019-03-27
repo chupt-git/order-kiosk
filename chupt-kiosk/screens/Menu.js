@@ -25,7 +25,7 @@ class Menu extends React.Component {
     return (
       <MainWrap>
         <TopNavigation/>
-        <Body>
+        <Body style={{marginTop:20}}>
           <MainButton
               type={menu.type}
               medWidth

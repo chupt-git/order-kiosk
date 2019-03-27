@@ -5,7 +5,7 @@ import ColoredText from '../components/ColoredText'
 import MenuItemWrap from '../components/MenuItemWrap'
 import ItemTitle from '../components/ItemTitle'
 import MenuImage from './MenuImage.js'
-import { addToCart, changeSide, clearModdedSide, clearChecked } from '../kioskActions'
+import { addToCart, changeSide, clearModdedSide, clearChecked, removePopup } from '../kioskActions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withNavigation } from 'react-navigation'
@@ -36,13 +36,23 @@ class MenuItem extends React.Component {
             itemToAdd = sideChanged
         }
         addButton.push (
-            <CircleButton
-                key={'addButton'}
-                onPress={() => {
-                    this.props.addToCart(itemToAdd)
-                    this.props.navigation.navigate('MenuPicker')}}>
-                <ColoredText>+</ColoredText>
-            </CircleButton>)
+            <View key={'addButton'} style={{display:'flex', flexDirection: 'row'}}>
+                <CircleButton
+                    style={{width: 150}}
+                    onPress={() => {
+                        this.props.addToCart(itemToAdd)
+                        this.props.navigation.navigate('MenuPicker')}}>
+                    <ColoredText>Add</ColoredText>
+                </CircleButton>
+                <CircleButton
+                    style={{width: 150}}
+                    onPress={() => this.props.navigation.navigate('ModifyItem', {
+                        item: item
+                    })}>
+                    <ColoredText>Modify</ColoredText>
+                </CircleButton>
+            </View>
+        )
 
     } else {
         addButton.push(
@@ -58,18 +68,6 @@ class MenuItem extends React.Component {
 
     return (
       <View style={{position: 'relative'}}>
-          <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('ModifyItem', {
-                item: item
-              })}
-              style={{
-                position: 'absolute',
-                top: 0,
-                right: 25,
-                zIndex: 1
-              }}>
-                <Text style={{fontSize: 50, color: 'grey'}}>...</Text>
-          </TouchableOpacity>
           <MenuItemWrap style={{
             flexDirection: 'row',
             display: 'flex',

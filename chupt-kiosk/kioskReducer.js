@@ -19,7 +19,8 @@ import {
     TOGGLE_MODAL_DISPLAY,
     CLEAR_MODDED_SIDE,
     CLEAR_CHECKED,
-    ADD_ONE_TO_CART
+    ADD_ONE_TO_CART,
+    REMOVE_POPUP
 } from './kioskActions'
 
 const initialState = {
@@ -39,7 +40,8 @@ const initialState = {
     display: false,
     loading: false,
     error: null,
-    amount: 0
+    amount: 0,
+    showPopup: false
 }
 
 export default function productReducer(state = initialState, action) {
@@ -124,7 +126,6 @@ export default function productReducer(state = initialState, action) {
                 ...state,
                 checked: []
             }
-
 
         case ADD_ONE_TO_CART:
             const menuType = newCart.find(x=> x.type.toLowerCase() === action.payload.item.type.toLowerCase())
@@ -231,6 +232,7 @@ export default function productReducer(state = initialState, action) {
             return {
                 ...state,
                 cart: newCart,
+                showPopup: true,
                 amount: newAmount
             }
 
@@ -448,6 +450,12 @@ export default function productReducer(state = initialState, action) {
             return {
                 ...state,
                 display: !state.display
+            }
+
+        case REMOVE_POPUP:
+            return {
+                ...state,
+                showPopup: false
             }
 
         default:

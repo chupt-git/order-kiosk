@@ -51,16 +51,17 @@ class Checkout extends React.Component {
                     </View>
                 </View>
 
-                <View style={{display:'flex',flexDirection: 'row', alignItems: 'baseline'}}>
+                <View style={{display:'flex',flexDirection: 'row', alignItems: 'baseline', marginTop: 10}}>
                     <MedText blue>Total:</MedText>
                     <MedText>${this.props.amount.toFixed(2)}</MedText>
                 </View>
                 <MainButton
-                    style={{marginRight: 10, marginLeft: 10,}}
                     noBorder
                     fullWidth
-                    onPress={() => this.props.navigation.navigate('Finish')}>
-                    <ColoredText>Finish</ColoredText>
+                    green
+                    onPress={() => this.props.navigation.navigate('Finish')}
+                >
+                    <Text style={{textAlign: 'center', color: '#fff', fontSize: 20, width: '100%'}}>Finish</Text>
                 </MainButton>
             </View>
             </Body>
@@ -68,6 +69,15 @@ class Checkout extends React.Component {
     );
   }
 }
+
+
+{/*<MainButton*/}
+    {/*style={{marginRight: 10, marginLeft: 10,}}*/}
+    {/*noBorder*/}
+    {/*fullWidth*/}
+    {/*onPress={() => this.props.navigation.navigate('Finish')}>*/}
+    {/*<ColoredText>Finish</ColoredText>*/}
+{/*</MainButton>*/}
 
 function mapStateToProps(state) {
     return {
