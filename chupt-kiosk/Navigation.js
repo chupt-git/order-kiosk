@@ -8,28 +8,30 @@ import Menu from './screens/Menu'
 import Cart from './screens/Cart'
 import ModifyItem from './screens/ModifyItem'
 import SideChange from './screens/SideChange'
-import OrderInfo from "./screens/OrderInfo";
+import OrderInfo from "./screens/OrderInfo"
+import LockerOpened from "./screens/LockerOpened"
 
 const Navigation = createStackNavigator(
-  {
-  Home: Home,
-  MenuPicker: MenuPicker,
-  Menu: Menu,
-  Pickup: Pickup,
-  Finish: Finish,
-  Checkout: Checkout,
-  Cart: Cart,
-  ModifyItem: ModifyItem,
-  SideChange: SideChange,
-  OrderInfo: OrderInfo
-},
-  {
-    initialRouteName: "Home",
-    navigationOptions: {
-          gesturesEnabled: false,
-      },
-    headerMode: 'none',
-  }
+    {
+        Home: Home,
+        MenuPicker: MenuPicker,
+        Menu: Menu,
+        Pickup: Pickup,
+        Finish: Finish,
+        Checkout: Checkout,
+        Cart: Cart,
+        ModifyItem: ModifyItem,
+        SideChange: SideChange,
+        OrderInfo: OrderInfo,
+        LockerOpened: LockerOpened
+    },
+    {
+        initialRouteName: "Home",
+        navigationOptions: {
+            gesturesEnabled: false,
+        },
+        headerMode: 'none',
+    }
 );
 
 

@@ -19,6 +19,12 @@ export const TOGGLE_MODAL_DISPLAY = 'TOGGLE_MODAL_DISPLAY'
 export const CLEAR_MODDED_SIDE = 'CLEAR_MODDED_SIDE'
 export const CLEAR_CHECKED = 'CLEAR_CHECKED'
 export const ADD_ONE_TO_CART = 'ADD_ONE_TO_CART'
+export const REMOVE_POPUP = 'REMOVE_POPUP'
+
+
+export const removePopup= () => ({
+  type: REMOVE_POPUP
+})
 
 export const toggleModalDisplay = () => ({
   type: TOGGLE_MODAL_DISPLAY
@@ -155,8 +161,6 @@ export function sendOrder(cart, contact) {
     dispatch(fetchProductsBegin())
     let items={}
     let currentCategory = ''
-
-    console.log(cart, contact)
 
     cart.forEach((dataItem) => {
       if (currentCategory !== dataItem.type) {

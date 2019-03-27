@@ -73,21 +73,27 @@ class ModifyItem extends React.Component {
                     flexDirection: 'column'
                 }}>
                     <View style={{
+                        marginTop: 50,
                         width: '100%',
-                        display: 'flex',
-                        flexDirection: 'row',
-                        justifyContent: 'space-between',
-                        alignItems: 'flex-start'
+                        height: '100%'
                     }}>
-                        <MenuImage style={{width: '50%'}} item={itemWrap}/>
-                        <View style={{width: '50%'}}>
-                            <MedText>{itemWrap.name}</MedText>
-                            <Txt>{itemWrap.description}</Txt>
-                            {sideButton}
+                        <View style={{
+                            width: '100%',
+                            display: 'flex',
+                            flexDirection: 'row',
+                            justifyContent: 'space-between',
+                            alignItems: 'flex-start'
+                        }}>
+                            <MenuImage style={{width: '50%'}} item={itemWrap}/>
+                            <View style={{width: '50%'}}>
+                                <MedText>{itemWrap.name}</MedText>
+                                <Txt>{itemWrap.description}</Txt>
+                                {sideButton}
+                            </View>
                         </View>
-                    </View>
-                    <View style={{display:'flex', flexDirection: 'row'}}>
-                        {mods}
+                        <View style={{display:'flex', flexDirection: 'row', marginTop: 100}}>
+                            {mods}
+                        </View>
                     </View>
 
                     <View style={{
@@ -99,12 +105,13 @@ class ModifyItem extends React.Component {
                         flexDirection: 'row',
                         justifyContent: 'center',
                     }}>
-
-                        <CircleButton onPress={() => {
-                            this.props.addToCart(itemWrap)
-                            this.props.navigation.navigate('MenuPicker')
+                        <CircleButton
+                            style={{width: 150}}
+                            onPress={() => {
+                                this.props.addToCart(itemWrap)
+                                this.props.navigation.navigate('MenuPicker')
                         }}>
-                            <ColoredText>+</ColoredText>
+                            <ColoredText>Add</ColoredText>
                         </CircleButton>
                     </View>
                 </MenuItemWrap>

@@ -20,16 +20,15 @@ class OrderInfo extends React.Component {
                 <Body>
                     <View style={{width: '97%', height: '90%', display: 'flex', justifyContent: 'space-around'}}>
                         <View>
-                        <HeaderText style={{marginBottom: 50}} left big>Pickup</HeaderText>
-
+                            <HeaderText style={{marginBottom: 20}} left big>Pickup</HeaderText>
                             <View style={{display:'flex', flexDirection: 'row', alignItems: 'center'}}>
                                 <PickupButton style={{height: 150}} status='full'>
-                                     <ColoredText bigger>12</ColoredText>
+                                     <ButtonText noPad>12</ButtonText>
                                 </PickupButton>
 
                                 <View style={{
                                     marginLeft: 10,
-                                    height: 150,
+                                    height: 120,
                                     display: 'flex',
                                     justifyContent: 'space-around'
                                 }}>
@@ -39,37 +38,59 @@ class OrderInfo extends React.Component {
                                 </View>
                             </View>
 
-                            <View style={{marginLeft: 50, marginTop: 50}}>
-                                <View>
-                                    <Txt bold blue style={{marginBottom: 10}}>Meals:</Txt>
+                            <View style={{marginLeft: 20, marginTop: 50}}>
+                                <View style={{
+                                    width: '100%',
+                                    display: 'flex',
+                                    flexDirection: 'row',
+                                    alignItems:'center',
+                                    justifyContent: 'space-between'
+                                }}>
+                                    <View style={{marginBottom: 10, flex: 1}}>
+                                        <Txt bold blue style={{marginBottom: 10}}>Meals:</Txt>
 
-                                    <View style={{marginLeft: 10}}>
-                                        <Txt style={{maxWidth: '50%'}} light>
-                                            Meal Name
-                                        </Txt>
                                         <View style={{marginLeft: 10}}>
-                                            <Text style={{marginBottom: 2, color:'#919191'}}>
-                                                - No Sauce
-                                            </Text>
+                                            <Txt style={{maxWidth: '50%'}} light>
+                                                Meal Name
+                                            </Txt>
+                                            <View style={{marginLeft: 10}}>
+                                                <Text style={{marginBottom: 2, color:'#919191'}}>
+                                                    - No Sauce
+                                                </Text>
+                                            </View>
                                         </View>
                                     </View>
+                                    <View style={{backgroundColor:'#fff', width: 50}}>
+                                        <HeaderText light>1</HeaderText>
+                                    </View>
                                 </View>
+                                <View style={{height: 2, width: '100%', backgroundColor: '#959595', marginTop: 20, marginBottom: 20}}/>
+                                <View style={{
+                                    width: '100%',
+                                    display: 'flex',
+                                    flexDirection: 'row',
+                                    alignItems:'center',
+                                    justifyContent: 'space-between'
+                                }}>
+                                    <View style={{flex: 1}}>
+                                        <Txt bold blue style={{marginBottom: 10}}>Entrees:</Txt>
 
-                                <View>
-                                    <Txt bold blue style={{marginBottom: 10}}>Entrees:</Txt>
-
-                                    <View style={{marginLeft: 10}}>
-                                        <Txt style={{maxWidth: '50%'}} light>
-                                            Entree Name
-                                        </Txt>
                                         <View style={{marginLeft: 10}}>
-                                            <Text style={{marginBottom: 2, color:'#919191'}}>
-                                                - Mild For Heat
-                                            </Text>
-                                            <Text style={{marginBottom: 2, color:'#919191'}}>
-                                                - No Carrot
-                                            </Text>
+                                            <Txt style={{maxWidth: '50%'}} light>
+                                                Entree Name
+                                            </Txt>
+                                            <View style={{marginLeft: 10}}>
+                                                <Text style={{marginBottom: 2, color:'#919191'}}>
+                                                    - Mild For Heat
+                                                </Text>
+                                                <Text style={{marginBottom: 2, color:'#919191'}}>
+                                                    - No Carrot
+                                                </Text>
+                                            </View>
                                         </View>
+                                    </View>
+                                    <View style={{backgroundColor:'#fff', width: 50}}>
+                                        <HeaderText light>2</HeaderText>
                                     </View>
                                 </View>
                             </View>
@@ -77,12 +98,12 @@ class OrderInfo extends React.Component {
 
 
                         <MainButton
-                            noBorder
                             green
                             fullWidth
+                            home
                             centerText
-                            onPress={() => this.props.navigation.navigate('Checkout')}>
-                            <ColoredText>Open Locker</ColoredText>
+                            onPress={() => this.props.navigation.navigate('LockerOpened')}>
+                            <HeaderText center big white light>Open Locker</HeaderText>
                         </MainButton>
                     </View>
                 </Body>

@@ -113,6 +113,7 @@ class Finish extends React.Component {
             justifyContent: 'center'
           }}>
             <ButtonText>Congratulations!</ButtonText>
+            <ButtonText style={{marginTop: 50}} >Locker 15</ButtonText>
             <ButtonText style={{marginTop: 50, marginBottom: 50}} small>Your order has been successfully received!
               Your order will be ready in 5 minutes.</ButtonText>
 
@@ -121,7 +122,7 @@ class Finish extends React.Component {
                 onPress={() => this.props.navigation.navigate('Pickup')}
                 white
                 home>
-              <ButtonText center small green>
+              <ButtonText style={{width: '100%'}} center small green>
                 Open Locker
               </ButtonText>
             </MainButton>
@@ -132,7 +133,7 @@ class Finish extends React.Component {
                 })}
                 blue
                 home>
-              <ButtonText center small>
+              <ButtonText style={{width: '100%'}} center small>
                 New Order
               </ButtonText>
             </MainButton>

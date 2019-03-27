@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 
 const InputBox = styled.TextInput`
-    height: 70;
+    height: 70px;
     background-color: #fff;
     padding: 5px;
     margin-top: 15px;
