@@ -178,7 +178,7 @@ export default function productReducer(state = initialState, action) {
                             }
                         })
 
-                        itemMods.choices.forEach(y=> {
+                        itemMods.choices.forEach(y => {
                             const singleMod = x.mods.find(i => i.name === y.name)
 
                             if (singleMod.value !== y.value) {

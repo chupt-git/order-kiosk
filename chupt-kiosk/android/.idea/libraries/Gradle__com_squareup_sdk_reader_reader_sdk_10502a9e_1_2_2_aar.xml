@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.squareup.sdk.reader:reader-sdk-10502a9e:1.2.2@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/reader-sdk-10502a9e-1.2.2.aar/c3b07f8cfb7c336610a486f5fd25c6de/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/reader-sdk-10502a9e-1.2.2.aar/c3b07f8cfb7c336610a486f5fd25c6de/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.sdk.reader/reader-sdk-10502a9e/1.2.2/e98b2c364ccae068a080d763e8c183dd5971aee2/reader-sdk-10502a9e-1.2.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

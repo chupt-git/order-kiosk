@@ -2183,9 +2183,9 @@ expo@^32.0.6:
     uuid-js "^0.7.5"
     whatwg-fetch "^2.0.4"
 
-expokit@^32.0.7:
-  version "32.0.7"
-  resolved "https://registry.yarnpkg.com/expokit/-/expokit-32.0.7.tgz#8395bae17c53c469d5f749fd567efe2d88907cf7"
+expokit@^32.1.1:
+  version "32.1.1"
+  resolved "https://registry.yarnpkg.com/expokit/-/expokit-32.1.1.tgz#55e763d4fa26eb3627d06fcb12d0e3c87d767c2c"
   dependencies:
     jsc-android "^224109.1.0"
 
@@ -4019,9 +4019,9 @@ react-native-screens@1.0.0-alpha.22, "react-native-screens@^1.0.0 || ^1.0.0-alph
   version "1.0.0-alpha.22"
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-1.0.0-alpha.22.tgz#7a120377b52aa9bbb94d0b8541a014026be9289b"
 
-react-native-square-reader-sdk@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/react-native-square-reader-sdk/-/react-native-square-reader-sdk-1.1.1.tgz#b3cf8549da011ff72ae87cf801cdd11d911a46b7"
+react-native-square-reader-sdk@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-square-reader-sdk/-/react-native-square-reader-sdk-1.2.0.tgz#7609d5083e8732913c2dd6c189ab43550ff375a5"
 
 react-native-svg@8.0.10:
   version "8.0.10"

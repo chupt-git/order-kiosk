@@ -5,6 +5,8 @@ import com.facebook.react.ReactPackage;
 
 import java.util.Arrays;
 import java.util.List;
+import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import expo.core.interfaces.Package;
 import expo.loaders.provider.interfaces.AppLoaderPackagesProviderInterface;
@@ -32,25 +34,23 @@ import expo.modules.sms.SMSPackage;
 import expo.modules.taskManager.TaskManagerPackage;
 import expolib_v1.okhttp3.OkHttpClient;
 import com.squareup.sdk.reader.ReaderSdk;
-import android.support.multidex.MultiDex;
-import android.content.Context;
 
 // Needed for `react-native link`
 // import com.facebook.react.ReactApplication;
 import com.squareup.sdk.reader.react.ReaderSdkPackage;
-import com.smixx.fabric.FabricPackage;
 
 public class MainApplication extends ExpoApplication implements AppLoaderPackagesProviderInterface<ReactPackage> {
   @Override public void onCreate() {
-   super.onCreate();
-   ReaderSdk.initialize(this);
+    super.onCreate();
+    ReaderSdk.initialize(this);
   }
 
   @Override protected void attachBaseContext(Context base) {
-   super.attachBaseContext(base);
-   // Required if minSdkVersion < 21
-   MultiDex.install(this);
+    super.attachBaseContext(base);
+    // Required if minSdkVersion < 21
+    MultiDex.install(this);
   }
+
   @Override
   public boolean isDebug() {
     return BuildConfig.DEBUG;
@@ -64,8 +64,6 @@ public class MainApplication extends ExpoApplication implements AppLoaderPackage
 
         // Needed for `react-native link`
         // new MainReactPackage(),
-            new ReaderSdkPackage(),
-            new FabricPackage(),
             new ReaderSdkPackage()
     );
   }

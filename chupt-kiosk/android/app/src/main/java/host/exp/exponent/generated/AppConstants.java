@@ -11,14 +11,14 @@ import host.exp.exponent.Constants;
 @DoNotStrip
 public class AppConstants {
 
-  public static final String VERSION_NAME = null;
-  public static String INITIAL_URL = null;
-  public static final String SHELL_APP_SCHEME = null;
+  public static final String VERSION_NAME = "2.10.8";
+  public static String INITIAL_URL = "exp://exp.host/@chelseadover/chupt-kiosk";
+  public static final String SHELL_APP_SCHEME = "expf221005a356e45d2be6e6e5bb223fcac";
   public static final String RELEASE_CHANNEL = "default";
   public static boolean SHOW_LOADING_VIEW_IN_SHELL_APP = false;
   public static boolean ARE_REMOTE_UPDATES_ENABLED = true;
   public static final List<Constants.EmbeddedResponse> EMBEDDED_RESPONSES;
-  public static boolean FCM_ENABLED = true;
+  public static boolean FCM_ENABLED = false;
 
   static {
     List<Constants.EmbeddedResponse> embeddedResponses = new ArrayList<>();

@@ -14,12 +14,6 @@ buildscript {
   }
 }
 
-
-ext {
-  compileSdkVersion = 23
-  buildToolsVersion = '23.0.1'
-}
-
 allprojects {
   repositories {
     // For non-detach
@@ -69,6 +63,16 @@ allprojects {
     // https://github.com/google/ExoPlayer/issues/5225#issuecomment-445739013
     maven { url 'https://google.bintray.com/exoplayer' }
     maven { url "https://jitpack.io" }
+
+    google()
+    maven {
+      url "https://sdk.squareup.com/android"
+      credentials {
+        username "sq0idp-EEr0UerVULRXtF1xdh3zLw"
+        password "gcfbf3tevbr2jrovtflv3p57vhht5ho4suotytxknnf3jldlht3q"
+      }
+    }
+    jcenter()
 
     // Want this last so that we never end up with a stale cache
     mavenLocal()

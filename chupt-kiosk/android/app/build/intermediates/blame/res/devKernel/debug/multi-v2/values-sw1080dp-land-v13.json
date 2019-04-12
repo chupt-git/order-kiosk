@@ -4,13 +4,13 @@
             "outputFile": "/Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/build/intermediates/incremental/mergeDevKernelDebugResources/merged.dir/values-sw1080dp-land-v13/values-sw1080dp-land-v13.xml",
             "map": [
                 {
-                    "source": "/Users/chelsea/.gradle/caches/transforms-1/files-1.1/reader-sdk-155af43b-1.1.3.aar/b0098d56f9fd039811edb32cf59e4dea/res/values-sw1080dp-land-v13/values-sw1080dp-land-v13.xml",
+                    "source": "/Users/chelsea/.gradle/caches/transforms-1/files-1.1/reader-sdk-10502a9e-1.2.2.aar/c3b07f8cfb7c336610a486f5fd25c6de/res/values-sw1080dp-land-v13/values-sw1080dp-land-v13.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,133,208,277,345,405,465,524,589,646,703,757,823,885,951,1020,1085,1143",
-                        "endColumns": "77,74,68,67,59,59,58,64,56,56,53,65,61,65,68,64,57,61",
-                        "endOffsets": "128,203,272,340,400,460,519,584,641,698,752,818,880,946,1015,1080,1138,1200"
+                        "startLines": "2,3,4,5,6,7,8,9,10,11",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,115,175,234,299,356,413,479,541,607",
+                        "endColumns": "59,59,58,64,56,56,65,61,65,68",
+                        "endOffsets": "110,170,229,294,351,408,474,536,602,671"
                     }
                 }
             ]

@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.chupt.chupt-kiosk</string>
+	<string>com.chupt.order-kiosk</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -23,7 +23,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>exp29533467016e4530b249ebbaad391658</string>
+				<string>expf221005a356e45d2be6e6e5bb223fcac</string>
 			</array>
 		</dict>
 		<dict>
@@ -31,7 +31,7 @@
 			<string>OAuthRedirect</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.chupt.chupt-kiosk</string>
+				<string>com.chupt.order-kiosk</string>
 			</array>
 		</dict>
 	</array>

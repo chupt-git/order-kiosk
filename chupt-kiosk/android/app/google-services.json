@@ -11,14 +11,14 @@
         "client_id": "android:host.exp.exponent",
         "client_type": 1,
         "android_client_info": {
-          "package_name": "host.exp.exponent",
-          "certificate_hash": "892B2B46907B26D3E729829AFCE15446B9947450"
+          "package_name": "com.chupt.order_kiosk",
+          "certificate_hash": ""
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCJhlF9Y-b7mTW2E9Oxuq94mGnLepa2ItE"
+          "current_key": ""
         }
       ],
       "services": {

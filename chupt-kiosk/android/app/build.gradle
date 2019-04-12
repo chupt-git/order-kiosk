@@ -13,32 +13,21 @@ apply plugin: 'io.fabric'
 apply plugin: 'devicefarm'
 
 repositories {
-  google()
-  maven {
-    url "https://sdk.squareup.com/android"
-    credentials {
-      username 'sq0idp-EEr0UerVULRXtF1xdh3zLw'
-      password 'gcfbf3tevbr2jrovtflv3p57vhht5ho4suotytxknnf3jldlht3q'
-    }
-  }
-  jcenter()
+  maven { url 'https://maven.fabric.io/public' }
 }
 
 android {
   compileSdkVersion 27
 
   defaultConfig {
-    applicationId 'host.exp.exponent'
+    applicationId 'com.chupt.order_kiosk'
     minSdkVersion 21
     targetSdkVersion 26
-    // ADD VERSIONS HERE
-    // BEGIN VERSIONS
-    versionCode 106
-    versionName '2.10.7'
-    // END VERSIONS
-//    ndk {
-//      abiFilters 'armeabi-v7a', 'x86'
-//    }
+    versionCode 1
+    versionName '1.0.0'
+    ndk {
+      abiFilters 'armeabi-v7a', 'x86'
+    }
     multiDexEnabled true
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     // Deprecated. Used by net.openid:appauth
@@ -47,7 +36,7 @@ android {
     ]
   }
   dexOptions {
-    // javaMaxHeapSize System.getenv("DISABLE_DEX_MAX_HEAP") ? null : "8g"
+    javaMaxHeapSize System.getenv("DISABLE_DEX_MAX_HEAP") ? null : "8g"
     // Ensures incremental builds remain fast
     preDexLibraries true
     // Required to build with Reader SDK
@@ -90,14 +79,11 @@ android {
   lintOptions {
     abortOnError false
   }
-  lintOptions {
-    abortOnError false
-  }
   packagingOptions {
     pickFirst "**"
   }
   configurations.all {
-    resolutionStrategy.force 'com.android.support:design:27.1.1'
+    resolutionStrategy.force 'com.android.support:design:27.1.0'
   }
 }
 
@@ -124,14 +110,14 @@ apply from: 'expo.gradle'
 // WHEN_PREPARING_SHELL_REMOVE_TO_HERE
 
 dependencies {
-  compile project(':react-native-square-reader-sdk')
-  compile project(':react-native-fabric')
-  implementation project(':react-native-square-reader-sdk')
-  implementation fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':react-native-square-reader-sdk')
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+
   implementation 'com.android.support:multidex:1.0.1'
+
   // Our dependencies
   implementation 'com.android.support:appcompat-v7:27.1.1'
-  implementation 'com.android.support:cardview-v7:27.1.1'
+
   // Our dependencies from ExpoView
   // DON'T ADD ANYTHING HERE THAT ISN'T IN EXPOVIEW. ONLY COPY THINGS FROM EXPOVIEW TO HERE.
   implementation 'com.android.support:appcompat-v7:27.1.1'
@@ -142,8 +128,10 @@ dependencies {
   compileOnly 'org.glassfish:javax.annotation:3.1.1'
   implementation 'com.jakewharton:butterknife:8.4.0'
   implementation 'de.greenrobot:eventbus:2.4.0'
+
   // Be careful when upgrading! Upgrading might break experience scoping. Check with Jesse. See Analytics.resetAmplitudeDatabaseHelper
   implementation 'com.amplitude:android-sdk:2.9.2'
+
   implementation 'com.squareup.picasso:picasso:2.5.2'
   implementation 'com.google.android.gms:play-services-gcm:15.0.1'
   implementation 'com.google.android.gms:play-services-analytics:16.0.1'
@@ -152,10 +140,10 @@ dependencies {
   implementation 'com.google.android.gms:play-services-location:15.0.1'
   implementation 'com.google.android.gms:play-services-ads:15.0.1'
   annotationProcessor 'com.raizlabs.android:DBFlow-Compiler:2.2.1'
-  implementation 'com.raizlabs.android:DBFlow-Core:2.2.1'
-  implementation 'com.raizlabs.android:DBFlow:2.2.1'
-  implementation 'com.madgag.spongycastle:core:1.53.0.0'
-  implementation 'com.madgag.spongycastle:prov:1.53.0.0'
+  implementation "com.raizlabs.android:DBFlow-Core:2.2.1"
+  implementation "com.raizlabs.android:DBFlow:2.2.1"
+  implementation "com.madgag.spongycastle:core:1.53.0.0"
+  implementation "com.madgag.spongycastle:prov:1.53.0.0"
   debugImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta1'
   // debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.4-beta1'
   releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta1'
@@ -171,18 +159,20 @@ dependencies {
   implementation('com.airbnb.android:lottie:2.5.5') {
     exclude group: 'com.android.support', module: 'appcompat-v7'
   }
-  implementation 'io.branch.sdk.android:library:2.17.1'
   implementation('io.nlopez.smartlocation:library:3.2.11') {
     transitive = false
   }
   implementation 'com.android.support:exifinterface:27.1.1'
   implementation 'com.squareup.okio:okio:1.9.0'
   implementation 'com.facebook.soloader:soloader:0.5.1'
+
   implementation 'com.google.android.exoplayer:exoplayer:2.6.1'
   implementation 'expolib_v1.com.google.android.exoplayer:expolib_v1-extension-okhttp:2.6.1@aar'
+
   // expo-file-system
   implementation 'com.squareup.okhttp3:okhttp:3.10.0'
   implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.10.0'
+
   // Testing
   androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
   // We use a modified build of com.android.support.test:runner:1.0.1. Explanation in maven-test/README
@@ -191,16 +181,23 @@ dependencies {
   androidTestImplementation 'com.google.code.findbugs:jsr305:3.0.0'
   androidTestImplementation 'com.android.support.test.uiautomator:uiautomator-v18:2.1.1'
   androidTestImplementation 'com.azimolabs.conditionwatcher:conditionwatcher:0.2'
+
   testImplementation 'junit:junit:4.12'
   testImplementation 'org.mockito:mockito-core:1.10.19'
   testImplementation 'org.robolectric:robolectric:3.8'
   testImplementation 'com.android.support.test:runner:1.0.2-alpha1'
   testImplementation 'com.android.support.test:rules:1.0.2-alpha1'
+
+
   implementation('host.exp.exponent:expoview:32.0.0@aar') {
     transitive = true
     exclude group: 'com.squareup.okhttp3', module: 'okhttp'
     exclude group: 'com.squareup.okhttp3', module: 'okhttp-urlconnection'
   }
+
+
+
+
   api 'com.facebook.react:react-native:32.0.0'
   api 'host.exp.exponent:expo-app-loader-provider:1.0.0'
   api 'host.exp.exponent:expo-core:2.0.0'
@@ -216,6 +213,7 @@ dependencies {
   api 'host.exp.exponent:expo-react-native-adapter:2.0.0'
   api 'host.exp.exponent:expo-task-manager:1.0.0'
   api 'host.exp.exponent:expo-task-manager-interface:1.0.0'
+
   // Optional universal modules, could be removed
   // along with references in MainActivity
   api 'host.exp.exponent:expo-ads-admob:2.0.0'
@@ -240,6 +238,8 @@ dependencies {
   api 'host.exp.exponent:expo-sensors:2.0.0'
   api 'host.exp.exponent:expo-sms:2.0.0'
   api 'host.exp.exponent:expo-background-fetch:1.0.0'
+
+
 }
 
 // This has to be down here for some reason

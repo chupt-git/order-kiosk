@@ -4,7 +4,7 @@
             "outputFile": "/Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/build/intermediates/incremental/mergeDevKernelDebugResources/merged.dir/values-v21/values-v21.xml",
             "map": [
                 {
-                    "source": "/Users/chelsea/.gradle/caches/transforms-1/files-1.1/reader-sdk-155af43b-1.1.3.aar/b0098d56f9fd039811edb32cf59e4dea/res/values-v21/values-v21.xml",
+                    "source": "/Users/chelsea/.gradle/caches/transforms-1/files-1.1/reader-sdk-10502a9e-1.2.2.aar/c3b07f8cfb7c336610a486f5fd25c6de/res/values-v21/values-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -61,6 +61,25 @@
                     }
                 },
                 {
+                    "source": "/Users/chelsea/.gradle/caches/transforms-1/files-1.1/design-27.1.0.aar/6b3dd9f594690dc94c98c9b77db1c0d4/res/values-v21/values-v21.xml",
+                    "from": {
+                        "startLines": "2,5",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,266",
+                        "endLines": "4,5",
+                        "endColumns": "12,96",
+                        "endOffsets": "261,358"
+                    },
+                    "to": {
+                        "startLines": "164,228",
+                        "startColumns": "4,4",
+                        "startOffsets": "12574,17124",
+                        "endLines": "166,228",
+                        "endColumns": "12,96",
+                        "endOffsets": "12780,17216"
+                    }
+                },
+                {
                     "source": "/Users/chelsea/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/9313b5ad628552383682ff44f18253c1/res/values-v21/values-v21.xml",
                     "from": {
                         "startLines": "2,5,8,11",
@@ -77,25 +96,6 @@
                         "endLines": "271,274,278,282",
                         "endColumns": "12,12,12,12",
                         "endOffsets": "19975,20138,20432,20727"
-                    }
-                },
-                {
-                    "source": "/Users/chelsea/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/c74630566a6f865f915ea5e66975f059/res/values-v21/values-v21.xml",
-                    "from": {
-                        "startLines": "2,5",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,266",
-                        "endLines": "4,5",
-                        "endColumns": "12,96",
-                        "endOffsets": "261,358"
-                    },
-                    "to": {
-                        "startLines": "164,228",
-                        "startColumns": "4,4",
-                        "startOffsets": "12574,17124",
-                        "endLines": "166,228",
-                        "endColumns": "12,96",
-                        "endOffsets": "12780,17216"
                     }
                 }
             ]
