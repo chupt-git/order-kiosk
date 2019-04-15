@@ -1,0 +1,38 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/build/intermediates/incremental/mergeProdKernelDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "/Users/chelsea/.gradle/caches/transforms-1/files-1.1/reader-sdk-10502a9e-1.2.2.aar/c3b07f8cfb7c336610a486f5fd25c6de/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,129",
+                        "endColumns": "73,79",
+                        "endOffsets": "124,204"
+                    }
+                },
+                {
+                    "source": "/Users/chelsea/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/3baf730bb6863ff4274954f0d4562c31/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
+                    },
+                    "to": {
+                        "startLines": "4",
+                        "startColumns": "4",
+                        "startOffsets": "209",
+                        "endLines": "8",
+                        "endColumns": "13",
+                        "endOffsets": "481"
+                    }
+                }
+            ]
+        }
+    ]
+}

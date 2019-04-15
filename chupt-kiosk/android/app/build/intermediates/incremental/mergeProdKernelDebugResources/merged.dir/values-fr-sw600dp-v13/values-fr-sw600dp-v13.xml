@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="crm_email_collection_enter_email_address">Saisir une adresse email</string>
+    <string name="kitchen_printing_cardholder_name_retrieving">Récupération du nom du titulaire d’une carte à puce</string>
+    <string name="points_redeem_button">Échanger contre {points} {points_terminology}</string>
+    <string name="points_redeem_button_applied">Appliqué pour {points} {points_terminology}</string>
+    <string name="points_redeem_button_disabled">{points} {points_terminology}</string>
+    <string name="split_tender_card_tendered">Débit de {amount} autorisé sur {brand} {digits}</string>
+    <string name="split_tender_card_tendered_plus_tip">Débit de {amount} + pourboire autorisé sur {brand} {digits}</string>
+</resources>

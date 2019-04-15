@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="crm_email_collection_enter_email_address">メールアドレスを入力してください</string>
+    <string name="kitchen_printing_cardholder_name_retrieving">ICカードからカード名義人名を取得しています</string>
+    <string name="points_redeem_button">{points}{points_terminology}と引換</string>
+    <string name="points_redeem_button_applied">{points}{points_terminology}を適用</string>
+    <string name="points_redeem_button_disabled">{points}{points_terminology}</string>
+    <string name="split_tender_card_tendered">{brand} {digits}の{amount}は承認されました</string>
+    <string name="split_tender_card_tendered_plus_tip">{brand} {digits}の{amount} + チップは承認されました</string>
+</resources>

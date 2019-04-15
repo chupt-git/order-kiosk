@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="marin_charge_width">208dp</dimen>
+    <dimen name="marin_gap_payment_pad_height_portrait">120dp</dimen>
+    <dimen name="marin_gap_signature_screen_button_margins">@dimen/marin_gutter</dimen>
+    <dimen name="marin_gap_signature_screen_extra_padding">0px</dimen>
+    <dimen name="marin_gap_signature_screen_padding">20dp</dimen>
+    <dimen name="marin_gap_signature_screen_tip_bar">@dimen/marin_gutter</dimen>
+    <style name="Widget.Marin.Charge.Subtitle">
+    <!-- There is no subtitle on tablets. -->
+  </style>
+    <style name="Widget.Marin.Charge.Title">
+    <item name="android:textSize">@dimen/marin_text_charge</item>
+    <item name="weight">medium</item>
+  </style>
+</resources>
