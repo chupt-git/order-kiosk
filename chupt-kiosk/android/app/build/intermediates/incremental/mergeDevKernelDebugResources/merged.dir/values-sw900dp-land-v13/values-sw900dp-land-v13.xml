@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="responsive_16P96L_64P0L_72P0L_96P0L">0dp</dimen>
+    <dimen name="responsive_16_64P0L_72P0L_96P0L">0dp</dimen>
+</resources>

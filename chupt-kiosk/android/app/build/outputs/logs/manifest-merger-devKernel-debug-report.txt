@@ -4,6 +4,7 @@ ADDED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/m
 INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-340:12
 INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-340:12
 INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-340:12
+MERGED from [:react-native-app-auth] /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/node_modules/react-native-app-auth/android/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-square-reader-sdk] /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/node_modules/react-native-square-reader-sdk/android/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:17:1-26:12
 MERGED from [host.exp.exponent:expoview:32.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/expoview-32.0.0.aar/728343a69658b0407de3b00ac199a169/AndroidManifest.xml:2:1-91:12
 MERGED from [com.facebook.react:react-native:32.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/react-native-32.0.0.aar/88668d39170e78189f96c61e8fa64990/AndroidManifest.xml:2:1-15:12
@@ -980,6 +981,8 @@ uses-sdk
 INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-app-auth] /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/node_modules/react-native-app-auth/android/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-app-auth] /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/node_modules/react-native-app-auth/android/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-square-reader-sdk] /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/node_modules/react-native-square-reader-sdk/android/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:22:5-24:41
 MERGED from [:react-native-square-reader-sdk] /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/node_modules/react-native-square-reader-sdk/android/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:22:5-24:41
 MERGED from [host.exp.exponent:expoview:32.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/expoview-32.0.0.aar/728343a69658b0407de3b00ac199a169/AndroidManifest.xml:7:5-9:41

@@ -20,9 +20,17 @@ export const CLEAR_MODDED_SIDE = 'CLEAR_MODDED_SIDE'
 export const CLEAR_CHECKED = 'CLEAR_CHECKED'
 export const ADD_ONE_TO_CART = 'ADD_ONE_TO_CART'
 export const REMOVE_POPUP = 'REMOVE_POPUP'
+export const PHONE_INPUT_VALIDATION = 'PHONE_INPUT_VALIDATION'
+export const CHANGE_CONTACT_INPUT = 'CHANGE_CONTACT_INPUT'
+export const CONTACT_CHANGE = 'CONTACT_CHANGE'
 
+export const contactChange = (input, contactType) => ({
+  type: CONTACT_CHANGE,
+  input: {input},
+  contactType: {contactType}
+})
 
-export const removePopup= () => ({
+export const removePopup = () => ({
   type: REMOVE_POPUP
 })
 
@@ -48,7 +56,7 @@ export const changeSide = (item, mealId) => ({
   mealId: { mealId }
 })
 
-export const  populateMods = (item, mealType, productID) => ({
+export const populateMods = (item, mealType, productID) => ({
   type: POPULATE_MODS,
   item: {item},
   mealType: {mealType},
@@ -85,6 +93,11 @@ export const changePhoneInput = number => ({
   type: CHANGE_PHONE_INPUT,
   payload: { number }
 });
+
+export const phoneInputValidation  = item => ({
+  type: PHONE_INPUT_VALIDATION,
+  payload: { item }
+})
 
 export const changePickupTypeInput = pickupType => ({
   type: CHANGE_PICKUPTYPE_INPUT,
@@ -156,32 +169,113 @@ export function fetchPickup() {
   };
 }
 
-export function sendOrder(cart, contact) {
+export function fetchOrder() {
+  return dispatch => {
+    dispatch(fetchProductsBegin());
+    return fetch('https://chupt-dev-4.appspot.com/orders/')
+      .then(handleErrors)
+      .then(res => res.json())
+      .then(json => {
+        console.log(json)
+      })
+      .catch(error => dispatch(fetchProductsFailure(error)))
+  };
+}
+
+export function sendOrder(cart, contact, amount) {
   return dispatch => {
     dispatch(fetchProductsBegin())
-    let items={}
+    let items = {}
     let currentCategory = ''
+    let current_item = {}
+    let newMods = []
+    const uuidv1 = require('uuid/v1');
 
     cart.forEach((dataItem) => {
       if (currentCategory !== dataItem.type) {
-        delete dataItem.items.type
-        items[dataItem.type] = dataItem.items
+        items[dataItem.type] = {items: []}
+        dataItem.items.forEach((item) => {
+          if (item.items) {
+            let multiItems = []
+            // IF MULTI
+            item.items.forEach(x => {
+              x.mods.forEach(y => {
+                newMods.push({name: y.name, value: y.value})
+              })
+              multiItems.push(
+                {
+                  item_id: x.item_id,
+                  item_type: x.item_type,
+                  mods: newMods,
+                  count: 2,
+                  amount: 6.50
+                }
+              )
+            })
+            items[dataItem.type].items.push(multiItems)
+          } else {
+            // IF SINGLE
+            item.mods.forEach(y => {
+              newMods.push({name: y.name, value: y.value})
+            })
+
+            items[dataItem.type].items.push(
+              {
+                item_id: item.item_id,
+                item_type: item.item_type,
+                mods: newMods,
+                count: 1,
+                amount: item.amount
+              }
+            )
+
+          }
+        })
+
         currentCategory = dataItem.type
       }
     })
-    
-    return fetch('http://192.168.1.9:5000/orders', {
+
+    return fetch('https://chupt-dev-4.appspot.com/orders/', {
       method: 'POST',
       headers: {
-        Accept: 'application/json',
+        'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         pod_id: 'DApm5HLNDrE4vpFjanQR65',
-        items,
-
+        name: contact.name,
+        phone: contact.number,
+        pickup_pin: contact.number,
+        customer_uid: uuidv1(),
+        placer_uid: uuidv1(),
+        source: "pod",
+        pickup_type: "locker",
+        items: items,
+        payment: {
+          cards: [
+            {
+              "amount": amount,
+              "agent": "square",
+              "agent_ref": "neY5J5msqrPH5ZbiurXNwQ",
+              "card_type": "visa debit",
+              "card_num": "xxxx",
+              "name": contact.name,
+              "expiration": "01/20",
+              "ccv": "345"
+            }
+          ]
+        }
       }),
     })
+    .then((response) => response.json())
+    .then((responseData) => {
+        console.log("Response:",responseData);
+     })
+     .catch((error) => {
+        console.log('problem while adding data');
+      })
+    .done()
   }
 }
 

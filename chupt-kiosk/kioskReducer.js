@@ -7,11 +7,8 @@ import {
     FETCH_LOCKERS_FAILURE,
     ADD_TO_CART,
     REMOVE_FROM_CART,
-    CHANGE_NAME_INPUT,
-    CHANGE_PHONE_INPUT,
     REMOVE_ONE_FROM_CART,
     CHANGE_ITEM_NUMBER,
-    CHANGE_PICKUPTYPE_INPUT,
     TOGGLE_CHECKED,
     POPULATE_MODS,
     CHANGE_SIDE,
@@ -20,7 +17,9 @@ import {
     CLEAR_MODDED_SIDE,
     CLEAR_CHECKED,
     ADD_ONE_TO_CART,
-    REMOVE_POPUP
+    REMOVE_POPUP,
+    PHONE_INPUT_VALIDATION,
+    CONTACT_CHANGE
 } from './kioskActions'
 
 const initialState = {
@@ -34,9 +33,15 @@ const initialState = {
         {type: 'Drinks', items: []},
         {type: 'Meals', items: []}
     ],
-    name: '',
-    number: '',
-    pickupType: '',
+    number: {
+      num: '',
+      unvalid: true
+    },
+    contact: {
+      name: '',
+      number: '',
+      email: ''
+    },
     display: false,
     loading: false,
     error: null,
@@ -49,6 +54,8 @@ export default function productReducer(state = initialState, action) {
     let newChecked = state.checked.map((item) => Object.assign({}, item))
     let newModdedSide = state.moddedSide.map((item) => Object.assign({}, item))
     let newAmount = state.amount
+    let newNumber = JSON.parse(JSON.stringify(state.number))
+    let newContact = JSON.parse(JSON.stringify(state.contact))
 
     function compare(a, b) {
         const newA = JSON.parse(JSON.stringify(a))
@@ -70,7 +77,20 @@ export default function productReducer(state = initialState, action) {
         return JSON.stringify(newA) === JSON.stringify(newB);
     }
 
+    function validatePhoneNumber(elementValue){
+      var phoneNumberPattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+      return phoneNumberPattern.test(elementValue);
+    }
+
     switch (action.type) {
+
+        case CONTACT_CHANGE:
+          newContact[action.contactType.contactType] = action.input.input
+          return {
+              ...state,
+              contact: newContact
+          }
+
         case FETCH_PRODUCTS_BEGIN:
             return {
                 ...state,
@@ -159,7 +179,6 @@ export default function productReducer(state = initialState, action) {
             const checked = newChecked.find(x => x.id === revertItem.item_id)
 
             revertItem.changedMod = action.payload.item.changedMod = []
-
             if (checked) {
                 if (revertItem.items) {
                     // MULTI
@@ -418,22 +437,15 @@ export default function productReducer(state = initialState, action) {
                 amount: newAmount
             };
 
-        case CHANGE_NAME_INPUT:
-            return {
-                ...state,
-                name: action.payload
+        case PHONE_INPUT_VALIDATION:
+            const isValid = !validatePhoneNumber(action.payload.item)
+            newNumber = {
+              number: action.payload.item,
+              unvalid: isValid
             }
-
-        case CHANGE_PICKUPTYPE_INPUT:
             return {
                 ...state,
-                pickupType: action.payload
-            }
-
-        case CHANGE_PHONE_INPUT:
-            return {
-                ...state,
-                number: action.payload
+                number: newNumber
             }
 
         case QUICK_DELETE_CART:

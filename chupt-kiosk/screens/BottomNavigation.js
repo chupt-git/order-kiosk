@@ -136,7 +136,6 @@ const mapDispatchToProps = dispatch => (
     bindActionCreators({
         toggleModalDisplay,
         removePopup
-        // quickDeleteCart
     }, dispatch)
 )
 

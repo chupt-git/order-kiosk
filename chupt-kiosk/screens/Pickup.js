@@ -1,7 +1,8 @@
 import React from 'react'
 import { FlatList, View, TextInput } from 'react-native'
-import {fetchPickup} from "../kioskActions";
+import {fetchPickup, phoneInputValidation, fetchOrder} from "../kioskActions";
 import {connect} from "react-redux"
+import { bindActionCreators } from 'redux'
 import TopNavigation from "./TopNavigation"
 import Body from '../components/Body'
 import MainWrap from '../components/MainWrap'
@@ -10,7 +11,7 @@ import ColoredText from '../components/ColoredText'
 import HeaderText from '../components/HeaderText'
 import MedText from '../components/MedText'
 import MainButton from '../components/MainButton'
-
+import InputBox from '../components/InputBox'
 
 class Pickup extends React.Component {
   componentWillMount() {
@@ -45,17 +46,14 @@ class Pickup extends React.Component {
                       </View>
                       <View style={{margin: 15}}>
                           <MedText style={{marginTop: 50}}>PHONE NUMBER (PIN)</MedText>
-                          <TextInput
+                          <InputBox
                               style={{
-                                  height: 70,
-                                  backgroundColor: '#fff',
-                                  padding: 5,
                                   marginTop: 15,
-                                  fontSize: 20
                               }}
                               placeholder="Enter Phone Number"
                               keyboardType={'phone-pad'}
                               autoComplete={'tel'}
+                              onChangeText={(input) => this.props.dispatch(phoneInputValidation(input))}
                           />
                       </View>
                   </View>
@@ -66,10 +64,10 @@ class Pickup extends React.Component {
                   }}>
                       <MainButton
                           noBorder
-                          green
                           medWidth
                           centerText
-                          onPress={() => this.props.navigation.navigate('OrderInfo')}>
+                          disabled={this.props.number.unvalid}
+                          onPress={() => this.props.dispatch(fetchOrder())}>
                           <ColoredText>SIGN IN</ColoredText>
                       </MainButton>
                   </View>
@@ -80,13 +78,12 @@ class Pickup extends React.Component {
     }
   }
 }
-
+// onPress={() => this.props.navigation.navigate('OrderInfo')}>
 function mapStateToProps(state) {
   return {
-    lockers: state.lockers
+    lockers: state.lockers,
+    number: state.number
   }
 }
 
 export default connect(mapStateToProps)(Pickup)
-
-

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="marin_gap_grid_inner_padding">24dp</dimen>
+    <dimen name="marin_gap_grid_outer_padding">24dp</dimen>
+    <dimen name="marin_gap_grid_padding_wide">24dp</dimen>
+    <dimen name="marin_gap_tile_padding_horizontal">16dp</dimen>
+    <dimen name="marin_grid_tile_text_size">24sp</dimen>
+    <dimen name="marin_split_ticket_width">440dp</dimen>
+    <dimen name="responsive_16P96L_64P0L_72P0L_96P0L">0dp</dimen>
+    <dimen name="responsive_16_64P0L_72P0L_96P0L">0dp</dimen>
+    <dimen name="responsive_48P96L_60P120L_96P192L">192dp</dimen>
+    <dimen name="responsive_96P192L_120P240L_192P384L">384dp</dimen>
+</resources>

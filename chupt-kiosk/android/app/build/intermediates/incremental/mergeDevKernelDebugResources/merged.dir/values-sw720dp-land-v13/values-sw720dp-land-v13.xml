@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="marin_cart_item_gutter">24dp</dimen>
+    <dimen name="marin_cart_item_gutter_half">12dp</dimen>
+    <dimen name="marin_cart_list_gutter_vertical">9dp</dimen>
+    <dimen name="marin_gap_grid_padding_wide">20dp</dimen>
+    <dimen name="marin_gap_tile_padding_horizontal">14dp</dimen>
+    <dimen name="marin_grid_tile_text_size">16sp</dimen>
+    <dimen name="marin_split_ticket_width">281dp</dimen>
+    <dimen name="marin_text_tile_inner_padding">14dp</dimen>
+    <dimen name="marin_text_tile_outer_padding">14dp</dimen>
+    <dimen name="responsive_16P96L_64P0L_72P0L_96P0L">0dp</dimen>
+    <dimen name="responsive_16_64P0L_72P0L_96P0L">0dp</dimen>
+    <dimen name="responsive_48P96L_60P120L_96P192L">120dp</dimen>
+    <dimen name="responsive_96P192L_120P240L_192P384L">240dp</dimen>
+</resources>

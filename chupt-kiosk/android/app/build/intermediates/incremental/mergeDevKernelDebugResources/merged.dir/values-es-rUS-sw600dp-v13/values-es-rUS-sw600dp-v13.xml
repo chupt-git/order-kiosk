@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="points_redeem_button">Canjear por {points} {points_terminology}</string>
+    <string name="points_redeem_button_applied">Aplicado por {points} {points_terminology}</string>
+    <string name="points_redeem_button_disabled">{points} {points_terminology}</string>
+    <string name="split_tender_card_tendered">{brand} {digits} authorizada por {amount}</string>
+    <string name="split_tender_card_tendered_plus_tip">{brand} {digits} autorizada por {amount} + propina</string>
+</resources>
