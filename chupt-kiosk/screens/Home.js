@@ -4,7 +4,7 @@ import ButtonWrap from '../components/ButtonWrap'
 import MainButton from '../components/MainButton'
 import ButtonText from '../components/ButtonText'
 import MainWrap from '../components/MainWrap'
-import { fetchProducts } from '../kioskActions'
+import { fetchProducts, clearState, test } from '../kioskActions'
 import { connect } from 'react-redux'
 
 class Home extends React.Component {
@@ -20,9 +20,9 @@ class Home extends React.Component {
           <ButtonWrap>
             <MainButton
               style={{width: '75%'}}
-              onPress={() => this.props.navigation.navigate('MenuPicker', {
+              onPress={() => {this.props.dispatch(clearState()), this.props.navigation.navigate('MenuPicker', {
                 menu: this.props.menu
-              })}
+              })}}
               white
               home>
               <ButtonText green>

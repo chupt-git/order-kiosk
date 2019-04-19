@@ -31,7 +31,6 @@ class MenuImage extends React.Component {
         )
       })
     }
-
     return (
       <View>
         {images}

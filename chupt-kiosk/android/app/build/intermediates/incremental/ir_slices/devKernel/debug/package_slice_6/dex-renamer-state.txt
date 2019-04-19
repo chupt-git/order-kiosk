@@ -1,4 +1,4 @@
-#Wed Apr 17 08:56:25 PDT 2019
+#Fri Apr 19 12:39:17 PDT 2019
 base.0=/Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/build/intermediates/transforms/dexMerger/devKernel/debug/6
 path.0=classes.dex
 renamed.0=classes.dex

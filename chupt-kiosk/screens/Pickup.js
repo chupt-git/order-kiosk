@@ -67,7 +67,7 @@ class Pickup extends React.Component {
                           medWidth
                           centerText
                           disabled={this.props.number.unvalid}
-                          onPress={() => this.props.dispatch(fetchOrder())}>
+                          onPress={() => this.props.dispatch(fetchOrder('TSnb3gf5M48tzuowqrVRQL'), this.props.navigation.navigate('OrderInfo'))}>
                           <ColoredText>SIGN IN</ColoredText>
                       </MainButton>
                   </View>

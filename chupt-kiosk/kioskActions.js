@@ -12,9 +12,9 @@ export const REMOVE_ONE_FROM_CART = 'REMOVE_ONE_FROM_CART'
 export const CHANGE_ITEM_NUMBER = 'CHANGE_ITEM_NUMBER'
 export const CHANGE_PICKUPTYPE_INPUT = 'CHANGE_PICKUPTYPE_INPUT'
 export const TOGGLE_CHECKED = 'TOGGLE_CHECKED'
-export const  POPULATE_MODS = 'POPULATE_MODS'
+export const POPULATE_MODS = 'POPULATE_MODS'
 export const CHANGE_SIDE = 'CHANGE_SIDE'
-export  const QUICK_DELETE_CART = 'QUICK_DELETE_CART'
+export const QUICK_DELETE_CART = 'QUICK_DELETE_CART'
 export const TOGGLE_MODAL_DISPLAY = 'TOGGLE_MODAL_DISPLAY'
 export const CLEAR_MODDED_SIDE = 'CLEAR_MODDED_SIDE'
 export const CLEAR_CHECKED = 'CLEAR_CHECKED'
@@ -23,6 +23,13 @@ export const REMOVE_POPUP = 'REMOVE_POPUP'
 export const PHONE_INPUT_VALIDATION = 'PHONE_INPUT_VALIDATION'
 export const CHANGE_CONTACT_INPUT = 'CHANGE_CONTACT_INPUT'
 export const CONTACT_CHANGE = 'CONTACT_CHANGE'
+export const CLEAR_STATE = 'CLEAR_STATE'
+export const TEST = 'TEST'
+export const FETCH_ORDER_SUCCESS = 'FETCH_ORDER_SUCCESS'
+
+export const test =() => ({
+  type: TEST
+})
 
 export const contactChange = (input, contactType) => ({
   type: CONTACT_CHANGE,
@@ -44,6 +51,10 @@ export const clearModdedSide = () => ({
 
 export const clearChecked = () => ({
   type: CLEAR_CHECKED
+})
+
+export const clearState = () => ({
+  type: CLEAR_STATE
 })
 
 export const quickDeleteCart = () => ({
@@ -141,6 +152,11 @@ export const fetchLockersFailure = error => ({
   payload: { error }
 })
 
+export const fetchOrderSuccess = orderAndContact => ({
+  type: FETCH_ORDER_SUCCESS,
+  payload: { orderAndContact }
+})
+
 export function fetchProducts() {
   return dispatch => {
     dispatch(fetchProductsBegin());
@@ -149,7 +165,7 @@ export function fetchProducts() {
       .then(res => res.json())
       .then(json => {
         dispatch(fetchProductsSuccess(json.menu))
-        return json.menu
+        return json.orderAndContact
       })
       .catch(error => dispatch(fetchProductsFailure(error)))
   };
@@ -169,14 +185,14 @@ export function fetchPickup() {
   };
 }
 
-export function fetchOrder() {
+export function fetchOrder(order_id) {
   return dispatch => {
     dispatch(fetchProductsBegin());
-    return fetch('https://chupt-dev-4.appspot.com/orders/')
+    return fetch('https://chupt-dev-4.appspot.com/orders/'+ order_id)
       .then(handleErrors)
       .then(res => res.json())
       .then(json => {
-        console.log(json)
+        dispatch(fetchOrderSuccess(json))
       })
       .catch(error => dispatch(fetchProductsFailure(error)))
   };
@@ -193,11 +209,12 @@ export function sendOrder(cart, contact, amount) {
 
     cart.forEach((dataItem) => {
       if (currentCategory !== dataItem.type) {
-        items[dataItem.type] = {items: []}
+        items[dataItem.type.toLowerCase()] = []
         dataItem.items.forEach((item) => {
           if (item.items) {
             let multiItems = []
             // IF MULTI
+
             item.items.forEach(x => {
               x.mods.forEach(y => {
                 newMods.push({name: y.name, value: y.value})
@@ -206,28 +223,31 @@ export function sendOrder(cart, contact, amount) {
                 {
                   item_id: x.item_id,
                   item_type: x.item_type,
-                  mods: newMods,
-                  count: 2,
-                  amount: 6.50
+                  mods: newMods
                 }
               )
             })
-            items[dataItem.type].items.push(multiItems)
+
+            items[dataItem.type.toLowerCase()].push({
+              item_id: item.item_id,
+              item_type: item.item_type,
+              amount: item.amount,
+              count: item.count,
+              items: multiItems
+            })
           } else {
             // IF SINGLE
             item.mods.forEach(y => {
               newMods.push({name: y.name, value: y.value})
             })
 
-            items[dataItem.type].items.push(
-              {
+            items[dataItem.type.toLowerCase()].push({
                 item_id: item.item_id,
                 item_type: item.item_type,
                 mods: newMods,
-                count: 1,
+                count: item.count,
                 amount: item.amount
-              }
-            )
+              })
 
           }
         })
@@ -244,9 +264,9 @@ export function sendOrder(cart, contact, amount) {
       },
       body: JSON.stringify({
         pod_id: 'DApm5HLNDrE4vpFjanQR65',
-        name: contact.name,
-        phone: contact.number,
-        pickup_pin: contact.number,
+        name: contact.name.input,
+        phone: contact.number.input,
+        pickup_pin: contact.number.input,
         customer_uid: uuidv1(),
         placer_uid: uuidv1(),
         source: "pod",
@@ -260,7 +280,7 @@ export function sendOrder(cart, contact, amount) {
               "agent_ref": "neY5J5msqrPH5ZbiurXNwQ",
               "card_type": "visa debit",
               "card_num": "xxxx",
-              "name": contact.name,
+              "name": contact.name.input,
               "expiration": "01/20",
               "ccv": "345"
             }
@@ -270,7 +290,8 @@ export function sendOrder(cart, contact, amount) {
     })
     .then((response) => response.json())
     .then((responseData) => {
-        console.log("Response:",responseData);
+
+        console.log("Response:", responseData);
      })
      .catch((error) => {
         console.log('problem while adding data');

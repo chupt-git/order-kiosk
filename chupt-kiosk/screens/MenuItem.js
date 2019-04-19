@@ -25,6 +25,7 @@ class MenuItem extends React.Component {
         item.type = this.props.type
         const mealId = this.props.mealId
         const addButton = []
+        const modifyButton =[]
 
         if (!mealId) {
             const sideChanged = this.props.moddedSide.find(x => x.item_id === item.item_id)
@@ -34,6 +35,18 @@ class MenuItem extends React.Component {
             } else {
                 item = sideChanged
                 itemToAdd = sideChanged
+            }
+            if(item.type !== 'drinks') {
+              modifyButton.push(
+                <CircleButton
+                    key={'modifyButton'}
+                    style={{width: 150}}
+                    onPress={() => this.props.navigation.navigate('ModifyItem', {
+                        item: item
+                    })}>
+                    <ColoredText>Modify</ColoredText>
+                </CircleButton>
+              )
             }
             addButton.push(
                 <View key={'addButton'} style={{display: 'flex', flexDirection: 'row'}}>
@@ -45,13 +58,7 @@ class MenuItem extends React.Component {
                         }}>
                         <ColoredText>Add</ColoredText>
                     </CircleButton>
-                    <CircleButton
-                        style={{width: 150}}
-                        onPress={() => this.props.navigation.navigate('ModifyItem', {
-                            item: item
-                        })}>
-                        <ColoredText>Modify</ColoredText>
-                    </CircleButton>
+                    {modifyButton}
                 </View>
             )
 

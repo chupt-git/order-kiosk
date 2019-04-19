@@ -5,6 +5,7 @@ import {
     FETCH_LOCKERS_BEGIN,
     FETCH_LOCKERS_SUCCESS,
     FETCH_LOCKERS_FAILURE,
+    FETCH_ORDER_SUCCESS,
     ADD_TO_CART,
     REMOVE_FROM_CART,
     REMOVE_ONE_FROM_CART,
@@ -19,7 +20,9 @@ import {
     ADD_ONE_TO_CART,
     REMOVE_POPUP,
     PHONE_INPUT_VALIDATION,
-    CONTACT_CHANGE
+    CONTACT_CHANGE,
+    CLEAR_STATE,
+    TEST
 } from './kioskActions'
 
 const initialState = {
@@ -38,15 +41,25 @@ const initialState = {
       unvalid: true
     },
     contact: {
-      name: '',
-      number: '',
-      email: ''
+      name: {
+        input:'',
+        valid: false
+      },
+      number: {
+        input:'',
+        valid: false
+      },
+      email: {
+        input:'',
+        valid: false
+      },
     },
     display: false,
     loading: false,
     error: null,
     amount: 0,
-    showPopup: false
+    showPopup: false,
+    orderAndContact: {}
 }
 
 export default function productReducer(state = initialState, action) {
@@ -56,6 +69,7 @@ export default function productReducer(state = initialState, action) {
     let newAmount = state.amount
     let newNumber = JSON.parse(JSON.stringify(state.number))
     let newContact = JSON.parse(JSON.stringify(state.contact))
+    let newInitialState = JSON.parse(JSON.stringify(initialState))
 
     function compare(a, b) {
         const newA = JSON.parse(JSON.stringify(a))
@@ -78,14 +92,41 @@ export default function productReducer(state = initialState, action) {
     }
 
     function validatePhoneNumber(elementValue){
-      var phoneNumberPattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
-      return phoneNumberPattern.test(elementValue);
+      let re = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+      return re.test(elementValue);
+    }
+
+    function validateEmail(emailInput) {
+      let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(emailInput.trim()).toLowerCase());
+    }
+
+    function validateName(nameInput) {
+      let re = /^[A-Za-z\s]+$/
+      return re.test(nameInput)
     }
 
     switch (action.type) {
 
+        case CLEAR_STATE:
+          newInitialState.menu = state.menu
+          return newInitialState;
+
         case CONTACT_CHANGE:
-          newContact[action.contactType.contactType] = action.input.input
+          newContact[action.contactType.contactType].input = action.input.input
+          switch (action.contactType.contactType) {
+            case 'name':
+              newContact[action.contactType.contactType].valid = validateName(action.input.input)
+              break;
+            case 'email':
+              newContact[action.contactType.contactType].valid = validateEmail(action.input.input)
+              break;
+            case 'number':
+                newContact[action.contactType.contactType].valid = validatePhoneNumber(action.input.input)
+              break;
+            default:
+          }
+
           return {
               ...state,
               contact: newContact
@@ -134,6 +175,23 @@ export default function productReducer(state = initialState, action) {
                 error: action.payload.error,
                 menu: []
             };
+
+        case FETCH_ORDER_SUCCESS:
+        // TODO FINISH THIS
+  
+          let newOrderInfo = JSON.parse(JSON.stringify(action.payload.orderAndContact.items))
+          let newItems = []
+
+          Object.keys(newOrderInfo).forEach(x => {
+            console.log(newOrderInfo)
+          })
+
+
+
+          return {
+              ...state,
+              orderAndContact: action.payload
+          }
 
         case CLEAR_MODDED_SIDE:
             return {
