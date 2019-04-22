@@ -36,9 +36,9 @@ const config = {
   dangerouslyAllowInsecureHttpRequest: true
 };
 
-async function test() {
+async function getAuthCode() {
   try {
-    const result = await authorize(config);
+    return await authorize(config);
       // result includes accessToken, accessTokenExpirationDate and refreshToken
       console.log(result)
   } catch (error) {
@@ -51,26 +51,26 @@ class Checkout extends React.Component {
      super(props);
   }
   async componentDidMount() {
-    test()
-    // try {
-    //   // authCode is a mobile authorization code from the Mobile Authorization API
-    //   const authorizedLocation = await authorizeAsync(authCode);
-    //   // Authorized and authorizedLocation is available
-    // } catch(ex) {
-    //   switch(ex.code) {
-    //     case AuthorizeErrorNoNetwork:
-    //       // Remind connecting to network
-    //       break;
-    //     case UsageError:
-    //       let errorMessage = ex.message;
-    //       if (__DEV__) {
-    //         errorMessage += `\n\nDebug Message: ${ex.debugMessage}`;
-    //         console.log(`${ex.code}:${ex.debugCode}:${ex.debugMessage}`)
-    //       }
-    //       Alert.alert('Error', errorMessage);
-    //       break;
-    //   }
-    // }
+    try {
+      const authCode = getAuthCode()
+      // authCode is a mobile authorization code from the Mobile Authorization API
+      const authorizedLocation = await authorizeAsync(authCode);
+      // Authorized and authorizedLocation is available
+    } catch(ex) {
+      switch(ex.code) {
+        case AuthorizeErrorNoNetwork:
+          // Remind connecting to network
+          break;
+        case UsageError:
+          let errorMessage = ex.message;
+          if (__DEV__) {
+            errorMessage += `\n\nDebug Message: ${ex.debugMessage}`;
+            console.log(`${ex.code}:${ex.debugCode}:${ex.debugMessage}`)
+          }
+          Alert.alert('Error', errorMessage);
+          break;
+      }
+    }
   }
   render() {
     let invalid = true

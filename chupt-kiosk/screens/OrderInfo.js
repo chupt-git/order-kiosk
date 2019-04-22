@@ -12,6 +12,7 @@ import TopNavigation from "./TopNavigation"
 import Body from '../components/Body'
 import Txt from "../components/Txt"
 import PickupButton from '../components/PickupButton'
+import CartItem from './CartItem'
 
 class OrderInfo extends React.Component {
 
@@ -21,7 +22,6 @@ class OrderInfo extends React.Component {
         if (!Object.keys(orderInfo).length) {
           return null
         } else {
-          console.log(orderInfo.orderAndContact.items)
           return (
               <MainWrap>
                   <TopNavigation/>
@@ -45,6 +45,18 @@ class OrderInfo extends React.Component {
                                       <Txt bold>Order ID: {orderInfo.orderAndContact.order_id}</Txt>
                                   </View>
                               </View>
+
+                              <FlatList
+                                  style={{width: '100%', padding: 20}}
+                                  data={orderInfo.orderAndContact.items}
+                                  renderItem={(dataItem) => {
+                                      return (
+                                          <CartItem
+                                              item={dataItem}/>
+                                      )
+                                  }}
+                                  keyExtractor={(item, index) => index.toString()}
+                              />
 
                           </View>
 
@@ -73,18 +85,3 @@ function mapStateToProps(state) {
 
 
 export default connect(mapStateToProps)(OrderInfo)
-
-
-
-
-// <FlatList
-//     style={{width: '100%', padding: 20}}
-//     data={orderInfo.orderAndContact.items}
-//     renderItem={(dataItem) => {
-//         return (
-//             <CartItem
-//                 item={dataItem}/>
-//         )
-//     }}
-//     keyExtractor={(item, index) => index.toString()}
-// />

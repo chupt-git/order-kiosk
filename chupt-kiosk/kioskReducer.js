@@ -177,16 +177,15 @@ export default function productReducer(state = initialState, action) {
             };
 
         case FETCH_ORDER_SUCCESS:
-        // TODO FINISH THIS
-  
           let newOrderInfo = JSON.parse(JSON.stringify(action.payload.orderAndContact.items))
           let newItems = []
 
+
           Object.keys(newOrderInfo).forEach(x => {
-            console.log(newOrderInfo)
+            newItems.push({items:newOrderInfo[x], type: x, changedMod: []})
           })
 
-
+          action.payload.orderAndContact.items = newItems
 
           return {
               ...state,
