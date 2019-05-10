@@ -1,11 +1,13 @@
+// import { ExportToCsv } from 'export-to-csv';
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import {
   sendOrder,
-  contactChange
+  contactChange,
+  getAuthCode
 } from '../kioskActions'
-import {View, Text} from 'react-native'
+import {View, Text, Alert} from 'react-native'
 import TopNavigation from "./TopNavigation"
 import HeaderText from '../components/HeaderText'
 import MedText from '../components/MedText'
@@ -19,30 +21,42 @@ import {
   authorizeAsync,
   AuthorizeErrorNoNetwork,
   UsageError,
-} from 'react-native-square-reader-sdk';
-import { authorize } from 'react-native-app-auth'
-const config = {
-  issuer: 'http://localhost:8000/',
-  clientId: 'sq0idp-EEr0UerVULRXtF1xdh3zLw',
-  redirectUrl: 'host.exp.exponent',
-  scopes: ["PAYMENTS_WRITE_IN_PERSON ",
-            "MERCHANT_PROFILE_READ ",
-            "PAYMENTS_READ ",
-            "PAYMENTS_WRITE"],
-  clientSecret: 'sq0csp-TBFE6x2YOWPmYOloBF0_gdFZ1mA2dXRhW56zxTl5kEM',
-  additionalParameters: {
-    approval_prompt: 'force'
-  },
-  dangerouslyAllowInsecureHttpRequest: true
-};
+} from 'react-native-square-reader-sdk'
 
-async function getAuthCode() {
-  try {
-    return await authorize(config);
-      // result includes accessToken, accessTokenExpirationDate and refreshToken
-      console.log(result)
-  } catch (error) {
-    console.log(error);
+
+// async function getAuthCode() {
+//   try {
+//     return await authorize(config);
+//       // result includes accessToken, accessTokenExpirationDate and refreshToken
+//       console.log(result)
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+async function checkToken(token) {
+  if (token){
+    try {
+      // authCode is a mobile authorization code from the Mobile Authorization API
+      const authorizedLocation = await authorizeAsync(token);
+      // Authorized and authorizedLocation is available
+      console.log(authorizedLocation);
+    } catch(ex) {
+      console.log(ex);
+      // switch(ex.code) {
+      //   case AuthorizeErrorNoNetwork:
+      //     // Remind connecting to network
+      //     break;
+      //   case UsageError:
+      //     let errorMessage = ex.message;
+      //     if (__DEV__) {
+      //       errorMessage += `\n\nDebug Message: ${ex.debugMessage}`;
+      //       console.log(`${ex.code}:${ex.debugCode}:${ex.debugMessage}`)
+      //     }
+      //     Alert.alert('Error', errorMessage);
+      //     break;
+      // }
+    }
   }
 }
 
@@ -50,29 +64,13 @@ class Checkout extends React.Component {
   constructor(props) {
      super(props);
   }
+
   async componentDidMount() {
-    try {
-      const authCode = getAuthCode()
-      // authCode is a mobile authorization code from the Mobile Authorization API
-      const authorizedLocation = await authorizeAsync(authCode);
-      // Authorized and authorizedLocation is available
-    } catch(ex) {
-      switch(ex.code) {
-        case AuthorizeErrorNoNetwork:
-          // Remind connecting to network
-          break;
-        case UsageError:
-          let errorMessage = ex.message;
-          if (__DEV__) {
-            errorMessage += `\n\nDebug Message: ${ex.debugMessage}`;
-            console.log(`${ex.code}:${ex.debugCode}:${ex.debugMessage}`)
-          }
-          Alert.alert('Error', errorMessage);
-          break;
-      }
-    }
+    this.props.getAuthCode()
   }
   render() {
+    checkToken(this.props.token)
+
     let invalid = true
     for (let i in this.props.contact) {
       if (this.props.contact[i].valid === false) {
@@ -149,14 +147,16 @@ function mapStateToProps(state) {
         cart: state.cart,
         contact: state.contact,
         pickupType: state.pickupType,
-        amount: state.amount
+        amount: state.amount,
+        token: state.token
     }
 }
 
 const mapDispatchToProps = dispatch => (
   bindActionCreators({
     sendOrder,
-    contactChange
+    contactChange,
+    getAuthCode
   }, dispatch)
 )
 

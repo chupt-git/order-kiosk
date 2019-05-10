@@ -11,61 +11,62 @@ import MenuItem from './MenuItem'
 import ColoredText from '../components/ColoredText'
 import DeleteMenuModal from './DeleteMenuModal'
 
-
 class Menu extends React.Component {
-  render() {
+  render () {
     const menu = this.props.navigation.state.params
     const items = this.props.menu.products
     let currentProducts = []
 
-    Object.keys(items).forEach(function(key) {
+    Object.keys(items).forEach(function (key) {
       if (key === menu.type) {
         currentProducts = items[key]
-    }})
+      }
+    })
     return (
       <MainWrap>
         <TopNavigation/>
         <Body style={{marginTop:20}}>
           <MainButton
-              type={menu.type}
-              medWidth
-              style={{
-                  position:'relative',
-                  zIndex:5,
-                overflow: 'hidden',
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems:'flex-end'}}>
+            type={menu.type}
+            medWidth
+            style={{
+              position: 'relative',
+              zIndex: 5,
+              overflow: 'hidden',
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'flex-end' }}>
             <ButtonText small>{menu.type}</ButtonText>
             <View style={{
               height: 50,
               display: 'flex',
               flexDirection: 'row',
-              alignItems:'flex-end'}}>
+              alignItems: 'flex-end' }}>
               <ButtonText small>${menu.price.front}</ButtonText>
               <ColoredText style={{
-                    fontSize:25,
-                    lineHeight: 25,
-                    alignSelf: 'flex-start'}}>
-                    .{menu.price.back}
+                fontSize: 25,
+                lineHeight: 25,
+                alignSelf: 'flex-start' }}>
+                .{menu.price.back}
               </ColoredText>
             </View>
           </MainButton>
           <FlatList
-            contentContainerStyle={{flexGrow: 1, paddingBottom: 57}}
+            contentContainerStyle={{ flexGrow: 1, paddingBottom: 57 }}
             style={{
-                width: '95%',
-                paddingTop: 30,
-                marginTop: -40
+              width: '95%',
+              paddingTop: 30,
+              marginTop: -40
             }}
             data={currentProducts}
-            renderItem={({item}) => {
+            renderItem={({ item }) => {
               return (
                 <MenuItem
                   item={item}
                   type={menu.type}
                 />
-              )}}
+              )
+            }}
             keyExtractor={(item, index) => index.toString()}
           />
         </Body>
@@ -75,10 +76,10 @@ class Menu extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-    return {
-        menu: state.menu
-    }
+function mapStateToProps (state) {
+  return {
+    menu: state.menu
+  }
 }
 
 export default connect(mapStateToProps)(Menu)

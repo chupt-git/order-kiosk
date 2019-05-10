@@ -22,7 +22,7 @@ import {
     PHONE_INPUT_VALIDATION,
     CONTACT_CHANGE,
     CLEAR_STATE,
-    TEST
+    FETCH_AUTH_CODE_SUCCESS
 } from './kioskActions'
 
 const initialState = {
@@ -59,7 +59,8 @@ const initialState = {
     error: null,
     amount: 0,
     showPopup: false,
-    orderAndContact: {}
+    orderAndContact: {},
+    token: ''
 }
 
 export default function productReducer(state = initialState, action) {
@@ -191,6 +192,13 @@ export default function productReducer(state = initialState, action) {
               ...state,
               orderAndContact: action.payload
           }
+
+        case FETCH_AUTH_CODE_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                token: action.payload.authCode
+            };
 
         case CLEAR_MODDED_SIDE:
             return {
@@ -526,6 +534,8 @@ export default function productReducer(state = initialState, action) {
                 ...state,
                 showPopup: false
             }
+
+
 
         default:
             return state;

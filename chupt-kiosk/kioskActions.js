@@ -24,12 +24,8 @@ export const PHONE_INPUT_VALIDATION = 'PHONE_INPUT_VALIDATION'
 export const CHANGE_CONTACT_INPUT = 'CHANGE_CONTACT_INPUT'
 export const CONTACT_CHANGE = 'CONTACT_CHANGE'
 export const CLEAR_STATE = 'CLEAR_STATE'
-export const TEST = 'TEST'
 export const FETCH_ORDER_SUCCESS = 'FETCH_ORDER_SUCCESS'
-
-export const test =() => ({
-  type: TEST
-})
+export const FETCH_AUTH_CODE_SUCCESS = 'FETCH_AUTH_CODE_SUCCESS'
 
 export const contactChange = (input, contactType) => ({
   type: CONTACT_CHANGE,
@@ -157,6 +153,11 @@ export const fetchOrderSuccess = orderAndContact => ({
   payload: { orderAndContact }
 })
 
+export const fetchAuthCodeSuccess = authCode => ({
+  type: FETCH_AUTH_CODE_SUCCESS,
+  payload: { authCode }
+})
+
 export function fetchProducts() {
   return dispatch => {
     dispatch(fetchProductsBegin());
@@ -174,7 +175,7 @@ export function fetchProducts() {
 export function fetchPickup() {
   return dispatch => {
     dispatch(fetchLockersBegin());
-    return fetch('https://chupt-dev-4.appspot.com/carts/1')
+    return fetch('https://chupt-dev-4.appspot.com/pods/DApm5HLNDrE4vpFjanQR65/status')
         .then(handleErrors)
         .then(res => res.json())
         .then(json => {
@@ -196,6 +197,41 @@ export function fetchOrder(order_id) {
       })
       .catch(error => dispatch(fetchProductsFailure(error)))
   };
+}
+
+export function getAuthCode() {
+  return dispatch => {
+    dispatch(fetchLockersBegin());
+    return fetch('https://access-token-949d4.firebaseio.com/tokens.json')
+        .then(handleErrors)
+        .then(res => {
+          return res.json()
+        })
+        .then(json => {
+          dispatch(fetchAuthCodeSuccess(json.accessToken))
+          return json.accessToken
+        })
+        .catch(error => dispatch(fetchLockersFailure(error)))
+  }
+}
+
+export function refreshAuthCode() {
+  return dispatch => {
+    dispatch(fetchLockersBegin());
+    return fetch('https://connect.squareup.com/oauth2/token'), {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        client_id: 'sq0idp-EEr0UerVULRXtF1xdh3zLw',
+        client_secret:'sq0csp-TBFE6x2YOWPmYOloBF0_gdFZ1mA2dXRhW56zxTl5kEM',
+        grant_type: 'refresh_token',
+        refresh_token: 'EQAAEIj1L02P5t2yhYZMONQmA_SqY_wl_h--UIhAE-1cBObahPrSBt72LUKpmewg'
+      })
+    }
+  }
 }
 
 export function sendOrder(cart, contact, amount) {

@@ -46,11 +46,12 @@ MERGED from [host.exp.exponent:expo-background-fetch:1.0.0] /Users/chelsea/.grad
 MERGED from [host.exp.exponent:expo-font-interface:2.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/expo-font-interface-2.0.0.aar/babafc10d2b485fbeebef2a874201621/AndroidManifest.xml:2:1-11:12
 MERGED from [host.exp.exponent:expo-core:2.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/expo-core-2.0.0.aar/ea70902606f14f3af6e95136396632c6/AndroidManifest.xml:2:1-11:12
 MERGED from [com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/leakcanary-android-no-op-1.4-beta1.aar/7315e8bb1df5f4b0d50c276072bbd5f0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.squareup.sdk.reader:reader-sdk-sq0idp-EEr0UerVULRXtF1xdh3zLw:1.2.2] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/reader-sdk-sq0idp-EEr0UerVULRXtF1xdh3zLw-1.2.2.aar/f47acddd37cc5b540e75972e15ac2f1d/AndroidManifest.xml:2:1-13:12
+MERGED from [com.squareup.sdk.reader:reader-sdk-10502a9e:1.2.2] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/reader-sdk-10502a9e-1.2.2.aar/c3b07f8cfb7c336610a486f5fd25c6de/AndroidManifest.xml:2:1-151:12
+MERGED from [com.google.android.gms:play-services-safetynet:15.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-safetynet-15.0.1.aar/3b3970d012b8ea9785e94bbc38b22ccd/AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:multidex:1.0.3] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/multidex-1.0.3.aar/d7312772c303dac0d9e38e22ca0ec32f/AndroidManifest.xml:17:1-22:12
 MERGED from [com.theartofdev.edmodo:android-image-cropper:2.7.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/android-image-cropper-2.7.0.aar/e1acd2e1b7bd15b2611003fb21f8bba6/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android:cameraview:1.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/cameraview-1.0.0.aar/7c783f0d58162ca1fb080f68cb3ebecc/AndroidManifest.xml:14:1-34:12
-MERGED from [com.squareup.sdk.reader:reader-sdk-sq0idp-EEr0UerVULRXtF1xdh3zLw:1.2.2] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/reader-sdk-sq0idp-EEr0UerVULRXtF1xdh3zLw-1.2.2.aar/f47acddd37cc5b540e75972e15ac2f1d/AndroidManifest.xml:2:1-13:12
-MERGED from [com.squareup.sdk.reader:reader-sdk-10502a9e:1.2.2] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/reader-sdk-10502a9e-1.2.2.aar/c3b07f8cfb7c336610a486f5fd25c6de/AndroidManifest.xml:2:1-151:12
 MERGED from [com.facebook.android:facebook-android-sdk:4.39.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.39.0.aar/1d858f7624873b6044be49e3f5239107/AndroidManifest.xml:21:1-31:12
 MERGED from [com.facebook.android:facebook-login:4.39.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/facebook-login-4.39.0.aar/d563e3b69b55bcf9a74a89f300cc8526/AndroidManifest.xml:21:1-31:12
 MERGED from [com.facebook.android:facebook-share:4.39.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/facebook-share-4.39.0.aar/1e5adb1e369310530c39378797f707f0/AndroidManifest.xml:21:1-31:12
@@ -111,7 +112,6 @@ MERGED from [com.google.android.gms:play-services-identity:15.0.1] /Users/chelse
 MERGED from [com.google.android.gms:play-services-clearcut:15.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-clearcut-15.0.1.aar/e5b7a2113440e13e50d6bbe717e83976/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-flags:15.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-flags-15.0.1.aar/667781bc667fdc05a5d94bff5905cd99/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-phenotype:15.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-phenotype-15.0.1.aar/0d57ddd5729aebd42e11e2f695ffa4b2/AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.gms:play-services-safetynet:12.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-safetynet-12.0.1.aar/76a874abfd44f9835c3620fed03ea487/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-iid-interop:16.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/firebase-iid-interop-16.0.0.aar/e1fc06b1f6b9701eae41f83dba06a576/AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/3f0a556f115e4d7c4e04eae1423409fb/AndroidManifest.xml:17:1-29:12
 MERGED from [com.google.firebase:firebase-common:16.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.0.aar/c764fe15cbb11c578b3c380c9611ab6f/AndroidManifest.xml:2:1-16:12
@@ -161,7 +161,6 @@ MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /Users/chel
 MERGED from [com.jakewharton.threetenabp:threetenabp:1.0.5] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/threetenabp-1.0.5.aar/f50839cf938c039c265f6e07fa97f0fd/AndroidManifest.xml:2:1-10:12
 MERGED from [io.reactivex:rxandroid:1.2.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/rxandroid-1.2.1.aar/bbac74aa50cf79ca09a6505bcaca474f/AndroidManifest.xml:15:1-21:12
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/rxandroid-2.1.0.aar/bf666684a805a53f78d10cb65ec59573/AndroidManifest.xml:15:1-20:12
-MERGED from [com.google.android.gms:play-services-safetynet-license:12.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-safetynet-license-12.0.1.aar/48baec23757d5e93f23a65229b57cbfe/AndroidManifest.xml:17:1-24:12
 INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-340:12
 INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-340:12
 INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml:2:1-340:12
@@ -455,12 +454,14 @@ MERGED from [host.exp.exponent:expo-task-manager:1.0.0] /Users/chelsea/.gradle/c
 MERGED from [host.exp.exponent:expo-task-manager:1.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/expo-task-manager-1.0.0.aar/f4ffc01257b54d3b7f262e51720a554b/AndroidManifest.xml:11:5-25:19
 MERGED from [host.exp.exponent:expo-app-auth:2.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/expo-app-auth-2.0.0.aar/663736257e994115ba0574632122724b/AndroidManifest.xml:11:5-17:19
 MERGED from [host.exp.exponent:expo-app-auth:2.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/expo-app-auth-2.0.0.aar/663736257e994115ba0574632122724b/AndroidManifest.xml:11:5-17:19
-MERGED from [com.google.android:cameraview:1.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/cameraview-1.0.0.aar/7c783f0d58162ca1fb080f68cb3ebecc/AndroidManifest.xml:32:5-20
-MERGED from [com.google.android:cameraview:1.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/cameraview-1.0.0.aar/7c783f0d58162ca1fb080f68cb3ebecc/AndroidManifest.xml:32:5-20
 MERGED from [com.squareup.sdk.reader:reader-sdk-sq0idp-EEr0UerVULRXtF1xdh3zLw:1.2.2] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/reader-sdk-sq0idp-EEr0UerVULRXtF1xdh3zLw-1.2.2.aar/f47acddd37cc5b540e75972e15ac2f1d/AndroidManifest.xml:12:5-20
 MERGED from [com.squareup.sdk.reader:reader-sdk-sq0idp-EEr0UerVULRXtF1xdh3zLw:1.2.2] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/reader-sdk-sq0idp-EEr0UerVULRXtF1xdh3zLw-1.2.2.aar/f47acddd37cc5b540e75972e15ac2f1d/AndroidManifest.xml:12:5-20
 MERGED from [com.squareup.sdk.reader:reader-sdk-10502a9e:1.2.2] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/reader-sdk-10502a9e-1.2.2.aar/c3b07f8cfb7c336610a486f5fd25c6de/AndroidManifest.xml:60:5-149:19
 MERGED from [com.squareup.sdk.reader:reader-sdk-10502a9e:1.2.2] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/reader-sdk-10502a9e-1.2.2.aar/c3b07f8cfb7c336610a486f5fd25c6de/AndroidManifest.xml:60:5-149:19
+MERGED from [com.google.android.gms:play-services-safetynet:15.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-safetynet-15.0.1.aar/3b3970d012b8ea9785e94bbc38b22ccd/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-safetynet:15.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-safetynet-15.0.1.aar/3b3970d012b8ea9785e94bbc38b22ccd/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android:cameraview:1.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/cameraview-1.0.0.aar/7c783f0d58162ca1fb080f68cb3ebecc/AndroidManifest.xml:32:5-20
+MERGED from [com.google.android:cameraview:1.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/cameraview-1.0.0.aar/7c783f0d58162ca1fb080f68cb3ebecc/AndroidManifest.xml:32:5-20
 MERGED from [com.facebook.android:facebook-android-sdk:4.39.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.39.0.aar/1d858f7624873b6044be49e3f5239107/AndroidManifest.xml:28:5-29:19
 MERGED from [com.facebook.android:facebook-android-sdk:4.39.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.39.0.aar/1d858f7624873b6044be49e3f5239107/AndroidManifest.xml:28:5-29:19
 MERGED from [com.facebook.android:facebook-login:4.39.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/facebook-login-4.39.0.aar/d563e3b69b55bcf9a74a89f300cc8526/AndroidManifest.xml:28:5-29:19
@@ -531,8 +532,6 @@ MERGED from [com.google.android.gms:play-services-clearcut:15.0.1] /Users/chelse
 MERGED from [com.google.android.gms:play-services-clearcut:15.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-clearcut-15.0.1.aar/e5b7a2113440e13e50d6bbe717e83976/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-phenotype:15.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-phenotype-15.0.1.aar/0d57ddd5729aebd42e11e2f695ffa4b2/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-phenotype:15.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-phenotype-15.0.1.aar/0d57ddd5729aebd42e11e2f695ffa4b2/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-safetynet:12.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-safetynet-12.0.1.aar/76a874abfd44f9835c3620fed03ea487/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-safetynet:12.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-safetynet-12.0.1.aar/76a874abfd44f9835c3620fed03ea487/AndroidManifest.xml:22:5-20
 MERGED from [com.google.firebase:firebase-iid-interop:16.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/firebase-iid-interop-16.0.0.aar/e1fc06b1f6b9701eae41f83dba06a576/AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-iid-interop:16.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/firebase-iid-interop-16.0.0.aar/e1fc06b1f6b9701eae41f83dba06a576/AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/3f0a556f115e4d7c4e04eae1423409fb/AndroidManifest.xml:22:5-27:19
@@ -579,8 +578,6 @@ MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /Users/chel
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.0.aar/b30338a0d7ef297144a1123d04ec777b/AndroidManifest.xml:9:5-20
 MERGED from [com.jakewharton.threetenabp:threetenabp:1.0.5] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/threetenabp-1.0.5.aar/f50839cf938c039c265f6e07fa97f0fd/AndroidManifest.xml:8:5-20
 MERGED from [com.jakewharton.threetenabp:threetenabp:1.0.5] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/threetenabp-1.0.5.aar/f50839cf938c039c265f6e07fa97f0fd/AndroidManifest.xml:8:5-20
-MERGED from [com.google.android.gms:play-services-safetynet-license:12.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-safetynet-license-12.0.1.aar/48baec23757d5e93f23a65229b57cbfe/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-safetynet-license:12.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-safetynet-license-12.0.1.aar/48baec23757d5e93f23a65229b57cbfe/AndroidManifest.xml:22:5-20
 	android:supportsRtl
 		ADDED from [com.facebook.android:facebook-android-sdk:4.39.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.39.0.aar/1d858f7624873b6044be49e3f5239107/AndroidManifest.xml:28:18-44
 	android:label
@@ -1065,16 +1062,18 @@ MERGED from [host.exp.exponent:expo-core:2.0.0] /Users/chelsea/.gradle/caches/tr
 MERGED from [host.exp.exponent:expo-core:2.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/expo-core-2.0.0.aar/ea70902606f14f3af6e95136396632c6/AndroidManifest.xml:7:5-9:41
 MERGED from [com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/leakcanary-android-no-op-1.4-beta1.aar/7315e8bb1df5f4b0d50c276072bbd5f0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/leakcanary-android-no-op-1.4-beta1.aar/7315e8bb1df5f4b0d50c276072bbd5f0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.squareup.sdk.reader:reader-sdk-sq0idp-EEr0UerVULRXtF1xdh3zLw:1.2.2] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/reader-sdk-sq0idp-EEr0UerVULRXtF1xdh3zLw-1.2.2.aar/f47acddd37cc5b540e75972e15ac2f1d/AndroidManifest.xml:8:5-10:41
+MERGED from [com.squareup.sdk.reader:reader-sdk-sq0idp-EEr0UerVULRXtF1xdh3zLw:1.2.2] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/reader-sdk-sq0idp-EEr0UerVULRXtF1xdh3zLw-1.2.2.aar/f47acddd37cc5b540e75972e15ac2f1d/AndroidManifest.xml:8:5-10:41
+MERGED from [com.squareup.sdk.reader:reader-sdk-10502a9e:1.2.2] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/reader-sdk-10502a9e-1.2.2.aar/c3b07f8cfb7c336610a486f5fd25c6de/AndroidManifest.xml:6:5-8:41
+MERGED from [com.squareup.sdk.reader:reader-sdk-10502a9e:1.2.2] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/reader-sdk-10502a9e-1.2.2.aar/c3b07f8cfb7c336610a486f5fd25c6de/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.android.gms:play-services-safetynet:15.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-safetynet-15.0.1.aar/3b3970d012b8ea9785e94bbc38b22ccd/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-safetynet:15.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-safetynet-15.0.1.aar/3b3970d012b8ea9785e94bbc38b22ccd/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:multidex:1.0.3] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/multidex-1.0.3.aar/d7312772c303dac0d9e38e22ca0ec32f/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:multidex:1.0.3] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/multidex-1.0.3.aar/d7312772c303dac0d9e38e22ca0ec32f/AndroidManifest.xml:20:5-43
 MERGED from [com.theartofdev.edmodo:android-image-cropper:2.7.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/android-image-cropper-2.7.0.aar/e1acd2e1b7bd15b2611003fb21f8bba6/AndroidManifest.xml:7:5-9:41
 MERGED from [com.theartofdev.edmodo:android-image-cropper:2.7.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/android-image-cropper-2.7.0.aar/e1acd2e1b7bd15b2611003fb21f8bba6/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android:cameraview:1.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/cameraview-1.0.0.aar/7c783f0d58162ca1fb080f68cb3ebecc/AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.android:cameraview:1.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/cameraview-1.0.0.aar/7c783f0d58162ca1fb080f68cb3ebecc/AndroidManifest.xml:19:5-21:41
-MERGED from [com.squareup.sdk.reader:reader-sdk-sq0idp-EEr0UerVULRXtF1xdh3zLw:1.2.2] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/reader-sdk-sq0idp-EEr0UerVULRXtF1xdh3zLw-1.2.2.aar/f47acddd37cc5b540e75972e15ac2f1d/AndroidManifest.xml:8:5-10:41
-MERGED from [com.squareup.sdk.reader:reader-sdk-sq0idp-EEr0UerVULRXtF1xdh3zLw:1.2.2] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/reader-sdk-sq0idp-EEr0UerVULRXtF1xdh3zLw-1.2.2.aar/f47acddd37cc5b540e75972e15ac2f1d/AndroidManifest.xml:8:5-10:41
-MERGED from [com.squareup.sdk.reader:reader-sdk-10502a9e:1.2.2] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/reader-sdk-10502a9e-1.2.2.aar/c3b07f8cfb7c336610a486f5fd25c6de/AndroidManifest.xml:6:5-8:41
-MERGED from [com.squareup.sdk.reader:reader-sdk-10502a9e:1.2.2] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/reader-sdk-10502a9e-1.2.2.aar/c3b07f8cfb7c336610a486f5fd25c6de/AndroidManifest.xml:6:5-8:41
 MERGED from [com.facebook.android:facebook-android-sdk:4.39.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.39.0.aar/1d858f7624873b6044be49e3f5239107/AndroidManifest.xml:24:5-26:41
 MERGED from [com.facebook.android:facebook-android-sdk:4.39.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.39.0.aar/1d858f7624873b6044be49e3f5239107/AndroidManifest.xml:24:5-26:41
 MERGED from [com.facebook.android:facebook-login:4.39.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/facebook-login-4.39.0.aar/d563e3b69b55bcf9a74a89f300cc8526/AndroidManifest.xml:24:5-26:41
@@ -1195,8 +1194,6 @@ MERGED from [com.google.android.gms:play-services-flags:15.0.1] /Users/chelsea/.
 MERGED from [com.google.android.gms:play-services-flags:15.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-flags-15.0.1.aar/667781bc667fdc05a5d94bff5905cd99/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-phenotype:15.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-phenotype-15.0.1.aar/0d57ddd5729aebd42e11e2f695ffa4b2/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-phenotype:15.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-phenotype-15.0.1.aar/0d57ddd5729aebd42e11e2f695ffa4b2/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-safetynet:12.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-safetynet-12.0.1.aar/76a874abfd44f9835c3620fed03ea487/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-safetynet:12.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-safetynet-12.0.1.aar/76a874abfd44f9835c3620fed03ea487/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-iid-interop:16.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/firebase-iid-interop-16.0.0.aar/e1fc06b1f6b9701eae41f83dba06a576/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-iid-interop:16.0.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/firebase-iid-interop-16.0.0.aar/e1fc06b1f6b9701eae41f83dba06a576/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/3f0a556f115e4d7c4e04eae1423409fb/AndroidManifest.xml:20:5-44
@@ -1295,8 +1292,6 @@ MERGED from [io.reactivex:rxandroid:1.2.1] /Users/chelsea/.gradle/caches/transfo
 MERGED from [io.reactivex:rxandroid:1.2.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/rxandroid-1.2.1.aar/bbac74aa50cf79ca09a6505bcaca474f/AndroidManifest.xml:19:5-43
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/rxandroid-2.1.0.aar/bf666684a805a53f78d10cb65ec59573/AndroidManifest.xml:18:5-43
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.0] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/rxandroid-2.1.0.aar/bf666684a805a53f78d10cb65ec59573/AndroidManifest.xml:18:5-43
-MERGED from [com.google.android.gms:play-services-safetynet-license:12.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-safetynet-license-12.0.1.aar/48baec23757d5e93f23a65229b57cbfe/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-safetynet-license:12.0.1] /Users/chelsea/.gradle/caches/transforms-1/files-1.1/play-services-safetynet-license-12.0.1.aar/48baec23757d5e93f23a65229b57cbfe/AndroidManifest.xml:20:5-44
 INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/src/main/AndroidManifest.xml
 	tools:overrideLibrary

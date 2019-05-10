@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Apr 17 08:56:28 PDT 2019
+#Wed May 01 11:00:43 PDT 2019
 56.path=lib/arm64-v8a/libgifimage.so
 5.base=/Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/build/intermediates/merged_assets/devKernelDebug/mergeDevKernelDebugAssets/out
 42.base=/Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/build/intermediates/transforms/mergeJniLibs/devKernel/debug/0
