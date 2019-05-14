@@ -202,7 +202,7 @@ export function fetchOrder(order_id) {
 export function getAuthCode() {
   return dispatch => {
     dispatch(fetchLockersBegin());
-    return fetch('https://access-token-949d4.firebaseio.com/tokens.json')
+    return fetch('https://connect.squareup.com/mobile/authorization-code')
         .then(handleErrors)
         .then(res => {
           return res.json()
@@ -259,7 +259,8 @@ export function sendOrder(cart, contact, amount) {
                 {
                   item_id: x.item_id,
                   item_type: x.item_type,
-                  mods: newMods
+                  mods: newMods,
+                  name: x.name
                 }
               )
             })
@@ -269,7 +270,8 @@ export function sendOrder(cart, contact, amount) {
               item_type: item.item_type,
               amount: item.amount,
               count: item.count,
-              items: multiItems
+              items: multiItems,
+              name: item.name
             })
           } else {
             // IF SINGLE
@@ -282,7 +284,8 @@ export function sendOrder(cart, contact, amount) {
                 item_type: item.item_type,
                 mods: newMods,
                 count: item.count,
-                amount: item.amount
+                amount: item.amount,
+                name: item.name
               })
 
           }
@@ -326,7 +329,6 @@ export function sendOrder(cart, contact, amount) {
     })
     .then((response) => response.json())
     .then((responseData) => {
-
         console.log("Response:", responseData);
      })
      .catch((error) => {

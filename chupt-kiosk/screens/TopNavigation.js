@@ -6,6 +6,7 @@ import LogoImg from '../components/LogoImg'
 import ColoredText from '../components/ColoredText'
 import CircleButton from '../components/CircleButton'
 import { withNavigation } from 'react-navigation'
+import { View } from 'react-native'
 
 class TopNavigation extends React.Component {
   render () {

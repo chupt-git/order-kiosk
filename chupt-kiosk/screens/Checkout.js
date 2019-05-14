@@ -35,6 +35,7 @@ import {
 // }
 
 async function checkToken(token) {
+  console.log(token);
   if (token){
     try {
       // authCode is a mobile authorization code from the Mobile Authorization API
@@ -43,19 +44,19 @@ async function checkToken(token) {
       console.log(authorizedLocation);
     } catch(ex) {
       console.log(ex);
-      // switch(ex.code) {
-      //   case AuthorizeErrorNoNetwork:
-      //     // Remind connecting to network
-      //     break;
-      //   case UsageError:
-      //     let errorMessage = ex.message;
-      //     if (__DEV__) {
-      //       errorMessage += `\n\nDebug Message: ${ex.debugMessage}`;
-      //       console.log(`${ex.code}:${ex.debugCode}:${ex.debugMessage}`)
-      //     }
-      //     Alert.alert('Error', errorMessage);
-      //     break;
-      // }
+      switch(ex.code) {
+        case AuthorizeErrorNoNetwork:
+          // Remind connecting to network
+          break;
+        case UsageError:
+          let errorMessage = ex.message;
+          if (__DEV__) {
+            errorMessage += `\n\nDebug Message: ${ex.debugMessage}`;
+            console.log(`${ex.code}:${ex.debugCode}:${ex.debugMessage}`)
+          }
+          Alert.alert('Error', errorMessage);
+          break;
+      }
     }
   }
 }
@@ -70,6 +71,7 @@ class Checkout extends React.Component {
   }
   render() {
     checkToken(this.props.token)
+    // console.log(this.props.token)
 
     let invalid = true
     for (let i in this.props.contact) {

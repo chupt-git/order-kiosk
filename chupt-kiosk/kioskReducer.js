@@ -194,6 +194,7 @@ export default function productReducer(state = initialState, action) {
           }
 
         case FETCH_AUTH_CODE_SUCCESS:
+        // console.log( action.payload);
             return {
                 ...state,
                 loading: false,
