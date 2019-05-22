@@ -259,7 +259,8 @@ export function sendOrder(cart, contact, amount) {
                 {
                   item_id: x.item_id,
                   item_type: x.item_type,
-                  mods: newMods
+                  mods: newMods,
+                  name: x.name
                 }
               )
             })
@@ -269,7 +270,8 @@ export function sendOrder(cart, contact, amount) {
               item_type: item.item_type,
               amount: item.amount,
               count: item.count,
-              items: multiItems
+              items: multiItems,
+              name: item.name
             })
           } else {
             // IF SINGLE
@@ -282,7 +284,8 @@ export function sendOrder(cart, contact, amount) {
                 item_type: item.item_type,
                 mods: newMods,
                 count: item.count,
-                amount: item.amount
+                amount: item.amount,
+                name: item.name
               })
 
           }

@@ -6,22 +6,22 @@
     density="hdpi"
     format="10"
     plugin-version="3.2.1"
-    timestamp="1557351484325"
+    timestamp="1558457749909"
     token="5473434480244057211"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="6367" />
+        duration="66" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="139" />
+        duration="56" />
     <task
         name="verifier"
-        duration="223" />
+        duration="3" />
 
     <artifact
         location="/Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/build/intermediates/split-apk/devKernel/debug/slices/slice_8.apk"
@@ -29,6 +29,9 @@
     <artifact
         location="/Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/build/intermediates/split-apk/devKernel/debug/slices/slice_6.apk"
         type="SPLIT" />
+    <artifact
+        location="/Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/build/intermediates/instant-run-apk/devKernel/debug/app-devKernel-debug.apk"
+        type="SPLIT_MAIN" />
     <artifact
         location="/Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/build/intermediates/split-apk/devKernel/debug/slices/slice_3.apk"
         type="SPLIT" />
@@ -59,13 +62,10 @@
     <artifact
         location="/Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/build/intermediates/split-apk/devKernel/debug/slices/slice_9.apk"
         type="SPLIT" />
-    <artifact
-        location="/Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/build/intermediates/instant-run-apk/devKernel/debug/app-devKernel-debug.apk"
-        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1557351484325"
+        timestamp="1558457749909"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/build/intermediates/split-apk/devKernel/debug/slices/slice_8.apk"
@@ -73,6 +73,9 @@
         <artifact
             location="/Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/build/intermediates/split-apk/devKernel/debug/slices/slice_6.apk"
             type="SPLIT" />
+        <artifact
+            location="/Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/build/intermediates/instant-run-apk/devKernel/debug/app-devKernel-debug.apk"
+            type="SPLIT_MAIN" />
         <artifact
             location="/Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/build/intermediates/split-apk/devKernel/debug/slices/slice_3.apk"
             type="SPLIT" />
@@ -103,9 +106,6 @@
         <artifact
             location="/Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/build/intermediates/split-apk/devKernel/debug/slices/slice_9.apk"
             type="SPLIT" />
-        <artifact
-            location="/Users/chelsea/Github/Chupt/order-kiosk/chupt-kiosk/android/app/build/intermediates/instant-run-apk/devKernel/debug/app-devKernel-debug.apk"
-            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>
